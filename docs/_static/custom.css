@@ -1,0 +1,27 @@
+.wy-side-nav-search {
+    background-color: #f7f0eb;
+}
+
+.wy-side-nav-search>div.version {
+    color: rgba(96, 0, 128, 0.67);
+}
+
+.wy-side-nav-search input[type=text] {
+    border-color: #7a2177;
+}
+
+.wy-menu-vertical a:hover {
+    background-color: #e8e7e7;
+}
+
+.wy-side-nav-search>a:hover, .wy-side-nav-search .wy-dropdown>a:hover {
+    background: none;
+}
+
+a {
+    color: #7a2177;
+}
+
+a:hover {
+    color: #3d103c;
+}
