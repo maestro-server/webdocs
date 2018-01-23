@@ -19,6 +19,10 @@ Maestro Server is be composed of 3 system.
 - ‎Scheduler commands with Ansible
 - ‎Auto Discovery for cloud environment
 
+.. Note::
+
+  `See demo cloud inventory here <http://demo.maestroserver.io/>`_. 
+
 > **App manager**: Automataze command services
 
 - Command hooks in multiple servers.
@@ -33,13 +37,16 @@ Maestro Server is be composed of 3 system.
 
 What is Maestro Server
 ----------------------
-Maestro was built to solve some problems we found in operating multi-cloud environments
+Maestro was built to solve some problems we found in operating multi-cloud environments, multiple shared Devops culture team.
+
 
 What does Maestro do?
 *********************
+
 
 What problems does it solve?
 ****************************
 
 How do I use it?
 ****************
+Centralized database system like CMDB, centralized playbooks like Ansible Tower and centralized monitoring cloud system like ManageIQ

@@ -107,13 +107,13 @@ Vagrant
 We have Vagrant box, its good for visualization (demo) or the best way to create a development environment.
 
 .. Note::
-    PS: All port its expose, dont use vagrant in production environment.
+    PS: ``All port its expose``, don't use vagrant in production environment.
 
 
 .. Note::
 
     **HA - High availability and critical system**
 
-    If your necessity is, ha, critical situation, go in `Ha session`__.
+    If your necessity is, HA, critical situation, go in `Ha session`__.
 
     __ installing/production.html
