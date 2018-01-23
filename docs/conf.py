@@ -64,7 +64,11 @@ release = u'0.1'
 #
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
-language = None
+language = 'en'
+
+locale_dirs = [
+    'locale/',
+]
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -107,12 +111,7 @@ html_logo = '_static/logo.png'
 #
 # This is required for the alabaster theme
 # refs: http://alabaster.readthedocs.io/en/latest/installation.html#sidebars
-html_sidebars = {
-    '**': [
-        'relations.html',  # needs 'show_related': True theme option to display
-        'searchbox.html',
-    ]
-}
+html_sidebars = {}
 
 
 # -- Options for HTMLHelp output ------------------------------------------
