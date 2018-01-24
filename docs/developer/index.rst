@@ -6,3 +6,6 @@ Developer Guide
 
    architecture
    setup
+   provider
+   lint
+   tests
