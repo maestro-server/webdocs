@@ -1,5 +1,5 @@
-Access and Auth
-===============
+Reports
+=======
 
 Single table report
 -------------------
