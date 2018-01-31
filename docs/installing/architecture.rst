@@ -21,6 +21,7 @@ Server API
 ----------
 
 Server App main application, some responsibility is 
+
 - Authentication and authorization
 - Validate and create entities (crud ops)
 - Proxy to others services
@@ -157,7 +158,8 @@ URL_REPORTS             http://localhost:5005        Url reports-app (flask)
 FrontEnd - Client App
 ---------------------
 
-Client App front end application  
+Client App front end application 
+
 - Html and Js client application
 - Single page app (SPA)
 - Cache layer
@@ -238,12 +240,10 @@ Discovery App
 -------------
 
 Discovery App service to connect and crawler provider
+
 - Encharge to manager and authenticate in each provider
 - Crawler the data and record into db
 - Consume batch insert data
-
-.. Warning::
-	Only this service can be external access
 
 ----------
 
@@ -357,11 +357,9 @@ CELERY_BROKER_URL       amqp://rabbitmq:5672"        RabiitMQ connection
 Scheduler App
 -------------
 
-Scheduler App service to execute schedule crawler joob
-- Celery beat, to create a jobs calling discovery app
+Scheduler App service to execute schedule crawler job
 
-.. Warning::
-	Only this service can be external access
+- Celery beat, to create a jobs calling discovery app
 
 ----------
 
@@ -426,12 +424,10 @@ Report
 ------
 
 Reports app, generate reports
+
 - Understand complex queries and generate reports
 - Manage storage and control each technical flow
 - Transform in artifact pdf, csv or json
-
-.. Warning::
-	Only this service can be external access
 
 ----------
 

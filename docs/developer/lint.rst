@@ -1,5 +1,115 @@
 Lints
 ====================
 
-Add New Providers
+Each project uses lint program to guarantee the pattern and quality.
+
+JavaScript (Client App)
+-----------------------
+
+Use `eslint <https://eslint.org/>`_, default vue-loader
+
+.. code-block:: bash
+
+    npm run lint
+
+
+------------
+
+NodeJs (Server App)
+-------------------
+
+Eslint too,
+
+Airbnb with some changes
+
+.. code-block:: bash
+
+    npm run lint
+
+.. code-block:: bash
+
+    "rules": {
+        "linebreak-style": [
+            0
+        ],
+        "semi": [
+            2,
+            "always"
+        ],
+        "semi-spacing": [2, {            // http://eslint.org/docs/rules/semi-spacing
+            "before": false,
+            "after": true
+        }],
+        "no-console": 0,
+        "strict": ["error", "global"],
+        "no-catch-shadow": 2, // disallow the catch clause parameter name being the same as a variable in the outer scope (off by default in the node environment)
+        "no-delete-var": 2, // disallow deletion of variables
+        "no-label-var": 2, // disallow labels that share a name with a variable
+        "no-shadow": 2, // disallow declaration of variables already declared in the outer scope
+        "no-shadow-restricted-names": 2, // disallow shadowing of names such as arguments
+        "no-undef": 0, // disallow use of undeclared variables unless mentioned in a /*global */ block
+        "no-undef-init": 2, // disallow use of undefined when initializing variables
+        "no-undefined": 2, // disallow use of undefined variable (off by default)
+        "no-unused-vars": 2, // disallow declaration of variables that are not used in the code
+        "no-use-before-define": 2, // disallow use of variables before they are defined
+        "complexity": 0, // specify the maximum cyclomatic complexity allowed in a program (off by default)
+        "no-var": 2, // require let or const instead of var (off by default)
+        "generator-star-spacing": [2, "before"] // enforce the spacing around the * in generator functions (off by default)
+    }
+
+------------
+
+Python 3 (Discovery, Scheduler and Reports)
+-------------------------------------------
+
+pytlint, default config.
+
+.. code-block:: bash
+
+    npm run lint
+
+------------
+
+Quality Assurance
 -----------------
+
+**Server App**
+
+================  ================================================================================================================================================================================== 
+Code codeclimate  .. image:: https://codeclimate.com/github/maestro-server/server-app/badges/gpa.svg
+                        :target: https://codeclimate.com/github/maestro-server/server-app
+                
+                  .. image:: https://codeclimate.com/github/maestro-server/server-app/badges/issue_count.svg
+                        :target: https://codeclimate.com/github/maestro-server/server-app
+
+Travis            .. image:: https://travis-ci.org/maestro-server/server-app.svg?branch=master
+                        :target: https://travis-ci.org/maestro-server/server-app
+
+DavidDm           .. image:: https://david-dm.org/maestro-server/server-app.svg
+                        :target: https://david-dm.org/
+
+Codacy            .. image:: https://api.codacy.com/project/badge/Grade/12101716a7a64a07a38c8dd0ea645606
+                        :target: https://www.codacy.com/app/maestro/server-app?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=maestro-server/server-app&amp;utm_campaign=Badge_Grade
+
+Coveralls         .. image:: https://coveralls.io/repos/github/maestro-server/server-app/badge.svg?branch=master
+                        :target: https://coveralls.io/github/maestro-server/server-app?branch=master
+================  ================================================================================================================================================================================== 
+
+------------
+
+**Discovery API**
+
+================  ================================================================================================================================================================================== 
+
+Codacy            .. image:: https://api.codacy.com/project/badge/Grade/105fc88179e640d3b7433d24dec6d644
+                        :target: https://www.codacy.com/app/maestro/discovery-api?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=maestro-server/discovery-api&amp;utm_campaign=Badge_Grade
+
+Travis            .. image:: https://travis-ci.org/maestro-server/discovery-api.svg?branch=master
+                        :target: https://travis-ci.org/maestro-server/discovery-api
+
+CodeClimate       .. image:: https://api.codeclimate.com/v1/badges/082edc45c4509b79f751/maintainability
+                        :target: https://codeclimate.com/github/maestro-server/discovery-api/maintainability
+                  .. image:: https://api.codeclimate.com/v1/badges/082edc45c4509b79f751/test_coverage
+                        :target: https://codeclimate.com/github/maestro-server/discovery-api/test_coverage
+================  ================================================================================================================================================================================== 
+
