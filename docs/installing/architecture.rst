@@ -75,6 +75,7 @@ Download de repository
 
 .. code-block:: bash
 
+    cd server-app
     npm install
 
 ----------
@@ -186,6 +187,8 @@ Client App front end application
 .. code-block:: bash
 
     docker run -p 80:80 -e "API_URL=http://localhost:8888" maestroserver/client-maestro
+
+Docker have installed nginx proxy.
 
 ----------
 
