@@ -1,8 +1,7 @@
 License
 ====================
 
-Copyright (c) 2018, Felipe Klerk Signorini and contributors. See AUTHORS
-for more details.
+Copyright (c) 2018, Felipe Klerk Signorini and contributors.
 
 Some rights reserved.
 
