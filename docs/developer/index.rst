@@ -7,7 +7,6 @@ This chapter will explain internal concepts about Maestro, its only matter if yo
    :maxdepth: 2
 
    architecture
-   setup
-   provider
    lint
    tests
+   qa

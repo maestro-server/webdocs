@@ -12,5 +12,3 @@ You can add new members and config each access role.
 .. figure:: ../../_static/screen/team.png
 
     Form team
-
-------------

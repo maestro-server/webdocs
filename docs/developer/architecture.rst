@@ -34,7 +34,7 @@ Discovery App
 
 .. image:: ../_static/screen/discovery.png
 
-Discovery using Flask <http://flask.pocoo.org/>,  and python >3.5, has api rest, and tasks.
+Discovery using `Flask <http://flask.pocoo.org>`_,  and python >3.5, has api rest, and tasks.
 
 **Setup dev env**
 
@@ -50,20 +50,38 @@ Will be setup rabbitmq and redis
 
 - Controller used factory dc abstract to create easy way to make CRUD in mongodb
 
-- The crawler is divided in 3 parts,
-	**api:** connect in api provider and get result
-	**translate:** normalize the data
-	**insert:** insert/update data in mongodb
+- The crawler is divided in 3 parts
+
+	- **api:** connect in api provider and get result
+
+	- **translate:** normalize the data
+
+	- **insert:** insert/update data in mongodb
+
 	Each step have unique task.
 
 - Config is managed by env variables, need to be, because in production env like k8s is easier to manager the pods.
 
 - Repository has pymongo objects.
 
+----------
+
+**Flower - Debbug Celery**
+
+We installed a flower, it's a control panel to centralize results throughout rabbitMQ, very useful to troubleshooting producer and consumers.
+
+.. code-block:: bash
+
+    flower -A app.celery
+
+    npm run flower
+
+----------
+
 Scheduler App
 -------------
 
 .. image:: ../_static/screen/scheduler.png
 
-Discovery using Flask <http://flask.pocoo.org/>,  and python >3.5, used Celery Beat feature to call tasks.
+Discovery using `Flask <http://flask.pocoo.org>`_,  and python >3.5, used Celery Beat feature to call tasks.
 

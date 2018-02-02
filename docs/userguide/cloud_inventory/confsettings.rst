@@ -49,5 +49,3 @@ Regions and zones, if you like, its possible to configure and pre-define some re
 .. figure:: ../../_static/screen/rr_1.png
 
     Pre-define regions and zones.
-
-------------

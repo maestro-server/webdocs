@@ -49,6 +49,13 @@ Server App main application, some responsibility is
         - "MAESTRO_DISCOVERY_TIMEOUT=10000"
         - "MAESTRO_DISCOVERY_URL=http://discovery:5000"
 
+Run docker compose
+
+.. code-block:: bash
+    
+    docker-compose up -d
+
+Or docker run
 
 .. code-block:: bash
 
