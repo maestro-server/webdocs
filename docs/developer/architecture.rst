@@ -46,6 +46,16 @@ Discovery using `Flask <http://flask.pocoo.org>`_,  and python >3.5, has api res
 
 Will be setup rabbitmq and redis
 
+**Windows Env**
+
+If you use windows, celery havent support for windows, the last version is 3.1.25.
+
+.. code-block:: bash
+
+    pip3 install celery==3.1.25
+
+    npm run powershell
+
 **Important topics**
 
 - Controller used factory dc abstract to create easy way to make CRUD in mongodb
