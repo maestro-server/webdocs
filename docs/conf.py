@@ -96,7 +96,7 @@ html_theme = 'sphinx_rtd_theme'
 html_theme_options = {
     'logo_only': True,
     'analytics_id': 'UA-112879234-1',
-    'canonical_url': 'docs.maestroserver.io',
+    'canonical_url': 'docs.maestroserver.io/',
 }
 
 # Add any paths that contain custom static files (such as style sheets) here,
