@@ -353,13 +353,13 @@ Download de repository
 ======================= ============================ =========================== 
 Env Variables                   Example                    Description         
 ======================= ============================ =========================== 
-MAESTRO_MONGO_URI       'localhost'                  Mongo Url conn
-MAESTRO_MONGO_DATABASE  'maestro-client'     
-MAESTRO_DISCOVERY_URL   'http://localhost'           Discovery API URL
+MAESTRO_MONGO_URI       localhost                    Mongo Url conn
+MAESTRO_MONGO_DATABASE  maestro-client       
+MAESTRO_DISCOVERY_URL   http://localhost             Discovery API URL
 MAESTRO_DISCOVERY_PORT  5000                         Discovery API Port
-MAESTRO_SECRETJWT       'xxxx'                       Same that Server App
+MAESTRO_SECRETJWT       xxxx                         Same that Server App
 MAESTRO_SCAN_QTD        200  
-CELERY_BROKER_URL       amqp://rabbitmq:5672"        RabiitMQ connection
+CELERY_BROKER_URL       amqp://rabbitmq:5672         RabbitMQ connection
 ======================= ============================ =========================== 
 
 ----------
@@ -422,9 +422,9 @@ Download de repository
 ======================= ============================ =========================== 
 Env Variables                   Example                    Description         
 ======================= ============================ =========================== 
-MAESTRO_DISCOVERY_URL   'http://localhost'           Discovery API URL
+MAESTRO_DISCOVERY_URL   http://localhost             Discovery API URL
 MAESTRO_DISCOVERY_PORT  5000                         Discovery API Port
-CELERY_BROKER_URL       amqp://rabbitmq:5672"        RabiitMQ connection
+CELERY_BROKER_URL       amqp://rabbitmq:5672         RabbitMQ connection
 ======================= ============================ =========================== 
 
 ----------
@@ -448,22 +448,20 @@ Reports app, generate reports
     version: '2'
 
     services:
-    discovery:
-        image: maestroserver/discovery-maestro
-        ports:
-        - "5000:5000"
-        environment:
-        - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
-        - "MAESTRO_PORT=5000"
-        - "MAESTRO_MONGO_URI=mongodb"
-        - "MAESTRO_MONGO_DATABASE=maestro-client"
+        reports:
+            image: maestroserver/reports-maestro
+            environment:
+            - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
+            - "MAESTRO_URL=http://localhost:5005"
+            - "MAESTRO_MONGO_URI=mongodb"
+            - "MAESTRO_MONGO_DATABASE=maestro-reports"
 
-    celery:
-        image: maestroserver/discovery-maestro-celery
-        environment:
-        - "MAESTRO_DISCOVERY_URL=http://discovery"
-        - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
-        - "MAESTRO_PORT=5000"
+        reports_worker:
+            image: maestroserver/reports-maestro-celery
+            environment:
+            - "MAESTRO_URL=http://reports:5005"
+            - "MAESTRO_DISCOVERY_URL=http://discovery:5000"
+            - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
 
 ----------
 
@@ -485,11 +483,11 @@ Download de repository
 
 .. code-block:: bash
 
-    python -m flask run.py
+    python -m flask run.py --port 5005 
 
     or
 
-    FLASK_APP=run.py FLASK_DEBUG=1 flask run
+    FLASK_APP=run.py FLASK_DEBUG=1 flask run --port 5005 
 
     or 
 
@@ -526,17 +524,16 @@ Download de repository
 
 **Env variables**
 
-======================= ============================ =========================== 
+======================= ============================ ===========================================
 Env Variables                   Example                    Description         
-======================= ============================ =========================== 
-MAESTRO_MONGO_URI       'localhost'                  Mongo Url conn
-MAESTRO_MONGO_DATABASE  'maestro-client'     
-MAESTRO_DISCOVERY_URL   'http://localhost'           Discovery API URL
-MAESTRO_DISCOVERY_PORT  5000                         Discovery API Port
-MAESTRO_SECRETJWT       'xxxx'                       Same that Server App
-MAESTRO_SCAN_QTD        200  
-CELERY_BROKER_URL       amqp://rabbitmq:5672"        RabiitMQ connection
-======================= ============================ ===========================
+======================= ============================ ===========================================
+MAESTRO_MONGO_URI       localhost                    Mongo Url conn
+MAESTRO_MONGO_DATABASE  maestro-reports              Db name, its differente of servers-app     
+MAESTRO_DISCOVERY_URL   http://localhost:5000        Discovery API URL
+MAESTRO_URL             http://localhost:5005        Report api
+MAESTRO_INSERT_QTD      200                          Throughput insert in reports collection
+CELERY_BROKER_URL       amqp://rabbitmq:5672         RabbitMQ connection
+======================= ============================ ===========================================
 
 ----------
 

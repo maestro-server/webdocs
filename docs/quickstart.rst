@@ -7,15 +7,15 @@ Overview
 Maestro is split into 6 pieces:
 
 +-----------------+-------------------------------------------------+--------------------+
-| Client App      | FrontEnd client                                 | Vue2 + Boostrap 3  | 
+| Client App      | FrontEnd client                                 | Vue2 + Bootstrap 3 | 
 +-----------------+-------------------------------------------------+--------------------+
 | Server App      | Primary API, authetication, crud and manager    | NodeJs 6.10 Kraken |
 +-----------------+-------------------------------------------------+--------------------+
-| Discovery App   | Auto discovery and crawler                      | Python 3.5, flask  | 
+| Discovery App   | Auto discovery and crawler                      | Python 3.6, flask  | 
 +-----------------+-------------------------------------------------+--------------------+
-| Scheduler App   | Rabbits worker for Scheduler discovery          | Python 3.5, celery | 
+| Scheduler App   | Rabbits worker for Scheduler discovery          | Python 3.6, celery | 
 +-----------------+-------------------------------------------------+--------------------+
-| Reports App     | Reports generetor                               | Python 3.5, flask  | 
+| Reports App     | Reports generetor                               | Python 3.6, flask  | 
 +-----------------+-------------------------------------------------+--------------------+
 | Playbook Server | Playbook server, task executer                  | Python, shell      | 
 +-----------------+-------------------------------------------------+--------------------+
@@ -29,6 +29,10 @@ We recommend to use docker, if you like to see demo version, copy and execute do
     PS: Docker will be created and manager all networks and communication between services.
     
     PS: The containers its prepared for run in production ready, but its recommend to create a separate database environment and export the volume (remember all storage inside of docker its temporary)
+
+.. Note::
+
+    :download:`docker-compose file <_static/files/docker-compose.yml>`
 
 .. code-block:: yaml
 
@@ -69,6 +73,21 @@ We recommend to use docker, if you like to see demo version, copy and execute do
         - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
         - "MAESTRO_PORT=5000"
 
+  reports:
+    image: maestroserver/reports-maestro
+    environment:
+     - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
+     - "MAESTRO_URL=http://localhost:5005"
+     - "MAESTRO_MONGO_URI=mongodb"
+     - "MAESTRO_MONGO_DATABASE=maestro-reports"
+
+  reports_worker:
+    image: maestroserver/reports-maestro-celery
+    environment:
+     - "MAESTRO_URL=http://reports:5005"
+     - "MAESTRO_DISCOVERY_URL=http://discovery:5000"
+     - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
+
     scheduler:
         image: maestroserver/scheduler-maestro
         environment:
@@ -107,6 +126,7 @@ Vagrant
 We have Vagrant box, its good for visualization (demo) or the best way to create a development environment.
 
 .. Note::
+
     PS: ``All port its expose``, don't use vagrant in production environment.
 
 

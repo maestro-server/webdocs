@@ -1,0 +1,82 @@
+version: '2'
+
+    services:
+    client:
+        image: maestroserver/client-maestro
+        ports:
+        - "80:80"
+        environment:
+        - "API_URL=http://localhost:8888"
+
+    server:
+        image: maestroserver/server-maestro
+        ports:
+        - "8888:8888"
+        environment:
+        - "MAESTRO_PORT=8888"
+        - "MAESTRO_MONGO_URI=mongodb/maestro-client"
+        - "MAESTRO_DISCOVERY_TIMEOUT=10000"
+        - "MAESTRO_DISCOVERY_URL=http://discovery:5000"
+
+    discovery:
+        image: maestroserver/discovery-maestro
+        ports:
+        - "5000:5000"
+        environment:
+        - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
+        - "MAESTRO_PORT=5000"
+        - "MAESTRO_MONGO_URI=mongodb"
+        - "MAESTRO_MONGO_DATABASE=maestro-client"
+
+    celery:
+        image: maestroserver/discovery-maestro-celery
+        environment:
+        - "MAESTRO_DISCOVERY_URL=http://discovery"
+        - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
+        - "MAESTRO_PORT=5000"
+
+  reports:
+    image: maestroserver/reports-maestro
+    environment:
+     - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
+     - "MAESTRO_URL=http://localhost:5005"
+     - "MAESTRO_MONGO_URI=mongodb"
+     - "MAESTRO_MONGO_DATABASE=maestro-reports"
+
+  reports_worker:
+    image: maestroserver/reports-maestro-celery
+    environment:
+     - "MAESTRO_URL=http://reports:5005"
+     - "MAESTRO_DISCOVERY_URL=http://discovery:5000"
+     - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
+
+    scheduler:
+        image: maestroserver/scheduler-maestro
+        environment:
+        - "MAESTRO_DISCOVERY_URL=http://discovery"
+        - "MAESTRO_DISCOVERY_PORT=5000"
+        - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
+        - "MAESTRO_MONGO_URI=mongodb"
+        - "MAESTRO_MONGO_DATABASE=maestro-client"
+
+    rabbitmq:
+        hostname: "discovery-rabbit"
+        image: rabbitmq:3-management
+        ports:
+        - "15672:15672"
+        - "5672:5672"
+
+    redis:
+        image: redis
+        ports:
+        - "6379:6379"
+
+    mongodb:
+        image: mongo
+        volumes:
+        - mongodata:/data/db
+        ports:
+        - "27017:27017"
+
+    volumes:
+    mongodata: {}
