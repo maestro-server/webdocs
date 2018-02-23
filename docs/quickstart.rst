@@ -73,20 +73,20 @@ We recommend to use docker, if you like to see demo version, copy and execute do
         - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
         - "MAESTRO_PORT=5000"
 
-  reports:
-    image: maestroserver/reports-maestro
-    environment:
-     - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
-     - "MAESTRO_URL=http://localhost:5005"
-     - "MAESTRO_MONGO_URI=mongodb"
-     - "MAESTRO_MONGO_DATABASE=maestro-reports"
+    reports:
+        image: maestroserver/reports-maestro
+        environment:
+        - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
+        - "MAESTRO_URL=http://localhost:5005"
+        - "MAESTRO_MONGO_URI=mongodb"
+        - "MAESTRO_MONGO_DATABASE=maestro-reports"
 
-  reports_worker:
-    image: maestroserver/reports-maestro-celery
-    environment:
-     - "MAESTRO_URL=http://reports:5005"
-     - "MAESTRO_DISCOVERY_URL=http://discovery:5000"
-     - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
+    reports_worker:
+        image: maestroserver/reports-maestro-celery
+        environment:
+        - "MAESTRO_URL=http://reports:5005"
+        - "MAESTRO_DISCOVERY_URL=http://discovery:5000"
+        - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
 
     scheduler:
         image: maestroserver/scheduler-maestro
