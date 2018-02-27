@@ -4,6 +4,8 @@ Reports
 Single table report
 -------------------
 
+General table able to create single report, you can add specific filters.
+
 .. figure:: ../../_static/screen/report_c.png
 
      Single report, use only one entity
@@ -24,8 +26,12 @@ Single table report
 | Active                                                                    | Boolean | true/false         | Flag, used to deleted items, possibility to retrived deleted items |                                                
 +---------------------------------------------------------------------------+---------+--------------------+--------------------------------------------------------------------+
 
+--------
+
 Pivot table reports
 -------------------
+
+Pivot reports, can create a relational table, relational is, client -> system -> app -> servers, you can use any type of filters in any step.
 
 .. figure:: ../../_static/screen/report_c2.png
 
