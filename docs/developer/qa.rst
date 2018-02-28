@@ -7,11 +7,34 @@ We use some tools to mensure quality.
 
       `Travis with all projects <http://https://travis-ci.org/maestro-server>`_
 
+------------
+
+Client Maestro
+--------------
+
+================  ================================================================================================================================================================================== 
+
+Codacy            .. image:: https://api.codacy.com/project/badge/Grade/e7ddc95f8f464045befe97f68c89504b
+                        :target: https://www.codacy.com/app/maestro/client-app?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=maestro-server/client-app&amp;utm_campaign=Badge_Grade
+
+Travis            .. image:: https://travis-ci.org/maestro-server/client-app.svg?branch=master
+                        :target: https://travis-ci.org/maestro-server/client-app
+
+CodeClimate       .. image:: https://api.codeclimate.com/v1/badges/153ccbbe1bd09ea8232d/maintainability
+                        :target: https://codeclimate.com/github/maestro-server/client-app/maintainability
+                        :alt: Maintainability
+                  .. image:: https://api.codeclimate.com/v1/badges/153ccbbe1bd09ea8232d/test_coverage
+                        :target: https://codeclimate.com/github/maestro-server/client-app/test_coverage
+                        :alt: Test Coverage
+================  ================================================================================================================================================================================== 
+
+------------
+
 Server App
 ----------
 
 ================  ================================================================================================================================================================================== 
-Code codeclimate  .. image:: https://codeclimate.com/github/maestro-server/server-app/badges/gpa.svg
+CodeClimate       .. image:: https://codeclimate.com/github/maestro-server/server-app/badges/gpa.svg
                         :target: https://codeclimate.com/github/maestro-server/server-app
                 
                   .. image:: https://codeclimate.com/github/maestro-server/server-app/badges/issue_count.svg
@@ -32,8 +55,8 @@ Coveralls         .. image:: https://coveralls.io/repos/github/maestro-server/se
 
 ------------
 
-Discovery API
--------------
+Discovery Maestro
+-----------------
 
 ================  ================================================================================================================================================================================== 
 
@@ -47,5 +70,47 @@ CodeClimate       .. image:: https://api.codeclimate.com/v1/badges/082edc45c4509
                         :target: https://codeclimate.com/github/maestro-server/discovery-api/maintainability
                   .. image:: https://api.codeclimate.com/v1/badges/082edc45c4509b79f751/test_coverage
                         :target: https://codeclimate.com/github/maestro-server/discovery-api/test_coverage
+================  ================================================================================================================================================================================== 
+
+------------
+
+Report Maestro
+--------------
+
+================  ================================================================================================================================================================================== 
+
+Codacy            .. image:: https://api.codacy.com/project/badge/Grade/d5272664aa1f46e08d99aa13c695e663
+                              :target: https://www.codacy.com/app/maestro/report-app?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=maestro-server/report-app&amp;utm_campaign=Badge_Grade
+
+Travis            .. image:: https://travis-ci.org/maestro-server/report-app.svg?branch=master
+                        :target: https://travis-ci.org/maestro-server/report-app
+
+CodeClimate       .. image:: https://api.codeclimate.com/v1/badges/d30df800647b4c898f42/maintainability
+                        :target: https://codeclimate.com/github/maestro-server/report-app/maintainability
+                        :alt: Maintainability
+                  .. image:: https://api.codeclimate.com/v1/badges/d30df800647b4c898f42/test_coverage
+                        :target: https://codeclimate.com/github/maestro-server/report-app/test_coverage
+                        :alt: Test Coverage
+================  ================================================================================================================================================================================== 
+
+------------
+
+Scheduler Maestro
+-----------------
+
+================  ================================================================================================================================================================================== 
+
+Codacy            .. image:: https://api.codacy.com/project/badge/Grade/70223d33e20d4ed59ea4e310dc38260d
+                        :target: https://www.codacy.com/app/maestro/scheduler-app?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=maestro-server/scheduler-app&amp;utm_campaign=Badge_Grade
+
+Travis            .. image:: https://travis-ci.org/maestro-server/scheduler-app.svg?branch=master
+                        :target: https://travis-ci.org/maestro-server/scheduler-app
+
+CodeClimate       .. image:: https://api.codeclimate.com/v1/badges/3a073f54d89d948c0c08/maintainability
+                        :target: https://codeclimate.com/github/maestro-server/scheduler-app/maintainability
+                        :alt: Maintainability
+                  .. image:: https://api.codeclimate.com/v1/badges/3a073f54d89d948c0c08/test_coverage
+                        :target: https://codeclimate.com/github/maestro-server/scheduler-app/test_coverage
+                        :alt: Test Coverage
 ================  ================================================================================================================================================================================== 
 
