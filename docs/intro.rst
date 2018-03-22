@@ -43,7 +43,7 @@ Maestro was built to solve some problems we found in operating multi-cloud envir
 What problems does it solve?
 ****************************
 
-New way in the technology world wit h new forms to think and act, new architecture in multicloud, microservices and etc, all this stuffs increase a complex path to be updated, in the same time teams grow and more, the knowledge split, it operation teams transform in squad horizontal service team, create a necessity to orchestrate people and data.
+New way in the technology world with new forms to think and act, new architecture in multicloud, microservices and etc, all this stuffs increase a complex path to be updated, in the same time teams grow and more, the knowledge split, it operation teams transform in squad horizontal service team, create a necessity to orchestrate people and data.
 
 Maestro comes to help it operation teams to organize and audit multicloud infrastructure, Cloud Inventory arrive to substitute CMDB systems, auto-discovery servers, services and apps in organizing and smart way, its possible to classify each service, like database, message queues, vpns, api gateway, service mesh and etc, create a relation between servers and services, docs clusters, and points, targets all you need to be a complete and simple inventory.
 
