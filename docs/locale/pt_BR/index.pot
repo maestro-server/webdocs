@@ -1,0 +1,30 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018, Felipe Signorini
+# This file is distributed under the same license as the Maestro Server - Cloud Inventory package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Maestro Server - Cloud Inventory 0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-03-22 20:54+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../index.rst:4
+msgid "Cloud Inventory's documentation!"
+msgstr ""
+
+#: ../../index.rst:6
+msgid "The docs its be separated into 3 parts, the first is about installation and setup Maestro, the second is about User Guide how you create and manage Maestro in the business point of view, and the last we have a developer guide for people like to contribute for the project."
+msgstr ""
+
+#: ../../index.rst:8
+msgid "Contents:"
+msgstr ""
+

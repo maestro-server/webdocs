@@ -1,0 +1,1156 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018, Felipe Signorini
+# This file is distributed under the same license as the Maestro Server - Cloud Inventory package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Maestro Server - Cloud Inventory 0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-03-22 20:54+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../userguide/cloud_inventory/accessauth.rst:2
+msgid "Access and Auth"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/accessauth.rst:4
+msgid "All entitites in Maestro has access roles, the access role"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/accessauth.rst:7
+msgid "Account / Profile"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/accessauth.rst:9
+msgid "On profile you can update your profile."
+msgstr ""
+
+#: ../../userguide/cloud_inventory/accessauth.rst:15
+msgid "Profile fields"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/accessauth.rst:20
+msgid "ACL"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/accessauth.rst:22
+msgid "All entities in Maestro has access roles, the access role, we have, each access role maybe in a team or in user."
+msgstr ""
+
+#: ../../userguide/cloud_inventory/accessauth.rst:25
+msgid "Read:"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/accessauth.rst:25
+msgid "Have only read access"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/accessauth.rst:27
+msgid "Write:"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/accessauth.rst:27
+msgid "Have read and write access (update)"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/accessauth.rst:29
+msgid "Admin:"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/accessauth.rst:29
+msgid "Able to delete, grant and revoke access."
+msgstr ""
+
+#: ../../userguide/cloud_inventory/accessauth.rst:36
+msgid "You can change any acl point for specify user or team."
+msgstr ""
+
+#: ../../userguide/cloud_inventory/accessauth.rst:41
+msgid "Change password"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/accessauth.rst:43
+msgid "If you like to change password, you need to go on profile > change password"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/accessauth.rst:49
+msgid "New pass"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/autodiscovery.rst:2
+msgid "Auto Discovery"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/autodiscovery.rst:4
+msgid "To setup connections in auto-discovery, go inventory > connections."
+msgstr ""
+
+#: ../../userguide/cloud_inventory/autodiscovery.rst:8
+msgid "Access connection"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/autodiscovery.rst:10
+msgid "In version 0.1, we have two providers:"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/autodiscovery.rst:13
+msgid "Connectiong with AWS"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/autodiscovery.rst:15
+msgid "To register one aws account use access_key and secret_key"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/autodiscovery.rst:17
+#: ../../userguide/cloud_inventory/autodiscovery.rst:54
+msgid "**Synchronized and permissions to grant.**"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/autodiscovery.rst:20
+msgid "server-List"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/autodiscovery.rst:20
+msgid "ec2 describe_instances"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/autodiscovery.rst:22
+msgid "loadbalance-list"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/autodiscovery.rst:22
+msgid "describe_load_balancers and describe_load_balancers"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/autodiscovery.rst:24
+msgid "dbs-list"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/autodiscovery.rst:24
+msgid "rds describe_db_instances"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/autodiscovery.rst:26
+msgid "storage-object-list"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/autodiscovery.rst:26
+msgid "s3 list_buckets"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/autodiscovery.rst:28
+msgid "volumes-list"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/autodiscovery.rst:28
+msgid "ec2 describe_volumes"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/autodiscovery.rst:30
+msgid "cdns-list"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/autodiscovery.rst:30
+msgid "cloudfront list_distributions"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/autodiscovery.rst:32
+msgid "snapshot-list"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/autodiscovery.rst:32
+msgid "ec2 describe_snapshots"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/autodiscovery.rst:34
+msgid "images-list"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/autodiscovery.rst:34
+msgid "ec2 vdescribe_images"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/autodiscovery.rst:36
+msgid "security-list"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/autodiscovery.rst:36
+msgid "ec2 describe_security_groups"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/autodiscovery.rst:38
+msgid "network-list"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/autodiscovery.rst:38
+msgid "ec2 describe_vpcs, describe_subnets, describe_vpc_peering_connections, describe_vpn_gateways, describe_vpc_endpoints, describe_route_tables, describe_network_interfaces, describe_nat_gateways and describe_network_acls"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/autodiscovery.rst:45
+msgid "Setup connection with AWS"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/autodiscovery.rst:50
+msgid "Connectiong with OpenStack"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/autodiscovery.rst:52
+msgid "To register one openstack account, use project name, url api, user, and password."
+msgstr ""
+
+#: ../../userguide/cloud_inventory/autodiscovery.rst:57
+msgid "Server-List:"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/autodiscovery.rst:57
+msgid "servers compute"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/autodiscovery.rst:59
+msgid "Loadbalance-list:"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/autodiscovery.rst:59
+msgid "load_balancers load_balancer"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/autodiscovery.rst:61
+msgid "volumes-list:"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/autodiscovery.rst:61
+msgid "volumes block_store"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/autodiscovery.rst:63
+msgid "snapshot-list:"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/autodiscovery.rst:63
+msgid "block_store snapshots"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/autodiscovery.rst:65
+msgid "images-list:"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/autodiscovery.rst:65
+msgid "compute images"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/autodiscovery.rst:67
+msgid "security-list:"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/autodiscovery.rst:67
+msgid "network security_groups"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/autodiscovery.rst:69
+msgid "flavor-list:"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/autodiscovery.rst:69
+msgid "compute flavors"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/autodiscovery.rst:71
+msgid "network-list:"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/autodiscovery.rst:71
+msgid "network networks, subnets, ports and routers"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/autodiscovery.rst:74
+msgid "If you like, choose how the resource will be synchronized with an active and inactive button."
+msgstr ""
+
+#: ../../userguide/cloud_inventory/autodiscovery.rst:80
+msgid "Setupconnection with OpenStack"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/autodiscovery.rst:86
+msgid "PS:  There is scheduler job, its automatize sync, this schedule will be activated by default, and each resource have our own time, in the example, server-list will be synchronized for every 5 minutes, networks stuffs normally happen for every 2 weeks."
+msgstr ""
+
+#: ../../userguide/cloud_inventory/autodiscovery.rst:93
+msgid "Enable and disable the job"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/autodiscovery.rst:99
+msgid "FAQ"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/autodiscovery.rst:101
+msgid "**Permission error**"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/autodiscovery.rst:103
+msgid "If through Unauthorized error, you need to grant ready only permission, in AWS you need to create IAM and grant these permissions."
+msgstr ""
+
+#: ../../userguide/cloud_inventory/autodiscovery.rst:105
+msgid "**Infinitive process loading**"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/autodiscovery.rst:107
+msgid "Its common problem, Maestro needs two services to execute a successful synchronize, Discovery APP and RabbitMQ, normally when discovery app is down, we have infinite process message (because server app notify to start a process, and discovery app need to finish with Success process). Guarantees if discovery app up and running and if it's connected correctly with rabbitmq."
+msgstr ""
+
+#: ../../userguide/cloud_inventory/autodiscovery.rst:110
+msgid "For debbug, use stdout docker, like"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/confsettings.rst:2
+msgid "Config / Settings"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/confsettings.rst:5
+#: ../../userguide/cloud_inventory/inventory.rst:275
+msgid "Services"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/confsettings.rst:7
+msgid "You can create and delete new services used in servers and apps services field, choose a name, family and some tags."
+msgstr ""
+
+#: ../../userguide/cloud_inventory/confsettings.rst:13
+msgid "Register a new, or update service."
+msgstr ""
+
+#: ../../userguide/cloud_inventory/confsettings.rst:18
+msgid "Config Options"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/confsettings.rst:20
+msgid "Config options, its used in point part options, like environments, types of services, and time to schedule updates providers lists."
+msgstr ""
+
+#: ../../userguide/cloud_inventory/confsettings.rst:23
+msgid "application_options"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/confsettings.rst:23
+msgid "Options of apps"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/confsettings.rst:24
+msgid "clients_options"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/confsettings.rst:25
+msgid "connections"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/confsettings.rst:25
+msgid "Time scheduler and crawler connections"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/confsettings.rst:26
+msgid "database_options"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/confsettings.rst:27
+msgid "datacenter_options"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/confsettings.rst:28
+msgid "env_options"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/confsettings.rst:29
+msgid "server_options"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/confsettings.rst:30
+msgid "services_options"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/confsettings.rst:30
+msgid "Initial setup of services"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/confsettings.rst:31
+msgid "system_options"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/confsettings.rst:38
+msgid "Maestro configs, created when run migration command."
+msgstr ""
+
+#: ../../userguide/cloud_inventory/confsettings.rst:43
+msgid "Regions and zones"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/confsettings.rst:45
+msgid "Regions and zones, if you like, its possible to configure and pre-define some regions and zones."
+msgstr ""
+
+#: ../../userguide/cloud_inventory/confsettings.rst:51
+msgid "Pre-define regions and zones."
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:2
+msgid "Inventory"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:4
+msgid "Inside inventory there are a groups of entities organize by responsabilitie accordly architecture point of view."
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:8
+#: ../../userguide/cloud_inventory/inventory.rst:223
+msgid "Servers"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:10
+msgid "The most import fields in server register is:"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:13
+#: ../../userguide/cloud_inventory/inventory.rst:35
+#: ../../userguide/cloud_inventory/inventory.rst:75
+#: ../../userguide/cloud_inventory/inventory.rst:87
+#: ../../userguide/cloud_inventory/inventory.rst:111
+#: ../../userguide/cloud_inventory/inventory.rst:163
+#: ../../userguide/cloud_inventory/inventory.rst:180
+#: ../../userguide/cloud_inventory/inventory.rst:214
+#: ../../userguide/cloud_inventory/inventory.rst:220
+#: ../../userguide/cloud_inventory/inventory.rst:247
+#: ../../userguide/cloud_inventory/inventory.rst:267
+msgid "Field"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:13
+#: ../../userguide/cloud_inventory/inventory.rst:35
+#: ../../userguide/cloud_inventory/inventory.rst:75
+#: ../../userguide/cloud_inventory/inventory.rst:87
+#: ../../userguide/cloud_inventory/inventory.rst:111
+#: ../../userguide/cloud_inventory/inventory.rst:163
+#: ../../userguide/cloud_inventory/inventory.rst:180
+#: ../../userguide/cloud_inventory/inventory.rst:214
+#: ../../userguide/cloud_inventory/inventory.rst:220
+#: ../../userguide/cloud_inventory/inventory.rst:247
+#: ../../userguide/cloud_inventory/inventory.rst:267
+msgid "Functional"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:15
+msgid "Hostname"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:15
+#: ../../userguide/cloud_inventory/inventory.rst:77
+msgid "Hostname, accept duplicate hostname per team, but the inveotry will warning about this."
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:16
+msgid "Ipv4 Private"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:16
+msgid "Ipv4 private, same situation of hostname (accept duplicate but will warning)"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:17
+msgid "Ipv4 Public"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:17
+msgid "Ipv4 public, only for external servers."
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:18
+msgid "OS"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:18
+msgid "Base is most basic form, like Linux adn Windows, Distro normally use for linux, like ubuntu, centos, and version its a number"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:19
+#: ../../userguide/cloud_inventory/inventory.rst:19
+msgid "CPU"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:20
+#: ../../userguide/cloud_inventory/inventory.rst:20
+msgid "Memory"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:21
+#: ../../userguide/cloud_inventory/inventory.rst:78
+msgid "Environment"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:21
+#: ../../userguide/cloud_inventory/inventory.rst:78
+msgid "Production | Development | Stage"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:28
+msgid "Setup OS server"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:32
+msgid "You have some tabs,"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:37
+msgid "Storage"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:37
+msgid "Add your storage information, mount path, size in GB and if is a root device, some cloud maybe bring news informations."
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:38
+msgid "Datacenter"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:38
+msgid "Provider, region and zones, if this server still in cloud Environment you can put id in id_instance, will be create a link and Maestro will know if its duplicate when execute a auto discovery servers."
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:39
+msgid "Auth"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:39
+msgid "Used to register a methods to authenticate in servers."
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:40
+#: ../../userguide/cloud_inventory/inventory.rst:216
+msgid "Service"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:40
+msgid "Register all services its run inside a servers, this information its used to create some links with applications inventory and used in ``Application Manager`` system."
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:45
+msgid "Services is a very important field in servers, which this information the system will try to find some relation with applications, for example if you register Oracle Database, and create a database and register a relation between this servers, the system will automatically create a service relation."
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:51
+msgid "Assing a dc name, region and zone."
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:57
+msgid "Register, which mode you can to access and authenticate on server."
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:63
+msgid "Related services running."
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:68
+msgid "Apps"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:70
+msgid "Apps are it all services with is a business responsibility, normally it is an application made by the developer and deploys."
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:72
+msgid "Some fields:"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:77
+#: ../../userguide/cloud_inventory/inventory.rst:182
+msgid "Name"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:79
+msgid "Language"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:80
+msgid "Cluster mode"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:84
+msgid "Specification"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:89
+msgid "Role"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:89
+msgid "Point information like endpoint, commands, health check, its good for doc."
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:90
+#: ../../userguide/cloud_inventory/inventory.rst:169
+#: ../../userguide/cloud_inventory/inventory.rst:242
+msgid "System"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:90
+#: ../../userguide/cloud_inventory/inventory.rst:169
+msgid "Systems related it."
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:91
+#: ../../userguide/cloud_inventory/inventory.rst:167
+msgid "Server"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:91
+msgid "Servers deployed by app."
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:92
+msgid "Deploy"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:92
+msgid "List of ways to deploy this app."
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:99
+msgid "Choose language like node or php."
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:104
+msgid "Databases"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:106
+msgid "Databases are it all with data persistence responsibility, can be relational, norelational, in memory, distribuited storage and etc."
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:108
+msgid "We have some specific database, in this case, can have exclusive form"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:113
+msgid "Oracle"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:113
+msgid "You can register ASM DB, CDBs, configurations like Rac, grid system and golden gate backups"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:114
+msgid "MySQL"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:114
+msgid "Register some features like Master/Slave, Cluster with Aurora, backups services and more."
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:117
+msgid "**Oracle**"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:119
+msgid "Support version 10g, 11g and 12g"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:123
+msgid "Choose how Oracle will be storage data, can be local disk, networks disk or ASM."
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:129
+msgid "Choose how Oracle will be run, single node, RAC/Grid mode."
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:135
+msgid "Which CDBS run in oracle database."
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:141
+msgid "Which servers this db run, if is single node, its only one server, but if is rac setup, will be run in multiple servers."
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:143
+msgid "**MySQL**"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:145
+msgid "Support MySQL, AWS Aurora, MariaDB, Percona and etc"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:149
+#: ../../userguide/cloud_inventory/inventory.rst:158
+msgid "Version and mode to run."
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:152
+msgid "**Other databases**"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:154
+msgid "Partial support whitch all bases"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:165
+#: ../../userguide/cloud_inventory/inventory.rst:224
+msgid "Spec"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:165
+msgid "Point information like endpoint, port, commands, health check, its good for doc."
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:166
+#: ../../userguide/cloud_inventory/inventory.rst:175
+msgid "Datacenters"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:166
+msgid "Provider, (only by third party services)"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:167
+msgid "Servers deployed by db."
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:168
+msgid "CDBS"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:168
+msgid "Used only by Oracle DB"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:177
+msgid "Register all clouds, bare metal, providers and etc."
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:182
+msgid "Identity name"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:183
+msgid "Provider"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:183
+msgid "Choose a provider, or create a new one"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:184
+msgid "Regions"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:184
+msgid "Choose or create regions"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:185
+msgid "Zones"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:185
+msgid "Choose or create zones"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:192
+msgid "List of datacenters, with instances, regiions and zones"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:198
+msgid "You can choose the provider, regions and zones."
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:204
+msgid "Choose regions or create it."
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:209
+msgid "LoadBalances"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:211
+msgid "Service with responsibility of distributed request through other servers"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:216
+msgid "Which is service?"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:222
+msgid "Targets"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:222
+msgid "Which servers this lb send it"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:223
+msgid "Which servers this lb still installed"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:224
+msgid "Endpoint and healthcheck"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:231
+msgid "Docs a endpoint and healthcheck used in app."
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:237
+msgid "Select loadbalance targets."
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:244
+msgid "A group of application, databases, loadbalances and etc, compond a unique system."
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:249
+msgid "Links"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:249
+msgid "Some useful links"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:250
+#: ../../userguide/cloud_inventory/inventory.rst:262
+msgid "Clients"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:250
+msgid "Relation to this system and client"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:257
+msgid "Select owner of system"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:264
+msgid "SLA owner, clients"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:269
+msgid "Contacts/Channel"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:269
+msgid "How contact the client"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:277
+msgid "Common program running inside on server"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/inventory.rst:281
+msgid "Create a new service, to use in server and any app."
+msgstr ""
+
+#: ../../userguide/cloud_inventory/reports.rst:2
+msgid "Reports"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/reports.rst:5
+msgid "Single table report"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/reports.rst:7
+msgid "General table able to create single report, you can add specific filters."
+msgstr ""
+
+#: ../../userguide/cloud_inventory/reports.rst:11
+msgid "Single report, use only one entity"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/reports.rst:14
+msgid "Hostname/name"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/reports.rst:14
+msgid "string"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/reports.rst:14
+msgid "equal/contains"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/reports.rst:14
+msgid "Name or hostname"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/reports.rst:16
+msgid "Ex: Hostname contais stg, will find somethiing like webserver.stg or stg2."
+msgstr ""
+
+#: ../../userguide/cloud_inventory/reports.rst:20
+msgid "Updated_at"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/reports.rst:20
+msgid "date"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/reports.rst:20
+msgid "after/equal/before"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/reports.rst:20
+msgid "Last data update"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/reports.rst:22
+msgid "Ex: Select only the new items udated in this month"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/reports.rst:26
+msgid "Active"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/reports.rst:26
+msgid "Boolean"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/reports.rst:26
+msgid "true/false"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/reports.rst:26
+msgid "Flag, used to deleted items, possibility to retrived deleted items"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/reports.rst:32
+msgid "Pivot table reports"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/reports.rst:34
+msgid "Pivot reports, can create a relational table, relational is, client -> system -> app -> servers, you can use any type of filters in any step."
+msgstr ""
+
+#: ../../userguide/cloud_inventory/reports.rst:38
+msgid "Nesting relation entities."
+msgstr ""
+
+#: ../../userguide/cloud_inventory/smtp.rst:2
+msgid "SMTP Config"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/smtp.rst:4
+msgid "To set up smtp, you need to declare some envrioment inside server-app"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/smtp.rst:7
+msgid "SMTP_PORT"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/smtp.rst:7
+msgid "465"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/smtp.rst:9
+msgid "SMTP_HOST"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/smtp.rst:9
+msgid "smtp.gmail.com"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/smtp.rst:11
+msgid "SMTP_SENDER"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/smtp.rst:11
+msgid "'maestrosmtp@gmail.com'"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/smtp.rst:13
+msgid "SMTP_USERNAME"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/smtp.rst:13
+msgid "'maestrosmtp'"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/smtp.rst:15
+msgid "SMTP_PASSWORD"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/smtp.rst:15
+msgid "'XXXX'"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/smtp.rst:17
+msgid "SMTP_USETSL"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/smtp.rst:17
+#: ../../userguide/cloud_inventory/smtp.rst:19
+msgid "true|false"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/smtp.rst:17
+msgid "Enable TLS connect"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/smtp.rst:19
+msgid "SMTP_IGNORE"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/smtp.rst:19
+msgid "During the connection, validate security connection?"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/smtp.rst:22
+msgid "Example"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/teams.rst:2
+msgid "Teams"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/teams.rst:4
+msgid "You can create teams, to do this, click in main menu right corner, and go teams page."
+msgstr ""
+
+#: ../../userguide/cloud_inventory/teams.rst:6
+msgid "Each team has a name, email, avatar and more important than others is members and permission."
+msgstr ""
+
+#: ../../userguide/cloud_inventory/teams.rst:8
+msgid "You can add new members and config each access role."
+msgstr ""
+
+#: ../../userguide/cloud_inventory/teams.rst:14
+msgid "Form team"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/upload.rst:2
+msgid "Upload Config"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/upload.rst:4
+msgid "You can choose two mode to upload the files, a local file or using S3 to storage direcly."
+msgstr ""
+
+#: ../../userguide/cloud_inventory/upload.rst:6
+msgid "Where need to configure an upload file manage:"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/upload.rst:9
+msgid "server-app"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/upload.rst:9
+msgid "Using in avatar users, teams and projects images."
+msgstr ""
+
+#: ../../userguide/cloud_inventory/upload.rst:11
+msgid "discovery app"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/upload.rst:11
+msgid "Using to store report artifact, like pdfs, csv and jsons."
+msgstr ""
+
+#: ../../userguide/cloud_inventory/upload.rst:15
+#: ../../userguide/cloud_inventory/upload.rst:22
+msgid "Local"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/upload.rst:17
+msgid "For a single node, the file will be stored in local disk."
+msgstr ""
+
+#: ../../userguide/cloud_inventory/upload.rst:19
+#: ../../userguide/cloud_inventory/upload.rst:52
+msgid "Env variables"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/upload.rst:22
+#: ../../userguide/cloud_inventory/upload.rst:55
+msgid "UPLOAD_TYPE"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/upload.rst:23
+msgid "LOCAL_DIR"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/upload.rst:23
+msgid "/upload"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/upload.rst:48
+msgid "AWS S3"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/upload.rst:50
+msgid "You can use S3 Amazon storage object service, perfectly for HA environments"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/upload.rst:55
+msgid "S3"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/upload.rst:56
+msgid "AWS_ACCESS_KEY_ID"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/upload.rst:56
+msgid "XXXXXXXXXX"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/upload.rst:57
+msgid "AWS_SECRET_ACCESS_KEY"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/upload.rst:57
+msgid "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/upload.rst:58
+msgid "AWS_DEFAULT_REGION"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/upload.rst:58
+msgid "us-east-1"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/upload.rst:59
+msgid "AWS_S3_BUCKET_NAME"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/upload.rst:59
+msgid "maestroserver"
+msgstr ""
+
+#: ../../userguide/cloud_inventory/upload.rst:88
+msgid "Need to be adjusted client-app appoint new local file"
+msgstr ""
+
+#: ../../userguide/index.rst:3
+msgid "User Guide"
+msgstr ""
+
+#: ../../userguide/index.rst:5
+msgid "The inventory is divided into three parts:"
+msgstr ""
+
+#: ../../userguide/index.rst:7
+msgid "> **Inventory:** All about your infra, its an area with all information of register and visualization of cloud envrioment, like servers, applications, loadbalances, databases, datacenters, system, and clients."
+msgstr ""
+
+#: ../../userguide/index.rst:9
+msgid "> **Playbooks:** Location to register and manager playbooks, scheduler commands, tasks execution and audit actions."
+msgstr ""
+
+#: ../../userguide/index.rst:11
+msgid "> **Reports:** Exclusive to generate reports, with a possibility to apply advanced filters and export in different types of file."
+msgstr ""
+
+#: ../../userguide/index.rst:15
+msgid "Cloud Inventory"
+msgstr ""
+

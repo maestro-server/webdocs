@@ -1,0 +1,693 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018, Felipe Signorini
+# This file is distributed under the same license as the Maestro Server - Cloud Inventory package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Maestro Server - Cloud Inventory 0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-03-22 20:54+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../installing/architecture.rst:3
+msgid "Cloud Inventory"
+msgstr ""
+
+#: ../../installing/architecture.rst:5
+msgid "Cloud Inventory able to catalog and manager system in multi-cloud environment"
+msgstr ""
+
+#: ../../installing/architecture.rst:7
+msgid "Server manager in multi-cloud"
+msgstr ""
+
+#: ../../installing/architecture.rst:8
+msgid "Reports with advanced filters"
+msgstr ""
+
+#: ../../installing/architecture.rst:9
+msgid "‎Scheduler commands with Ansible"
+msgstr ""
+
+#: ../../installing/architecture.rst:10
+msgid "‎Auto Discovery for cloud environment"
+msgstr ""
+
+#: ../../installing/architecture.rst:13
+msgid "Architecture"
+msgstr ""
+
+#: ../../installing/architecture.rst:17
+msgid "Cloud inventory services is:"
+msgstr ""
+
+#: ../../installing/architecture.rst:21
+msgid "Server API"
+msgstr ""
+
+#: ../../installing/architecture.rst:23
+msgid "Server App main application, some responsibility is"
+msgstr ""
+
+#: ../../installing/architecture.rst:25
+msgid "Authentication and authorization"
+msgstr ""
+
+#: ../../installing/architecture.rst:26
+msgid "Validate and create entities (crud ops)"
+msgstr ""
+
+#: ../../installing/architecture.rst:27
+msgid "Proxy to others services"
+msgstr ""
+
+#: ../../installing/architecture.rst:28
+msgid "Unique service can be access by world"
+msgstr ""
+
+#: ../../installing/architecture.rst:31
+msgid "Only this service can be external access"
+msgstr ""
+
+#: ../../installing/architecture.rst:35
+#: ../../installing/architecture.rst:181
+#: ../../installing/architecture.rst:261
+#: ../../installing/architecture.rst:377
+#: ../../installing/architecture.rst:445
+msgid "**Installation by docker**"
+msgstr ""
+
+#: ../../installing/architecture.rst:52
+msgid "Run docker compose"
+msgstr ""
+
+#: ../../installing/architecture.rst:58
+msgid "Or docker run"
+msgstr ""
+
+#: ../../installing/architecture.rst:66
+#: ../../installing/architecture.rst:203
+msgid "**Installation with node**"
+msgstr ""
+
+#: ../../installing/architecture.rst:68
+#: ../../installing/architecture.rst:205
+msgid "Nodejs 6 or 7"
+msgstr ""
+
+#: ../../installing/architecture.rst:69
+msgid "Npm"
+msgstr ""
+
+#: ../../installing/architecture.rst:70
+#: ../../installing/architecture.rst:291
+#: ../../installing/architecture.rst:399
+#: ../../installing/architecture.rst:473
+#: ../../installing/production.rst:34
+msgid "MongoDB"
+msgstr ""
+
+#: ../../installing/architecture.rst:71
+msgid "Gcc + python (bcrypt package, if need be compilate)"
+msgstr ""
+
+#: ../../installing/architecture.rst:73
+#: ../../installing/architecture.rst:207
+#: ../../installing/architecture.rst:293
+#: ../../installing/architecture.rst:401
+#: ../../installing/architecture.rst:475
+msgid "Download de repository"
+msgstr ""
+
+#: ../../installing/architecture.rst:81
+#: ../../installing/architecture.rst:215
+#: ../../installing/architecture.rst:301
+msgid "**Install  dependences**"
+msgstr ""
+
+#: ../../installing/architecture.rst:90
+msgid "**Configure some env variable**"
+msgstr ""
+
+#: ../../installing/architecture.rst:92
+msgid "create .env file"
+msgstr ""
+
+#: ../../installing/architecture.rst:104
+msgid "and"
+msgstr ""
+
+#: ../../installing/architecture.rst:112
+msgid "For production environment, need to use pm2 or forever lib."
+msgstr ""
+
+#: ../../installing/architecture.rst:114
+msgid "Like:"
+msgstr ""
+
+#: ../../installing/architecture.rst:139
+#: ../../installing/architecture.rst:239
+#: ../../installing/architecture.rst:352
+#: ../../installing/architecture.rst:421
+#: ../../installing/architecture.rst:526
+msgid "**Env variables**"
+msgstr ""
+
+#: ../../installing/architecture.rst:142
+#: ../../installing/architecture.rst:242
+#: ../../installing/architecture.rst:355
+#: ../../installing/architecture.rst:424
+#: ../../installing/architecture.rst:529
+msgid "Env Variables"
+msgstr ""
+
+#: ../../installing/architecture.rst:142
+#: ../../installing/architecture.rst:242
+#: ../../installing/architecture.rst:355
+#: ../../installing/architecture.rst:424
+#: ../../installing/architecture.rst:529
+msgid "Example"
+msgstr ""
+
+#: ../../installing/architecture.rst:142
+#: ../../installing/architecture.rst:242
+#: ../../installing/architecture.rst:355
+#: ../../installing/architecture.rst:424
+#: ../../installing/architecture.rst:529
+msgid "Description"
+msgstr ""
+
+#: ../../installing/architecture.rst:144
+msgid "MAESTRO_PORT"
+msgstr ""
+
+#: ../../installing/architecture.rst:144
+msgid "8888"
+msgstr ""
+
+#: ../../installing/architecture.rst:145
+msgid "NODE_ENV"
+msgstr ""
+
+#: ../../installing/architecture.rst:145
+msgid "development|production"
+msgstr ""
+
+#: ../../installing/architecture.rst:146
+#: ../../installing/architecture.rst:357
+#: ../../installing/architecture.rst:531
+msgid "MAESTRO_MONGO_URI"
+msgstr ""
+
+#: ../../installing/architecture.rst:146
+msgid "localhost/maestro-client"
+msgstr ""
+
+#: ../../installing/architecture.rst:146
+msgid "DB string connection"
+msgstr ""
+
+#: ../../installing/architecture.rst:147
+#: ../../installing/architecture.rst:361
+msgid "MAESTRO_SECRETJWT"
+msgstr ""
+
+#: ../../installing/architecture.rst:147
+#: ../../installing/architecture.rst:148
+#: ../../installing/architecture.rst:149
+#: ../../installing/architecture.rst:156
+#: ../../installing/architecture.rst:157
+msgid "XXXX"
+msgstr ""
+
+#: ../../installing/architecture.rst:148
+msgid "MAESTRO_SECRETJWT_FORGOT"
+msgstr ""
+
+#: ../../installing/architecture.rst:149
+msgid "MAESTRO_SECRET_CRYPTO_FORGOT"
+msgstr ""
+
+#: ../../installing/architecture.rst:150
+#: ../../installing/architecture.rst:359
+#: ../../installing/architecture.rst:426
+#: ../../installing/architecture.rst:533
+msgid "MAESTRO_DISCOVERY_URL"
+msgstr ""
+
+#: ../../installing/architecture.rst:150
+#: ../../installing/architecture.rst:533
+msgid "http://localhost:5000"
+msgstr ""
+
+#: ../../installing/architecture.rst:150
+msgid "Url discovery-app (flask)"
+msgstr ""
+
+#: ../../installing/architecture.rst:151
+msgid "MAESTRO_REPORT_URL"
+msgstr ""
+
+#: ../../installing/architecture.rst:151
+#: ../../installing/architecture.rst:534
+msgid "http://localhost:5005"
+msgstr ""
+
+#: ../../installing/architecture.rst:151
+msgid "Url reports-app (flask)"
+msgstr ""
+
+#: ../../installing/architecture.rst:152
+msgid "SMTP_PORT"
+msgstr ""
+
+#: ../../installing/architecture.rst:152
+msgid "1025"
+msgstr ""
+
+#: ../../installing/architecture.rst:153
+msgid "SMTP_HOST"
+msgstr ""
+
+#: ../../installing/architecture.rst:153
+#: ../../installing/architecture.rst:357
+#: ../../installing/architecture.rst:531
+msgid "localhost"
+msgstr ""
+
+#: ../../installing/architecture.rst:154
+msgid "SMTP_SENDER"
+msgstr ""
+
+#: ../../installing/architecture.rst:154
+msgid "felipeklerkk@XXXX"
+msgstr ""
+
+#: ../../installing/architecture.rst:155
+msgid "SMTP_IGNORE"
+msgstr ""
+
+#: ../../installing/architecture.rst:155
+msgid "true|false"
+msgstr ""
+
+#: ../../installing/architecture.rst:156
+msgid "AWS_ACCESS_KEY_ID"
+msgstr ""
+
+#: ../../installing/architecture.rst:157
+msgid "AWS_SECRET_ACCESS_KEY"
+msgstr ""
+
+#: ../../installing/architecture.rst:158
+msgid "AWS_DEFAULT_REGION"
+msgstr ""
+
+#: ../../installing/architecture.rst:158
+msgid "us-east-1"
+msgstr ""
+
+#: ../../installing/architecture.rst:159
+msgid "AWS_S3_BUCKET_NAME"
+msgstr ""
+
+#: ../../installing/architecture.rst:159
+msgid "maestroserver"
+msgstr ""
+
+#: ../../installing/architecture.rst:160
+msgid "MAESTRO_UPLOAD_TYPE"
+msgstr ""
+
+#: ../../installing/architecture.rst:160
+msgid "S3/Local"
+msgstr ""
+
+#: ../../installing/architecture.rst:160
+msgid "Upload mode"
+msgstr ""
+
+#: ../../installing/architecture.rst:161
+msgid "LOCAL_DIR"
+msgstr ""
+
+#: ../../installing/architecture.rst:161
+msgid "/public/static/"
+msgstr ""
+
+#: ../../installing/architecture.rst:161
+msgid "Where files willb uploaded"
+msgstr ""
+
+#: ../../installing/architecture.rst:168
+msgid "FrontEnd - Client App"
+msgstr ""
+
+#: ../../installing/architecture.rst:170
+msgid "Client App front end application"
+msgstr ""
+
+#: ../../installing/architecture.rst:172
+msgid "Html and Js client application"
+msgstr ""
+
+#: ../../installing/architecture.rst:173
+msgid "Single page app (SPA)"
+msgstr ""
+
+#: ../../installing/architecture.rst:174
+msgid "Cache layer"
+msgstr ""
+
+#: ../../installing/architecture.rst:177
+msgid "This service needs a proxy reverse like nginx or haproxy."
+msgstr ""
+
+#: ../../installing/architecture.rst:199
+msgid "Docker have installed nginx proxy."
+msgstr ""
+
+#: ../../installing/architecture.rst:223
+msgid "**Production  build**"
+msgstr ""
+
+#: ../../installing/architecture.rst:231
+msgid "**Dev run**"
+msgstr ""
+
+#: ../../installing/architecture.rst:244
+msgid "API_URL"
+msgstr ""
+
+#: ../../installing/architecture.rst:244
+msgid "http://localhost:8888"
+msgstr ""
+
+#: ../../installing/architecture.rst:244
+msgid "Server App Url"
+msgstr ""
+
+#: ../../installing/architecture.rst:245
+msgid "STATIC_URL"
+msgstr ""
+
+#: ../../installing/architecture.rst:245
+msgid "/upload/"
+msgstr ""
+
+#: ../../installing/architecture.rst:245
+msgid "Relative path of static content"
+msgstr ""
+
+#: ../../installing/architecture.rst:251
+msgid "Discovery App"
+msgstr ""
+
+#: ../../installing/architecture.rst:253
+msgid "Discovery App service to connect and crawler provider"
+msgstr ""
+
+#: ../../installing/architecture.rst:255
+msgid "Encharge to manager and authenticate in each provider"
+msgstr ""
+
+#: ../../installing/architecture.rst:256
+msgid "Crawler the data and record into db"
+msgstr ""
+
+#: ../../installing/architecture.rst:257
+msgid "Consume batch insert data"
+msgstr ""
+
+#: ../../installing/architecture.rst:287
+#: ../../installing/architecture.rst:395
+#: ../../installing/architecture.rst:469
+msgid "**Installation with python 3**"
+msgstr ""
+
+#: ../../installing/architecture.rst:289
+#: ../../installing/architecture.rst:397
+#: ../../installing/architecture.rst:471
+msgid "Python >3.4"
+msgstr ""
+
+#: ../../installing/architecture.rst:290
+#: ../../installing/architecture.rst:398
+#: ../../installing/architecture.rst:472
+msgid "RabbitMQ"
+msgstr ""
+
+#: ../../installing/architecture.rst:309
+#: ../../installing/architecture.rst:483
+msgid "**Install  run api**"
+msgstr ""
+
+#: ../../installing/architecture.rst:325
+#: ../../installing/architecture.rst:409
+#: ../../installing/architecture.rst:499
+msgid "**Install  run rabbit workers**"
+msgstr ""
+
+#: ../../installing/architecture.rst:339
+#: ../../installing/architecture.rst:513
+msgid "For production environment, use something like gunicorn."
+msgstr ""
+
+#: ../../installing/architecture.rst:357
+#: ../../installing/architecture.rst:531
+msgid "Mongo Url conn"
+msgstr ""
+
+#: ../../installing/architecture.rst:358
+#: ../../installing/architecture.rst:532
+msgid "MAESTRO_MONGO_DATABASE"
+msgstr ""
+
+#: ../../installing/architecture.rst:358
+msgid "maestro-client"
+msgstr ""
+
+#: ../../installing/architecture.rst:359
+#: ../../installing/architecture.rst:426
+msgid "http://localhost"
+msgstr ""
+
+#: ../../installing/architecture.rst:359
+#: ../../installing/architecture.rst:426
+#: ../../installing/architecture.rst:533
+msgid "Discovery API URL"
+msgstr ""
+
+#: ../../installing/architecture.rst:360
+#: ../../installing/architecture.rst:427
+msgid "MAESTRO_DISCOVERY_PORT"
+msgstr ""
+
+#: ../../installing/architecture.rst:360
+#: ../../installing/architecture.rst:427
+msgid "5000"
+msgstr ""
+
+#: ../../installing/architecture.rst:360
+#: ../../installing/architecture.rst:427
+msgid "Discovery API Port"
+msgstr ""
+
+#: ../../installing/architecture.rst:361
+msgid "xxxx"
+msgstr ""
+
+#: ../../installing/architecture.rst:361
+msgid "Same that Server App"
+msgstr ""
+
+#: ../../installing/architecture.rst:362
+msgid "MAESTRO_SCAN_QTD"
+msgstr ""
+
+#: ../../installing/architecture.rst:362
+#: ../../installing/architecture.rst:535
+msgid "200"
+msgstr ""
+
+#: ../../installing/architecture.rst:363
+#: ../../installing/architecture.rst:428
+#: ../../installing/architecture.rst:536
+msgid "CELERY_BROKER_URL"
+msgstr ""
+
+#: ../../installing/architecture.rst:363
+#: ../../installing/architecture.rst:428
+#: ../../installing/architecture.rst:536
+msgid "amqp://rabbitmq:5672"
+msgstr ""
+
+#: ../../installing/architecture.rst:363
+#: ../../installing/architecture.rst:428
+#: ../../installing/architecture.rst:536
+msgid "RabbitMQ connection"
+msgstr ""
+
+#: ../../installing/architecture.rst:369
+msgid "Scheduler App"
+msgstr ""
+
+#: ../../installing/architecture.rst:371
+msgid "Scheduler App service to execute schedule crawler job"
+msgstr ""
+
+#: ../../installing/architecture.rst:373
+msgid "Celery beat, to create a jobs calling discovery app"
+msgstr ""
+
+#: ../../installing/architecture.rst:435
+msgid "Report App"
+msgstr ""
+
+#: ../../installing/architecture.rst:437
+msgid "Reports app, generate reports"
+msgstr ""
+
+#: ../../installing/architecture.rst:439
+msgid "Understand complex queries and generate reports"
+msgstr ""
+
+#: ../../installing/architecture.rst:440
+msgid "Manage storage and control each technical flow"
+msgstr ""
+
+#: ../../installing/architecture.rst:441
+msgid "Transform in artifact pdf, csv or json"
+msgstr ""
+
+#: ../../installing/architecture.rst:532
+msgid "maestro-reports"
+msgstr ""
+
+#: ../../installing/architecture.rst:532
+msgid "Db name, its differente of servers-app"
+msgstr ""
+
+#: ../../installing/architecture.rst:534
+msgid "MAESTRO_URL"
+msgstr ""
+
+#: ../../installing/architecture.rst:534
+msgid "Report api"
+msgstr ""
+
+#: ../../installing/architecture.rst:535
+msgid "MAESTRO_INSERT_QTD"
+msgstr ""
+
+#: ../../installing/architecture.rst:535
+msgid "Throughput insert in reports collection"
+msgstr ""
+
+#: ../../installing/architecture.rst:542
+msgid "Playbook Server"
+msgstr ""
+
+#: ../../installing/architecture.rst:544
+msgid "Playbook server, execute a remote commands - Create and manage a encapsulate environments - Connect remotely - Execute playbook jobs - Manage failback and notification"
+msgstr ""
+
+#: ../../installing/architecture.rst:551
+msgid "This service is under development"
+msgstr ""
+
+#: ../../installing/index.rst:2
+msgid "Installing Maestro"
+msgstr ""
+
+#: ../../installing/production.rst:3
+msgid "HA - Production Read"
+msgstr ""
+
+#: ../../installing/production.rst:6
+msgid "Not exist one way to do right, but we have some concerns, needed a backup system, HA avaliability, monitoring and etc, like a normal app system. Maestro built with 12 factory in mind, its able to hight availability and horizontal scaling."
+msgstr ""
+
+#: ../../installing/production.rst:9
+msgid "12 Factory and Horizontal Scaling"
+msgstr ""
+
+#: ../../installing/production.rst:11
+msgid "All services need work in stateless, like session, images or any process, we use JWT for authentication and isolated storage server."
+msgstr ""
+
+#: ../../installing/production.rst:13
+msgid "Avoid to use any local configurate like local upload, maestro has supported to use s3 storage object."
+msgstr ""
+
+#: ../../installing/production.rst:15
+msgid "Put all connection config in env docker setup, would able to use kubernetes, rancher or any orchestration is good advice."
+msgstr ""
+
+#: ../../installing/production.rst:17
+msgid "Its possible to deploy discovery api in one server, and discovery celery another server."
+msgstr ""
+
+#: ../../installing/production.rst:19
+msgid "In front end, use nginx, or any other proxy."
+msgstr ""
+
+#: ../../installing/production.rst:21
+msgid "One example setup, can be in each node,"
+msgstr ""
+
+#: ../../installing/production.rst:27
+msgid "It's possible to improve discovery and reports app"
+msgstr ""
+
+#: ../../installing/production.rst:36
+msgid "MongoDB is prepared to scale and high availability, the best setup creates a master and `replica <https://docs.mongodb.com/manual/tutorial/deploy-replica-set>`_,"
+msgstr ""
+
+#: ../../installing/production.rst:41
+msgid "Version"
+msgstr ""
+
+#: ../../installing/production.rst:43
+msgid "We controlled a version (semversion), any docker has this version, for example, maestro-server:0.3, if you need to rollback is easier to do. How find my version:"
+msgstr ""
+
+#: ../../installing/production.rst:46
+msgid "Front end, show in right-footer."
+msgstr ""
+
+#: ../../installing/production.rst:48
+msgid "http://server.api.maestroserver.io:8888/"
+msgstr ""
+
+#: ../../installing/production.rst:50
+msgid "http://discovery.api.maestroserver.io:5000/"
+msgstr ""
+
+#: ../../installing/production.rst:52
+msgid "http://reports.api.maestroserver.io:5005/"
+msgstr ""
+
+#: ../../installing/production.rst:56
+msgid "Health Check"
+msgstr ""
+
+#: ../../installing/production.rst:58
+msgid "**http://server.api.maestroserver.io:8888/health** - Check mongoDB connection."
+msgstr ""
+
+#: ../../installing/production.rst:60
+msgid "**http://discovery.api.maestroserver.io:5000/health** - Check RabbitMQ and MongoDB Connection"
+msgstr ""
+
+#: ../../installing/production.rst:62
+msgid "**http://reports.api.maestroserver.io:5005/health** - Check RabbitMQ and MongoDB Connection"
+msgstr ""
+

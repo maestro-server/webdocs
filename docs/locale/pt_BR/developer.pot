@@ -1,0 +1,388 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018, Felipe Signorini
+# This file is distributed under the same license as the Maestro Server - Cloud Inventory package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Maestro Server - Cloud Inventory 0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-03-22 20:54+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../developer/api.rst:2
+msgid "APIs"
+msgstr ""
+
+#: ../../developer/api.rst:4
+msgid "All commands, jobs, tasks or action is made by rest api, you can use se same api to integrate with your own applications."
+msgstr ""
+
+#: ../../developer/api.rst:7
+msgid "Server API"
+msgstr ""
+
+#: ../../developer/api.rst:9
+msgid "Primary api, encharge by autentication, create and retrive data. `See docs server api <https://maestro-server.github.io/server-app/docs/inventory/>`_."
+msgstr ""
+
+#: ../../developer/api.rst:18
+msgid "Discovery API"
+msgstr ""
+
+#: ../../developer/api.rst:20
+msgid "Crawler and connection with api providers. `See docs discovery api <https://maestro-server.github.io/discovery-api/>`_."
+msgstr ""
+
+#: ../../developer/architecture.rst:2
+msgid "Architecture"
+msgstr ""
+
+#: ../../developer/architecture.rst:5
+msgid "Macro Map"
+msgstr ""
+
+#: ../../developer/architecture.rst:7
+msgid "Services relation, each service comunite by `rest` (http) calls."
+msgstr ""
+
+#: ../../developer/architecture.rst:12
+msgid "Client App"
+msgstr ""
+
+#: ../../developer/architecture.rst:14
+msgid "The front end is written with:"
+msgstr ""
+
+#: ../../developer/architecture.rst:17
+msgid "Vue2"
+msgstr ""
+
+#: ../../developer/architecture.rst:17
+msgid "Main framework, using by react and manager views, routes and temaplates, use vue-loader with webpack"
+msgstr ""
+
+#: ../../developer/architecture.rst:19
+msgid "Webpack2"
+msgstr ""
+
+#: ../../developer/architecture.rst:19
+msgid "bundler generate"
+msgstr ""
+
+#: ../../developer/architecture.rst:20
+msgid "Bootue"
+msgstr ""
+
+#: ../../developer/architecture.rst:20
+msgid "All micro components, like buttons, tables, forms and etc, its 100% Bootstrap3 components built with Vue2, 100% standalone, no query."
+msgstr ""
+
+#: ../../developer/architecture.rst:22
+msgid "Nginx"
+msgstr ""
+
+#: ../../developer/architecture.rst:22
+msgid "Using for proxy reverse"
+msgstr ""
+
+#: ../../developer/architecture.rst:23
+msgid "Mocha / Chai / Sinon"
+msgstr ""
+
+#: ../../developer/architecture.rst:23
+msgid "Test, asserts and mock library."
+msgstr ""
+
+#: ../../developer/architecture.rst:28
+msgid "**Vue2 Macro Architecture**"
+msgstr ""
+
+#: ../../developer/architecture.rst:32
+#: ../../developer/architecture.rst:95
+#: ../../developer/architecture.rst:145
+msgid "**Important topics**"
+msgstr ""
+
+#: ../../developer/architecture.rst:34
+msgid "Front end application is divided in:"
+msgstr ""
+
+#: ../../developer/architecture.rst:36
+msgid "**src/pages:** templates and bussiness rules (domain layer)"
+msgstr ""
+
+#: ../../developer/architecture.rst:38
+msgid "**resources:** factories, modals, and cache managers (infrastructure layer)"
+msgstr ""
+
+#: ../../developer/architecture.rst:42
+msgid "A single folder structure components normally use:"
+msgstr ""
+
+#: ../../developer/architecture.rst:49
+#: ../../developer/qa.rst:34
+msgid "Server App"
+msgstr ""
+
+#: ../../developer/architecture.rst:51
+msgid "We using DDD to organize the code, has infra, repositories, entities (values objects), interfaces, application, and domain, if like to learn read this article is very cool `DDD in Node Apps <https://blog.codeminer42.com/nodejs-and-good-practices-354e7d763626>`_"
+msgstr ""
+
+#: ../../developer/architecture.rst:55
+msgid "Server its have constructed with `KrakenJs <http://krakenjs.com/>`_, we create a lot of middleware and organize by domain."
+msgstr ""
+
+#: ../../developer/architecture.rst:57
+#: ../../developer/architecture.rst:75
+msgid "**Setup dev env**"
+msgstr ""
+
+#: ../../developer/architecture.rst:65
+msgid "Will be setup mongodb and fake smtp server"
+msgstr ""
+
+#: ../../developer/architecture.rst:69
+msgid "Discovery App"
+msgstr ""
+
+#: ../../developer/architecture.rst:73
+msgid "Discovery using `Flask <http://flask.pocoo.org>`_,  and python >3.5, has api rest, and tasks."
+msgstr ""
+
+#: ../../developer/architecture.rst:83
+msgid "Will be setup rabbitmq and redis"
+msgstr ""
+
+#: ../../developer/architecture.rst:85
+msgid "**Windows Env**"
+msgstr ""
+
+#: ../../developer/architecture.rst:87
+msgid "If you use windows, celery havent support for windows, the last version is 3.1.25."
+msgstr ""
+
+#: ../../developer/architecture.rst:97
+msgid "Controller used factory dc abstract to create easy way to make CRUD in mongodb"
+msgstr ""
+
+#: ../../developer/architecture.rst:99
+msgid "The crawler is divided in 3 parts"
+msgstr ""
+
+#: ../../developer/architecture.rst:101
+msgid "**api:** connect in api provider and get result"
+msgstr ""
+
+#: ../../developer/architecture.rst:103
+msgid "**translate:** normalize the data"
+msgstr ""
+
+#: ../../developer/architecture.rst:105
+msgid "**insert:** insert/update data in mongodb"
+msgstr ""
+
+#: ../../developer/architecture.rst:107
+msgid "Each step have unique task."
+msgstr ""
+
+#: ../../developer/architecture.rst:109
+msgid "Config is managed by env variables, need to be, because in production env like k8s is easier to manager the pods."
+msgstr ""
+
+#: ../../developer/architecture.rst:111
+msgid "Repository has pymongo objects."
+msgstr ""
+
+#: ../../developer/architecture.rst:115
+msgid "**Flower - Debbug Celery**"
+msgstr ""
+
+#: ../../developer/architecture.rst:117
+msgid "We installed a flower, it's a control panel to centralize results throughout rabbitMQ, very useful to troubleshooting producer and consumers."
+msgstr ""
+
+#: ../../developer/architecture.rst:128
+msgid "Scheduler App"
+msgstr ""
+
+#: ../../developer/architecture.rst:132
+msgid "Discovery using `Flask <http://flask.pocoo.org>`_,  and python >3.5, used Celery Beat feature to call tasks."
+msgstr ""
+
+#: ../../developer/architecture.rst:137
+msgid "Reports App"
+msgstr ""
+
+#: ../../developer/architecture.rst:141
+msgid "Reports using `Flask <http://flask.pocoo.org>`_,  and python >3.6, used Celery Beat feature to call tasks, have strong dependences with discovery app and server app, reports use a standalone MongoDB (only reports app see this db)."
+msgstr ""
+
+#: ../../developer/architecture.rst:147
+msgid "Controller used factory task to organize the workflow report generetaion."
+msgstr ""
+
+#: ../../developer/architecture.rst:149
+msgid "The process is divided in 4 parts"
+msgstr ""
+
+#: ../../developer/architecture.rst:151
+msgid "**general/pivot:** prepare and select result (communicate with discovery api)"
+msgstr ""
+
+#: ../../developer/architecture.rst:153
+msgid "**notification:** notificate any message (use discovery app to do)"
+msgstr ""
+
+#: ../../developer/architecture.rst:155
+msgid "**upload:** control flow data (throttle inserets)"
+msgstr ""
+
+#: ../../developer/architecture.rst:157
+msgid "**webhook:** insert/update data in mongodb or an y endpoint"
+msgstr ""
+
+#: ../../developer/index.rst:2
+msgid "Developer Guide"
+msgstr ""
+
+#: ../../developer/index.rst:4
+msgid "This chapter will explain internal concepts about Maestro, its only matter if you will contribute with code, customize and etc."
+msgstr ""
+
+#: ../../developer/lint.rst:2
+msgid "Lints"
+msgstr ""
+
+#: ../../developer/lint.rst:4
+msgid "Each project uses lint program to guarantee the pattern and quality."
+msgstr ""
+
+#: ../../developer/lint.rst:7
+msgid "JavaScript (Client App)"
+msgstr ""
+
+#: ../../developer/lint.rst:9
+msgid "Use `eslint <https://eslint.org/>`_, default vue-loader"
+msgstr ""
+
+#: ../../developer/lint.rst:19
+msgid "NodeJs (Server App)"
+msgstr ""
+
+#: ../../developer/lint.rst:21
+msgid "Eslint too,"
+msgstr ""
+
+#: ../../developer/lint.rst:23
+msgid "Airbnb with some changes"
+msgstr ""
+
+#: ../../developer/lint.rst:63
+msgid "Python 3 (Discovery, Scheduler and Reports)"
+msgstr ""
+
+#: ../../developer/lint.rst:65
+msgid "pytlint, default config."
+msgstr ""
+
+#: ../../developer/qa.rst:2
+msgid "Quality Assurance"
+msgstr ""
+
+#: ../../developer/qa.rst:4
+msgid "We use some tools to mensure quality."
+msgstr ""
+
+#: ../../developer/qa.rst:8
+msgid "`Travis with all projects <http://https://travis-ci.org/maestro-server>`_"
+msgstr ""
+
+#: ../../developer/qa.rst:13
+msgid "Client Maestro"
+msgstr ""
+
+#: ../../developer/qa.rst:17
+#: ../../developer/qa.rst:49
+#: ../../developer/qa.rst:63
+#: ../../developer/qa.rst:82
+#: ../../developer/qa.rst:103
+msgid "Codacy"
+msgstr ""
+
+#: ../../developer/qa.rst:20
+#: ../../developer/qa.rst:43
+#: ../../developer/qa.rst:66
+#: ../../developer/qa.rst:85
+#: ../../developer/qa.rst:106
+msgid "Travis"
+msgstr ""
+
+#: ../../developer/qa.rst:23
+#: ../../developer/qa.rst:37
+#: ../../developer/qa.rst:69
+#: ../../developer/qa.rst:88
+#: ../../developer/qa.rst:109
+msgid "CodeClimate"
+msgstr ""
+
+#: ../../developer/qa.rst:46
+msgid "DavidDm"
+msgstr ""
+
+#: ../../developer/qa.rst:52
+#: ../../developer/tests.rst:37
+msgid "Coveralls"
+msgstr ""
+
+#: ../../developer/qa.rst:59
+msgid "Discovery Maestro"
+msgstr ""
+
+#: ../../developer/qa.rst:78
+msgid "Report Maestro"
+msgstr ""
+
+#: ../../developer/qa.rst:99
+msgid "Scheduler Maestro"
+msgstr ""
+
+#: ../../developer/tests.rst:2
+msgid "Tests"
+msgstr ""
+
+#: ../../developer/tests.rst:4
+msgid "Each service need to be testing."
+msgstr ""
+
+#: ../../developer/tests.rst:7
+msgid "Server APP"
+msgstr ""
+
+#: ../../developer/tests.rst:9
+msgid "Testing use Mocha + Chai and Sinon, test coverage with Istambul"
+msgstr ""
+
+#: ../../developer/tests.rst:29
+msgid "**Coverage**"
+msgstr ""
+
+#: ../../developer/tests.rst:43
+msgid "Discovery APP"
+msgstr ""
+
+#: ../../developer/tests.rst:45
+#: ../../developer/tests.rst:57
+msgid "Testing use pytest"
+msgstr ""
+
+#: ../../developer/tests.rst:55
+msgid "Reports APP"
+msgstr ""
+
