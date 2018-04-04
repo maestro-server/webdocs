@@ -4,7 +4,7 @@ Overview
 What is Maestro Server
 **********************
 
-Maestro Server is an open source software platform for management and discovery servers, apps and system for Hybrid IT. It can manage small and large environments, be able to visualize the latest multi-cloud environment state.
+Maestro Server is an open source software platform for management and discovery servers, apps and system for Hybrid IT. Can manage small and large environments, be able to visualize the latest multi-cloud environment state.
 
 You will be able to:
 
@@ -37,12 +37,13 @@ Analysis your's full state environment of all providers do you have, centralize 
 
 **Maestro Server is be composed of 3 system.**
 
-> **Cloud inventory**: Catalog and manager system in multi-cloud environment
+> **Cloud inventory**: Infrastructure analyses, classify servers, applications, systems and clients in multi-cloud environment.
 
 - Latest environment state
 - Enforce compliance
 - ‎Advanced reports
 - Robust ACL System
+- Made for teams
 
 .. Note::
 
