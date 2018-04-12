@@ -6,8 +6,8 @@ This chapter will explain internal concepts about Maestro, its only matter if yo
 .. toctree::
    :maxdepth: 2
 
-   architecture
-   api
+   architecture/index
+   api/index
    lint
    tests
    qa

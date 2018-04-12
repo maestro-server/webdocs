@@ -1,8 +1,3 @@
-====================
-HA - Production Read
-====================
-
-
 Not exist one way to do right, but we have some concerns, needed a backup system, HA avaliability, monitoring and etc, like a normal app system. Maestro built with 12 factory in mind, its able to hight availability and horizontal scaling.
 
 12 Factory and Horizontal Scaling

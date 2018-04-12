@@ -35,27 +35,4 @@ Analysis your's full state environment of all providers do you have, centralize 
 
 ----------------
 
-**Maestro Server is be composed of 3 system.**
-
-> **Cloud inventory**: Infrastructure analyses, classify servers, applications, systems and clients in multi-cloud environment.
-
-- Latest environment state
-- Enforce compliance
-- ‎Advanced reports
-- Robust ACL System
-- Made for teams
-
-.. Note::
-
   `See demo cloud inventory here <http://demo.maestroserver.io/>`_. 
-
-> **App manager**: Automataze command services
-
-- Command hooks in multiple servers.
-- ‎Centralized manage server.
-- Schedule task
-
-> **Orchestrate architecture**: Orchestrate system for server and services.
-
-- Orchestration architecture for complex system
-- ‎State manager.

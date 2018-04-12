@@ -4,22 +4,27 @@ Get Maestro up in just a few minutes, we recommend to use docker, but if you lik
 
 Overview
 ------------
-Maestro is split into 6 pieces:
+List of micro service:
 
-+-----------------+-------------------------------------------------+--------------------+
-| Client App      | FrontEnd client                                 | Vue2 + Bootstrap 3 | 
-+-----------------+-------------------------------------------------+--------------------+
-| Server App      | Primary API, authetication, crud and manager    | NodeJs 6.10 Kraken |
-+-----------------+-------------------------------------------------+--------------------+
-| Discovery App   | Auto discovery and crawler                      | Python 3.6, flask  | 
-+-----------------+-------------------------------------------------+--------------------+
-| Scheduler App   | Rabbits worker for Scheduler discovery          | Python 3.6, celery | 
-+-----------------+-------------------------------------------------+--------------------+
-| Reports App     | Reports generetor                               | Python 3.6, flask  | 
-+-----------------+-------------------------------------------------+--------------------+
-| Playbook Server | Playbook server, task executer                  | Python, shell      | 
-+-----------------+-------------------------------------------------+--------------------+
-
++----------------------+-------------------------------------------------+--------------------+
+| Client App           | FrontEnd client                                 | Vue2 + Bootstrap 3 | 
++----------------------+-------------------------------------------------+--------------------+
+| Server App           | Primary API, authetication, crud and manager    | NodeJs 6.10 Kraken |
++----------------------+-------------------------------------------------+--------------------+
+| Discovery App        | Auto discovery and crawlers                     | Python 3.6, flask  | 
++----------------------+-------------------------------------------------+--------------------+
+| Scheduler App        | Jobs manager with celery beat                   | Python 3.6, celery | 
++----------------------+-------------------------------------------------+--------------------+
+| Reports App          | Reports generetor                               | Python 3.6, flask  | 
++----------------------+-------------------------------------------------+--------------------+
+| Remote agente App    | Playbook server, task executer                  | Python, shell      | 
++----------------------+-------------------------------------------------+--------------------+
+| Authenticator App    | Remote Authenticator                            | Python, flask      | 
++----------------------+-------------------------------------------------+--------------------+
+| Data DB App          | Data layer                                      | Python, flask      | 
++----------------------+-------------------------------------------------+--------------------+
+| Websocket App        | Websocket api                                   | SockJS, express    | 
++----------------------+-------------------------------------------------+--------------------+
 
 Running locally
 ---------------
