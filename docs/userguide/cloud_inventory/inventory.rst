@@ -6,6 +6,7 @@ Inside inventory there are a groups of entities organize by responsabilitie acco
 
 Servers
 -------
+`Inventory > Server`
 
 The most import fields in server register is:
 
@@ -40,10 +41,6 @@ Auth         Used to register a methods to authenticate in servers.
 Service      Register all services its run inside a servers, this information its used to create some links with applications inventory and used in ``Application Manager`` system.
 ============ ======================================================================================================================================================================================================== 
 
-.. Note::
-
-    Services is a very important field in servers, which this information the system will try to find some relation with applications, for example if you register Oracle Database, and create a database and register a relation between this servers, the system will automatically create a service relation.
-
 ------------
 
 .. figure:: ../../_static/screen/sv_ddc.png
@@ -58,6 +55,11 @@ Service      Register all services its run inside a servers, this information it
 
 ------------
 
+.. Note::
+
+    Services is a very important field in servers, which this information the system will try to find some relation with applications, for example if you register Oracle Database, and create a database and register a relation between this servers, the system will automatically create a service relation.
+
+
 .. figure:: ../../_static/screen/sv_service.png
 
     Related services running.
@@ -66,6 +68,7 @@ Service      Register all services its run inside a servers, this information it
 
 Apps
 ----
+`Inventory > Application`
 
 Apps are it all services with is a business responsibility, normally it is an application made by the developer and deploys.
 
@@ -102,6 +105,7 @@ Deploy       List of ways to deploy this app.
 
 Databases
 ---------
+`Inventory > Database`
 
 Databases are it all with data persistence responsibility, can be relational, norelational, in memory, distribuited storage and etc.
 
@@ -173,6 +177,7 @@ System       Systems related it.
 
 Datacenters
 -----------
+`Inventory > Datacenter`
 
 Register all clouds, bare metal, providers and etc.
 
@@ -207,6 +212,7 @@ Zones        Choose or create zones
 
 LoadBalances
 ------------
+`Inventory > Loadbalance`
 
 Service with responsibility of distributed request through other servers
 
@@ -240,6 +246,7 @@ Spec         Endpoint and healthcheck
 
 System
 ------
+`Inventory > System`
 
 A group of application, databases, loadbalances and etc, compond a unique system.
 
@@ -260,6 +267,7 @@ Clients      Relation to this system and client
 
 Clients
 -------
+`Inventory > Clients`
 
 SLA owner, clients
 
@@ -273,6 +281,7 @@ Contacts/Channel  How contact the client
 
 Services
 --------
+`Inventory > Settings > Services`
 
 Common program running inside on server 
 
