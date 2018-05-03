@@ -23,16 +23,27 @@ Discovery App service to connect and crawler provider
         - "5000:5000"
         environment:
         - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
-        - "MAESTRO_PORT=5000"
-        - "MAESTRO_MONGO_URI=mongodb"
-        - "MAESTRO_MONGO_DATABASE=maestro-client"
+        - "MAESTRO_DATA_URI=http://data:5000"
 
-    celery:
+    discovery-celery:
         image: maestroserver/discovery-maestro-celery
         environment:
-        - "MAESTRO_DISCOVERY_URL=http://discovery"
         - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
-        - "MAESTRO_PORT=5000"
+        - "MAESTRO_DATA_URI=http://data:5000"
+
+Run docker compose
+
+.. code-block:: bash
+    
+    docker-compose up -d
+
+Or docker run
+
+.. code-block:: bash
+
+    docker run -p 5000:5000  -e "MAESTRO_DATA_URI=http://data:5000" -e "CELERY_BROKER_URL=amqp://rabbitmq:5672" maestroserver/discovery-maestro 
+ 
+    docker run -e "MAESTRO_DATA_URI=http://data:5000" -e "CELERY_BROKER_URL=amqp://rabbitmq:5672" maestroserver/discovery-maestro-celery 
 
 ----------
 
@@ -40,7 +51,6 @@ Discovery App service to connect and crawler provider
 
     - Python >3.4
     - RabbitMQ
-    - MongoDB
 
 Download de repository
 
@@ -103,14 +113,13 @@ Download de repository
 
 **Env variables**
 
-======================= ============================ =========================== 
+======================= ============================ ============================
 Env Variables                   Example                    Description         
-======================= ============================ =========================== 
-MAESTRO_MONGO_URI       localhost                    Mongo Url conn
-MAESTRO_MONGO_DATABASE  maestro-client       
-MAESTRO_DISCOVERY_URL   http://localhost             Discovery API URL
-MAESTRO_DISCOVERY_PORT  5000                         Discovery API Port
+======================= ============================ ============================     
+MAESTRO_DATA_URI        http://localhost:5010        Discovery API URL
 MAESTRO_SECRETJWT       xxxx                         Same that Server App
-MAESTRO_SCAN_QTD        200  
+MAESTRO_TRANSLATE_QTD   200                          Prefetch translation process
+MAESTRO_GWORKERS        2                            Gunicorn multi process
 CELERY_BROKER_URL       amqp://rabbitmq:5672         RabbitMQ connection
-======================= ============================ =========================== 
+CELERYD_TASK_TIME_LIMIT 10                           Timeout workers
+======================= ============================ ============================
