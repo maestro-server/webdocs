@@ -6,10 +6,9 @@ Server App main application, some responsibility is
 - Authentication and authorization
 - Validate and create entities (crud ops)
 - Proxy to others services
-- Unique service can be access by world
 
 .. Warning::
-	Only this service can be external access
+	This service can be external access
 
 ----------
 
@@ -25,9 +24,7 @@ Server App main application, some responsibility is
         ports:
         - "8888:8888"
         environment:
-        - "MAESTRO_PORT=8888"
         - "MAESTRO_MONGO_URI=mongodb/maestro-client"
-        - "MAESTRO_DISCOVERY_TIMEOUT=10000"
         - "MAESTRO_DISCOVERY_URL=http://discovery:5000"
 
 Run docker compose
@@ -40,7 +37,7 @@ Or docker run
 
 .. code-block:: bash
 
-    docker run -p 8888:8888 -e "MAESTRO_PORT=8888" -e "MAESTRO_MONGO_URI=mongodb/maestro-client" -e "MAESTRO_DISCOVERY_TIMEOUT=10000" -e "MAESTRO_DISCOVERY_URL=http://discovery:5000" maestroserver/server-maestro 
+    docker run -p 8888:8888  -e "MAESTRO_MONGO_URI=mongodb/maestro-client" -e "MAESTRO_DISCOVERY_URL=http://discovery:5000" maestroserver/server-maestro 
 
 ----------
 
@@ -92,7 +89,7 @@ and
 
 For production environment, need to use pm2 or forever lib.
 
-Like:
+Like (PM2):
 
 .. code-block:: bash
 
@@ -119,25 +116,30 @@ Like:
 
 **Env variables**
 
-============================== ========================== ============================= 
+============================== ========================== =============================== 
         Env Variables                   Example                   Description                          
-============================== ========================== ============================= 
+============================== ========================== ===============================
  MAESTRO_PORT                   8888                                                                   
  NODE_ENV                       development|production                                                 
  MAESTRO_MONGO_URI              localhost/maestro-client   DB string connection                        
- MAESTRO_SECRETJWT              XXXX                                                                   
- MAESTRO_SECRETJWT_FORGOT       XXXX                                                                   
- MAESTRO_SECRET_CRYPTO_FORGOT   XXXX                                                                   
+ MAESTRO_SECRETJWT              XXXX                       Secret key - session                                            
+ MAESTRO_SECRETJWT_FORGOT       XXXX                       Secret key - forgot request                                            
+ MAESTRO_SECRET_CRYPTO_FORGOT   XXXX                       Secret key - forgot content                                            
  MAESTRO_DISCOVERY_URL          http://localhost:5000      Url discovery-app (flask)                   
- MAESTRO_REPORT_URL             http://localhost:5005      Url reports-app (flask)                     
+ MAESTRO_REPORT_URL             http://localhost:5005      Url reports-app (flask)
+ MAESTRO_TIMEOUT                1000                       Timeout micro service request
  SMTP_PORT                      1025                                                                   
  SMTP_HOST                      localhost                                                              
  SMTP_SENDER                    felipeklerkk@XXXX                                                      
- SMTP_IGNORE                    true|false                                                             
+ SMTP_IGNORE                    true|false
+ SMTP_USETSL                    true|false
+ SMTP_USERNAME
+ SMTP_PASSWORD                                                            
  AWS_ACCESS_KEY_ID              XXXX                                                                   
  AWS_SECRET_ACCESS_KEY          XXXX                                                                   
  AWS_DEFAULT_REGION             us-east-1                                                              
  AWS_S3_BUCKET_NAME             maestroserver                                                          
  MAESTRO_UPLOAD_TYPE            S3/Local                   Upload mode                                 
- LOCAL_DIR                      /public/static/            Where files willb uploaded                  
-============================== ========================== =============================
+ LOCAL_DIR                      /public/static/            Where files will be uploaded
+ PWD                            $rootDirectory             PWD process
+============================== ========================== ===============================
