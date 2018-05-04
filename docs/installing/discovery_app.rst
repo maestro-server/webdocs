@@ -116,7 +116,7 @@ Download de repository
 ======================= ============================ ============================
 Env Variables                   Example                    Description         
 ======================= ============================ ============================     
-MAESTRO_DATA_URI        http://localhost:5010        Discovery API URL
+MAESTRO_DATA_URI        http://localhost:5010        Data Layer API URL
 MAESTRO_SECRETJWT       xxxx                         Same that Server App
 MAESTRO_TRANSLATE_QTD   200                          Prefetch translation process
 MAESTRO_GWORKERS        2                            Gunicorn multi process

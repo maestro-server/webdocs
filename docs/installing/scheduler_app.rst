@@ -2,9 +2,13 @@
 Scheduler App
 -------------
 
-Scheduler App service to execute schedule crawler job
+Scheduler App service to manage and execute jobs
 
-- Celery beat, to create a jobs calling discovery app
+- Schedule jobs, interval or crontab
+- Requests chain jobs
+- Modules
+    - Webhook: Call URL request
+    - Connections: Call Crawler task
 
 ----------
 
@@ -15,15 +19,36 @@ Scheduler App service to execute schedule crawler job
     version: '2'
 
     services:
-    scheduler:
-        image: maestroserver/scheduler-maestro
-        environment:
-        - "MAESTRO_DISCOVERY_URL=http://discovery"
-        - "MAESTRO_DISCOVERY_PORT=5000"
-        - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
-        - "MAESTRO_MONGO_URI=mongodb"
-        - "MAESTRO_MONGO_DATABASE=maestro-client"
+        scheduler:
+            image: maestroserver/scheduler-maestro
+            environment:
+            - "MAESTRO_DATA_URI=http://data:5000"
+            - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
+            - "MAESTRO_MONGO_URI=localhost"
+            - "MAESTRO_MONGO_DATABASE=maestro-client"
 
+        scheduler:
+            image: maestroserver/scheduler-maestro-celery
+            environment:
+            - "MAESTRO_DATA_URI=http://data:5000"
+            - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
+            - "MAESTRO_MONGO_URI=localhost"
+            - "MAESTRO_MONGO_DATABASE=maestro-client"
+
+ Run docker compose
+
+.. code-block:: bash
+    
+    docker-compose up -d
+
+Or docker run
+
+.. code-block:: bash
+
+    docker run -e "MAESTRO_DATA_URI=http://data:5000" -e "CELERY_BROKER_URL=amqp://rabbitmq:5672" maestroserver/scheduler-maestro
+ 
+    docker run -e "MAESTRO_DATA_URI=http://data:5000" -e "CELERY_BROKER_URL=amqp://rabbitmq:5672" maestroserver/scheduler-maestro-celery 
+       
 ----------
 
 **Installation with python 3**
@@ -37,6 +62,18 @@ Download de repository
 .. code-block:: bash
 
     git clone https://github.com/maestro-server/scheduler-app.git
+
+----------
+
+**Install  run celery beat**
+
+.. code-block:: bash
+
+    celery -A app.celery beat -S app.schedulers.MongoScheduler --loglevel=info
+
+    or 
+
+    npm run beat
 
 ----------
 
@@ -57,7 +94,8 @@ Download de repository
 ======================= ============================ =========================== 
 Env Variables                   Example                    Description         
 ======================= ============================ =========================== 
-MAESTRO_DISCOVERY_URL   http://localhost             Discovery API URL
-MAESTRO_DISCOVERY_PORT  5000                         Discovery API Port
+MAESTRO_DATA_URI        http://data:5000             Data Layer API URL
+MAESTRO_MONGO_URI       localhost                    MongoDB URI
+MAESTRO_MONGO_DATABASE  maestro-client               Mongo Database name
 CELERY_BROKER_URL       amqp://rabbitmq:5672         RabbitMQ connection
 ======================= ============================ =========================== 
