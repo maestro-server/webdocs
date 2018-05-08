@@ -21,14 +21,13 @@ Reports app, generate reports
             image: maestroserver/reports-maestro
             environment:
             - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
-            - "MAESTRO_URL=http://localhost:5005"
             - "MAESTRO_MONGO_URI=mongodb"
             - "MAESTRO_MONGO_DATABASE=maestro-reports"
 
         reports_worker:
             image: maestroserver/reports-maestro-celery
             environment:
-            - "MAESTRO_URL=http://reports:5005"
+            - "MAESTRO_DATA_URI=http://data:5000"
             - "MAESTRO_DISCOVERY_URL=http://discovery:5000"
             - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
 
@@ -99,7 +98,7 @@ Env Variables                   Example                    Description
 MAESTRO_MONGO_URI       localhost                    Mongo Url conn
 MAESTRO_MONGO_DATABASE  maestro-reports              Db name, its differente of servers-app     
 MAESTRO_DISCOVERY_URL   http://localhost:5000        Discovery API URL
-MAESTRO_URL             http://localhost:5005        Report api
+MAESTRO_REPORT_URI      http://localhost:5005        Report api
 MAESTRO_INSERT_QTD      200                          Throughput insert in reports collection
 CELERY_BROKER_URL       amqp://rabbitmq:5672         RabbitMQ connection
 ======================= ============================ ===========================================

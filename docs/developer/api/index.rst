@@ -8,3 +8,4 @@ All commands, jobs, tasks or action is made by rest api, you can use se same api
 
    server
    discovery
+   data

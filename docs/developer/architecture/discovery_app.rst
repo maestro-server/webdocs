@@ -47,9 +47,11 @@ If you use windows, celery havent support for windows, the last version is 3.1.2
 
 **Flower - Debbug Celery**
 
-We installed a flower, it's a control panel to centralize results throughout rabbitMQ, very useful to troubleshooting producer and consumers.
+You can install a flower, it's a control panel to centralize results throughout rabbitMQ, very useful to troubleshooting producer and consumers.
 
 .. code-block:: bash
+
+    pip install flower
 
     flower -A app.celery
 

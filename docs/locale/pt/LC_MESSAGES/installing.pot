@@ -576,7 +576,7 @@ msgid "Db name, its differente of servers-app"
 msgstr ""
 
 #: ../../installing/architecture.rst:534
-msgid "MAESTRO_URL"
+msgid "MAESTRO_REPORT_URI"
 msgstr ""
 
 #: ../../installing/architecture.rst:534

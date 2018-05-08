@@ -61,3 +61,14 @@ Testing use pytest
     npm run test
 
     python -m unittest discover
+
+Data Layer APP
+--------------
+
+Testing use pytest
+
+.. code-block:: bash
+
+    npm run test
+
+    python -m unittest discover

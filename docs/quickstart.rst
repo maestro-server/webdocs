@@ -56,10 +56,9 @@ We recommend to use docker, if you like to see demo version, copy and execute do
         ports:
         - "8888:8888"
         environment:
-        - "MAESTRO_PORT=8888"
         - "MAESTRO_MONGO_URI=mongodb/maestro-client"
-        - "MAESTRO_DISCOVERY_TIMEOUT=10000"
         - "MAESTRO_DISCOVERY_URL=http://discovery:5000"
+        - "MAESTRO_REPORT_URL=http://reports:5000"
 
     discovery:
         image: maestroserver/discovery-maestro
@@ -67,40 +66,47 @@ We recommend to use docker, if you like to see demo version, copy and execute do
         - "5000:5000"
         environment:
         - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
-        - "MAESTRO_PORT=5000"
-        - "MAESTRO_MONGO_URI=mongodb"
-        - "MAESTRO_MONGO_DATABASE=maestro-client"
+        - "MAESTRO_DATA_URL=http://data:5000"
 
-    celery:
+    discovery-celery:
         image: maestroserver/discovery-maestro-celery
         environment:
-        - "MAESTRO_DISCOVERY_URL=http://discovery"
-        - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
-        - "MAESTRO_PORT=5000"
+        - "MAESTRO_DATA_URL=http://data:5000"
+        - "CELERY_BROKER_URL=amqp://rabbitmq:5672" 
 
     reports:
         image: maestroserver/reports-maestro
         environment:
         - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
-        - "MAESTRO_URL=http://localhost:5005"
         - "MAESTRO_MONGO_URI=mongodb"
         - "MAESTRO_MONGO_DATABASE=maestro-reports"
 
     reports_worker:
         image: maestroserver/reports-maestro-celery
         environment:
-        - "MAESTRO_URL=http://reports:5005"
-        - "MAESTRO_DISCOVERY_URL=http://discovery:5000"
+        - "MAESTRO_REPORT_URI=http://reports:5000"
+        - "MAESTRO_DATA_URI=http://data:5000"
         - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
 
     scheduler:
         image: maestroserver/scheduler-maestro
         environment:
-        - "MAESTRO_DISCOVERY_URL=http://discovery"
-        - "MAESTRO_DISCOVERY_PORT=5000"
+        - "MAESTRO_DATA_URI=http://data:5000"
         - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
         - "MAESTRO_MONGO_URI=mongodb"
         - "MAESTRO_MONGO_DATABASE=maestro-client"
+
+    scheduler_worker:
+        image: maestroserver/scheduler-maestro-celery
+        environment:
+        - "MAESTRO_DATA_URI=http://data:5000"
+        - "CELERY_BROKER_URL=amqp://rabbitmq:5672"   
+
+    data:
+        image: maestroserver/data-maestro
+        environment:
+            - "MAESTRO_MONGO_URI=mongodb"
+            - "MAESTRO_MONGO_DATABASE=maestro-client"
 
     rabbitmq:
         hostname: "discovery-rabbit"
@@ -108,11 +114,6 @@ We recommend to use docker, if you like to see demo version, copy and execute do
         ports:
         - "15672:15672"
         - "5672:5672"
-
-    redis:
-        image: redis
-        ports:
-        - "6379:6379"
 
     mongodb:
         image: mongo

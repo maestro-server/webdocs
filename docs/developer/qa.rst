@@ -114,3 +114,24 @@ CodeClimate       .. image:: https://api.codeclimate.com/v1/badges/3a073f54d89d9
                         :alt: Test Coverage
 ================  ================================================================================================================================================================================== 
 
+------------
+
+Data Layer API
+-----------------
+
+================  ================================================================================================================================================================================== 
+
+Codacy            .. image:: https://api.codacy.com/project/badge/Grade/d8b11776962a4867a491c7a039c250ec
+                        :target: https://www.codacy.com/app/maestro/data-app?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=maestro-server/data-app&amp;utm_campaign=Badge_Grade
+
+Travis            .. image:: https://travis-ci.org/maestro-server/data-app.svg?branch=master
+                        :target: https://travis-ci.org/maestro-server/data-app
+
+CodeClimate       .. image:: https://api.codeclimate.com/v1/badges/0d6930d08ca210a9e46e/maintainability
+                        :target: https://codeclimate.com/github/maestro-server/data-app/maintainability
+                        :alt: Maintainability
+                  .. image:: https://api.codeclimate.com/v1/badges/0d6930d08ca210a9e46e/test_coverage
+                        :target: https://codeclimate.com/github/maestro-server/data-app/test_coverage
+                        :alt: Test Coverage
+================  ================================================================================================================================================================================== 
+

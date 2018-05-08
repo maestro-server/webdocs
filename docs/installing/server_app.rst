@@ -26,6 +26,7 @@ Server App main application, some responsibility is
         environment:
         - "MAESTRO_MONGO_URI=mongodb/maestro-client"
         - "MAESTRO_DISCOVERY_URL=http://discovery:5000"
+        - "MAESTRO_REPORT_URL=http://reports:5000"
 
 Run docker compose
 
@@ -37,7 +38,7 @@ Or docker run
 
 .. code-block:: bash
 
-    docker run -p 8888:8888  -e "MAESTRO_MONGO_URI=mongodb/maestro-client" -e "MAESTRO_DISCOVERY_URL=http://discovery:5000" maestroserver/server-maestro 
+    docker run -p 8888:8888  -e "MAESTRO_MONGO_URI=mongodb/maestro-client" -e "MAESTRO_DISCOVERY_URL=http://discovery:5000" -e "MAESTRO_REPORT_URL=http://reports:5000" maestroserver/server-maestro 
 
 ----------
 

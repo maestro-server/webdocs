@@ -24,16 +24,14 @@ Scheduler App service to manage and execute jobs
             environment:
             - "MAESTRO_DATA_URI=http://data:5000"
             - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
-            - "MAESTRO_MONGO_URI=localhost"
+            - "MAESTRO_MONGO_URI=mongodb"
             - "MAESTRO_MONGO_DATABASE=maestro-client"
 
-        scheduler:
+        scheduler_worker:
             image: maestroserver/scheduler-maestro-celery
             environment:
             - "MAESTRO_DATA_URI=http://data:5000"
             - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
-            - "MAESTRO_MONGO_URI=localhost"
-            - "MAESTRO_MONGO_DATABASE=maestro-client"
 
  Run docker compose
 
