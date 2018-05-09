@@ -1,6 +1,6 @@
 
 Reports App
-----------
+-----------
 
 Reports app, generate reports
 
@@ -28,7 +28,6 @@ Reports app, generate reports
             image: maestroserver/reports-maestro-celery
             environment:
             - "MAESTRO_DATA_URI=http://data:5000"
-            - "MAESTRO_DISCOVERY_URL=http://discovery:5000"
             - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
 
 ----------
@@ -92,13 +91,17 @@ Download de repository
 
 **Env variables**
 
-======================= ============================ ===========================================
+========================= ============================ ===========================================
 Env Variables                   Example                    Description         
-======================= ============================ ===========================================
-MAESTRO_MONGO_URI       localhost                    Mongo Url conn
-MAESTRO_MONGO_DATABASE  maestro-reports              Db name, its differente of servers-app     
-MAESTRO_DISCOVERY_URL   http://localhost:5000        Discovery API URL
-MAESTRO_REPORT_URI      http://localhost:5005        Report api
-MAESTRO_INSERT_QTD      200                          Throughput insert in reports collection
-CELERY_BROKER_URL       amqp://rabbitmq:5672         RabbitMQ connection
-======================= ============================ ===========================================
+========================= ============================ ===========================================
+MAESTRO_MONGO_URI         localhost                    Mongo Url conn
+MAESTRO_MONGO_DATABASE    maestro-reports              Db name, its differente of servers-app     
+MAESTRO_DATA_URI          http://localhost:5010        Data layer api
+MAESTRO_REPORT_URI        http://localhost:5005        Report api
+MAESTRO_REPORT_RESULT_QTD 200                          Limit default
+MAESTRO_TIMEOUT_DATA      10                           Timeout for data retrived
+MAESTRO_TIMEOUT_WEBHOOK   5                            Timeout for notifications
+MAESTRO_INSERT_QTD        20                           Prefetch data insert
+MAESTRO_GWORKERS          2                            Gworkers thread pool                         
+CELERY_BROKER_URL         amqp://rabbitmq:5672         RabbitMQ connection
+========================= ============================ ===========================================
