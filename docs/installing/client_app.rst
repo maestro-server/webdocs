@@ -77,4 +77,6 @@ Env Variables                   Example                    Description
 ======================= ============================ =============================== 
 API_URL                 http://localhost:8888        Server App Url                                           
 STATIC_URL              /upload/                     Relative path of static content                
+LOGO                    /static/imgs/logo300.png     Logotype, (login page)
+THEME                   theme-lotus                  Theme (gold|wine|blue|green)
 ======================= ============================ =============================== 
