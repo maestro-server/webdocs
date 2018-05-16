@@ -49,7 +49,7 @@ We recommend to use docker, if you like to see demo version, copy and execute do
             ports:
             - "80:80"
             environment:
-            - "API_URL=http://10.168.20.20:8888"
+            - "API_URL=http://localhost:8888"
             depends_on:
             - server    
 
