@@ -49,7 +49,9 @@ We recommend to use docker, if you like to see demo version, copy and execute do
             ports:
             - "80:80"
             environment:
-            - "API_URL=http://localhost:8888"
+            - "API_URL=http://10.168.20.20:8888"
+            depends_on:
+            - server    
 
         server:
             image: maestroserver/server-maestro
@@ -59,6 +61,14 @@ We recommend to use docker, if you like to see demo version, copy and execute do
             - "MAESTRO_MONGO_URI=mongodb/maestro-client"
             - "MAESTRO_DISCOVERY_URL=http://discovery:5000"
             - "MAESTRO_REPORT_URL=http://reports:5000"
+            - "SMTP_PORT=25"
+            - "SMTP_HOST=maildev"
+            - "SMTP_SENDER=felipeklerkk@gmail.com"
+            - "SMTP_IGNORE=true"
+            depends_on:
+            - mongodb
+            - discovery
+            - reports 
 
         discovery:
             image: maestroserver/discovery-maestro
@@ -66,13 +76,19 @@ We recommend to use docker, if you like to see demo version, copy and execute do
             - "5000:5000"
             environment:
             - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
-            - "MAESTRO_DATA_URL=http://data:5000"
+            - "MAESTRO_DATA_URI=http://data:5000"
+            depends_on:
+            - rabbitmq
+            - data
 
-        discovery-celery:
+        discovery_worker:
             image: maestroserver/discovery-maestro-celery
             environment:
-            - "MAESTRO_DATA_URL=http://data:5000"
+            - "MAESTRO_DATA_URI=http://data:5000"
             - "CELERY_BROKER_URL=amqp://rabbitmq:5672" 
+            depends_on:
+            - rabbitmq
+            - data
 
         reports:
             image: maestroserver/reports-maestro
@@ -80,13 +96,18 @@ We recommend to use docker, if you like to see demo version, copy and execute do
             - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
             - "MAESTRO_MONGO_URI=mongodb"
             - "MAESTRO_MONGO_DATABASE=maestro-reports"
+            depends_on:
+            - rabbitmq
+            - mongodb
 
         reports_worker:
             image: maestroserver/reports-maestro-celery
             environment:
-            - "MAESTRO_REPORT_URI=http://reports:5000"
             - "MAESTRO_DATA_URI=http://data:5000"
             - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
+            depends_on:
+            - rabbitmq
+            - data
 
         scheduler:
             image: maestroserver/scheduler-maestro
@@ -95,18 +116,26 @@ We recommend to use docker, if you like to see demo version, copy and execute do
             - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
             - "MAESTRO_MONGO_URI=mongodb"
             - "MAESTRO_MONGO_DATABASE=maestro-client"
+            depends_on:
+            - mongodb
+            - rabbitmq
 
         scheduler_worker:
             image: maestroserver/scheduler-maestro-celery
             environment:
             - "MAESTRO_DATA_URI=http://data:5000"
-            - "CELERY_BROKER_URL=amqp://rabbitmq:5672"   
+            - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
+            depends_on:
+            - rabbitmq
+            - data  
 
         data:
             image: maestroserver/data-maestro
             environment:
-                - "MAESTRO_MONGO_URI=mongodb"
-                - "MAESTRO_MONGO_DATABASE=maestro-client"
+            - "MAESTRO_MONGO_URI=mongodb"
+            - "MAESTRO_MONGO_DATABASE=maestro-client"
+            depends_on:
+            - mongodb
 
         rabbitmq:
             hostname: "discovery-rabbit"
@@ -114,7 +143,7 @@ We recommend to use docker, if you like to see demo version, copy and execute do
             ports:
             - "15672:15672"
             - "5672:5672"
-
+            
         mongodb:
             image: mongo
             volumes:
@@ -122,8 +151,17 @@ We recommend to use docker, if you like to see demo version, copy and execute do
             ports:
             - "27017:27017"
 
+        maildev:
+            image: djfarrelly/maildev
+            mem_limit: 80m
+            ports:
+            - "1025:25"
+            - "1080:80"
+
+
     volumes:
         mongodata: {}
+
 
 
 Vagrant

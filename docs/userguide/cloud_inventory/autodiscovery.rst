@@ -83,7 +83,7 @@ If you like, choose how the resource will be synchronized with an active and ina
 
 .. Note::
     
-    PS:  There is scheduler job, its automatize sync, this schedule will be activated by default, and each resource have our own time, in the example, server-list will be synchronized for every 5 minutes, networks stuffs normally happen for every 2 weeks.
+    PS:  There is scheduler job, its automatize sync, this schedule will be activated by default, and each resource have our own time, in the example, server-list will be synchronized for every 5 minutes, networks stuffs normally happen for every 2 weeks. You can the time using in each resource, more details  see schedulers.
 
 
 ------------

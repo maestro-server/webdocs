@@ -19,6 +19,7 @@ Cloud Inventory
 
    cloud_inventory/inventory
    cloud_inventory/autodiscovery
+   cloud_inventory/scheduler
    cloud_inventory/teams
    cloud_inventory/accessauth
    cloud_inventory/reports
