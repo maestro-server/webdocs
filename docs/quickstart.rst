@@ -60,7 +60,7 @@ We recommend to use docker, if you like to see demo version, copy and execute do
             environment:
             - "MAESTRO_MONGO_URI=mongodb/maestro-client"
             - "MAESTRO_DISCOVERY_URL=http://discovery:5000"
-            - "MAESTRO_REPORT_URL=http://reports:5000"
+            - "MAESTRO_REPORT_URL=http://reports:5005"
             - "SMTP_PORT=25"
             - "SMTP_HOST=maildev"
             - "SMTP_SENDER=felipeklerkk@gmail.com"
@@ -103,6 +103,7 @@ We recommend to use docker, if you like to see demo version, copy and execute do
         reports_worker:
             image: maestroserver/reports-maestro-celery
             environment:
+            - "MAESTRO_REPORT_URI=http://reports:5005"
             - "MAESTRO_DATA_URI=http://data:5000"
             - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
             depends_on:
