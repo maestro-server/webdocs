@@ -50,6 +50,7 @@ We recommend to use docker, if you like to see demo version, copy and execute do
             - "80:80"
             environment:
             - "API_URL=http://localhost:8888"
+            - "STATIC_URL=http://localhost:8888/static/"
             depends_on:
             - server    
 
