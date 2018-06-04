@@ -26,10 +26,7 @@ High Architecture
    discovery_app
    reports_app
    scheduler_app
-   remote_app
    data_app
-   authenticator_app
-   websocket_app
 
 
 HA - Production Read

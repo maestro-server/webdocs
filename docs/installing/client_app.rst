@@ -25,6 +25,7 @@ Client App front end application
         - "80:80"
         environment:
         - "API_URL=http://localhost:8888"
+        - "STATIC_URL=http://localhost:8888/static/"
 
 .. code-block:: bash
 
@@ -78,5 +79,5 @@ Env Variables                   Example                    Description
 API_URL                 http://localhost:8888        Server App Url                                           
 STATIC_URL              /upload/                     Relative path of static content                
 LOGO                    /static/imgs/logo300.png     Logotype, (login page)
-THEME                   theme-lotus                  Theme (gold|wine|blue|green)
+THEME                   theme-lotus                  Theme (gold|wine|blue|green|dark)
 ======================= ============================ =============================== 

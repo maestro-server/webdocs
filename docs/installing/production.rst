@@ -32,6 +32,17 @@ MongoDB is prepared to scale and high availability, the best setup creates a mas
 
 .. image:: ../_static/screen/mongoHA.png
 
+----------
+
+Scheduler Beat App
+------------------
+
+.. Danger::
+	Scheduler app have two parts, the producer called beat and workers, the beat its only service without prepare to setup in high availability, be carefull. It´s hard to put a beat service in HA system in a simple way, I prefer to go in simple way, to minimize, beat schedule is isolated and build in an immutable state (if fall, you call up in another server, and all schedules will be recovered), but must have only one beat instance per time. 
+     
+
+
+
 Version
 -------
 
@@ -40,18 +51,8 @@ How find my version:
 
 - Front end, show in right-footer.
 
-- http://server.api.maestroserver.io:8888/
+- http://{server-api}:8888/
 
-- http://discovery.api.maestroserver.io:5000/
+- http://{discovery-api}:5000/
 
-- http://reports.api.maestroserver.io:5005/
-
-
-Health Check
-------------
-
-- **http://server.api.maestroserver.io:8888/health** - Check mongoDB connection.
-
-- **http://discovery.api.maestroserver.io:5000/health** - Check RabbitMQ and MongoDB Connection
-
-- **http://reports.api.maestroserver.io:5005/health** - Check RabbitMQ and MongoDB Connection
+- http://{reports-api}:5005/

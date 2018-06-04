@@ -17,14 +17,9 @@ List of micro service:
 +----------------------+-------------------------------------------------+--------------------+
 | Reports App          | Reports generetor                               | Python 3.6, flask  | 
 +----------------------+-------------------------------------------------+--------------------+
-| Remote agente App    | Playbook server, task executer                  | Python, shell      | 
-+----------------------+-------------------------------------------------+--------------------+
-| Authenticator App    | Remote Authenticator                            | Python, flask      | 
-+----------------------+-------------------------------------------------+--------------------+
 | Data DB App          | Data layer                                      | Python, flask      | 
 +----------------------+-------------------------------------------------+--------------------+
-| Websocket App        | Websocket api                                   | SockJS, express    | 
-+----------------------+-------------------------------------------------+--------------------+
+
 
 Running locally
 ---------------
@@ -77,7 +72,7 @@ We recommend to use docker, if you like to see demo version, copy and execute do
             - "5000:5000"
             environment:
             - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
-            - "MAESTRO_DATA_URI=http://data:5000"
+            - "MAESTRO_DATA_URI=http://data:5010"
             depends_on:
             - rabbitmq
             - data
@@ -85,7 +80,7 @@ We recommend to use docker, if you like to see demo version, copy and execute do
         discovery_worker:
             image: maestroserver/discovery-maestro-celery
             environment:
-            - "MAESTRO_DATA_URI=http://data:5000"
+            - "MAESTRO_DATA_URI=http://data:5010"
             - "CELERY_BROKER_URL=amqp://rabbitmq:5672" 
             depends_on:
             - rabbitmq
@@ -105,7 +100,7 @@ We recommend to use docker, if you like to see demo version, copy and execute do
             image: maestroserver/reports-maestro-celery
             environment:
             - "MAESTRO_REPORT_URI=http://reports:5005"
-            - "MAESTRO_DATA_URI=http://data:5000"
+            - "MAESTRO_DATA_URI=http://data:5010"
             - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
             depends_on:
             - rabbitmq
@@ -114,7 +109,7 @@ We recommend to use docker, if you like to see demo version, copy and execute do
         scheduler:
             image: maestroserver/scheduler-maestro
             environment:
-            - "MAESTRO_DATA_URI=http://data:5000"
+            - "MAESTRO_DATA_URI=http://data:5010"
             - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
             - "MAESTRO_MONGO_URI=mongodb"
             - "MAESTRO_MONGO_DATABASE=maestro-client"
@@ -125,7 +120,7 @@ We recommend to use docker, if you like to see demo version, copy and execute do
         scheduler_worker:
             image: maestroserver/scheduler-maestro-celery
             environment:
-            - "MAESTRO_DATA_URI=http://data:5000"
+            - "MAESTRO_DATA_URI=http://data:5010"
             - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
             depends_on:
             - rabbitmq
@@ -173,7 +168,7 @@ We have Vagrant box, its good for visualization (demo) or the best way to create
 
 .. Note::
 
-    PS: ``All port its expose``, don't use vagrant in production environment.
+    PS: ``All port its expose``, don't use vagrant in production environment, or put this VM behind public firewall
 
 
 .. Note::

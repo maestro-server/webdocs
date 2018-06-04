@@ -34,7 +34,7 @@ services:
         - "5000:5000"
         environment:
         - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
-        - "MAESTRO_DATA_URI=http://data:5000"
+        - "MAESTRO_DATA_URI=http://data:5010"
         depends_on:
         - rabbitmq
         - data
@@ -42,7 +42,7 @@ services:
     discovery_worker:
         image: maestroserver/discovery-maestro-celery
         environment:
-        - "MAESTRO_DATA_URI=http://data:5000"
+        - "MAESTRO_DATA_URI=http://data:5010"
         - "CELERY_BROKER_URL=amqp://rabbitmq:5672" 
         depends_on:
         - rabbitmq
@@ -62,7 +62,7 @@ services:
         image: maestroserver/reports-maestro-celery
         environment:
         - "MAESTRO_REPORT_URI=http://reports:5005"
-        - "MAESTRO_DATA_URI=http://data:5000"
+        - "MAESTRO_DATA_URI=http://data:5010"
         - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
         depends_on:
         - rabbitmq
@@ -71,7 +71,7 @@ services:
     scheduler:
         image: maestroserver/scheduler-maestro
         environment:
-        - "MAESTRO_DATA_URI=http://data:5000"
+        - "MAESTRO_DATA_URI=http://data:5010"
         - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
         - "MAESTRO_MONGO_URI=mongodb"
         - "MAESTRO_MONGO_DATABASE=maestro-client"
@@ -82,7 +82,7 @@ services:
     scheduler_worker:
         image: maestroserver/scheduler-maestro-celery
         environment:
-        - "MAESTRO_DATA_URI=http://data:5000"
+        - "MAESTRO_DATA_URI=http://data:5010"
         - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
         depends_on:
         - rabbitmq
