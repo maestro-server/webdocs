@@ -55,8 +55,8 @@ We recommend to use docker, if you like to see demo version, copy and execute do
             - "8888:8888"
             environment:
             - "MAESTRO_MONGO_URI=mongodb/maestro-client"
-            - "MAESTRO_DISCOVERY_URL=http://discovery:5000"
-            - "MAESTRO_REPORT_URL=http://reports:5005"
+            - "MAESTRO_DISCOVERY_URI=http://discovery:5000"
+            - "MAESTRO_REPORT_URI=http://reports:5005"
             - "SMTP_PORT=25"
             - "SMTP_HOST=maildev"
             - "SMTP_SENDER=felipeklerkk@gmail.com"
