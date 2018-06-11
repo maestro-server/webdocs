@@ -2,9 +2,21 @@
 Scheduler App
 -------------
 
-Scheduler use celery beat to control scheduler jobs, customized scheduler class based at `Zmap CeleryBeat Mongo <https://github.com/zmap/celerybeat-mongo>`_.
+Scheduler App service to manage and execute jobs
+
+- Schedule jobs, interval or crontab
+- Requests chain jobs
+- Modules
+    - Webhook: Call URL request
+    - Connections: Call Crawler task
+
+----------   
+
+Scheduler use apscheduler to control scheduler jobs, `Apscheduler documentation <https://apscheduler.readthedocs.io/en/latest/>`_
 
 .. image:: ../../_static/screen/scheduler.png
+
+----------    
 
 **Installation with python 3**
 
@@ -35,3 +47,55 @@ Download de repository
 	- **depleted_job:** If any job recevied something wrong, this taks is called e depleted that job.
 
     - **notify_event:** Send notification event. 
+
+
+----------
+
+**Installation with python 3**
+
+    - Python >3.4
+    - RabbitMQ
+    - MongoDB
+
+Download de repository
+
+.. code-block:: bash
+
+    git clone https://github.com/maestro-server/scheduler-app.git
+
+----------
+
+**Install  run celery beat**
+
+.. code-block:: bash
+
+    celery -A app.celery beat -S app.schedulers.MongoScheduler --loglevel=info
+
+    or 
+
+    npm run beat
+
+----------
+
+**Install  run rabbit workers**
+
+.. code-block:: bash
+
+    celery -A app.celery worker -E --hostname=scheduler@%h --loglevel=info
+
+    or 
+
+    npm run celery
+
+----------
+
+**Env variables**
+
+======================= ============================ =========================== 
+Env Variables                   Example                    Description         
+======================= ============================ =========================== 
+MAESTRO_DATA_URI        http://data:5000             Data Layer API URL
+MAESTRO_MONGO_URI       localhost                    MongoDB URI
+MAESTRO_MONGO_DATABASE  maestro-client               Mongo Database name
+CELERY_BROKER_URL       amqp://rabbitmq:5672         RabbitMQ connection
+======================= ============================ =========================== 

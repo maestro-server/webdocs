@@ -1,6 +1,14 @@
 Discovery App
 -------------
 
+Discovery App service to connect and crawler provider
+
+- Encharge to manager and authenticate in each provider
+- Crawler the data and record into db
+- Consume batch insert data
+
+----------
+
 .. image:: ../../_static/screen/discovery.png
 
 Discovery using `Flask <http://flask.pocoo.org>`_,  and python >3.5, has api rest, and tasks.
@@ -56,3 +64,82 @@ You can install a flower, it's a control panel to centralize results throughout 
     flower -A app.celery
 
     npm run flower
+
+----------
+
+**Installation with python 3**
+
+    - Python >3.4
+    - RabbitMQ
+
+Download de repository
+
+.. code-block:: bash
+
+    git clone https://github.com/maestro-server/discovery-api.git
+
+----------
+
+**Install  dependences**
+
+.. code-block:: bash
+
+    pip install -r requeriments.txt
+
+----------
+
+**Install  run api**
+
+.. code-block:: bash
+
+    python -m flask run.py
+
+    or
+
+    FLASK_APP=run.py FLASK_DEBUG=1 flask run
+
+    or 
+
+    npm run server
+
+----------
+
+**Install  run rabbit workers**
+
+.. code-block:: bash
+
+    celery -A app.celery worker -E -Q discovery --hostname=discovery@%h --loglevel=info
+
+    or 
+
+    npm run celery
+
+----------
+
+.. Warning::
+
+    For production environment, use something like gunicorn.
+
+    .. code-block:: python
+
+        # gunicorn_config.py
+
+        import os
+
+        bind = "0.0.0.0:" + str(os.environ.get("MAESTRO_PORT", 5000))
+        workers = os.environ.get("MAESTRO_GWORKERS", 2)
+
+----------
+
+**Env variables**
+
+======================= ============================ ============================
+Env Variables                   Example                    Description         
+======================= ============================ ============================     
+MAESTRO_DATA_URI        http://localhost:5010        Data Layer API URL
+MAESTRO_SECRETJWT       xxxx                         Same that Server App
+MAESTRO_TRANSLATE_QTD   200                          Prefetch translation process
+MAESTRO_GWORKERS        2                            Gunicorn multi process
+CELERY_BROKER_URL       amqp://rabbitmq:5672         RabbitMQ connection
+CELERYD_TASK_TIME_LIMIT 10                           Timeout workers
+======================= ============================ ============================

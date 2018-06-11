@@ -25,23 +25,17 @@ Env variables
 
  .. code-block:: yaml
 
-    version: '2'
-
     services:
     server:
         image: maestroserver/server-maestro
-        ports:
-        - "8888:8888"
         environment:
         - UPLOAD_TYPE=Local
         - LOCAL_DIR=/upload
 
     client:
         image: maestroserver/client-maestro
-        ports:
-        - "8888:8888"
         environment:
-        - STATIC_URL='/static'
+        - STATIC_URL='http://server-app:8888/static'
 
 
 AWS S3
@@ -61,13 +55,9 @@ Env variables
 
  .. code-block:: yaml
 
-    version: '2'
-
     services:
     server:
         image: maestroserver/server-maestro
-        ports:
-        - "8888:8888"
         environment:
         - AWS_ACCESS_KEY_ID='XXXXXXXXXX'                    
         - AWS_SECRET_ACCESS_KEY='XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
@@ -77,8 +67,6 @@ Env variables
 
     client:
         image: maestroserver/client-maestro
-        ports:
-        - "8888:8888"
         environment:
         - STATIC_URL='http://maestroserver.s3.aws.com.br'
 

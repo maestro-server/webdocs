@@ -1,7 +1,15 @@
 Architecture
 ====================
 
-Services relation, each service comunite by `rest` (http) calls.
+This section show a advanced configurations for each micro service.
+
+    **Constainerazed system:**
+    Made with containers in mind, Maestro Server is deployed with Docker.
+
+    **Micro service arch:**
+    Created with micro services in mind, each service has your responsability.
+
+Services relation, each service communicate by `rest` (http) calls.
 
 .. image:: ../../_static/screen/arch_1.png
 
@@ -15,7 +23,4 @@ Services relation, each service comunite by `rest` (http) calls.
    discovery_app
    reports_app
    scheduler_app
-   remote_app
    data_app
-   authenticator_app
-   websocket_app
