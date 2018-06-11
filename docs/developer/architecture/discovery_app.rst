@@ -37,11 +37,15 @@ If you use windows, celery havent support for windows, the last version is 3.1.2
 
 - Controller used factory dc abstract to create easy way to make CRUD in mongodb
 
-- The crawler is divided in 3 parts
+- The crawler is divided in:
 
 	- **api:** connect in api provider and get result
 
 	- **translate:** normalize the data
+
+    - **setup:** reset tracker stats (used in datacenters to ensure a sync resource) 
+
+    - **tracker:** add list entry into tracker stats
 
 	- **insert:** insert/update data in mongodb
 
