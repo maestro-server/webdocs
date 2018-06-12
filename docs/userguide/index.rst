@@ -24,6 +24,3 @@ Cloud Inventory
    cloud_inventory/accessauth
    cloud_inventory/reports
    cloud_inventory/confsettings
-   cloud_inventory/smtp
-   cloud_inventory/upload
-   cloud_inventory/themes

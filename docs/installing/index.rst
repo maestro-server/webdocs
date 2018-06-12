@@ -67,7 +67,7 @@ Client App
 
 .. Warning::
     * API_URL it's rest endpoint provide by server-app.
-    * STATIC_URL it's endpoint for static files, if you use local upload type need to be {server-app-url}/static  - `More details upload <http://docs.maestroserver.io/en/latest/userguide/cloud_inventory/upload.html>`_.
+    * STATIC_URL it's endpoint for static files, if you use local upload type need to be {server-app-url}/static  - `More details upload <http://docs.maestroserver.io/en/latest/installing/upload.html>`_.
 
 
 **Env variables**
@@ -105,8 +105,8 @@ Server APP
 
 .. Warning::
     * MAESTRO_MONGO_URI - Must be mongodb, mongodb://{uri}/{db-name}
-    * SMTP_X - Used for reset emails and accounts, need to be valid SMTP server - `More details smtp <http://docs.maestroserver.io/en/latest/userguide/cloud_inventory/smtp.html>`_. 
-    * MAESTRO_UPLOAD_TYPE - Can be local or S3 `More details upload <http://docs.maestroserver.io/en/latest/userguide/cloud_inventory/upload.html>`_.
+    * SMTP_X - Used for reset emails and accounts, need to be valid SMTP server - `More details smtp <http://docs.maestroserver.io/en/latest/installing/smtp.html>`_. 
+    * MAESTRO_UPLOAD_TYPE - Can be local or S3 `More details upload <http://docs.maestroserver.io/en/latest/installing/upload.html>`_.
 
 **Env variables**
 
@@ -302,3 +302,12 @@ HA - Production Read
    :maxdepth: 2
 
    production
+
+Advanced configs
+----------------
+.. toctree::
+   :maxdepth: 2
+
+   smtp
+   upload
+   themes
