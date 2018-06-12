@@ -34,6 +34,10 @@ We recommend to use docker, if you like to see demo version, copy and execute do
 
     :download:`docker-compose file <_static/files/docker-compose.yml>`
 
+.. Warning::
+
+    This is quickstart, it's a docker compose to setup fast in local machines, if you like to install in production env, go to installing guide. 
+
 .. code-block:: yaml
 
     version: '2'
@@ -59,7 +63,7 @@ We recommend to use docker, if you like to see demo version, copy and execute do
             - "MAESTRO_REPORT_URI=http://reports:5005"
             - "SMTP_PORT=25"
             - "SMTP_HOST=maildev"
-            - "SMTP_SENDER=felipeklerkk@gmail.com"
+            - "SMTP_SENDER=myemail@gmail.com"
             - "SMTP_IGNORE=true"
             depends_on:
             - mongodb

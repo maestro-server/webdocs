@@ -121,7 +121,7 @@ Server APP
  MAESTRO_TIMEOUT                1000                       Timeout micro service request
  SMTP_PORT                      1025                                                                   
  SMTP_HOST                      localhost                                                              
- SMTP_SENDER                    felipeklerkk@XXXX                                                      
+ SMTP_SENDER                    myemail@XXXX                                                      
  SMTP_IGNORE                    true|false
  SMTP_USETSL                    true|false
  SMTP_USERNAME

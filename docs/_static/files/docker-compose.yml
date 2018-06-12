@@ -21,7 +21,7 @@ services:
         - "MAESTRO_REPORT_URI=http://reports:5005"
         - "SMTP_PORT=25"
         - "SMTP_HOST=maildev"
-        - "SMTP_SENDER=felipeklerkk@gmail.com"
+        - "SMTP_SENDER=maestro@mysender.com"
         - "SMTP_IGNORE=true"
         depends_on:
         - mongodb
