@@ -31,7 +31,9 @@ Example
         ports:
         - "8888:8888"
         environment:
-        - SMTP_PORT=1025
-        - SMTP_HOST=localhost
-        - SMTP_SENDER='maestroserver@maestro'
-        - SMTP_IGNORE=true
+        - SMTP_PORT=465
+        - SMTP_HOST=smtp.gmail.com
+        - SMTP_SENDER='mysender@gmail.com'
+        - SMTP_USERNAME=myusername
+        - SMTP_PASSWORD=mysecret
+        - SMTP_USETSL=true

@@ -66,7 +66,8 @@ Client App
     docker run -p 80:80 -e "API_URL=http://localhost:8888" maestroserver/client-maestro
 
 .. Warning::
-    PS: API_URL it's rest endpoint provide by server-app.
+    API_URL it's rest endpoint provide by server-app.
+    STATIC_URL it's endpoint for static files, if you use local upload type need to be {server-app-url}/static
 
 
 **Env variables**
@@ -75,7 +76,7 @@ Client App
 Env Variables                   Example                    Description         
 ======================= ============================ =============================== 
 API_URL                 http://localhost:8888        Server App Url                                           
-STATIC_URL              /upload/                     Relative path of static content                
+STATIC_URL              /static                      Relative path of static content                
 LOGO                    /static/imgs/logo300.png     Logotype, (login page)
 THEME                   theme-lotus                  Theme (gold|wine|blue|green|dark)
 ======================= ============================ =============================== 
@@ -103,7 +104,8 @@ Server APP
     docker run -p 8888:8888  -e "MAESTRO_MONGO_URI=mongodb/maestro-client" -e "MAESTRO_DISCOVERY_URI=http://discovery:5000" -e "MAESTRO_REPORT_URI=http://reports:5000" maestroserver/server-maestro 
 
 .. Warning::
-    PS: Must be mongodb, mongodb://{uri}/{db-name}
+    MAESTRO_MONGO_URI - Must be mongodb, mongodb://{uri}/{db-name}
+    SMTP_X - Used for reset emails and accounts, use valid SMTP server - `More details <http://docs.maestroserver.io/en/latest/userguide/cloud_inventory/smtp.html/>`_. 
 
 **Env variables**
 
