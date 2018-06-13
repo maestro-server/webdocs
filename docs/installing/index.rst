@@ -107,6 +107,7 @@ Server APP
     * MAESTRO_MONGO_URI - Must be mongodb, mongodb://{uri}/{db-name}
     * SMTP_X - Used for reset emails and accounts, need to be valid SMTP server - `More details smtp <http://docs.maestroserver.io/en/latest/installing/smtp.html>`_. 
     * MAESTRO_UPLOAD_TYPE - Can be local or S3 `More details upload <http://docs.maestroserver.io/en/latest/installing/upload.html>`_.
+    * MAESTRO_SECRETJWT - Hash to crypt JWT strings and connections between Discovery App (need to be the same)
 
 **Env variables**
 
@@ -168,6 +169,7 @@ Discovery App
 .. Warning::
     * MAESTRO_REPORT_URI - Enpoint API of Discovery - default port is 5010
     * MAESTRO_DATA_URI - Enpoint API of Data App - default port is 5000
+    * MAESTRO_SECRETJWT - Hash to crypt JWT strings and connections between Server App (need to be the same)
 
 **Env variables**
 
@@ -240,6 +242,10 @@ Data App
             - "MAESTRO_MONGO_URI=mongodb"
             - "MAESTRO_MONGO_DATABASE=maestro-client"
 
+.. code-block:: bash
+
+    docker run -p 5000 -e "MAESTRO_MONGO_URI=mongodb" -e "MAESTRO_MONGO_DATABASE=maestro-client" maestroserver/data-maestro
+
 **Env variables**
 
 ======================= ============================ ===========================================
@@ -247,7 +253,7 @@ Env Variables                   Example                    Description
 ======================= ============================ ===========================================
 MAESTRO_PORT			5000						 Port used 
 MAESTRO_MONGO_URI       localhost                    Mongo Url conn
-MAESTRO_MONGO_DATABASE  maestro-reports              Db name, its differente of servers-app     
+MAESTRO_MONGO_DATABASE  maestro-client               Db name, its differente of servers-app     
 MAESTRO_GWORKERS   		2       					 Gunicorn multi process  
 MAESTRO_INSERT_QTD      200                          Throughput insert in reports collection
 ======================= ============================ ===========================================
