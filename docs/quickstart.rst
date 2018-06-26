@@ -32,7 +32,7 @@ We recommend to use docker, if you like to see demo version, copy and execute do
 
 .. Note::
 
-    :download:`docker-compose file <_static/files/docker-compose.yml>`
+    `Download docker-compose file <https://raw.githubusercontent.com/maestro-server/development-maestro/master/docker-compose/docker-compose.yml>`_.
 
 .. Warning::
 
@@ -168,11 +168,12 @@ We recommend to use docker, if you like to see demo version, copy and execute do
 Vagrant
 -------
 
-We have Vagrant box, its good for visualization (demo) or the best way to create a development environment.
+We have VagrantFile, its good for visualization (demo) or the best way to create a development environment.
+
 
 .. Note::
 
-    PS: ``All port its expose``, don't use vagrant in production environment, or put this VM behind public firewall
+    `Download vagrantFile <https://raw.githubusercontent.com/maestro-server/development-maestro/master/vagrant/Vagrantfile>`_.
 
 
 .. Note::

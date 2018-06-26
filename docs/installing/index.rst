@@ -63,7 +63,7 @@ Client App
 
 .. code-block:: bash
 
-    docker run -p 80:80 -e "API_URL=http://localhost:8888" maestroserver/client-maestro
+    docker run -p 80:80 -e 'API_URL=http://localhost:8888' -e 'STATIC_URL=http://localhost:8888/static/' maestroserver/client-maestro
 
 .. Warning::
     * API_URL it's rest endpoint provide by server-app.
@@ -97,11 +97,11 @@ Server APP
         environment:
         - "MAESTRO_MONGO_URI=mongodb/maestro-client"
         - "MAESTRO_DISCOVERY_URI=http://discovery:5000"
-        - "MAESTRO_REPORT_URI=http://reports:5000"
+        - "MAESTRO_REPORT_URI=http://reports:5005"
 
 .. code-block:: bash
 
-    docker run -p 8888:8888  -e "MAESTRO_MONGO_URI=mongodb/maestro-client" -e "MAESTRO_DISCOVERY_URI=http://discovery:5000" -e "MAESTRO_REPORT_URI=http://reports:5000" maestroserver/server-maestro 
+    docker run -p 8888:8888  -e "MAESTRO_MONGO_URI=mongodb/maestro-client" -e "MAESTRO_DISCOVERY_URI=http://localhost:5000" -e "MAESTRO_REPORT_URI=http://localhost:5005" maestroserver/server-maestro 
 
 .. Warning::
     * MAESTRO_MONGO_URI - Must be mongodb, mongodb://{uri}/{db-name}
@@ -152,19 +152,19 @@ Discovery App
         - "5000:5000"
         environment:
         - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
-        - "MAESTRO_DATA_URI=http://data:5000"
+        - "MAESTRO_DATA_URI=http://data:5010"
 
     discovery_worker:
         image: maestroserver/discovery-maestro-celery
         environment:
         - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
-        - "MAESTRO_DATA_URI=http://data:5000"
+        - "MAESTRO_DATA_URI=http://data:5010"
 
 .. code-block:: bash
 
-    docker run -p 5000:5000  -e "MAESTRO_DATA_URI=http://data:5000" -e "CELERY_BROKER_URL=amqp://rabbitmq:5672" maestroserver/discovery-maestro 
+    docker run -p 5000:5000  -e "MAESTRO_DATA_URI=http://localhost:5010" -e "CELERY_BROKER_URL=amqp://rabbitmq:5672" maestroserver/discovery-maestro 
  
-    docker run -e "MAESTRO_DATA_URI=http://data:5000" -e "CELERY_BROKER_URL=amqp://rabbitmq:5672" maestroserver/discovery-maestro-celery 
+    docker run -e "MAESTRO_DATA_URI=http://localhost:5010" -e "CELERY_BROKER_URL=amqp://rabbitmq:5672" maestroserver/discovery-maestro-celery 
 
 .. Warning::
     * MAESTRO_REPORT_URI - Enpoint API of Discovery - default port is 5010
@@ -176,7 +176,7 @@ Discovery App
 ======================= ============================ ============================
 Env Variables                   Example                    Description         
 ======================= ============================ ============================  
-MAESTRO_PORT			5010  					     Port used    
+MAESTRO_PORT			5000  					     Port used    
 MAESTRO_DATA_URI        http://localhost:5010        Data Layer API URL
 MAESTRO_SECRETJWT       xxxx                         Same that Server App
 MAESTRO_TRANSLATE_QTD   200                          Prefetch translation process
@@ -194,6 +194,8 @@ Reports App
 
     reports:
         image: maestroserver/reports-maestro
+        ports:
+        - "5005:5005"
         environment:
         - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
         - "MAESTRO_MONGO_URI=mongodb"
@@ -210,6 +212,13 @@ Reports App
     * MAESTRO_REPORT_URI - Enpoint API of Reports - default port is 5005
     * MAESTRO_DATA_URI - Enpoint API of Data App - default port is 5000
 
+.. code-block:: bash
+
+    docker run -p 5005 -e "MAESTRO_DATA_URI=http://localhost:5010" -e "CELERY_BROKER_URL=amqp://rabbitmq:5672" maestroserver/reports-maestro
+ 
+    docker run -e "MAESTRO_DATA_URI=http://localhost:5010" -e "CELERY_BROKER_URL=amqp://rabbitmq:5672" maestroserver/reports-maestro-celery 
+     
+    
 **Env variables**
 
 ========================= ============================ ===========================================
@@ -238,20 +247,22 @@ Data App
 
     data:
         image: maestroserver/data-maestro
+        ports:
+        - "5010:5010"
         environment:
             - "MAESTRO_MONGO_URI=mongodb"
             - "MAESTRO_MONGO_DATABASE=maestro-client"
 
 .. code-block:: bash
 
-    docker run -p 5000 -e "MAESTRO_MONGO_URI=mongodb" -e "MAESTRO_MONGO_DATABASE=maestro-client" maestroserver/data-maestro
+    docker run -p 5010 -e "MAESTRO_MONGO_URI=mongodb" -e "MAESTRO_MONGO_DATABASE=maestro-client" maestroserver/data-maestro
 
 **Env variables**
 
 ======================= ============================ ===========================================
 Env Variables                   Example                    Description         
 ======================= ============================ ===========================================
-MAESTRO_PORT			5000						 Port used 
+MAESTRO_PORT			5010						 Port used 
 MAESTRO_MONGO_URI       localhost                    Mongo Url conn
 MAESTRO_MONGO_DATABASE  maestro-client               Db name, its differente of servers-app     
 MAESTRO_GWORKERS   		2       					 Gunicorn multi process  
@@ -269,7 +280,7 @@ Scheduler App
     scheduler:
         image: maestroserver/scheduler-maestro
         environment:
-        - "MAESTRO_DATA_URI=http://data:5000"
+        - "MAESTRO_DATA_URI=http://data:5010"
         - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
         - "MAESTRO_MONGO_URI=mongodb"
         - "MAESTRO_MONGO_DATABASE=maestro-client"
@@ -277,14 +288,14 @@ Scheduler App
     scheduler_worker:
         image: maestroserver/scheduler-maestro-celery
         environment:
-        - "MAESTRO_DATA_URI=http://data:5000"
+        - "MAESTRO_DATA_URI=http://data:5010"
         - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
 
 .. code-block:: bash
 
-    docker run -e "MAESTRO_DATA_URI=http://data:5000" -e "CELERY_BROKER_URL=amqp://rabbitmq:5672" maestroserver/scheduler-maestro
+    docker run -e "MAESTRO_DATA_URI=http://localhost:5010" -e "CELERY_BROKER_URL=amqp://rabbitmq:5672" maestroserver/scheduler-maestro
  
-    docker run -e "MAESTRO_DATA_URI=http://data:5000" -e "CELERY_BROKER_URL=amqp://rabbitmq:5672" maestroserver/scheduler-maestro-celery 
+    docker run -e "MAESTRO_DATA_URI=http://localhost:5010" -e "CELERY_BROKER_URL=amqp://rabbitmq:5672" maestroserver/scheduler-maestro-celery 
      
 .. Warning::
     * MAESTRO_DATA_URI - Enpoint API of Data App - default port is 5000
@@ -294,7 +305,7 @@ Scheduler App
 ======================= ============================ =========================== 
 Env Variables                   Example                    Description         
 ======================= ============================ =========================== 
-MAESTRO_DATA_URI        http://data:5000             Data Layer API URL
+MAESTRO_DATA_URI        http://data:5010             Data Layer API URL
 MAESTRO_MONGO_URI       localhost                    MongoDB URI
 MAESTRO_MONGO_DATABASE  maestro-client               Mongo Database name
 CELERY_BROKER_URL       amqp://rabbitmq:5672         RabbitMQ connection
