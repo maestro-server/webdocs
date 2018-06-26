@@ -214,9 +214,9 @@ Reports App
 
 .. code-block:: bash
 
-    docker run -p 5005 -e "MAESTRO_DATA_URI=http://localhost:5010" -e "CELERY_BROKER_URL=amqp://rabbitmq:5672" maestroserver/reports-maestro
+    docker run -p 5005 -e "MAESTRO_DATA_URI=http://localhost:5010" -e "CELERY_BROKER_URL=amqp://rabbitmq:5672" -e 'MAESTRO_MONGO_URI=localhost' maestroserver/reports-maestro
  
-    docker run -e "MAESTRO_DATA_URI=http://localhost:5010" -e "CELERY_BROKER_URL=amqp://rabbitmq:5672" maestroserver/reports-maestro-celery 
+    docker run -e "MAESTRO_DATA_URI=http://localhost:5010" -e "MAESTRO_REPORT_URI=http://localhost:5005" -e "CELERY_BROKER_URL=amqp://rabbitmq:5672" maestroserver/reports-maestro-celery 
      
     
 **Env variables**
