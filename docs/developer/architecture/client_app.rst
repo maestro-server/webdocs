@@ -86,7 +86,8 @@ Download de repository
 Env Variables                   Example                    Description         
 ======================= ============================ =============================== 
 API_URL                 http://localhost:8888        Server App Url                                           
-STATIC_URL              /upload/                     Relative path of static content                
+STATIC_URL              /upload/                     Relative path of static content 
+ANALYTICS_URL           http://localhost:9999        Analytics App Url        
 LOGO                    /static/imgs/logo300.png     Logotype, (login page)
 THEME                   theme-lotus                  Theme (gold|wine|blue|green|dark)
 ======================= ============================ =============================== 

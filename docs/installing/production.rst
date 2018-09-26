@@ -56,3 +56,7 @@ How find my version:
 - http://{discovery-api}:5000/
 
 - http://{reports-api}:5005/
+
+- http://{analytics-maestro}:5020/
+
+- http://{analytics-front}:9999/

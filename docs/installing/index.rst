@@ -44,6 +44,16 @@ If you like to create and export reports then:
     * Data App
     * RabbitMq
 
+
+Create bussiness analytics graphs, public and shared these maps, need:
+
+..
+
+    * Analytics App
+    * Analytics Front App
+    * Data App
+    * RabbitMq
+
 Let´s start
 
 Client App
@@ -60,13 +70,15 @@ Client App
         environment:
         - "API_URL=http://server-app:8888"
         - "STATIC_URL=http://server-app:8888/static/"
+        - "ANALYTICS_URL=http://localhost:9999"
 
 .. code-block:: bash
 
-    docker run -p 80:80 -e 'API_URL=http://localhost:8888' -e 'STATIC_URL=http://localhost:8888/static/' maestroserver/client-maestro
+    docker run -p 80:80 -e 'API_URL=http://localhost:8888' -e 'STATIC_URL=http://localhost:8888/static/' -e "ANALYTICS_URL=http://localhost:9999" maestroserver/client-maestro
 
 .. Warning::
     * API_URL it's rest endpoint provide by server-app.
+    * ANALYTICS_URL it's rest endpoint provide by analytics-front.
     * STATIC_URL it's endpoint for static files, if you use local upload type need to be {server-app-url}/static  - `More details upload <http://docs.maestroserver.io/en/latest/installing/upload.html>`_.
 
 
@@ -95,49 +107,66 @@ Server APP
         ports:
         - "8888:8888"
         environment:
-        - "MAESTRO_MONGO_URI=mongodb/maestro-client"
+        - "MAESTRO_MONGO_URI=mongodb"
+        - "MAESTRO_MONGO_DATABASE=maestro-client"
         - "MAESTRO_DISCOVERY_URI=http://discovery:5000"
+        - "MAESTRO_ANALYTICS_URI=http://analytics:5020"
+        - "MAESTRO_ANALYTICS_FRONT_URI=http://analytics_front:9999"
         - "MAESTRO_REPORT_URI=http://reports:5005"
 
 .. code-block:: bash
 
-    docker run -p 8888:8888  -e "MAESTRO_MONGO_URI=mongodb/maestro-client" -e "MAESTRO_DISCOVERY_URI=http://localhost:5000" -e "MAESTRO_REPORT_URI=http://localhost:5005" maestroserver/server-maestro 
+    docker run -p 8888:8888  
+        -e "MAESTRO_MONGO_URI=mongodb" 
+        -e "MAESTRO_MONGO_DATABASE=maestro-client" 
+        -e "MAESTRO_DISCOVERY_URI=http://localhost:5000" 
+        -e "MAESTRO_REPORT_URI=http://localhost:5005"
+        -e "MAESTRO_ANALYTICS_URI=http://localhost:5020"
+        -e "MAESTRO_ANALYTICS_FRONT_URI=http://localhost:9999"
+        maestroserver/server-maestro 
 
 .. Warning::
-    * MAESTRO_MONGO_URI - Must be mongodb, mongodb://{uri}/{db-name}
+    * MAESTRO_MONGO_URI - Must be uri, mongodb://{MAESTRO_MONGO_URI}/{MAESTRO_MONGO_DATABASE}
+    * MAESTRO_MONGO_DATABASE - Only mongodb database name (ex: maestro-client)
     * SMTP_X - Used for reset emails and accounts, need to be valid SMTP server - `More details smtp <http://docs.maestroserver.io/en/latest/installing/smtp.html>`_. 
     * MAESTRO_UPLOAD_TYPE - Can be local or S3 `More details upload <http://docs.maestroserver.io/en/latest/installing/upload.html>`_.
     * MAESTRO_SECRETJWT - Hash to crypt JWT strings and connections between Discovery App (need to be the same)
+    * MAESTRO_SECRETJWT_PUBLIC_ANALYTICS - Hash used only do public shared resources, must be different as MAESTRO_SECRETJWT
 
 **Env variables**
 
-============================== ========================== =============================== 
-        Env Variables                   Example                   Description                          
-============================== ========================== ===============================
- MAESTRO_PORT                   8888                                                                   
- NODE_ENV                       development|production                                                 
- MAESTRO_MONGO_URI              localhost/maestro-client   DB string connection                        
- MAESTRO_SECRETJWT              XXXX                       Secret key - session                                            
- MAESTRO_SECRETJWT_FORGOT       XXXX                       Secret key - forgot request                                            
- MAESTRO_SECRET_CRYPTO_FORGOT   XXXX                       Secret key - forgot content                                            
- MAESTRO_DISCOVERY_URI          http://localhost:5000      Url discovery-app (flask)                   
- MAESTRO_REPORT_URI             http://localhost:5005      Url reports-app (flask)
- MAESTRO_TIMEOUT                1000                       Timeout micro service request
- SMTP_PORT                      1025                                                                   
- SMTP_HOST                      localhost                                                              
- SMTP_SENDER                    myemail@XXXX                                                      
- SMTP_IGNORE                    true|false
- SMTP_USETSL                    true|false
+================================== ========================== =============================== 
+            Env Variables                   Example                   Description                          
+================================== ========================== ===============================
+ MAESTRO_PORT                       8888                                                                   
+ NODE_ENV                           development|production                                                 
+ MAESTRO_MONGO_URI                  localhost                  DB string connection
+ MAESTRO_MONGO_DATABASE             maestro-client             Database name
+ MAESTRO_SECRETJWT                  XXXX                       Secret key - session                                            
+ MAESTRO_SECRETJWT_FORGOT           XXXX                       Secret key - forgot request                                            
+ MAESTRO_SECRET_CRYPTO_FORGOT       XXXX                       Secret key - forgot content                                          
+ MAESTRO_SECRETJWT_PUBLIC_ANALYTICS XXXX                       Secret key - public shared                                                 
+ MAESTRO_DISCOVERY_URL              http://localhost:5000      Url discovery-app (flask)                   
+ MAESTRO_REPORT_URL                 http://localhost:5005      Url reports-app (flask)
+ MAESTRO_ANALYTICS_URI              http://localhost:5020      Url Analytics-app (flask)     
+ MAESTRO_ANALYTICS_FRONT_URI        http://localhost:9999      Url Analytics Front-app (node)                  
+
+ MAESTRO_TIMEOUT                    1000                       Timeout micro service request
+ SMTP_PORT                          1025                                                                   
+ SMTP_HOST                          localhost                                                              
+ SMTP_SENDER                        myemail@XXXX                                                      
+ SMTP_IGNORE                        true|false
+ SMTP_USETSL                        true|false
  SMTP_USERNAME
- SMTP_PASSWORD                                                                                                        
- MAESTRO_UPLOAD_TYPE            S3 or Local                Upload mode
- AWS_ACCESS_KEY_ID              XXXX                                                                   
- AWS_SECRET_ACCESS_KEY          XXXX                                                                   
- AWS_DEFAULT_REGION             us-east-1                                                              
- AWS_S3_BUCKET_NAME             maestroserver              Buckete name                             
- LOCAL_DIR                      /public/static/            Where files will be uploaded
- PWD                            $rootDirectory             PWD process
-============================== ========================== ===============================
+ SMTP_PASSWORD                                                            
+ AWS_ACCESS_KEY_ID                  XXXX                                                                   
+ AWS_SECRET_ACCESS_KEY              XXXX                                                                   
+ AWS_DEFAULT_REGION                 us-east-1                                                              
+ AWS_S3_BUCKET_NAME                 maestroserver              Bucket name                                            
+ MAESTRO_UPLOAD_TYPE                S3 or Local                Upload mode                                 
+ LOCAL_DIR                          /public/static/            Where files will be uploaded
+ PWD                                $rootDirectory             PWD process
+================================== ========================== ===============================
 
 Discovery App
 -------------
