@@ -32,7 +32,7 @@ Will be setup mongodb and fake smtp server
 
 **Installation with node**
 
-    - Nodejs 6 or 7
+    - Nodejs 8 or above
     - Npm
     - MongoDB
     - Gcc + python (bcrypt package, if need be compilate)
