@@ -134,35 +134,35 @@ Like (PM2):
 
 **Env variables**
 
-================================== ========================== =============================== 
+=================================== ========================== =============================== 
             Env Variables                   Example                   Description                          
-================================== ========================== ===============================
- MAESTRO_PORT                       8888                                                                   
- NODE_ENV                           development|production                                                 
- MAESTRO_MONGO_URI                  localhost                  DB string connection
- MAESTRO_MONGO_DATABASE             maestro-client             Database name
- MAESTRO_SECRETJWT                  XXXX                       Secret key - session                                            
- MAESTRO_SECRETJWT_FORGOT           XXXX                       Secret key - forgot request                                            
- MAESTRO_SECRET_CRYPTO_FORGOT       XXXX                       Secret key - forgot content
- MAESTRO_SECRETJWT_PUBLIC_ANALYTICS XXXX                       Secret key - public shared                                        
- MAESTRO_DISCOVERY_URL              http://localhost:5000      Url discovery-app (flask)                   
- MAESTRO_REPORT_URL                 http://localhost:5005      Url reports-app (flask)
- MAESTRO_ANALYTICS_URI              http://localhost:5020      Url Analytics-app (flask)     
- MAESTRO_ANALYTICS_FRONT_URI        http://localhost:9999      Url Analytics Front-app (node)
+=================================== ========================== ===============================
+ MAESTRO_PORT                        8888                                                                   
+ NODE_ENV                            development|production                                                 
+ MAESTRO_MONGO_URI                   localhost                  DB string connection
+ MAESTRO_MONGO_DATABASE              maestro-client             Database name
+ MAESTRO_SECRETJWT                   XXXX                       Secret key - session                                            
+ MAESTRO_SECRETJWT_FORGOT            XXXX                       Secret key - forgot request                                            
+ MAESTRO_SECRET_CRYPTO_FORGOT        XXXX                       Secret key - forgot content                                          
+ MAESTRO_SECRETJWT_PUBLIC_ANALYTICS  XXXX                       Secret key - public shared                                                 
+ MAESTRO_DISCOVERY_URL               http://localhost:5000      Url discovery-app (flask)                   
+ MAESTRO_REPORT_URL                  http://localhost:5005      Url reports-app (flask)
+ MAESTRO_ANALYTICS_URI               http://localhost:5020      Url Analytics-app (flask)     
+ MAESTRO_ANALYTICS_FRONT_URI         http://localhost:9999      Url Analytics Front-app (node)                  
 
- MAESTRO_TIMEOUT                    1000                       Timeout micro service request
- SMTP_PORT                          1025                                                                   
- SMTP_HOST                          localhost                                                              
- SMTP_SENDER                        myemail@XXXX                                                      
- SMTP_IGNORE                        true|false
- SMTP_USETSL                        true|false
+ MAESTRO_TIMEOUT                     1000                       Timeout micro service request
+ SMTP_PORT                           1025                                                                   
+ SMTP_HOST                           localhost                                                              
+ SMTP_SENDER                         myemail@XXXX                                                      
+ SMTP_IGNORE                         true|false
+ SMTP_USETSL                         true|false
  SMTP_USERNAME
  SMTP_PASSWORD                                                            
- AWS_ACCESS_KEY_ID                  XXXX                                                                   
- AWS_SECRET_ACCESS_KEY              XXXX                                                                   
- AWS_DEFAULT_REGION                 us-east-1                                                              
- AWS_S3_BUCKET_NAME                 maestroserver              Bucket name                                            
- MAESTRO_UPLOAD_TYPE                S3 or Local                Upload mode                                 
- LOCAL_DIR                          /public/static/            Where files will be uploaded
- PWD                                $rootDirectory             PWD process
-================================== ========================== ===============================
+ AWS_ACCESS_KEY_ID                   XXXX                                                                   
+ AWS_SECRET_ACCESS_KEY               XXXX                                                                   
+ AWS_DEFAULT_REGION                  us-east-1                                                              
+ AWS_S3_BUCKET_NAME                  maestroserver              Bucket name                                            
+ MAESTRO_UPLOAD_TYPE                 S3 or Local                Upload mode                                 
+ LOCAL_DIR                           /public/static/            Where files will be uploaded
+ PWD                                 $rootDirectory             PWD process
+=================================== ========================== ===============================

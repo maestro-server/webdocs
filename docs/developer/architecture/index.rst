@@ -23,4 +23,6 @@ Services relation, each service communicate by `rest` (http) calls.
    discovery_app
    reports_app
    scheduler_app
+   analytics
+   analytics_front
    data_app

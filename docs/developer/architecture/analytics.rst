@@ -40,25 +40,25 @@ If you use windows, celery havent support for windows, the last version is 3.1.2
 
 - Controller used only graph to start all tasks:
 
-- The drawer process is compond by:
+- The drawer process is compound by:
 
-	- **entry:** received request, and list all applications to start a entry point, if its system all endpoints will be used.
+    - **entry:** First task, figure out all entry applications accordingly system endpoint parameters, our any direct application if avalaible.
 
-	- **graphlookup:** normalize the data
+    - **graphlookup:** Request for Data App a aggregate query using MongoDB $graphLookup.
 
-    - **network bussiness:** reset tracker stats (used in datacenters to ensure a sync resource) 
+    - **network bussiness:** Construct Grid Map, and send to enrichment and info bussines.
 
-    - **enrichment:** add list entry into tracker stats
+    - **enrichment:** Request for Data App all servers used on grid.
 
-	- **info bussiness:** insert/update data in mongodb
+    - **info bussiness:** Calculate histogram, counts, density and connections.
 
-    - **netwrok client:** insert/update data in mongodb
+    - **network client:** Request for Data App all clients used in grid.
 
-    - **draw bussiness:** insert/update data in mongodb
+    - **draw bussiness:** Create svgs based of grid.
 
-    - **notification:** insert/update data in mongodb
+    - **notification:** Send updates for Data App.
 
-    - **send front app:** insert/update data in mongodb
+    - **send front app:** Send svgs to Analytics Front app.
 
 	Each step have unique task.
 
@@ -123,7 +123,7 @@ Download de repository
 
 .. code-block:: bash
 
-    celery -A app.celery worker -E -Q discovery --hostname=discovery@%h --loglevel=info
+    celery -A app.celery worker -E -Q analytics --loglevel=info
 
     or 
 
@@ -141,20 +141,22 @@ Download de repository
 
         import os
 
-        bind = "0.0.0.0:" + str(os.environ.get("MAESTRO_PORT", 5000))
+        bind = "0.0.0.0:" + str(os.environ.get("MAESTRO_PORT", 5020))
         workers = os.environ.get("MAESTRO_GWORKERS", 2)
 
 ----------
 
 **Env variables**
 
-======================= ============================ ============================
+=========================== ============================ ============================
 Env Variables                   Example                    Description         
-======================= ============================ ============================     
-MAESTRO_DATA_URI        http://localhost:5010        Data Layer API URL
-MAESTRO_SECRETJWT       xxxx                         Same that Server App
-MAESTRO_TRANSLATE_QTD   200                          Prefetch translation process
-MAESTRO_GWORKERS        2                            Gunicorn multi process
-CELERY_BROKER_URL       amqp://rabbitmq:5672         RabbitMQ connection
-CELERYD_TASK_TIME_LIMIT 10                           Timeout workers
-======================= ============================ ============================
+=========================== ============================ ============================    
+MAESTRO_PORT                 5020                         Port
+MAESTRO_DATA_URI             http://localhost:5010        Data Layer API URL
+MAESTRO_ANALYTICS_FRONT_URI  http://localhost:9999        Analytics Front URL
+MAESTRO_SECRETJWT_ANALYTICS  xxxx                         Used with Analytics Front
+MAESTRO_NOAUTH               xxxx                         Used for post auth Front
+MAESTRO_GWORKERS             2                            Gunicorn multi process
+CELERY_BROKER_URL            amqp://rabbitmq:5672         RabbitMQ connection
+CELERYD_TASK_TIME_LIMIT      10                           Timeout workers
+=========================== ============================ ============================

@@ -24,3 +24,13 @@ Cloud Inventory
    cloud_inventory/accessauth
    cloud_inventory/reports
    cloud_inventory/confsettings
+
+
+Graphs - Architecture maps
+==========================
+
+.. toctree::
+   :maxdepth: 2
+
+   graphs/gpdependencies
+   graphs/bussiness_graphs

@@ -66,6 +66,17 @@ Service      Register all services its run inside a servers, this information it
 
 ------------
 
+Add dependency
+
+.. Note::
+
+    Dependency is a relation beetwen two or more applications, example it's database its a depenecy of app4, and app4 it´s dependency of loadbalance.
+
+.. figure:: ../../_static/screen/server_deps.png
+
+    Add outers applications with dependecy.
+
+
 Apps
 ----
 `Inventory > Application`

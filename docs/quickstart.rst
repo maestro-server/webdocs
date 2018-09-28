@@ -9,7 +9,7 @@ List of micro service:
 +----------------------+-------------------------------------------------+--------------------+
 | Client App           | FrontEnd client                                 | Vue2 + Bootstrap 3 | 
 +----------------------+-------------------------------------------------+--------------------+
-| Server App           | Primary API, authetication, crud and manager    | NodeJs 6.10 Kraken |
+| Server App           | Primary API, authetication, crud and manager    | NodeJs 8.11 Kraken |
 +----------------------+-------------------------------------------------+--------------------+
 | Discovery App        | Auto discovery and crawlers                     | Python 3.6, flask  | 
 +----------------------+-------------------------------------------------+--------------------+
@@ -17,7 +17,11 @@ List of micro service:
 +----------------------+-------------------------------------------------+--------------------+
 | Reports App          | Reports generetor                               | Python 3.6, flask  | 
 +----------------------+-------------------------------------------------+--------------------+
-| Data DB App          | Data layer                                      | Python, flask      | 
+| Analytics App        | Analytics Maestro - Graphs Generator            | Python 3.6, flask  | 
++----------------------+-------------------------------------------------+--------------------+
+| Analytics Front      | Analytics Front                                 | NodeJs 8.11 Kraken | 
++----------------------+-------------------------------------------------+--------------------+
+| Data DB App          | Data layer                                      | Python 3.6, flask  | 
 +----------------------+-------------------------------------------------+--------------------+
 
 
@@ -50,6 +54,7 @@ We recommend to use docker, if you like to see demo version, copy and execute do
             environment:
             - "API_URL=http://localhost:8888"
             - "STATIC_URL=http://localhost:8888/static/"
+            - "ANALYTICS_URL=http://localhost:9999"
             depends_on:
             - server    
 
@@ -58,8 +63,11 @@ We recommend to use docker, if you like to see demo version, copy and execute do
             ports:
             - "8888:8888"
             environment:
-            - "MAESTRO_MONGO_URI=mongodb/maestro-client"
+            - "MAESTRO_MONGO_URI=mongodb"
+            - "MAESTRO_MONGO_DATABASE=maestro-client"
             - "MAESTRO_DISCOVERY_URI=http://discovery:5000"
+            - "MAESTRO_ANALYTICS_URI=http://analytics:5020"
+            - "MAESTRO_ANALYTICS_FRONT_URI=http://analytics_front:9999"
             - "MAESTRO_REPORT_URI=http://reports:5005"
             - "SMTP_PORT=25"
             - "SMTP_HOST=maildev"
@@ -129,6 +137,36 @@ We recommend to use docker, if you like to see demo version, copy and execute do
             depends_on:
             - rabbitmq
             - data  
+
+        analytics:
+            image: maestroserver/analytics-maestro
+            ports:
+            - "5020:5020"
+            environment:
+            - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
+            - "MAESTRO_DATA_URI=http://data:5010"
+            depends_on:
+            - rabbitmq
+            - data
+
+        analytics_worker:
+            image: maestroserver/analytics-maestro-celery
+            environment:
+            - "MAESTRO_DATA_URI=http://data:5010"
+            - "MAESTRO_ANALYTICS_FRONT_URI=http://analytics_front:9999"
+            - "CELERY_BROKER_URL=amqp://rabbitmq:5672" 
+            - "CELERYD_MAX_TASKS_PER_CHILD=2"
+            depends_on:
+            - rabbitmq
+            - data
+
+        analytics_front:
+            image: maestroserver/analytics-front-maestro
+            ports:
+            - "9999:9999"
+            environment:
+            - "MAESTRO_MONGO_URI=mongodb"
+            - "MAESTRO_MONGO_DATABASE=maestro-client"
 
         data:
             image: maestroserver/data-maestro

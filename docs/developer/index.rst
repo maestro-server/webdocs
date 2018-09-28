@@ -8,6 +8,8 @@ This chapter will explain internal concepts about Maestro, its only matter if yo
 
    architecture/index
    api/index
+   servdiscovery
+   tokens
    lint
    tests
    qa
