@@ -37,3 +37,10 @@ Example
         - SMTP_USERNAME=myusername
         - SMTP_PASSWORD=mysecret
         - SMTP_USETSL=true
+
+-------
+
+Services
+--------
+
+- Server App

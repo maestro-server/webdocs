@@ -424,12 +424,24 @@ Scheduler App
         environment:
         - "MAESTRO_DATA_URI=http://data:5010"
         - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
+        - "MAESTRO_DISCOVERY_URI=http://discovery:5000"
+        - "MAESTRO_ANALYTICS_URI=http://analytics:5020"
+        - "MAESTRO_REPORT_URI=http://reports:5005"
 
 .. code-block:: bash
 
-    docker run -e "MAESTRO_DATA_URI=http://localhost:5010" -e "CELERY_BROKER_URL=amqp://rabbitmq:5672" maestroserver/scheduler-maestro
+    docker run 
+        -e "MAESTRO_DATA_URI=http://localhost:5010" 
+        -e "CELERY_BROKER_URL=amqp://rabbitmq:5672" 
+        maestroserver/scheduler-maestro
  
-    docker run -e "MAESTRO_DATA_URI=http://localhost:5010" -e "CELERY_BROKER_URL=amqp://rabbitmq:5672" maestroserver/scheduler-maestro-celery 
+    docker run 
+        -e "MAESTRO_DATA_URI=http://localhost:5010"
+        -e "MAESTRO_DISCOVERY_URI=http://localhost:5000"
+        -e "MAESTRO_ANALYTICS_URI=http://localhost:5020"
+        -e "MAESTRO_REPORT_URI=http://localhost:5005"
+        -e "CELERY_BROKER_URL=amqp://rabbitmq:5672" 
+        maestroserver/scheduler-maestro-celery 
      
 .. Warning::
     * MAESTRO_DATA_URI - Enpoint API of Data App - default port is 5000
@@ -439,9 +451,12 @@ Scheduler App
 ======================= ============================ =========================== 
 Env Variables                   Example                    Description         
 ======================= ============================ =========================== 
-MAESTRO_DATA_URI        http://data:5010             Data Layer API URL
+MAESTRO_DATA_URI        http://localhost:5010        Data Layer API URL
+MAESTRO_DISCOVERY_URI   http://localhost:5000        Discovery App URL
+MAESTRO_ANALYTICS_URI   http://localhost:5020        Analytics App URL
+MAESTRO_REPORT_URI      http://localhost:5005        Reports App URL
 MAESTRO_MONGO_URI       localhost                    MongoDB URI
-MAESTRO_MONGO_DATABASE  maestro-client               Mongo Database name
+MAESTRO_MONGO_DATABASE  maestro-scheduler            Mongo Database name
 CELERY_BROKER_URL       amqp://rabbitmq:5672         RabbitMQ connection
 ======================= ============================ =========================== 
 

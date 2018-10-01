@@ -94,8 +94,11 @@ Download de repository
 ======================= ============================ =========================== 
 Env Variables                   Example                    Description         
 ======================= ============================ =========================== 
-MAESTRO_DATA_URI        http://data:5000             Data Layer API URL
+MAESTRO_DATA_URI        http://localhost:5000        Data Layer API URL
+MAESTRO_DISCOVERY_URI   http://localhost:5000        Discovery App URL
+MAESTRO_ANALYTICS_URI   http://localhost:5020        Analytics App URL
+MAESTRO_REPORT_URI      http://localhost:5005        Reports App URL
 MAESTRO_MONGO_URI       localhost                    MongoDB URI
-MAESTRO_MONGO_DATABASE  maestro-client               Mongo Database name
+MAESTRO_MONGO_DATABASE  maestro-scheduler            Mongo Database name
 CELERY_BROKER_URL       amqp://rabbitmq:5672         RabbitMQ connection
 ======================= ============================ =========================== 

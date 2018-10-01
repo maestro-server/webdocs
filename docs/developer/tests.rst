@@ -72,3 +72,25 @@ Testing use pytest
     npm run test
 
     python -m unittest discover
+
+Analytics Apps
+--------------
+
+Testing use pytest
+
+.. code-block:: bash
+
+    npm run test
+
+    python -m unittest discover
+
+Analytics Front
+---------------
+
+Testing use pytest
+
+.. code-block:: bash
+
+    npm run test
+
+    python -m unittest discover

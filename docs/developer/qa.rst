@@ -135,3 +135,44 @@ CodeClimate       .. image:: https://api.codeclimate.com/v1/badges/0d6930d08ca21
                         :alt: Test Coverage
 ================  ================================================================================================================================================================================== 
 
+------------
+
+Analytics App
+-------------
+
+================  ================================================================================================================================================================================== 
+
+Codacy            .. image:: https://api.codacy.com/project/badge/Grade/b9ed3c8e272546ceae2f8a98d13ee0f3
+                        :target: https://www.codacy.com/app/maestro/analytics-maestro?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=maestro-server/analytics-maestro&amp;utm_campaign=Badge_Grade
+
+Travis            .. image:: https://travis-ci.org/maestro-server/analytics-maestro.svg?branch=master
+                        :target: https://travis-ci.org/maestro-server/analytics-maestro
+
+CodeClimate       .. image:: https://api.codeclimate.com/v1/badges/c2272dfe465bdaea4900/maintainability
+                        :target: https://codeclimate.com/github/maestro-server/analytics-maestro/maintainability
+                        :alt: Maintainability
+                  .. image:: https://api.codeclimate.com/v1/badges/c2272dfe465bdaea4900/test_coverage
+                        :target: https://codeclimate.com/github/maestro-server/analytics-maestro/test_coverage
+                        :alt: Test Coverage
+================  ================================================================================================================================================================================== 
+
+------------
+
+Analytics Front
+---------------
+
+================  ================================================================================================================================================================================== 
+
+Codacy            .. image:: https://api.codacy.com/project/badge/Grade/0bed0f9dbff9486393e87fbe594cba1b
+                        :target: https://www.codacy.com/app/maestro/analytics-front?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=maestro-server/analytics-front&amp;utm_campaign=Badge_Grade
+
+Travis            .. image:: https://travis-ci.org/maestro-server/analytics-front.svg?branch=master
+                        :target: https://travis-ci.org/maestro-server/analytics-front
+
+CodeClimate       .. image:: https://api.codeclimate.com/v1/badges/645a6be641cb8abfaf36/maintainability
+                        :target: https://codeclimate.com/github/maestro-server/analytics-front/maintainability
+                        :alt: Maintainability
+                  .. image:: https://api.codeclimate.com/v1/badges/645a6be641cb8abfaf36/test_coverage
+                        :target: https://codeclimate.com/github/maestro-server/analytics-front/test_coverage
+                        :alt: Test Coverage
+================  ================================================================================================================================================================================== 

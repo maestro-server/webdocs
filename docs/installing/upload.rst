@@ -74,3 +74,11 @@ Env variables
 .. Note::
 
     Need to be adjusted client-app appoint new local file
+
+-------
+
+Services
+--------
+
+- Server App
+- Analytics Front

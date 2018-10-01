@@ -133,6 +133,9 @@ We recommend to use docker, if you like to see demo version, copy and execute do
             image: maestroserver/scheduler-maestro-celery
             environment:
             - "MAESTRO_DATA_URI=http://data:5010"
+            - "MAESTRO_DISCOVERY_URI=http://discovery:5000"
+            - "MAESTRO_ANALYTICS_URI=http://analytics:5020"
+            - "MAESTRO_REPORT_URI=http://reports:5005"
             - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
             depends_on:
             - rabbitmq
