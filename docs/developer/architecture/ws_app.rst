@@ -37,6 +37,7 @@ Download de repository (Centrifugal project)
 **Endpoints**
 
 Client access
+ 
 .. code-block:: javascript
     var centrifuge = new Centrifuge('ws://{server}/connection/websocket');
 
@@ -48,6 +49,7 @@ Client access
 
 
 Backend access
+
 .. code-block:: javascript
     import json
     import requests
