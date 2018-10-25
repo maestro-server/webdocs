@@ -26,3 +26,4 @@ Services relation, each service communicate by `rest` (http) calls.
    analytics
    analytics_front
    data_app
+   ws_app
