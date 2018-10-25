@@ -23,6 +23,8 @@ List of micro service:
 +----------------------+-------------------------------------------------+--------------------+
 | Data DB App          | Data layer                                      | Python 3.6, flask  | 
 +----------------------+-------------------------------------------------+--------------------+
+|WebSocket APP         | WebSocket - Events                              | Go, Centrifugo     | 
++----------------------+-------------------------------------------------+--------------------+
 
 
 Running locally
@@ -55,6 +57,7 @@ We recommend to use docker, if you like to see demo version, copy and execute do
             - "API_URL=http://localhost:8888"
             - "STATIC_URL=http://localhost:8888/static/"
             - "ANALYTICS_URL=http://localhost:9999"
+            - "WEBSOCKET_URL=ws://localhost:8000"
             depends_on:
             - server    
 
@@ -93,6 +96,7 @@ We recommend to use docker, if you like to see demo version, copy and execute do
             image: maestroserver/discovery-maestro-celery
             environment:
             - "MAESTRO_DATA_URI=http://data:5010"
+            - "MAESTRO_WEBSOCKET_URI=http://ws:8000"
             - "CELERY_BROKER_URL=amqp://rabbitmq:5672" 
             depends_on:
             - rabbitmq
@@ -113,6 +117,7 @@ We recommend to use docker, if you like to see demo version, copy and execute do
             environment:
             - "MAESTRO_REPORT_URI=http://reports:5005"
             - "MAESTRO_DATA_URI=http://data:5010"
+            - "MAESTRO_WEBSOCKET_URI=http://ws:8000"
             - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
             depends_on:
             - rabbitmq
@@ -157,6 +162,7 @@ We recommend to use docker, if you like to see demo version, copy and execute do
             environment:
             - "MAESTRO_DATA_URI=http://data:5010"
             - "MAESTRO_ANALYTICS_FRONT_URI=http://analytics_front:9999"
+            - "MAESTRO_WEBSOCKET_URI=http://ws:8000"
             - "CELERY_BROKER_URL=amqp://rabbitmq:5672" 
             - "CELERYD_MAX_TASKS_PER_CHILD=2"
             depends_on:
@@ -178,6 +184,11 @@ We recommend to use docker, if you like to see demo version, copy and execute do
             - "MAESTRO_MONGO_DATABASE=maestro-client"
             depends_on:
             - mongodb
+
+        ws:
+            image: maestroserver/websocket-maestro
+            ports:
+            - "8000:8000"
 
         rabbitmq:
             hostname: "discovery-rabbit"
