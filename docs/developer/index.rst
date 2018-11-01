@@ -13,4 +13,5 @@ This chapter will explain internal concepts about Maestro, its only matter if yo
    lint
    tests
    qa
+   third
    version

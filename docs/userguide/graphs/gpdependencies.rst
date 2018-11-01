@@ -16,3 +16,15 @@ After selected, you can select any application (will be active the app), and use
 
 
 .. image:: ../../_static/screen/dependecy2.png
+
+------------
+
+Click on app, and add to dependency
+
+.. image:: ../../_static/screen/dependecy4.png
+
+------------
+
+After create the tree, salve the tree, clicking on commit button.
+
+.. image:: ../../_static/screen/dependecy3.png
