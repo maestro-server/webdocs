@@ -29,7 +29,7 @@ msgid "Server API"
 msgstr ""
 
 #: ../../developer/api.rst:9
-msgid "Primary api, encharge by autentication, create and retrive data. `See docs server api <https://maestro-server.github.io/server-app/docs/inventory/>`_."
+msgid "Primary api, encharge by autentication, create and retrive data. `See docs server api <https://maestro-server.github.io/server-app/inventory/>`_."
 msgstr ""
 
 #: ../../developer/api.rst:18
