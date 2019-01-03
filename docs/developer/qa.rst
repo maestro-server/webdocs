@@ -176,3 +176,24 @@ CodeClimate       .. image:: https://api.codeclimate.com/v1/badges/645a6be641cb8
                         :target: https://codeclimate.com/github/maestro-server/analytics-front/test_coverage
                         :alt: Test Coverage
 ================  ================================================================================================================================================================================== 
+
+------------
+
+Audit App
+---------
+
+================  ================================================================================================================================================================================== 
+
+Codacy            .. image:: https://api.codacy.com/project/badge/Grade/4716ea50f4224175a6d6e5ebd5100974
+                        :target: https://www.codacy.com/app/maestro/audit-app?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=maestro-server/audit-app&amp;utm_campaign=Badge_Grade
+
+Travis            .. image:: https://travis-ci.org/maestro-server/audit-app.svg?branch=master
+                        :target: https://travis-ci.org/maestro-server/audit-app
+
+CodeClimate       .. image:: https://api.codeclimate.com/v1/badges/24f6cbc44944bdaf281b/maintainability
+                        :target: https://codeclimate.com/github/maestro-server/audit
+
+                  .. image:: https://api.codeclimate.com/v1/badges/24f6cbc44944bdaf281b/test_coverage
+                        :target: https://codeclimate.com/github/maestro-server/audit-app/test_coverage
+                        :alt: Test Coverage
+================  ================================================================================================================================================================================== 

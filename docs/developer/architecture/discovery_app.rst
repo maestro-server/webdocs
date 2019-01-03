@@ -35,6 +35,8 @@ If you use windows, celery havent support for windows, the last version is 3.1.2
 
 **Important topics**
 
+.. image:: ../../_static/screen/discovery_arch.png
+
 - Controller used factory dc abstract to create easy way to make CRUD in mongodb
 
 - The crawler is divided in:
@@ -48,6 +50,12 @@ If you use windows, celery havent support for windows, the last version is 3.1.2
     - **tracker:** add list entry into tracker stats
 
 	- **insert:** insert/update data in mongodb
+
+    - **audit:** prepare and transform data to be send record to external audit task
+
+    - **external_audit:** Send http request to Audit app
+
+    - **ws:** Send http notification to webscoket api
 
 	Each step have unique task.
 

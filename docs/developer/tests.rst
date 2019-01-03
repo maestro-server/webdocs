@@ -50,6 +50,12 @@ Testing use pytest
 
     python -m unittest discover
 
+================  ================================================================================================================================================================================== 
+Coveralls         .. image:: https://coveralls.io/repos/github/maestro-server/discovery-api/badge.svg?branch=master
+                        :target: https://coveralls.io/github/maestro-server/discovery-api?branch=master
+================  ================================================================================================================================================================================== 
+
+
 
 Reports APP
 -------------
@@ -62,6 +68,12 @@ Testing use pytest
 
     python -m unittest discover
 
+================  ================================================================================================================================================================================== 
+Coveralls         .. image:: https://coveralls.io/repos/github/maestro-server/report-app/badge.svg?branch=master
+                        :target: https://coveralls.io/github/maestro-server/report-app?branch=master
+================  ================================================================================================================================================================================== 
+
+
 Data Layer APP
 --------------
 
@@ -72,6 +84,12 @@ Testing use pytest
     npm run test
 
     python -m unittest discover
+
+================  ================================================================================================================================================================================== 
+Coveralls         .. image:: https://coveralls.io/repos/github/maestro-server/data-app/badge.svg?branch=master
+                        :target: https://coveralls.io/github/maestro-server/data-app?branch=master
+================  ================================================================================================================================================================================== 
+
 
 Analytics Apps
 --------------
@@ -84,6 +102,12 @@ Testing use pytest
 
     python -m unittest discover
 
+================  ================================================================================================================================================================================== 
+Coveralls         .. image:: https://coveralls.io/repos/github/maestro-server/analytics-maestro/badge.svg?branch=master
+                        :target: https://coveralls.io/github/maestro-server/analytics-maestro?branch=master
+================  ================================================================================================================================================================================== 
+
+
 Analytics Front
 ---------------
 
@@ -91,6 +115,26 @@ Testing use pytest
 
 .. code-block:: bash
 
-    npm run test
+    npm run e2e
 
-    python -m unittest discover
+================  ================================================================================================================================================================================== 
+Coveralls         .. image:: https://coveralls.io/repos/github/maestro-server/analytics-front/badge.svg?branch=master
+                        :target: https://coveralls.io/github/maestro-server/analytics-front?branch=master
+================  ================================================================================================================================================================================== 
+
+
+
+Audit App
+---------------
+
+Testing use pytest
+
+.. code-block:: bash
+
+    npm run e2e
+
+================  ================================================================================================================================================================================== 
+Coveralls         .. image:: https://coveralls.io/repos/github/maestro-server/audit-app/badge.svg?branch=master
+                        :target: https://coveralls.io/github/maestro-server/audit-app?branch=master
+================  ================================================================================================================================================================================== 
+
