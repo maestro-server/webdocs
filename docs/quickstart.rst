@@ -21,9 +21,11 @@ List of micro service:
 +----------------------+-------------------------------------------------+--------------------+
 | Analytics Front      | Analytics Front                                 | NodeJs 8.11 Kraken | 
 +----------------------+-------------------------------------------------+--------------------+
-| Data DB App          | Data layer                                      | Python 3.6, flask  | 
+| Data DB App          | Data layer                                      | Python 3.6, flask  |
 +----------------------+-------------------------------------------------+--------------------+
-|WebSocket APP         | WebSocket - Events                              | Go, Centrifugo     | 
+| Audit App            | HIstory tracker service                         | NodeJs 8.11 Kraken |
++----------------------+-------------------------------------------------+--------------------+
+| WebSocket APP        | WebSocket - Events                              | Go, Centrifugo     | 
 +----------------------+-------------------------------------------------+--------------------+
 
 
@@ -38,7 +40,7 @@ We recommend to use docker, if you like to see demo version, copy and execute do
 
 .. Note::
 
-    `Download docker-compose file <https://raw.githubusercontent.com/maestro-server/development-maestro/master/docker-compose/docker-compose.yml>`_.
+    `Download docker-compose file <https://raw.githubusercontent.com/maestro-server/infraascode-maestro/master/docker-compose/docker-compose.yml>`_.
 
 .. Warning::
 
@@ -185,6 +187,13 @@ We recommend to use docker, if you like to see demo version, copy and execute do
             depends_on:
             - mongodb
 
+        audit:
+            image: maestroserver/audit-app-maestro
+            environment:
+            - "MAESTRO_MONGO_URI=mongodb"
+            - "MAESTRO_MONGO_DATABASE=maestro-audit"
+            - "MAESTRO_DATA_URI=http://data:5010"
+
         ws:
             image: maestroserver/websocket-maestro
             ports:
@@ -216,6 +225,10 @@ We recommend to use docker, if you like to see demo version, copy and execute do
         mongodata: {}
 
 
+.. Note::
+
+    Remember to config API_URL and STATIC_URL on client app with ip/dns of your server.
+
 
 Vagrant
 -------
@@ -225,7 +238,7 @@ We have VagrantFile, its good for visualization (demo) or the best way to create
 
 .. Note::
 
-    `Download vagrantFile <https://raw.githubusercontent.com/maestro-server/development-maestro/master/vagrant/Vagrantfile>`_.
+    `Download vagrantFile <https://raw.githubusercontent.com/maestro-server/infraascode-maestro/master/vagrant/Vagrantfile>`_.
 
 
 .. Note::

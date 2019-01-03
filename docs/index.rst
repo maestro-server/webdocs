@@ -15,4 +15,5 @@ The docs its be separated into 3 parts, the first is about installation and setu
    userguide/index
    developer/index
    contrib
+   donate
    license

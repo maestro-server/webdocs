@@ -121,17 +121,20 @@ Like (PM2):
 
 **Env variables**
 
-================================== ========================== =============================== 
+================================== ========================== ============================================== 
             Env Variables                   Example                   Description                          
-================================== ========================== ===============================
+================================== ========================== ==============================================
 MAESTRO_PORT                        9999                                                   
 API_URL                             http://localhost:8888      Server app Url               
 NODE_ENV                            development|production                                 
 MAESTRO_MONGO_URI                   localhost                  DB string connection         
-MAESTRO_MONGO_DATABASE              maestro-client             Database name                  
-MAESTRO_SECRETJWT                   XXXX                       Secret key - session         
-MAESTRO_SECRETJWT_ANALYTICS         XXXX                       Secret key - analytics       
-MAESTRO_SECRETJWT_PUBLIC_ANALYTICS  XXXX                       Secret key - same server app 
+MAESTRO_MONGO_DATABASE              maestro-client             Database name   
+
+MAESTRO_SECRETJWT                   XXXX                       Secret key - server app         
+MAESTRO_SECRETJWT_PRIVATE           XXX                        Secret Key - JWT private connections       
+MAESTRO_NOAUTH                      XXX                        Secret Pass to validate private connections
+MAESTRO_SECRETJWT_PUBLIC	        XXXX	                   Secret key - same server app 
+
 AWS_ACCESS_KEY_ID                   XXXX                                                   
 AWS_SECRET_ACCESS_KEY               XXXX                                                   
 AWS_DEFAULT_REGION                  us-east-1                                              
@@ -139,4 +142,4 @@ AWS_S3_BUCKET_NAME                  maestroserver
 MAESTRO_UPLOAD_TYPE                 S3/Local                   Upload mode                  
 LOCAL_DIR                           /public/static/            Where files will be uploaded 
 PWD                                 $rootDirectory             PWD process                  
-================================== ========================== ===============================
+================================== ========================== ==============================================

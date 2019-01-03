@@ -13,13 +13,14 @@ Reports app, generate reports
 
 Reports using `Flask <http://flask.pocoo.org>`_,  and python >3.6, used Celery Beat feature to call tasks, have strong dependences with discovery app and server app, reports use a standalone MongoDB (only reports app see this db).
 
-.. image:: ../../_static/screen/reports.png
 
 **Important topics**
 
+.. image:: ../../_static/screen/reports_arch.png
+
 - Controller used factory task to organize the workflow report generetaion.
 
-- The process is divided in 4 parts
+- The process is divided
 
     - **general/pivot:** prepare and select result (communicate with discovery api)
 
@@ -27,7 +28,11 @@ Reports using `Flask <http://flask.pocoo.org>`_,  and python >3.6, used Celery B
 
     - **upload:** control flow data (throttle inserets)
 
-    - **webhook:** insert/update data in mongodb or an y endpoint
+    - **webhook:** insert/update data in mongodb or any endpoint
+
+    - **aggregation** - Execute aggregation tasks and save in report collections
+
+    - **notify** - Notify status task to websocket and audit services
 
 
 ----------
@@ -94,14 +99,22 @@ Download de repository
 ========================= ============================ ===========================================
 Env Variables                   Example                    Description         
 ========================= ============================ ===========================================
+MAESTRO_PORT			  5005						   Port used 
 MAESTRO_MONGO_URI         localhost                    Mongo Url conn
 MAESTRO_MONGO_DATABASE    maestro-reports              Db name, its differente of servers-app     
+
 MAESTRO_DATA_URI          http://localhost:5010        Data layer api
 MAESTRO_REPORT_URI        http://localhost:5005        Report api
-MAESTRO_REPORT_RESULT_QTD 200                          Limit default
-MAESTRO_TIMEOUT_DATA      10                           Timeout for data retrived
-MAESTRO_TIMEOUT_WEBHOOK   5                            Timeout for notifications
+MAESTRO_AUDIT_URI	      http://localhost:10900	   Audit App - API URL
+MAESTRO_WEBSOCKET_URI	  http://localhost:8000	       Webosocket App - API URL
+
+MAESTRO_SECRETJWT_PRIVATE XXX                          Secret Key - JWT private connections       
+MAESTRO_NOAUTH            XXX                          Secret Pass to validate private connections 
+MAESTRO_WEBSOCKET_SECRET  XXX                          Secret Key - JWT Websocket connections
+
+MAESTRO_REPORT_RESULT_QTD 1500                         Limit default
 MAESTRO_INSERT_QTD        20                           Prefetch data insert
+
 MAESTRO_GWORKERS          2                            Gworkers thread pool                         
 CELERY_BROKER_URL         amqp://rabbitmq:5672         RabbitMQ connection
 ========================= ============================ ===========================================

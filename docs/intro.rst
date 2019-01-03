@@ -12,6 +12,7 @@ You will be able to:
 - Continuously discover new servers and services of all environments
 - Powerful reports, can create a relation with servers, services, apps and clients
 - Automatically populate inventory with ansible, logging jobs, audit and cordenate multiple teams.
+- Tracking all changes of your infrastructure
 
 
 What problems does it solve?

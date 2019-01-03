@@ -41,8 +41,6 @@ Scheduler Beat App
 	Scheduler app have two parts, the producer called beat and workers, the beat its only service without prepare to setup in high availability, be carefull. It´s hard to put a beat service in HA system in a simple way, I prefer to go in simple way, to minimize, beat schedule is isolated and build in an immutable state (if fall, you call up in another server, and all schedules will be recovered), but must have only one beat instance per time. 
      
 
-
-
 Version
 -------
 
@@ -60,3 +58,5 @@ How find my version:
 - http://{analytics-maestro}:5020/
 
 - http://{analytics-front}:9999/
+
+- http://{audit}:10900/

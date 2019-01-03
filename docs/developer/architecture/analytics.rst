@@ -148,15 +148,19 @@ Download de repository
 
 **Env variables**
 
-=========================== ============================ ============================
+=========================== ============================ =============================================
 Env Variables                   Example                    Description         
-=========================== ============================ ============================    
+=========================== ============================ =============================================    
 MAESTRO_PORT                 5020                         Port
 MAESTRO_DATA_URI             http://localhost:5010        Data Layer API URL
 MAESTRO_ANALYTICS_FRONT_URI  http://localhost:9999        Analytics Front URL
-MAESTRO_SECRETJWT_ANALYTICS  xxxx                         Used with Analytics Front
-MAESTRO_NOAUTH               xxxx                         Used for post auth Front
+MAESTRO_WEBSOCKET_URI	     http://localhost:8000	      Webosocket App - API URL
+
+MAESTRO_SECRETJWT_PRIVATE    XXX                          Secret Key - JWT private connections       
+MAESTRO_NOAUTH               XXX                          Secret Pass to validate private connections 
+MAESTRO_WEBSOCKET_SECRET     XXX                          Secret Key - JWT Websocket connections
+
 MAESTRO_GWORKERS             2                            Gunicorn multi process
 CELERY_BROKER_URL            amqp://rabbitmq:5672         RabbitMQ connection
 CELERYD_TASK_TIME_LIMIT      10                           Timeout workers
-=========================== ============================ ============================
+=========================== ============================ =============================================
