@@ -10,6 +10,7 @@ Websocket system using `Centrifugo OpenSource project <https://github.com/centri
 ---------------
 
 .. image:: ../../_static/screen/arch_ws.png
+   :alt: Maestro Server - Websocket architecture
 
 **Setup dev env**
 

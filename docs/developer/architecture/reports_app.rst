@@ -10,6 +10,7 @@ Reports app, generate reports
 ----------
 
 .. image:: ../../_static/screen/microservice_arq.png
+   :alt: Maestro Server - Microservice
 
 Reports using `Flask <http://flask.pocoo.org>`_,  and python >3.6, used Celery Beat feature to call tasks, have strong dependences with discovery app and server app, reports use a standalone MongoDB (only reports app see this db).
 

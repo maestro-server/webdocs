@@ -33,6 +33,7 @@ How do I use it?
 Analysis your's full state environment of all providers do you have, centralize all information about datacenters, servers, loadbalance, orchestrations tools, volumes, vpns and etc, keep track their relations, can create complex and powerful reports, analysis costs, growing up velocity, standards services names, network configurations, available deploys for each server.
 
 .. image:: _static/screen/macro.png
+   :alt: Maestro Server - Cloud Inventory
 
 ----------------
 

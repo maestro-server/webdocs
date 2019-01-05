@@ -18,52 +18,59 @@ There are fill options to choose.
 Default
 -------
 
-.. figure:: ../_static/screen/theme_default.png
+.. image:: ../_static/screen/theme_default.png
+   :alt: Maestro Server - Lotus theme
 
-    THEME=lotus
+THEME=lotus
 
 Gold
 -------
 
-.. figure:: ../_static/screen/theme_gold.png
+.. image:: ../_static/screen/theme_gold.png
+   :alt: Maestro Server - Gold theme
 
-    THEME=gold
+THEME=gold
 
 Wine
 -------
 
-.. figure:: ../_static/screen/theme_wine.png
+.. image:: ../_static/screen/theme_wine.png
+   :alt: Maestro Server - Wine theme
 
-    THEME=wine
+THEME=wine
 
 
 Blue
 -------
 
-.. figure:: ../_static/screen/theme_blue.png
+.. image:: ../_static/screen/theme_blue.png
+   :alt: Maestro Server - Blue theme
 
-    THEME=blue
+THEME=blue
 
 Dark
 -------
 
-.. figure:: ../_static/screen/theme_dark.png
+.. image:: ../_static/screen/theme_dark.png
+   :alt: Maestro Server - Dark theme
 
-    THEME=dark
+THEME=dark
 
 
 Green
 -------
 
-.. figure:: ../_static/screen/theme_green.png
+.. image:: ../_static/screen/theme_green.png
+   :alt: Maestro Server - Green theme
 
-    THEME=green
+THEME=green
 
 Orange
 -------
 
-.. figure:: ../_static/screen/theme_orange.png
+.. image:: ../_static/screen/theme_orange.png
+   :alt: Maestro Server - Orange theme
 
-    THEME=orange
+THEME=orange
 
 

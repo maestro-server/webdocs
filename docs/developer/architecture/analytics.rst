@@ -13,6 +13,7 @@ Analytics App is a module to analytics graph and create xml of Maestro Server, y
 ----------
 
 .. image:: ../../_static/screen/analytics_internal.png
+   :alt: Maestro Server - Analytics maestro architecture
 
 Analytics using `Flask <http://flask.pocoo.org>`_,  and python >3.5, has api rest, and tasks.
 

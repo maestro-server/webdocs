@@ -1,6 +1,9 @@
 Reports
 =======
 
+.. image:: ../../_static/screen/reports_p.png
+   :alt: Maestro Server - Create reports
+
 Single table report
 -------------------
 
@@ -33,6 +36,20 @@ Pivot table reports
 
 Pivot reports, can create a relational table, relational is, client -> system -> app -> servers, you can use any type of filters in any step.
 
-.. figure:: ../../_static/screen/report_c2.png
+.. image:: ../../_static/screen/report_c2.png
+   :alt: Maestro Server - Reports
 
-    Nesting relation entities.
+Nesting relation entities.
+
+--------
+
+**Then each report have three pages**
+
+- **Charts:** Show a aggregation charts of all entities
+- **Table:** List a table data with results
+- **Info:** Show info about the report, good for debug propose
+
+.. image:: ../../_static/screen/aggr_1.png
+   :alt: Maestro Server - Create charts
+
+Result report

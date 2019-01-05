@@ -6,6 +6,7 @@ Architecture map among service dependencies and environment variable used to con
 ------------
 
 .. image:: ../_static/screen/dependecy.png
+   :alt: Maestro Server - Dependency graph
 
 +---------------+-----------------+----------------------------------------+-------------+
 | Service       | Need to see     | Context                                | Protocol    |
@@ -26,9 +27,13 @@ Architecture map among service dependencies and environment variable used to con
 +---------------+-----------------+----------------------------------------+-------------+
 | Report App    | Data App        | Update report status                   | Rest        |
 +---------------+-----------------+----------------------------------------+-------------+
+|               | Audit App       | Send any update to audit               | Rest        |
++---------------+-----------------+----------------------------------------+-------------+
 |               | WebSocket App   | Send to client any status              | WebSocket   |
 +---------------+-----------------+----------------------------------------+-------------+
 | Discovery App | Data App        |                                        | Rest        |
++---------------+-----------------+----------------------------------------+-------------+
+|               | Audit App       | Send any update to audit               | Rest        |
 +---------------+-----------------+----------------------------------------+-------------+
 |               | WebSocket App   |                                        | WebSocket   |
 +---------------+-----------------+----------------------------------------+-------------+

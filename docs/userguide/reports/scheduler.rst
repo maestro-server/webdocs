@@ -8,22 +8,25 @@ Scheduler section normally is used to automatize a polling synchronization in co
 You can list all schedules, the first column show if that schedule is enabled or disabled.
 
 
-.. figure:: ../../_static/screen/scheduler_list.png
+.. image:: ../../_static/screen/scheduler_list.png
+   :alt: Maestro Server - Scheduler list
 
-    List Scheduler
+List Scheduler
 
 ------------
 
 Details for connections schedulers, each time you create a new connection, automatically will create a lot of schedules, each schedule represents resources tracked if you like you can change the time processed of each schedule.
 
-.. figure:: ../../_static/screen/scheduler_counts.png
+.. image:: ../../_static/screen/scheduler_counts.png
+   :alt: Maestro Server - Scheduler counts
 
-    Total counts
+Total counts
 
 ------------
 
 You can create a custom schedule, normally is rest calling.
 
-.. figure:: ../../_static/screen/scheduler_create.png
-
-    Creating      
+.. image:: ../../_static/screen/scheduler_create.png
+   :alt: Maestro Server - Create scheduler
+    
+Creating      

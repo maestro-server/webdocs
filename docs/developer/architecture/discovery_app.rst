@@ -10,6 +10,7 @@ Discovery App service to connect and crawler provider
 ----------
 
 .. image:: ../../_static/screen/discovery.png
+   :alt: Maestro Server - Discovery app overview
 
 Discovery using `Flask <http://flask.pocoo.org>`_,  and python >3.5, has api rest, and tasks.
 
@@ -36,6 +37,7 @@ If you use windows, celery havent support for windows, the last version is 3.1.2
 **Important topics**
 
 .. image:: ../../_static/screen/discovery_arch.png
+   :alt: Maestro Server - Discovery architecture
 
 - Controller used factory dc abstract to create easy way to make CRUD in mongodb
 
@@ -62,6 +64,15 @@ If you use windows, celery havent support for windows, the last version is 3.1.2
 - Config is managed by env variables, need to be, because in production env like k8s is easier to manager the pods.
 
 - Repository has pymongo objects.
+
+----------
+
+**Component Diagram**
+
+Follow the component diagram to show a relation of each worker and service.
+
+.. image:: ../../_static/screen/discovery_components.png
+   :alt: Maestro Server - Component diagram
 
 ----------
 
@@ -164,10 +175,3 @@ CELERY_BROKER_URL          amqp://rabbitmq:5672          RabbitMQ connection
 CELERYD_TASK_TIME_LIMIT    10                            Timeout workers
 ========================== ============================ ==============================================
 
-----------
-
-**Component Diagram**
-
-Follow the component diagram to show a relation of each worker and service.
-
-.. image:: ../../_static/screen/discovery_components.png

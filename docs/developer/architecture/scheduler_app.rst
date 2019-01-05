@@ -15,6 +15,7 @@ Scheduler App service to manage and execute jobs
 Scheduler use apscheduler to control scheduler jobs, `Apscheduler documentation <https://apscheduler.readthedocs.io/en/latest/>`_
 
 .. image:: ../../_static/screen/scheduler.png
+   :alt: Maestro Server - Scheduler
 
 ----------    
 

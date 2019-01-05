@@ -32,3 +32,8 @@ Analytics Front API
 -------------------
 
 `See docs analytics front api <https://maestro-server.github.io/analytics-front/>`_. 
+
+Audit API
+---------
+
+`See docs audit api <https://maestro-server.github.io/audit-app/>`_. 

@@ -10,5 +10,6 @@ You can add new members and config each access role.
 ------------
 
 .. figure:: ../../_static/screen/team.png
+   :alt: Maestro Server - Teams
 
-    Form team
+Form team

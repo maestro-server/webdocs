@@ -1,11 +1,25 @@
 Auto Discovery
 ====================
 
-To setup connections in auto-discovery, go inventory > connections.
+.. image:: ../../_static/screen/conn_p.png
+   :alt: Maestro Server - Create connection
 
-.. figure:: ../../_static/screen/conn.png
+To setup new connections in auto-discovery:
 
-    Access connection
+- Create datacenters (select all regions with you like to discovery)
+- Create a connection - Select previous datacenters created and regions
+- Pass aws key and secret - Maestro need only a readyonly permission, the best pratice is, create a specific key for maestro
+
+1 - Create datacenters
+
+2 - Create connection - Go inventory > connections.
+
+.. image:: ../../_static/screen/connection.gif
+   :alt: Maestro Server - Connections
+
+Create a iam key with read only permission.
+
+Access connection
 
 In version 0.1, we have two providers:
 
@@ -40,9 +54,10 @@ To register one aws account use access_key and secret_key
 
 ------------
 
-.. figure:: ../../_static/screen/conn_aws.png
+.. image:: ../../_static/screen/conn_aws.png
+   :alt: Maestro Server - AWS Setup
 
-    Setup connection with AWS
+Setup connection with AWS
 
 ------------
 
@@ -75,9 +90,10 @@ If you like, choose how the resource will be synchronized with an active and ina
 
 ------------
 
-.. figure:: ../../_static/screen/conn_openstack.png
+.. image:: ../../_static/screen/conn_openstack.png
+   :alt: Maestro Server - OpenStack setup
 
-    Setupconnection with OpenStack
+Setupconnection with OpenStack
 
 ------------
 
@@ -88,9 +104,10 @@ If you like, choose how the resource will be synchronized with an active and ina
 
 ------------
 
-.. figure:: ../../_static/screen/conn_ena.png
+.. image:: ../../_static/screen/conn_ena.png
+   :alt: Maestro Server - Job on connection
 
-    Enable and disable the job
+Enable and disable the job
 
 ------------
 

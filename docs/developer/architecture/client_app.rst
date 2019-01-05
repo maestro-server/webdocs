@@ -41,6 +41,7 @@ Mocha / Chai / Sinon   Test, asserts and mock library.
 A single folder structure components normally use:
 
 .. image:: ../../_static/screen/client_component.png
+   :alt: Maestro Server - Vue architecture
 
 ----------
 

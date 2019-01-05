@@ -1,6 +1,9 @@
 Config / Settings
 ====================
 
+.. image:: ../../_static/screen/setting_p.png
+   :alt: Maestro Server - Configs
+
 Services
 --------
 
@@ -8,9 +11,10 @@ You can create and delete new services used in servers and apps services field, 
 
 ------------
 
-.. figure:: ../../_static/screen/service_reg.png
+.. image:: ../../_static/screen/service_reg.png
+   :alt: Maestro Server - Services
 
-    Register a new, or update service.
+Register a new, or update service.
 
 ------------
 
@@ -33,9 +37,10 @@ system_options
 
 ------------
 
-.. figure:: ../../_static/screen/rr_config.png
+.. image:: ../../_static/screen/rr_config.png
+   :alt: Maestro Server - Register new service
 
-    Maestro configs, created when run migration command.
+Maestro configs, created when run migration command.
 
 ------------
 
@@ -46,6 +51,7 @@ Regions and zones, if you like, its possible to configure and pre-define some re
 
 ------------
 
-.. figure:: ../../_static/screen/rr_1.png
+.. image:: ../../_static/screen/rr_1.png
+   :alt: Maestro Server - Register new zone
 
-    Pre-define regions and zones.
+Pre-define regions and zones.

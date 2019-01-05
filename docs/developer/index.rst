@@ -14,4 +14,5 @@ This chapter will explain internal concepts about Maestro, its only matter if yo
    tests
    qa
    third
+   cicd
    version

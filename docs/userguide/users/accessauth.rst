@@ -10,9 +10,10 @@ On profile you can update your profile.
 
 ------------
 
-.. figure:: ../../_static/screen/profile.png
+.. image:: ../../_static/screen/profile.png
+   :alt: Maestro Server - Profile fields
 
-    Profile fields
+Profile fields
 
 ------------
 
@@ -31,9 +32,10 @@ All entities in Maestro has access roles, the access role, we have, each access 
 
 ------------
 
-.. figure:: ../../_static/screen/acl.png
+.. image:: ../../_static/screen/acl.png
+   :alt: Maestro Server - Acl view
 
-    You can change any acl point for specify user or team.
+You can change any acl point for specify user or team.
 
 ------------
 
@@ -44,6 +46,7 @@ If you like to change password, you need to go on profile > change password
 
 ------------
 
-.. figure:: ../../_static/screen/newpass.png
+.. image:: ../../_static/screen/newpass.png
+   :alt: Maestro Server - New password
 
-    New pass
+New pass

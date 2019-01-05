@@ -10,6 +10,7 @@ Simple Rest API using `Flask <http://flask.pocoo.org>`_ (python) + pymongo.
 ---------------
 
 .. image:: ../../_static/screen/data.png
+   :alt: Maestro Server - Data architecture
 
 **Setup dev env**
 

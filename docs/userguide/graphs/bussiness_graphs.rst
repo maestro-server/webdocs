@@ -5,15 +5,15 @@ You can create an architecture of one or more systems, relation of each applicat
 
 To create a graph, go to Analytics > Bussiness Graph > New Graph
 
-------------
-
 .. image:: ../../_static/screen/analytics_enter.png
+   :alt: Maestro Server - Create dependency graph
 
 
 On create graph modal, have three options, create by System, by Client or by App
 
 
 .. image:: ../../_static/screen/analytics_modal1.png
+   :alt: Maestro Server - Graph modal
 
 ================  ============================================================
 by System          Will use all entry apps registered on selected system.
@@ -28,9 +28,10 @@ Entries applications
 
 Maestro use a entry applications to start create a graph tree based on deps links. Can be one and more.
 
-.. figure:: ../../_static/screen/entry_app.png
+.. image:: ../../_static/screen/entry_app.png
+   :alt: Maestro Server - Entry apps
 
-    In this example, app4 its a entry applications.
+In this example, app4 its a entry applications.
 
 
 .. Note::
@@ -45,9 +46,10 @@ Maestro use a entry applications to start create a graph tree based on deps link
 
 Filled graph name field, and starting to figure out all applications you like to set as entry point application.
 
-.. figure:: ../../_static/screen/analytics_modal2.png
+.. image:: ../../_static/screen/analytics_modal2.png
+   :alt: Maestro Server - Analytics by apps
 
-    We choose to set only app4 as entry point.
+We choose to set only app4 as entry point.
 
 ------------
 
@@ -63,18 +65,21 @@ More details - `NetworkX Graph - Density <https://networkx.github.io/documentati
 
 * **Histogram** - Total by deep dependency.
 
-.. figure:: ../../_static/screen/analytics_single.png
+.. image:: ../../_static/screen/analytics_single.png
+   :alt: Maestro Server - Single page analytics
 
-    If you like, can expand the graph.
+If you like, can expand the graph.
 
 ------------
 
 Expanded graph, you can export svg, png or shared this graph. Also, you can see each connection with mouse hover in each line.
 
 .. image:: ../../_static/screen/analytics_graph.png
+   :alt: Maestro Server - Expanded graphs
 
 ------------
 
 On shared modal, click in "see public link", this will be generate a shared link, it´s possible to embed on external tools, like Confluence.
 
 .. image:: ../../_static/screen/modal_public.png
+   :alt: Maestro Server - Setup public view

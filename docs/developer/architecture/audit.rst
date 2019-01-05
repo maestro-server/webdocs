@@ -13,11 +13,14 @@ Audit App is webapp application port of Maestro Server stack, yours responsibili
 
 We using DDD to organize the code, has infra, repositories, entities (values objects), interfaces, application, and domain, if like to learn read this article is very cool `DDD in Node Apps <https://blog.codeminer42.com/nodejs-and-good-practices-354e7d763626>`_ 
 
-.. image:: ../../_static/screen/audit_arch.png
+.. image:: ../../_static/screen/fluxo_data.png
+   :alt: Maestro Server - NodeJS DDD
 
-Server its have constructed with `KrakenJs <http://krakenjs.com/>`_, we create a lot of middleware and organize by domain.
+Audit its have constructed with `KrakenJs <http://krakenjs.com/>`_, we create a lot of middleware and organize by domain.
 
 Core API, organized by modules:
+
+.. image:: ../../_static/screen/audit_arch.png
 
 - Core
 - Audit // make diff of each request
@@ -28,8 +31,7 @@ Core API, organized by modules:
 **Installation with node**
 
     - Nodejs 8 or above
-    - MongoDB 3.4
-    - RabbitMQ
+    - MongoDB 3.x
 
 Download de repository
 

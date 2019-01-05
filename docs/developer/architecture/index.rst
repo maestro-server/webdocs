@@ -12,6 +12,7 @@ This section show a advanced configurations for each micro service.
 Services relation, each service communicate by `rest` (http) calls.
 
 .. image:: ../../_static/screen/arch_1.png
+   :alt: Maestro Server - Architecture overview
 
 ----------
 
