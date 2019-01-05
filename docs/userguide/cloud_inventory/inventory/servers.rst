@@ -65,18 +65,36 @@ Related services running.
 
 ------------
 
+**Volumes**
+
+.. image:: ../../../_static/screen/vol_1.png
+   :alt: Maestro Server - Volumes - Attached or built
+
+Can be attached or built-in:
+ 
+ - **Attached** are network storage or distributed storage service (ex: NFS)
+ 
+ - **built-in** its hard drive directly on a server (usually premise datacenters).
+
+After created you can describe a mount path, file type, size and virtual volumes configuration (if exist).
+
+.. image:: ../../../_static/screen/vol_2.png
+   :alt: Maestro Server - LVMs
+
+------------
+
 **Server Resources**
 
 Datacenters and servers have some assumption resources, and there are volumes, flavors, images, and networks.
 
 .. image:: ../../../_static/screen/volumes_p.png
    :alt: Maestro Server - Servers resources
-   
-- **Volumes**: Can be attached or built-in, attached are network storage or distributed storage service (ex: NFS), built-in its hard drive directly on a server (usually premise datacenters).
+
+- **Volumes**: List of volumes (ex: EBS, HardDisk)
 
 - **Flavors**: Datacenters information, can be public or private. 
 
-- **Images**: IMages hosted on datacenter, used for virtualization services.
+- **Images**: Images hosted on datacenter, used for virtualization services.
 
 - **Network**: depends on providers architecture, for example aws have security groups, acls, vpcs and subnets and etc.
 
