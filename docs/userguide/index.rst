@@ -28,7 +28,7 @@ Cloud Inventory
    :maxdepth: 2
 
    cloud_inventory/inventory/index
-   cloud_inventory/autodiscovery
+   cloud_inventory/autodiscovery/index
    cloud_inventory/confsettings
    cloud_inventory/history_track
 
