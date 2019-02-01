@@ -8,8 +8,6 @@ All reports have chars overview, Maestro is smart to identify with fields can be
 .. image:: ../../_static/screen/aggr.png
    :alt: Maestro Server - Charts
 
-    Reports charts
-
 ------------
 
 Applications charts
