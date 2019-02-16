@@ -24,7 +24,7 @@ Access connection
 In version 0.1, we have two providers:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    aws
    azure
