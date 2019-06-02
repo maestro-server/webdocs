@@ -50,7 +50,8 @@ Env variables
   AWS_ACCESS_KEY_ID       XXXXXXXXXX                      
   AWS_SECRET_ACCESS_KEY   XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  
   AWS_DEFAULT_REGION      us-east-1                       
-  AWS_S3_BUCKET_NAME      maestroserver                   
+  AWS_S3_BUCKET_NAME      maestroserver
+  AWS_ENDPOINT            S3 endpoint       
  ======================= ================================ 
 
  .. code-block:: yaml
@@ -74,6 +75,26 @@ Env variables
 .. Note::
 
     Need to be adjusted client-app appoint new local file
+
+Digital Ocean Spaces
+--------------------
+
+You can use Digital ocean space
+
+Env variables
+
+======================= ================================ 
+UPLOAD_TYPE             S3 
+AWS_ACCESS_KEY_ID       XXXXXXXXXX                      
+AWS_SECRET_ACCESS_KEY   XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  
+AWS_DEFAULT_REGION      us-east-1                       
+AWS_S3_BUCKET_NAME      maestroserver
+AWS_ENDPOINT            S3 endpoint       
+======================= ================================ 
+
+Endpoint can be ny3.spacesdigitalocean
+Access and secret it's create on spaces dashboard.
+AWS_DEFAULT_REGION can be ny3
 
 -------
 

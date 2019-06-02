@@ -7,6 +7,7 @@ This chapter will explain internal concepts about Maestro, its only matter if yo
    :maxdepth: 2
 
    architecture/index
+   analyticsgraph
    api/index
    servdiscovery
    tokens
