@@ -611,7 +611,14 @@ Advanced configs
 ----------------
 .. toctree::
    :maxdepth: 2
-
+ 
    smtp
    upload
    themes
+
+Deploy Kubernetes
+-----------------
+.. toctree::
+   :maxdepth: 2
+ 
+   kubernetes
