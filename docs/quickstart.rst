@@ -68,7 +68,7 @@ We recommend to use docker, if you like to see demo version, copy and execute do
             ports:
             - "8888:8888"
             environment:
-            - "MAESTRO_MONGO_URI=mongodb"
+            - "MAESTRO_MONGO_URI=mongodb://mongodb"
             - "MAESTRO_MONGO_DATABASE=maestro-client"
             - "MAESTRO_DISCOVERY_URI=http://discovery:5000"
             - "MAESTRO_ANALYTICS_URI=http://analytics:5020"
@@ -108,7 +108,7 @@ We recommend to use docker, if you like to see demo version, copy and execute do
             image: maestroserver/reports-maestro
             environment:
             - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
-            - "MAESTRO_MONGO_URI=mongodb"
+            - "MAESTRO_MONGO_URI=mongodb://mongodb"
             - "MAESTRO_MONGO_DATABASE=maestro-reports"
             depends_on:
             - rabbitmq
@@ -130,7 +130,7 @@ We recommend to use docker, if you like to see demo version, copy and execute do
             environment:
             - "MAESTRO_DATA_URI=http://data:5010"
             - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
-            - "MAESTRO_MONGO_URI=mongodb"
+            - "MAESTRO_MONGO_URI=mongodb://mongodb"
             - "MAESTRO_MONGO_DATABASE=maestro-client"
             depends_on:
             - mongodb
@@ -176,13 +176,13 @@ We recommend to use docker, if you like to see demo version, copy and execute do
             ports:
             - "9999:9999"
             environment:
-            - "MAESTRO_MONGO_URI=mongodb"
+            - "MAESTRO_MONGO_URI=mongodb://mongodb"
             - "MAESTRO_MONGO_DATABASE=maestro-client"
 
         data:
             image: maestroserver/data-maestro
             environment:
-            - "MAESTRO_MONGO_URI=mongodb"
+            - "MAESTRO_MONGO_URI=mongodb://mongodb"
             - "MAESTRO_MONGO_DATABASE=maestro-client"
             depends_on:
             - mongodb
@@ -190,7 +190,7 @@ We recommend to use docker, if you like to see demo version, copy and execute do
         audit:
             image: maestroserver/audit-app-maestro
             environment:
-            - "MAESTRO_MONGO_URI=mongodb"
+            - "MAESTRO_MONGO_URI=mongodb://mongodb"
             - "MAESTRO_MONGO_DATABASE=maestro-audit"
             - "MAESTRO_DATA_URI=http://data:5010"
 

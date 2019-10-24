@@ -121,7 +121,7 @@ Server APP
         ports:
         - "8888:8888"
         environment:
-        - "MAESTRO_MONGO_URI=mongodb"
+        - "MAESTRO_MONGO_URI=mongodb://mongodb"
         - "MAESTRO_MONGO_DATABASE=maestro-client"
         - "MAESTRO_DISCOVERY_URI=http://discovery:5000"
         - "MAESTRO_ANALYTICS_URI=http://analytics:5020"
@@ -131,7 +131,7 @@ Server APP
 .. code-block:: bash
 
     docker run -p 8888:8888  
-        -e "MAESTRO_MONGO_URI=mongodb" 
+        -e "MAESTRO_MONGO_URI=mongodb://mongodb" 
         -e "MAESTRO_MONGO_DATABASE=maestro-client" 
         -e "MAESTRO_DISCOVERY_URI=http://localhost:5000" 
         -e "MAESTRO_REPORT_URI=http://localhost:5005"
@@ -156,7 +156,7 @@ Server APP
 =================================== ========================== ============================================
  MAESTRO_PORT                        8888                                                                   
  NODE_ENV                            development|production                                                 
- MAESTRO_MONGO_URI                   localhost                  DB string connection
+ MAESTRO_MONGO_URI                   mongodb://localhost        DB string connection
  MAESTRO_MONGO_DATABASE              maestro-client             Database name
 
  MAESTRO_SECRETJWT                   XXXX                       Secret key - session                                            
@@ -261,7 +261,7 @@ Reports App
         - "5005:5005"
         environment:
         - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
-        - "MAESTRO_MONGO_URI=mongodb"
+        - "MAESTRO_MONGO_URI=mongodb://mongodb"
         - "MAESTRO_MONGO_DATABASE=maestro-reports"
 
     reports_worker:
@@ -388,7 +388,7 @@ Analytics Front
         ports:
         - "9999:9999"
         environment:
-        - "MAESTRO_MONGO_URI=mongodb"
+        - "MAESTRO_MONGO_URI=mongodb://mongodb"
         - "MAESTRO_MONGO_DATABASE=maestro-client"
 
 
@@ -399,7 +399,7 @@ Analytics Front
 .. code-block:: bash
 
     docker run -p 5005 
-        -e "MAESTRO_MONGO_URI=mongodb"
+        -e "MAESTRO_MONGO_URI=mongodb://mongodb"
         -e "MAESTRO_MONGO_DATABASE=maestro-client"
         maestroserver/analytics-front-maestro
  
@@ -442,12 +442,12 @@ Data App
         ports:
         - "5010:5010"
         environment:
-            - "MAESTRO_MONGO_URI=mongodb"
+            - "MAESTRO_MONGO_URI=mongodb://mongodb"
             - "MAESTRO_MONGO_DATABASE=maestro-client"
 
 .. code-block:: bash
 
-    docker run -p 5010 -e "MAESTRO_MONGO_URI=mongodb" -e "MAESTRO_MONGO_DATABASE=maestro-client" maestroserver/data-maestro
+    docker run -p 5010 -e "MAESTRO_MONGO_URI=mongodb://mongodb" -e "MAESTRO_MONGO_DATABASE=maestro-client" maestroserver/data-maestro
 
 **Env variables**
 
@@ -476,7 +476,7 @@ Scheduler App
         environment:
         - "MAESTRO_DATA_URI=http://data:5010"
         - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
-        - "MAESTRO_MONGO_URI=mongodb"
+        - "MAESTRO_MONGO_URI=mongodb://mongodb"
         - "MAESTRO_MONGO_DATABASE=maestro-client"
 
     scheduler_worker:
@@ -537,7 +537,7 @@ Audit App
         ports:
         - "10900:10900"
         environment:
-        - "MAESTRO_MONGO_URI=mongodb"
+        - "MAESTRO_MONGO_URI=mongodb://mongodb"
         - "MAESTRO_MONGO_DATABASE=maestro-audit"
         - "MAESTRO_DATA_URI=http://data:5010"
 
@@ -548,7 +548,7 @@ Audit App
 .. code-block:: bash
 
     docker run -p 10900 
-        -e "MAESTRO_MONGO_URI=mongodb"
+        -e "MAESTRO_MONGO_URI=mongodb://mongodb"
         -e "MAESTRO_MONGO_DATABASE=maestro-audit"
         maestroserver/audit-app-maestro
  
