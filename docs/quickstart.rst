@@ -230,6 +230,8 @@ We recommend to use docker, if you like to see demo version, copy and execute do
     Remember to config API_URL and STATIC_URL on client app with ip/dns of your server.
 
 
+-----------------
+
 Vagrant
 -------
 
@@ -248,3 +250,15 @@ We have VagrantFile, its good for visualization (demo) or the best way to create
     If your necessity is, HA, critical situation, go in `Ha session`__.
 
     __ installing/production.html
+
+-----------------
+
+Kubernetes
+-----------------
+
+You can use kubernetes to run maestro server.
+
+.. toctree::
+   :maxdepth: 1
+ 
+   ../installing/kubernetes

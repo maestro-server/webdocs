@@ -171,5 +171,6 @@ Like (PM2):
  AWS_S3_BUCKET_NAME                  maestroserver              Bucket name                                            
  MAESTRO_UPLOAD_TYPE                 S3 or Local                Upload mode                                 
  LOCAL_DIR                           /public/static/            Where files will be uploaded
+ AWS_ENDPOINT                        ny3.spacesdigitalocean     S3 endpoint  
  PWD                                 $rootDirectory             PWD process
 =================================== ========================== ============================================

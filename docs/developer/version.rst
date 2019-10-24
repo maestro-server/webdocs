@@ -3,14 +3,6 @@ Versions
 
 Microservices compatible versions
 
-------------
-
-v0.5x - Omega
--------------
-
-================  ===========
-Admin             0.5.x
-================  ===========
 
 ------------
 
