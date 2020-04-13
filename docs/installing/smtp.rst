@@ -1,7 +1,13 @@
 SMTP Config
 ===========
 
-To set up smtp, you need to declare some envrioment inside server-app
+**Services**
+
+- server
+
+---------
+
+To configure the smtp, go to server api.
 
 +---------------+-------------------------+------------------------------------------------------+
 | SMTP_PORT     | 465                     |                                                      |
@@ -23,24 +29,15 @@ Example
 
 .. code-block:: yaml
 
-    version: '2'
-
     services:
-    server:
-        image: maestroserver/server-maestro
-        ports:
-        - "8888:8888"
-        environment:
-        - SMTP_PORT=465
-        - SMTP_HOST=smtp.gmail.com
-        - SMTP_SENDER='mysender@gmail.com'
-        - SMTP_USERNAME=myusername
-        - SMTP_PASSWORD=mysecret
-        - SMTP_USETSL=true
-
--------
-
-Services
---------
-
-- Server App
+        server:
+            image: maestroserver/server-maestro
+            ports:
+            - "8888:8888"
+            environment:
+            - SMTP_PORT=465
+            - SMTP_HOST=smtp.gmail.com
+            - SMTP_SENDER='mysender@gmail.com'
+            - SMTP_USERNAME=myusername
+            - SMTP_PASSWORD=mysecret
+            - SMTP_USETSL=true

@@ -1,264 +1,148 @@
 Quick Start
 ====================
-Get Maestro up in just a few minutes, we recommend to use docker, but if you like to install direcly read the installation section.
-
-Overview
-------------
-List of micro service:
-
-+----------------------+-------------------------------------------------+--------------------+
-| Client App           | FrontEnd client                                 | Vue2 + Bootstrap 3 | 
-+----------------------+-------------------------------------------------+--------------------+
-| Server App           | Primary API, authetication, crud and manager    | NodeJs 8.11 Kraken |
-+----------------------+-------------------------------------------------+--------------------+
-| Discovery App        | Auto discovery and crawlers                     | Python 3.6, flask  | 
-+----------------------+-------------------------------------------------+--------------------+
-| Scheduler App        | Jobs manager with celery beat                   | Python 3.6, celery | 
-+----------------------+-------------------------------------------------+--------------------+
-| Reports App          | Reports generetor                               | Python 3.6, flask  | 
-+----------------------+-------------------------------------------------+--------------------+
-| Analytics App        | Analytics Maestro - Graphs Generator            | Python 3.6, flask  | 
-+----------------------+-------------------------------------------------+--------------------+
-| Analytics Front      | Analytics Front                                 | NodeJs 8.11 Kraken | 
-+----------------------+-------------------------------------------------+--------------------+
-| Data DB App          | Data layer                                      | Python 3.6, flask  |
-+----------------------+-------------------------------------------------+--------------------+
-| Audit App            | HIstory tracker service                         | NodeJs 8.11 Kraken |
-+----------------------+-------------------------------------------------+--------------------+
-| WebSocket APP        | WebSocket - Events                              | Go, Centrifugo     | 
-+----------------------+-------------------------------------------------+--------------------+
-
+To get Maestro up and running in just a few minutes, we recommend to use standalone docker.
 
 Running locally
----------------
-We recommend to use docker, if you like to see demo version, copy and execute docker-compose below, you need to change only two variable in client-app, url, and port.
+***************
+You can use a standalone docker to spin up a single maestro instance.
 
-.. Note::
-    PS: Docker will be created and manager all networks and communication between services.
-    
-    PS: The containers its prepared for run in production ready, but its recommend to create a separate database environment and export the volume (remember all storage inside of docker its temporary)
+.. code-block:: bash
 
-.. Note::
+    docker run -p 80:80 -p 8888:8888 -p 8000:8000 -p 9999:9999 maestroserver/standalone-maestro
 
-    `Download docker-compose file <https://raw.githubusercontent.com/maestro-server/infraascode-maestro/master/docker-compose/docker-compose.yml>`_.
 
-.. Warning::
+- You need to expose ports **80**, **8888**, **8000** and **9999**
+- Access Maestro by browser over 80 port.
 
-    This is quickstart, it's a docker compose to setup fast in local machines, if you like to install in production env, go to installing guide. 
+Persistent data
+***************
+
+Docker have a empheral disk, with means if you remove the container all data will be lost. You can handle it making volumes, the list of folder it need to export are:
+
+- **/data/db:** It is all data recorded on mongo db.
+- **/data/server-app/public/:** Profile images uploaded
+- **/data/analytics-front/public:** Architecture artifcats exposed externally.
+
+.. code-block:: bash
+
+    mkdir ./db ./server/public ./analytics/public
+
+    docker run 
+    -v ./db:/data/db
+    -v ./server/public:/data/server-app/public/
+    -v ./analytics/public:/data/analytics-front/public
+    maestroserver/standalone-maestro
+
+
+Using external Database
+***********************
+
+It recommend to spin up a mongodb externally, it uses `MAESTRO_MONGO_URI` env variable.
+
+=================================== ========================== =======================================================
+ Env Variables                       Default                    Description                          
+ MAESTRO_MONGO_URI                   mongodb://localhost:27017  Can be mongodb or mongo+srv://
+=================================== ========================== =======================================================
+
+ .. code-block:: bash
+
+    docker run 
+        -p 80:80 
+        -p 8888:8888 
+        -p 8000:8000 
+        -p 9999:9999 
+        -e MAESTRO_MONGO_URI=mongodb://external.mongo.com:27017 
+        maestroserver/standalone-maestro
+
+You can replace the db name setting the `MAESTRO_MONGO_DATABASE` env var.
+
+=================================== ========================== =======================================================
+ Env Variables                       Default                    Description                          
+ MAESTRO_MONGO_DATABASE              maestro-client             Database name
+=================================== ========================== =======================================================
+
+Using external RabbitMQ
+***********************
+
+You can spin up a rabbitmq externally, it uses `CELERY_BROKER_URL` env variable.
+
+=================================== ========================== =======================================================
+ Env Variables                       Default                    Description                          
+ CELERY_BROKER_URL                   amqp://localhost:5672      Amqp endpoint
+=================================== ========================== =======================================================
+
+ .. code-block:: bash
+
+    docker run 
+        -p 80:80 
+        -p 8888:8888 
+        -p 8000:8000 
+        -p 9999:9999 
+        -e CELERY_BROKER_URL=amqp://external.rabbitmq.com:5672
+        maestroserver/standalone-maestro
+
+
+Using S3 to store files
+***********************
+
+You can use S3 Amazon storage object service to store artifacts and profiles images.
+
+Env variables
+
+ ======================= ================================ 
+  UPLOAD_TYPE             S3 
+  AWS_ACCESS_KEY_ID       XXXXXXXXXX                      
+  AWS_SECRET_ACCESS_KEY   XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  
+  AWS_DEFAULT_REGION      us-east-1                       
+  AWS_S3_BUCKET_NAME      maestroserver   
+ ======================= ================================ 
+
+ .. code-block:: yaml
+
+    docker run 
+        -e AWS_ACCESS_KEY_ID='XXXXXXXXXX'
+        -e AWS_SECRET_ACCESS_KEY='XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
+        -e AWS_DEFAULT_REGION='us-east-1'  
+        maestroserver/standalone-maestro
+
+Complete docker compose
+***********************
 
 .. code-block:: yaml
 
-    version: '2'
-
     services:
-        client:
-            image: maestroserver/client-maestro
+        maestro:
+            image: maestroserver/standalone-maestro
             ports:
-            - "80:80"
-            environment:
-            - "API_URL=http://localhost:8888"
-            - "STATIC_URL=http://localhost:8888/static/"
-            - "ANALYTICS_URL=http://localhost:9999"
-            - "WEBSOCKET_URL=ws://localhost:8000"
-            depends_on:
-            - server    
-
-        server:
-            image: maestroserver/server-maestro
-            ports:
-            - "8888:8888"
-            environment:
-            - "MAESTRO_MONGO_URI=mongodb://mongodb"
-            - "MAESTRO_MONGO_DATABASE=maestro-client"
-            - "MAESTRO_DISCOVERY_URI=http://discovery:5000"
-            - "MAESTRO_ANALYTICS_URI=http://analytics:5020"
-            - "MAESTRO_ANALYTICS_FRONT_URI=http://analytics_front:9999"
-            - "MAESTRO_REPORT_URI=http://reports:5005"
-            - "SMTP_PORT=25"
-            - "SMTP_HOST=maildev"
-            - "SMTP_SENDER=myemail@gmail.com"
-            - "SMTP_IGNORE=true"
-            depends_on:
-            - mongodb
-            - discovery
-            - reports 
-
-        discovery:
-            image: maestroserver/discovery-maestro
-            ports:
-            - "5000:5000"
-            environment:
-            - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
-            - "MAESTRO_DATA_URI=http://data:5010"
-            depends_on:
-            - rabbitmq
-            - data
-
-        discovery_worker:
-            image: maestroserver/discovery-maestro-celery
-            environment:
-            - "MAESTRO_DATA_URI=http://data:5010"
-            - "MAESTRO_WEBSOCKET_URI=http://ws:8000"
-            - "CELERY_BROKER_URL=amqp://rabbitmq:5672" 
-            depends_on:
-            - rabbitmq
-            - data
-
-        reports:
-            image: maestroserver/reports-maestro
-            environment:
-            - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
-            - "MAESTRO_MONGO_URI=mongodb://mongodb"
-            - "MAESTRO_MONGO_DATABASE=maestro-reports"
-            depends_on:
-            - rabbitmq
-            - mongodb
-
-        reports_worker:
-            image: maestroserver/reports-maestro-celery
-            environment:
-            - "MAESTRO_REPORT_URI=http://reports:5005"
-            - "MAESTRO_DATA_URI=http://data:5010"
-            - "MAESTRO_WEBSOCKET_URI=http://ws:8000"
-            - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
-            depends_on:
-            - rabbitmq
-            - data
-
-        scheduler:
-            image: maestroserver/scheduler-maestro
-            environment:
-            - "MAESTRO_DATA_URI=http://data:5010"
-            - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
-            - "MAESTRO_MONGO_URI=mongodb://mongodb"
-            - "MAESTRO_MONGO_DATABASE=maestro-client"
-            depends_on:
-            - mongodb
-            - rabbitmq
-
-        scheduler_worker:
-            image: maestroserver/scheduler-maestro-celery
-            environment:
-            - "MAESTRO_DATA_URI=http://data:5010"
-            - "MAESTRO_DISCOVERY_URI=http://discovery:5000"
-            - "MAESTRO_ANALYTICS_URI=http://analytics:5020"
-            - "MAESTRO_REPORT_URI=http://reports:5005"
-            - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
-            depends_on:
-            - rabbitmq
-            - data  
-
-        analytics:
-            image: maestroserver/analytics-maestro
-            ports:
-            - "5020:5020"
-            environment:
-            - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
-            - "MAESTRO_DATA_URI=http://data:5010"
-            depends_on:
-            - rabbitmq
-            - data
-
-        analytics_worker:
-            image: maestroserver/analytics-maestro-celery
-            environment:
-            - "MAESTRO_DATA_URI=http://data:5010"
-            - "MAESTRO_ANALYTICS_FRONT_URI=http://analytics_front:9999"
-            - "MAESTRO_WEBSOCKET_URI=http://ws:8000"
-            - "CELERY_BROKER_URL=amqp://rabbitmq:5672" 
-            - "CELERYD_MAX_TASKS_PER_CHILD=2"
-            depends_on:
-            - rabbitmq
-            - data
-
-        analytics_front:
-            image: maestroserver/analytics-front-maestro
-            ports:
-            - "9999:9999"
-            environment:
-            - "MAESTRO_MONGO_URI=mongodb://mongodb"
-            - "MAESTRO_MONGO_DATABASE=maestro-client"
-
-        data:
-            image: maestroserver/data-maestro
-            environment:
-            - "MAESTRO_MONGO_URI=mongodb://mongodb"
-            - "MAESTRO_MONGO_DATABASE=maestro-client"
-            depends_on:
-            - mongodb
-
-        audit:
-            image: maestroserver/audit-app-maestro
-            environment:
-            - "MAESTRO_MONGO_URI=mongodb://mongodb"
-            - "MAESTRO_MONGO_DATABASE=maestro-audit"
-            - "MAESTRO_DATA_URI=http://data:5010"
-
-        ws:
-            image: maestroserver/websocket-maestro
-            ports:
-            - "8000:8000"
-
-        rabbitmq:
-            hostname: "discovery-rabbit"
-            image: rabbitmq:3-management
-            ports:
-            - "15672:15672"
-            - "5672:5672"
-            
-        mongodb:
-            image: mongo
+            - 80:80 
+            - 8888:8888 
+            - 8000:8000 
+            - 9999:9999
             volumes:
-            - mongodata:/data/db
-            ports:
-            - "27017:27017"
-
-        maildev:
-            image: djfarrelly/maildev
-            mem_limit: 80m
-            ports:
-            - "1025:25"
-            - "1080:80"
-
-
-    volumes:
-        mongodata: {}
-
+            - ./db:/data/db
+            - ./server/public:/data/server-app/public/
+            - ./artifacts:/data/artifacts
+            - ./analytics/public:/data/analytics-front/public
+            environment:
+            - AWS_ACCESS_KEY_ID='XXXXXXXXXX'
+            - AWS_SECRET_ACCESS_KEY='XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
+            - AWS_DEFAULT_REGION='us-east-1'
+            - MAESTRO_MONGO_URI=mongodb://external.mongo.com:27017
 
 .. Note::
 
-    Remember to config API_URL and STATIC_URL on client app with ip/dns of your server.
-
-
------------------
-
-Vagrant
--------
-
-We have VagrantFile, its good for visualization (demo) or the best way to create a development environment.
-
+    Standalone dockers use same env vars found it in all service.
 
 .. Note::
 
-    `Download vagrantFile <https://raw.githubusercontent.com/maestro-server/infraascode-maestro/master/vagrant/Vagrantfile>`_.
+    Standalone uses supervisord to manage all services inside of one docker, if you like to spin up one docker per service, go to `installation <http://docs.maestroserver.io/en/latest/installing/>`__.
 
+Installation guide
+******************
 
-.. Note::
-
-    **HA - High availability and critical system**
-
-    If your necessity is, HA, critical situation, go in `Ha session`__.
-
-    __ installing/production.html
-
------------------
-
-Kubernetes
------------------
-
-You can use kubernetes to run maestro server.
+If you like to deep dive on Maestro installation, be able to run containers in multiple instances, high availability and more, go to:
 
 .. toctree::
    :maxdepth: 1
  
-   ../installing/kubernetes
+   ../installing/index

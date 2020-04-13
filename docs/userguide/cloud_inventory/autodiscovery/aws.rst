@@ -1,4 +1,4 @@
-Connectiong with AWS
+Connect with AWS
 ====================
 
 To register one aws account use access_key and secret_key

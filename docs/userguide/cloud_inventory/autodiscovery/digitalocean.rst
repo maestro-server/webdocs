@@ -1,4 +1,4 @@
-Connectiong with Digital Ocean
+Connect with Digital Ocean
 ==============================
 
 To register one application token.

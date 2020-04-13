@@ -1,5 +1,12 @@
-Upload Config
-=============
+Using external store engine as S3
+=================================
+
+**Services**
+
+- server
+- analytics_front
+
+---------
 
 You can choose two mode to upload the files, a local file or using S3 to storage direcly.
 
@@ -95,11 +102,3 @@ AWS_ENDPOINT            S3 endpoint
 Endpoint can be ny3.spacesdigitalocean
 Access and secret it's create on spaces dashboard.
 AWS_DEFAULT_REGION can be ny3
-
--------
-
-Services
---------
-
-- Server App
-- Analytics Front

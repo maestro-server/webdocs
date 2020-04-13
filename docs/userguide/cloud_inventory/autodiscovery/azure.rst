@@ -1,4 +1,4 @@
-Connectiong with Azure
+Connect with Azure
 ======================
 
 To register use client id, tenant id, subscription id and secret token

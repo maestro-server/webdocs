@@ -26,7 +26,8 @@ by App             Will use these applications as entry application.
 Entries applications
 --------------------
 
-Maestro use a entry applications to start create a graph tree based on deps links. Can be one and more.
+Entry points are root access of the system represented as applications, can be cdns, proxies and loadbalances, vpns, file systems and webservices. Entry point it's used as a start point to make de dependency graph of the system.
+You can set entries apps on system edit page or using a dependency tree wizard.
 
 .. image:: ../../_static/screen/entry_app.png
    :alt: Maestro Server - Entry apps
@@ -53,7 +54,7 @@ We choose to set only app4 as entry point.
 
 ------------
 
-After some seconds all map its create, you can see density, total conections, histograms, all clients, systems and applications linked and the graph inself.
+You can analyses density, total conections, histograms, all clients, systems and applications linked and the architecture map.
 
 * **Density** - The density for undirected graphs is \[d = \frac{m}{n(n-1)},\] where \(n\) is the number of nodes and \(m\) is the number of edges in \(G\).
 

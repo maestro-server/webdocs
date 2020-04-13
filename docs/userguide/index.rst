@@ -39,7 +39,6 @@ Graphs - Architecture maps
 .. toctree::
    :maxdepth: 2
 
-   graphs/entry_points
    graphs/gpdependencies
    graphs/bussiness_graphs
 
