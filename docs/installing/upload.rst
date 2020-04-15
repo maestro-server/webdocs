@@ -27,7 +27,7 @@ Env variables
 
  ============= ================ 
   UPLOAD_TYPE   Local        
-  LOCAL_DIR     public/static/ 
+  LOCAL_DIR     /public/static/ 
  ============= ================ 
 
  .. code-block:: yaml
@@ -37,7 +37,7 @@ Env variables
         image: maestroserver/server-maestro
         environment:
         - UPLOAD_TYPE=Local
-        - LOCAL_DIR=public/static/
+        - LOCAL_DIR=/public/static/
 
     client:
         image: maestroserver/client-maestro
@@ -81,7 +81,7 @@ Env variables
     client:
         image: maestroserver/client-maestro
         environment:
-        - STATIC_URL='https://maestroserver.s3.aws.com.br/'
+        - STATIC_URL='https://{my_aws_endpoint}.s3.aws.com.br/{mybucketname}/'
 
 
 .. Note::
