@@ -7,7 +7,7 @@ SMTP Config
 
 ---------
 
-To configure the smtp, go to server api.
+You can use a external smtp service as SendGrid, Aws ses and more. Go to server application and set:
 
 +---------------+-------------------------+------------------------------------------------------+
 | SMTP_PORT     | 465                     |                                                      |

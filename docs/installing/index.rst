@@ -173,6 +173,8 @@ We use docker to spin up a new maestro bundle, you can copy and execute docker-c
             image: maestroserver/analytics-front-maestro
             ports:
             - "9999:9999"
+            volumes:
+            - artifacts_analytics:/data/artifacts/
             environment:
             - "MAESTRO_MONGO_URI=mongodb://mongodb"
             - "MAESTRO_MONGO_DATABASE=maestro-client"
@@ -222,13 +224,16 @@ We use docker to spin up a new maestro bundle, you can copy and execute docker-c
     volumes:
         mongodata: {}
         artifacts_server: {}
+        artifacts_analytics: {}
 
 --------
 
 Spin up the API server in a different server    
 ********************************************
 
-By default the client server uses the domain name to connect into server api, websocket and analytics front api; However if you like to switch this configuration you can use env vars the specific all endpoints.
+By default the client server uses the same domain name to connect into server api, websocket and analytics front api; However if you like to switch this configuration you can use env vars the specific all endpoints.
+
+By default access the client by ``//example.maestro``, the client will try to access the server api by ``//example.maestro:8888``, the analytic front by ``//example.maestro:9999`` and the websocket by ``ws(s)//example.maestro:8000``
 
 .. code-block:: yaml
 
@@ -237,7 +242,7 @@ By default the client server uses the domain name to connect into server api, we
             image: maestroserver/client-maestro
             environment:
             - "API_URL=http://server.api.endpoint:8888"
-            - "STATIC_URL=http://server.api.endpoint:8888/static/"
+            - "STATIC_URL=http://server.api.endpoint:8888/static/" # <- It need to have the slash
             - "ANALYTICS_URL=http://analytics.front.endpoint:9999"
             - "WEBSOCKET_URL=ws://websocket.endpoint:8000"
 

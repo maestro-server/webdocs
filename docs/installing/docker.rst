@@ -5,11 +5,11 @@ High Architecture
 
 -----------------
 
-We have docker compose file with all services (download here), this is the easy way to install Maestro, if you like can install in a pure way (we did a doc show each step to install without docker, see here Developer Guide).
+We have docker compose file with all services (download here), this is the easy way to install Maestro, to install in a pure way (we did a doc show each step to install without docker, see here Developer Guide).
 
-This section will show installation briefing for each service.
+This section will deep dive over configurations for each service.
 
-First: A minimun installation can be done with:
+A minimun installation can be done with:
 
 ..
 
@@ -17,9 +17,9 @@ First: A minimun installation can be done with:
     * Server App
     * MongoDB
 
-You can setup and use a minimun installation, you can create and delete servers, apps, datacenters, change acl and create new users, with these you have a simple inventory system.
+You can create and delete servers, apps, datacenters, change acl and create new users, this setup offer a simple inventory system.
 
-If you like to use a synchronous features with AWS or other providers, then you need:
+To use a synchronous discovery features with AWS and/or other providers, do you need:
 
 ..
 
@@ -27,13 +27,13 @@ If you like to use a synchronous features with AWS or other providers, then you 
     * Data App
     * RabbitMq
 
-Or use auto-discovery feature, will polling and maintain or inventory synchronous, then:
+To have a auto update over discovery you need to install the scheduler app.
 
 ..
 
     * Scheduler App 
 
-If you like to create and export reports then:
+To create and export reports you need to have the reports app installed:
 
 ..
 
@@ -42,7 +42,7 @@ If you like to create and export reports then:
     * RabbitMq
 
 
-Create bussiness analytics graphs, public and shared these maps, need:
+To create a bussiness analytics graphs, public and shared these maps, you need to install these apps:
 
 ..
 
@@ -52,17 +52,11 @@ Create bussiness analytics graphs, public and shared these maps, need:
     * RabbitMq
 
 
-And if you like to tracking history and smart update beetween entities, should install:
+And if you like to tracking history, you should install:
 
 ..
 
     * Audit App
-
-And if you need to manage all data, create and reset passwords, privilege admin stuffs, use:
-
-..
-
-    * Admin App
 
 
 Let´s start

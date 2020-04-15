@@ -38,6 +38,15 @@ cd docs/
 make html
 ```
 
+
+You can use a simple python http server to visualize the content, as example:
+
+```bash
+cd docs/_build/html/
+python3 -m http.server 7777
+```
+
+
 ### Contribute ###
 
 Are you interested in developing Maestro Server, creating new features or extending them?

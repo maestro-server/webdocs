@@ -8,7 +8,6 @@ Creating secrets files
 First step it's create 4 secrets files (secrets/)
 
 - mongo_srv.txt
-- mongo_uri.txt
 - smtp.txt
 - storage.txt
 
@@ -18,7 +17,6 @@ And populate accordlingly, running
 
    kubectl create secret generic smtp --from-env-file secrets/smtp.txt
    kubectl create secret generic mongo_srv --from-env-file secrets/mongo_srv.txt
-   kubectl create secret generic mongo_uri --from-env-file secrets/mongo_uri.txt
    kubectl create secret generic storage --from-env-file secrets/storage.txt
 
 **storage.txt**
@@ -29,12 +27,6 @@ And populate accordlingly, running
 	AWS_SECRET_ACCESS_KEY=
 	AWS_DEFAULT_REGION=
 	AWS_S3_BUCKET_NAME=
-
-**mongo_uri.txt**
-
-.. code-block:: bash
-
-	MAESTRO_MONGO_URI=mongo://mongodb:27017
 
 **mongo_srv.txt**
 
@@ -61,7 +53,6 @@ To check if everything it's ok run
 
 	NAME                  TYPE                                  DATA      AGE
 	mongosrv              Opaque                                1         24d
-	mongouri              Opaque                                1         24d
 	smtp                  Opaque                                6         18d
 	storage               Opaque                                4         17d
 

@@ -10,24 +10,24 @@ Using external store engine as S3
 
 You can choose two mode to upload the files, a local file or using S3 to storage direcly.
 
-Where need to configure an upload file manage:
+The Maestro uses an upload system in two points:
 
 +---------------+-----------------------------------------------------------+
 | server-app    | Using in avatar users, teams and projects images.         |
 +---------------+-----------------------------------------------------------+
-| discovery app | Using to store report artifact, like pdfs, csv and jsons. |
+| analytics app | To store artifacts such as graphs, svgs and pngs          |
 +---------------+-----------------------------------------------------------+
 
 Local
 -----
 
-For a single node, the file will be stored in local disk.
+For a single node, the file will be stored on a local disk.
 
 Env variables
 
  ============= ================ 
   UPLOAD_TYPE   Local        
-  LOCAL_DIR     /upload  
+  LOCAL_DIR     public/static/ 
  ============= ================ 
 
  .. code-block:: yaml
@@ -37,18 +37,23 @@ Env variables
         image: maestroserver/server-maestro
         environment:
         - UPLOAD_TYPE=Local
-        - LOCAL_DIR=/upload
+        - LOCAL_DIR=public/static/
 
     client:
         image: maestroserver/client-maestro
         environment:
-        - STATIC_URL='http://server-app:8888/static'
+        - STATIC_URL='http://server-app:8888/static/'
 
+.. Note::
+
+    These are the default configuration, you don't need to declare these values.
+
+------
 
 AWS S3
 ------
 
-You can use S3 Amazon storage object service, perfectly for HA environments
+You can use S3 Amazon storage object service to store an uploaded file.
 
 Env variables
 
@@ -76,17 +81,19 @@ Env variables
     client:
         image: maestroserver/client-maestro
         environment:
-        - STATIC_URL='http://maestroserver.s3.aws.com.br'
+        - STATIC_URL='https://maestroserver.s3.aws.com.br/'
 
 
 .. Note::
 
-    Need to be adjusted client-app appoint new local file
+    It Need to be adjusted the ``STATIC_URL`` endpoint on client-app.
+
+-------
 
 Digital Ocean Spaces
 --------------------
 
-You can use Digital ocean space
+You can use Digital ocean space, they uses the same S3 protocol, but rather than AWS you need to set ``AWS_ENDPOINT``. 
 
 Env variables
 
@@ -99,6 +106,6 @@ AWS_S3_BUCKET_NAME      maestroserver
 AWS_ENDPOINT            S3 endpoint       
 ======================= ================================ 
 
-Endpoint can be ny3.spacesdigitalocean
-Access and secret it's create on spaces dashboard.
-AWS_DEFAULT_REGION can be ny3
+- Endpoint can be ny3.spacesdigitalocean
+- Access and secret can be get on spaces dashboard.
+- AWS_DEFAULT_REGION can be ny3

@@ -12,7 +12,7 @@ Using external Database
 
 ---------
 
-It recommend to spin up a mongodb externally, it uses `MAESTRO_MONGO_URI` env variable.
+It recommend to spin up a mongodb externally, it uses ``MAESTRO_MONGO_URI`` env variable.
 
 =================================== ========================== =======================================================
  Env Variables                       Default                    Description                          
@@ -38,7 +38,7 @@ It recommend to spin up a mongodb externally, it uses `MAESTRO_MONGO_URI` env va
         image: maestroserver/scheduler-maestro
         environment:
         - "MAESTRO_MONGO_URI=mongodb://{external.mongo.url}"
-        - "MAESTRO_MONGO_DATABASE=maestro-client" # <------ It need to be the same db of servert-api
+        - "MAESTRO_MONGO_DATABASE=maestro-scheduler"
 
     analytics_front:
         image: maestroserver/analytics-front-maestro
@@ -60,7 +60,7 @@ It recommend to spin up a mongodb externally, it uses `MAESTRO_MONGO_URI` env va
 
 
 
-You can replace the db name setting the `MAESTRO_MONGO_DATABASE` env var.
+You can replace the db name setting the ``MAESTRO_MONGO_DATABASE`` env var.
 
 =================================== ========================== =======================================================
  Env Variables                       Default                    Description                          

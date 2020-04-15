@@ -37,7 +37,7 @@ Docker have a empheral disk, with means if you remove the container all data wil
 Using external Database
 ***********************
 
-It recommend to spin up a mongodb externally, it uses `MAESTRO_MONGO_URI` env variable.
+It recommend to spin up a mongodb externally, it uses ``MAESTRO_MONGO_URI`` env variable.
 
 =================================== ========================== =======================================================
  Env Variables                       Default                    Description                          
@@ -54,7 +54,7 @@ It recommend to spin up a mongodb externally, it uses `MAESTRO_MONGO_URI` env va
         -e MAESTRO_MONGO_URI=mongodb://external.mongo.com:27017 
         maestroserver/standalone-maestro
 
-You can replace the db name setting the `MAESTRO_MONGO_DATABASE` env var.
+You can replace the db name setting the ``MAESTRO_MONGO_DATABASE`` env var.
 
 =================================== ========================== =======================================================
  Env Variables                       Default                    Description                          
@@ -108,6 +108,30 @@ Env variables
 Complete docker compose
 ***********************
 
+Minimal setup
+
+.. code-block:: yaml
+
+    services:
+        maestro:
+            image: maestroserver/standalone-maestro
+            ports:
+            - 80:80
+            - 8888:8888
+            - 8000:8000 
+            - 9999:9999
+            volumes:
+            - mongodb:/data/db
+            - artifacts_server:/data/server-app/public/
+            - artifacts_analytics:/data/artifacts
+    volumes:
+        mongodata: {}
+        artifacts_server: {}
+        artifacts_analytics: {}
+
+
+Reliable setup using the standalone docker, a mongodb, smtp and store file setted externally.
+
 .. code-block:: yaml
 
     services:
@@ -118,16 +142,17 @@ Complete docker compose
             - 8888:8888 
             - 8000:8000 
             - 9999:9999
-            volumes:
-            - ./db:/data/db
-            - ./server/public:/data/server-app/public/
-            - ./artifacts:/data/artifacts
-            - ./analytics/public:/data/analytics-front/public
             environment:
             - AWS_ACCESS_KEY_ID='XXXXXXXXXX'
             - AWS_SECRET_ACCESS_KEY='XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
             - AWS_DEFAULT_REGION='us-east-1'
             - MAESTRO_MONGO_URI=mongodb://external.mongo.com:27017
+            - SMTP_PORT=465
+            - SMTP_HOST=smtp.gmail.com
+            - SMTP_SENDER='mysender@gmail.com'
+            - SMTP_USERNAME=myusername
+            - SMTP_PASSWORD=mysecret
+            - SMTP_USETSL=true
 
 .. Note::
 
@@ -137,10 +162,14 @@ Complete docker compose
 
     Standalone uses supervisord to manage all services inside of one docker, if you like to spin up one docker per service, go to `installation <http://docs.maestroserver.io/en/latest/installing/>`__.
 
+.. Warning::
+
+    Don't spin up a multiple standalone docker, it will duplicate the schedule tasks, if you need to make a production high availability setup, go to installation per service.
+
 Installation guide
 ******************
 
-If you like to deep dive on Maestro installation, be able to run containers in multiple instances, high availability and more, go to:
+If you like to deep dive on Maestro installation, it be able to run containers in multiple instances, high availability and more, go to:
 
 .. toctree::
    :maxdepth: 1
