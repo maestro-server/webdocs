@@ -121,7 +121,7 @@ Minimal setup
             - 8000:8000 
             - 9999:9999
             volumes:
-            - mongodb:/data/db
+            - mongodata:/data/db
             - artifacts_server:/data/server-app/public/
             - artifacts_analytics:/data/artifacts
     volumes:
