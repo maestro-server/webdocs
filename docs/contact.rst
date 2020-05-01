@@ -1,5 +1,5 @@
-Contact or support
-==================
+Contact
+=======
 
 Do you have any question, comments, feeback or question about Maestro Server? Please send me a message.
 
