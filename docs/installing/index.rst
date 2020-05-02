@@ -38,9 +38,9 @@ Running locally
 We use docker to spin up a new maestro bundle, you can copy and execute docker-compose describe below.
 
 .. Note::
-    PS: Docker will be created and manager all networks and communication between services.
+    PS: Docker compose will be able to created and manager all networks and communication between services.
     
-    PS: The containers is prepared for run in production, but it's recommended to create a separate database environment and export volumes. (PS: all storage inside of docker is ephemeral)
+    PS: Containers is prepared to run in production.
 
 .. Note::
 
@@ -231,9 +231,9 @@ We use docker to spin up a new maestro bundle, you can copy and execute docker-c
 Spin up the API server in a different server    
 ********************************************
 
-By default the client server uses the same domain name to connect into server api, websocket and analytics front api; However if you like to switch this configuration you can use env vars the specific all endpoints.
+By default the client server uses the same domain name to connect into server api, websocket and analytics front api; However if you like to switch this configuration you can use env vars the specific all api urls.
 
-By default access the client by ``//example.maestro``, the client will try to access the server api by ``//example.maestro:8888``, the analytic front by ``//example.maestro:9999`` and the websocket by ``ws(s)//example.maestro:8000``
+By default if you run the client service over ``//example.maestro``, the client will try to access the server api by ``//example.maestro:8888``, the analytic front by ``//example.maestro:9999`` and the websocket by ``ws(s)//example.maestro:8000``
 
 .. code-block:: yaml
 
@@ -254,8 +254,8 @@ Productionize
 Should you follow the steps below to run the Maestro on production.
 
 - Using external Database and RabbitMq   
-- Use a real store engine as AWS S3
-- Configurate a third SMTP system
+- Using a reliable store engine as AWS S3
+- Configurate a third-party SMTP system
 
 --------
 

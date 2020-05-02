@@ -7,7 +7,7 @@ SMTP Config
 
 ---------
 
-You can use a external smtp service as SendGrid, Aws ses and more. Go to server application and set:
+You can use a external smtp service as SendGrid, AWS SeS or any smtp server. Go to server application and set:
 
 +---------------+-------------------------+------------------------------------------------------+
 | SMTP_PORT     | 465                     |                                                      |

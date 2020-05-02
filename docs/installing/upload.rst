@@ -8,7 +8,7 @@ Using external store engine as S3
 
 ---------
 
-You can choose two mode to upload the files, a local file or using S3 to storage direcly.
+You can choose two upload mode, a local file or using S3 storage.
 
 The Maestro uses an upload system in two points:
 

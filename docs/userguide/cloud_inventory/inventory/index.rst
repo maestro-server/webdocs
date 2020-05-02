@@ -1,7 +1,7 @@
 Inventory
 =========
 
-Inside inventory there are a groups of entities organize by responsabilitie accordly architecture point of view.
+It can organize your inventory by architecture responsabilities.
 
 .. image:: ../../../_static/screen/dashboard.png
    :alt: Maestro Server - Dashboard

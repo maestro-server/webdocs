@@ -5,8 +5,6 @@ High Architecture
 
 -----------------
 
-We have docker compose file with all services (download here), this is the easy way to install Maestro, to install in a pure way (we did a doc show each step to install without docker, see here Developer Guide).
-
 This section will deep dive over configurations for each service.
 
 A minimun installation can be done with:
@@ -17,9 +15,8 @@ A minimun installation can be done with:
     * Server App
     * MongoDB
 
-You can create and delete servers, apps, datacenters, change acl and create new users, this setup offer a simple inventory system.
 
-To use a synchronous discovery features with AWS and/or other providers, do you need:
+To uses a synchronous discovery features with AWS and/or other providers, do you need:
 
 ..
 
@@ -500,6 +497,9 @@ Scheduler App
      
 .. Warning::
     * MAESTRO_DATA_URI - Enpoint API of Data App - default port is 5000
+
+.. Danger::
+    * You can only spin up an one schedule instance, if you do it will have a duplicate job execution.
 
 **Env variables**
 

@@ -12,7 +12,7 @@ You can use a standalone docker to spin up a single maestro instance.
 
 
 - You need to expose ports **80**, **8888**, **8000** and **9999**
-- Access Maestro by browser over 80 port.
+- You can access by browser over 80 port.
 
 Persistent data
 ***************
@@ -54,7 +54,7 @@ It recommend to spin up a mongodb externally, it uses ``MAESTRO_MONGO_URI`` env 
         -e MAESTRO_MONGO_URI=mongodb://external.mongo.com:27017 
         maestroserver/standalone-maestro
 
-You can replace the db name setting the ``MAESTRO_MONGO_DATABASE`` env var.
+Optionally, you can replace the db name setting the ``MAESTRO_MONGO_DATABASE`` env var.
 
 =================================== ========================== =======================================================
  Env Variables                       Default                    Description                          
@@ -130,7 +130,7 @@ Minimal setup
         artifacts_analytics: {}
 
 
-Reliable setup using the standalone docker, a mongodb, smtp and store file setted externally.
+Recommended reliable setup, using a mongodb, rabbitmq, smtp and store file setted externally.
 
 .. code-block:: yaml
 
@@ -147,6 +147,7 @@ Reliable setup using the standalone docker, a mongodb, smtp and store file sette
             - AWS_SECRET_ACCESS_KEY='XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
             - AWS_DEFAULT_REGION='us-east-1'
             - MAESTRO_MONGO_URI=mongodb://external.mongo.com:27017
+            - CELERY_BROKER_URL=amqp://external.rabbitmq.com:5672
             - SMTP_PORT=465
             - SMTP_HOST=smtp.gmail.com
             - SMTP_SENDER='mysender@gmail.com'
@@ -156,7 +157,7 @@ Reliable setup using the standalone docker, a mongodb, smtp and store file sette
 
 .. Note::
 
-    Standalone dockers use same env vars found it in all service.
+    Standalone dockers use same env vars found it in all services.
 
 .. Note::
 
