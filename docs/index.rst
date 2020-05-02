@@ -14,6 +14,7 @@ The docs are separated into 3 parts, the first one is about installation and set
    installing/index
    userguide/index
    developer/index
+   troubleshooting
    contrib
    donate
    contact

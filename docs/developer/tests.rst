@@ -1,7 +1,7 @@
 Tests
 ====================
 
-Each service need to be testing.
+This section describe, how you can test each service.
 
 Server APP
 ----------
@@ -16,7 +16,7 @@ Testing use Mocha + Chai and Sinon, test coverage with Istambul
 
     npm run unit
 
-    #if you like to code and testing in the same time
+    #you can use a tdd approach to test the code
     npm run tdd 
 
 

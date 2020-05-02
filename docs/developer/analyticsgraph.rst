@@ -1,19 +1,19 @@
 Algorithm Graphs Analytics
 ==========================
 
-This section will expose how analytics graphs works.
+This section will expose how the create of analytic graph works.
 
-Analytics system follow the steps below.
+ - High level work flow
 
 .. image:: ../_static/screen/analytics_internal.png
    :alt: Maestro Server - Analytics maestro architecture
 
 ----------
 
-Making mongodb graph lookup
----------------------------
+Making the mongodb graph lookup
+-------------------------------
 
-Graph lookup will create a python dict using mongodb graph, and all application entities have a dep field, its a list with app objects [id, name].
+The graph lookup creates a python dict using mongodb graph, and all application entities have a dep field this field have a app objects with `id` and `name`.
 
 .. image:: ../_static/analytics_graphs/ana_mongo.jpg
 

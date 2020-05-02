@@ -1,15 +1,31 @@
 Versions
 ========
 
-Microservices compatible versions
+Compatible mapping versions between services
 
+------------
+
+v0.6x - Candidate release
+-------------------------
+
+================  ===========
+Client            0.15.x
+Server            0.6.x
+Discovery         0.6.x
+Scheduler         0.6.x
+Data              0.6.x
+Reports           0.6.x
+Analytics         0.6.x
+Analytics Front   0.6.x
+Audit             0.6.x
+================  ===========
 
 ------------
 
 v0.5x - Beta
 ------------
 
-Break changes - All services of version 0.5.x isnt compatible with early versions.
+Break changes - All services of version 0.5.x isn't compatible with early versions.
 
 ================  ===========
 Client            0.14.x

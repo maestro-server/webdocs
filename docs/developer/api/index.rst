@@ -1,7 +1,7 @@
 APIs
 ====================
 
-All commands, jobs, tasks or action is made by rest api, you can use se same api to integrate with your own applications.
+All commands, jobs, tasks or action is made by rest api.
 
 Server API
 ----------

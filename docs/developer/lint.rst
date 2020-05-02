@@ -1,12 +1,12 @@
 Lints
 ====================
 
-Each project uses lint program to guarantee the pattern and quality.
+This section describe, how you can lint the code.
 
 JavaScript (Client App)
 -----------------------
 
-Use `eslint <https://eslint.org/>`_, default vue-loader
+Uses `eslint <https://eslint.org/>`_,
 
 .. code-block:: bash
 
@@ -18,51 +18,21 @@ Use `eslint <https://eslint.org/>`_, default vue-loader
 NodeJs (Server App)
 -------------------
 
-Eslint too,
+Uses Eslint.
 
-Airbnb with some changes
+Describe on server-app/.eslintrc
 
 .. code-block:: bash
 
     npm run lint
 
-.. code-block:: bash
-
-    "rules": {
-        "linebreak-style": [
-            0
-        ],
-        "semi": [
-            2,
-            "always"
-        ],
-        "semi-spacing": [2, {            // http://eslint.org/docs/rules/semi-spacing
-            "before": false,
-            "after": true
-        }],
-        "no-console": 0,
-        "strict": ["error", "global"],
-        "no-catch-shadow": 2, // disallow the catch clause parameter name being the same as a variable in the outer scope (off by default in the node environment)
-        "no-delete-var": 2, // disallow deletion of variables
-        "no-label-var": 2, // disallow labels that share a name with a variable
-        "no-shadow": 2, // disallow declaration of variables already declared in the outer scope
-        "no-shadow-restricted-names": 2, // disallow shadowing of names such as arguments
-        "no-undef": 0, // disallow use of undeclared variables unless mentioned in a /*global */ block
-        "no-undef-init": 2, // disallow use of undefined when initializing variables
-        "no-undefined": 2, // disallow use of undefined variable (off by default)
-        "no-unused-vars": 2, // disallow declaration of variables that are not used in the code
-        "no-use-before-define": 2, // disallow use of variables before they are defined
-        "complexity": 0, // specify the maximum cyclomatic complexity allowed in a program (off by default)
-        "no-var": 2, // require let or const instead of var (off by default)
-        "generator-star-spacing": [2, "before"] // enforce the spacing around the * in generator functions (off by default)
-    }
 
 ------------
 
 Python 3 (Discovery, Scheduler and Reports)
 -------------------------------------------
 
-pytlint, default config.
+pytlint using the default config.
 
 .. code-block:: bash
 

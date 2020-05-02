@@ -1,15 +1,12 @@
 Architecture
 ====================
 
-This section show a advanced configurations for each micro service.
+This section shows a advanced configurations for each micro service.
 
     **Constainerazed system:**
-    Made with containers in mind, Maestro Server is deployed with Docker.
+    Made with containers in mind, Maestro Server are deployed with Docker.
 
-    **Micro service arch:**
-    Created with micro services in mind, each service has your responsability.
-
-Services relation, each service communicate by `rest` (http) calls.
+The services uses `rest` (http) calls to communicate between then.
 
 .. image:: ../../_static/screen/arch_1.png
    :alt: Maestro Server - Architecture overview
