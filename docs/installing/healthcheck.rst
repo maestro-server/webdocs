@@ -1,8 +1,7 @@
 HealthChecks
 ------------
 
-We controlled a version (semversion), any docker has this version, for example, maestro-server:0.3, if you need to rollback is easier to do.
-How find my version:
+You can you the / path to do the healthchecks.
 
 - Front end, show in right-footer.
 

@@ -14,7 +14,7 @@ Using external RabbitMQ
 
 ---------
 
-You can spin up a rabbitmq externally, it uses `CELERY_BROKER_URL` env variable.
+You can spin up a rabbitmq externally, you can do using the `CELERY_BROKER_URL` env variable.
 
 =================================== ========================== =======================================================
  Env Variables                       Default                    Description                          

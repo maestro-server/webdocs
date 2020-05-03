@@ -73,16 +73,3 @@ Backend access
             }
         }
     }
-
-----------
-
-**Env variables**
-
-========================= ================== ==========================================
-Env Variables                 Example           Description                           
-========================= ================== ==========================================
-MAESTRO_WEBSOCKET_SECRET  backSecretToken    Token to authenticate backends apps      
-MAESTRO_SECRETJWT         frontSecretToken   Token to autheticate front end users     
-CENTRIFUGO_ADMIN          adminPassword      Admin password                           
-CENTRIFUGO_ADMIN_SECRET   adminSecretToken   Token to autheticate administrator users 
-========================= ================== ==========================================

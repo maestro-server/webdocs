@@ -1,8 +1,8 @@
 Installing Maestro
 ==================
 
-Quick Start - Docker Compose
-----------------------------
+Using Docker Compose
+---------------------
 
 To get Maestro up in just a few minutes go to `Standalone installation <http://docs.maestroserver.io/en/latest/quickstart.html>`_.; However if you like to get more control over the installation you can spin up a one docker per service.
 
@@ -35,10 +35,10 @@ There are a list of all services:
 
 Running locally
 ***************
-We use docker to spin up a new maestro bundle, you can copy and execute docker-compose describe below.
+You can use docker to spin up a maestro bundle, you can copy and execute the docker-compose file describe below.
 
 .. Note::
-    PS: Docker compose will be able to created and manager all networks and communication between services.
+    PS: Docker compose will be able to create and manager all networks and communication between services.
     
     PS: Containers is prepared to run in production.
 
@@ -56,6 +56,11 @@ We use docker to spin up a new maestro bundle, you can copy and execute docker-c
             image: maestroserver/client-maestro
             ports:
             - "80:80"
+            environment:
+            - "API_URL=http://localhost:8888"
+            - "STATIC_URL=http://localhost:8888/static/" # <- It need to have the slash
+            - "ANALYTICS_URL=http://localhost:9999"
+            - "WEBSOCKET_URL=ws://localhost:8000"
             depends_on:
             - server    
 
@@ -231,7 +236,7 @@ We use docker to spin up a new maestro bundle, you can copy and execute docker-c
 Spin up the API server in a different server    
 ********************************************
 
-By default the client server uses the same domain name to connect into server api, websocket and analytics front api; However if you like to switch this configuration you can use env vars the specific all api urls.
+By default the client server uses the same domain name to connect into server api, websocket and analytics front api; However if you like to switch this configuration you can use env vars to set all urls.
 
 By default if you run the client service over ``//example.maestro``, the client will try to access the server api by ``//example.maestro:8888``, the analytic front by ``//example.maestro:9999`` and the websocket by ``ws(s)//example.maestro:8000``
 
@@ -253,13 +258,16 @@ Productionize
 
 Should you follow the steps below to run the Maestro on production.
 
-- Using external Database and RabbitMq   
-- Using a reliable store engine as AWS S3
-- Configurate a third-party SMTP system
+- Using external Database and RabbitMq  - `More details about external DB <http://docs.maestroserver.io/en/latest/installing/external_db.html>`_.  
+- Using a reliable store engine as AWS S3 - `More details about upload <http://docs.maestroserver.io/en/latest/installing/upload.html>`_.
+- Configurate a third-party SMTP system -  `More details about SMTP <http://docs.maestroserver.io/en/latest/installing/smtp.html>`_. 
+- Spin up two or more instance of client, server, discovery, reports, analytics and data. [Expect websocket and scheduler]
+- Set a unique value for each ``SECRETJWT`` key - `More details about tokens <http://docs.maestroserver.io/en/latest/installing/tokens.html>`_.
+- Use a external loadbalance to handle ssl connections.
 
 --------
 
-Advanced configs
+Advanced setups
 ----------------
 
 .. toctree::
@@ -269,10 +277,11 @@ Advanced configs
    upload
    external_db
    external_rabbitmq
+   tokens
    themes
 
-Configuration per service
--------------------------
+Services configurations
+-----------------------------
 
 .. toctree::
    :maxdepth: 1
@@ -287,18 +296,4 @@ High availability
 
    production
    healthcheck
-
-Deploy Kubernetes
------------------
-.. toctree::
-   :maxdepth: 2
- 
    kubernetes
-
-Vagrant
--------
-
-.. toctree::
-   :maxdepth: 2
-
-   vagrant

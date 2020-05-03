@@ -118,21 +118,3 @@ Like (PM2):
 
     pm2 start --json pm2.json
 
-----------
-
-**Env variables**
-
-================================== ========================== ============================================
-            Env Variables                   Example                   Description                          
-================================== ========================== ============================================
-MAESTRO_PORT                         10900                                                               
-NODE_ENV                             development|production                                              
-MAESTRO_MONGO_URI                    localhost                DB string connection 
-
-MAESTRO_MONGO_DATABASE               maestro-audit            Database name                              
-MAESTRO_TIMEOUT                      1000                     Timeout any http private request           
-MAESTRO_DATA_URI                     http://localhost:5010    Data App - API URL 
-
-MAESTRO_SECRETJWT_PRIVATE            XXX                      Secret Key - JWT private connections       
-MAESTRO_NOAUTH                       XXX                      Secret Pass to validate private connections               
-================================== ========================== ============================================

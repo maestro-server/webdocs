@@ -1,4 +1,4 @@
-Service Dependecy tree
+Service Dependecy map
 ======================
 
 Architecture map among service dependencies and environment variable used to config this discovery on each service.

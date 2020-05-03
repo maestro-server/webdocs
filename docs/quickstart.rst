@@ -1,6 +1,6 @@
 Quick Start
 ====================
-To get Maestro up and running in just a few minutes, we recommend to use standalone docker.
+It had three ways to install maestro. The quick one is to use a standalone docker, if you like more control over the installation, you can place multiple docker images per service, and the last you can install from the source.
 
 Running locally
 ***************
@@ -17,11 +17,11 @@ You can use a standalone docker to spin up a single maestro instance.
 Persistent data
 ***************
 
-Docker have a empheral disk, with means if you remove the container all data will be lost. You can handle it making volumes, the list of folder it need to export are:
+Docker have a empheral disk, with means if you remove the container all data will be lost. You can handle it making volumes, the list of folder to expose are:
 
 - **/data/db:** It is all data recorded on mongo db.
 - **/data/server-app/public/:** Profile images uploaded
-- **/data/analytics-front/public:** Architecture artifcats exposed externally.
+- **/data/analytics-front/public:** Architecture artifacts exposed externally.
 
 .. code-block:: bash
 
@@ -37,12 +37,14 @@ Docker have a empheral disk, with means if you remove the container all data wil
 Using external Database
 ***********************
 
-It recommend to spin up a mongodb externally, it uses ``MAESTRO_MONGO_URI`` env variable.
+It do recommend to spin up a mongodb externally, you can set the ``MAESTRO_MONGO_URI`` env variable.
 
 =================================== ========================== =======================================================
  Env Variables                       Default                    Description                          
  MAESTRO_MONGO_URI                   mongodb://localhost:27017  Can be mongodb or mongo+srv://
 =================================== ========================== =======================================================
+
+As an example
 
  .. code-block:: bash
 
@@ -54,7 +56,7 @@ It recommend to spin up a mongodb externally, it uses ``MAESTRO_MONGO_URI`` env 
         -e MAESTRO_MONGO_URI=mongodb://external.mongo.com:27017 
         maestroserver/standalone-maestro
 
-Optionally, you can replace the db name setting the ``MAESTRO_MONGO_DATABASE`` env var.
+Optionally, you can replace the db name, setting the ``MAESTRO_MONGO_DATABASE`` env var.
 
 =================================== ========================== =======================================================
  Env Variables                       Default                    Description                          
@@ -64,7 +66,7 @@ Optionally, you can replace the db name setting the ``MAESTRO_MONGO_DATABASE`` e
 Using external RabbitMQ
 ***********************
 
-You can spin up a rabbitmq externally, it uses `CELERY_BROKER_URL` env variable.
+You can spin up a rabbitmq externally, it's uses `CELERY_BROKER_URL` env variable.
 
 =================================== ========================== =======================================================
  Env Variables                       Default                    Description                          
@@ -85,7 +87,7 @@ You can spin up a rabbitmq externally, it uses `CELERY_BROKER_URL` env variable.
 Using S3 to store files
 ***********************
 
-You can use S3 Amazon storage object service to store artifacts and profiles images.
+You can use S3 Amazon storage object service to store artifacts and profiles images over a reliable storage system.
 
 Env variables
 
@@ -104,6 +106,41 @@ Env variables
         -e AWS_SECRET_ACCESS_KEY='XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
         -e AWS_DEFAULT_REGION='us-east-1'  
         maestroserver/standalone-maestro
+
+
+Using external SMTP
+*******************
+
+You can use a external smtp service as SendGrid, AWS SeS or any smtp server. Go to server application and set:
+
++---------------+------------------------------------------------------+
+| SMTP_PORT     |                                                      |
++---------------+------------------------------------------------------+
+| SMTP_HOST     |                                                      |
++---------------+------------------------------------------------------+
+| SMTP_SENDER   |                                                      |
++---------------+------------------------------------------------------+
+| SMTP_USERNAME |                                                      |
++---------------+------------------------------------------------------+
+| SMTP_PASSWORD |                                                      |
++---------------+------------------------------------------------------+
+| SMTP_USETSL   | Enable TLS connect                                   |
++---------------+------------------------------------------------------+
+| SMTP_IGNORE   | Ignore the validation of security connection         |
++---------------+------------------------------------------------------+
+
+ .. code-block:: yaml
+
+    docker run 
+        -e SMTP_PORT=465
+        -e SMTP_HOST=smtp.gmail.com
+        -e SMTP_SENDER='mysender@gmail.com'
+        -e SMTP_USERNAME=myusername
+        -e SMTP_PASSWORD=mysecret
+        -e SMTP_USETSL=true  
+        maestroserver/standalone-maestro
+
+
 
 Complete docker compose
 ***********************
@@ -157,7 +194,7 @@ Recommended reliable setup, using a mongodb, rabbitmq, smtp and store file sette
 
 .. Note::
 
-    Standalone dockers use same env vars found it in all services.
+    Standalone docker use the same env vars found it in all services.
 
 .. Note::
 
@@ -166,13 +203,3 @@ Recommended reliable setup, using a mongodb, rabbitmq, smtp and store file sette
 .. Warning::
 
     Don't spin up a multiple standalone docker, it will duplicate the schedule tasks, if you need to make a production high availability setup, go to installation per service.
-
-Installation guide
-******************
-
-If you like to deep dive on Maestro installation, it be able to run containers in multiple instances, high availability and more, go to:
-
-.. toctree::
-   :maxdepth: 1
- 
-   ../installing/index

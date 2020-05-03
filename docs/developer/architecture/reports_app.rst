@@ -92,30 +92,3 @@ Download de repository
 
         bind = "0.0.0.0:" + str(os.environ.get("MAESTRO_PORT", 5005))
         workers = os.environ.get("MAESTRO_GWORKERS", 2)
-
-----------
-
-**Env variables**
-
-========================= ============================ ===========================================
-Env Variables                   Example                    Description         
-========================= ============================ ===========================================
-MAESTRO_PORT			  5005						   Port used 
-MAESTRO_MONGO_URI         localhost                    Mongo Url conn
-MAESTRO_MONGO_DATABASE    maestro-reports              Db name, its differente of servers-app     
-
-MAESTRO_DATA_URI          http://localhost:5010        Data layer api
-MAESTRO_REPORT_URI        http://localhost:5005        Report api
-MAESTRO_AUDIT_URI	      http://localhost:10900	   Audit App - API URL
-MAESTRO_WEBSOCKET_URI	  http://localhost:8000	       Webosocket App - API URL
-
-MAESTRO_SECRETJWT_PRIVATE XXX                          Secret Key - JWT private connections       
-MAESTRO_NOAUTH            XXX                          Secret Pass to validate private connections 
-MAESTRO_WEBSOCKET_SECRET  XXX                          Secret Key - JWT Websocket connections
-
-MAESTRO_REPORT_RESULT_QTD 1500                         Limit default
-MAESTRO_INSERT_QTD        20                           Prefetch data insert
-
-MAESTRO_GWORKERS          2                            Gworkers thread pool                         
-CELERY_BROKER_URL         amqp://rabbitmq:5672         RabbitMQ connection
-========================= ============================ ===========================================

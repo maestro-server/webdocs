@@ -7,10 +7,9 @@ This chapter will explain a internal concepts about Maestro, if you like to cont
    :maxdepth: 2
 
    architecture/index
-   analyticsgraph
-   api/index
    servdiscovery
-   tokens
+   api/index
+   analyticsgraph
    lint
    tests
    qa

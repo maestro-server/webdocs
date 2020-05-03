@@ -10,16 +10,16 @@ Using external store engine as S3
 
 You can choose two upload mode, a local file or using S3 storage.
 
-The Maestro uses an upload system in two points:
+The upload system was used on two points:
 
 +---------------+-----------------------------------------------------------+
-| server-app    | Using in avatar users, teams and projects images.         |
+| server-app    | Using on avatar users, teams and projects images.         |
 +---------------+-----------------------------------------------------------+
 | analytics app | To store artifacts such as graphs, svgs and pngs          |
 +---------------+-----------------------------------------------------------+
 
-Local
------
+Local Storage
+-------------
 
 For a single node, the file will be stored on a local disk.
 
@@ -32,7 +32,6 @@ Env variables
 
  .. code-block:: yaml
 
-    services:
     server:
         image: maestroserver/server-maestro
         environment:
@@ -46,14 +45,14 @@ Env variables
 
 .. Note::
 
-    These are the default configuration, you don't need to declare these values.
+    These are the default configurations, you don't need to declare these values.
 
 ------
 
-AWS S3
-------
+AWS S3 Storage
+--------------
 
-You can use S3 Amazon storage object service to store an uploaded file.
+You can use a S3 Amazon storage object service to store an upload files.
 
 Env variables
 
@@ -68,7 +67,6 @@ Env variables
 
  .. code-block:: yaml
 
-    services:
     server:
         image: maestroserver/server-maestro
         environment:
@@ -86,7 +84,8 @@ Env variables
 
 .. Note::
 
-    It Need to be adjusted the ``STATIC_URL`` endpoint on client-app.
+    - Remember to set the righ path on ``STATIC_URL`` endpoint into client-app.
+    - The bucket need to be public.
 
 -------
 
@@ -101,7 +100,7 @@ Env variables
 UPLOAD_TYPE             S3 
 AWS_ACCESS_KEY_ID       XXXXXXXXXX                      
 AWS_SECRET_ACCESS_KEY   XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  
-AWS_DEFAULT_REGION      us-east-1                       
+AWS_DEFAULT_REGION      ny3                       
 AWS_S3_BUCKET_NAME      maestroserver
 AWS_ENDPOINT            S3 endpoint       
 ======================= ================================ 

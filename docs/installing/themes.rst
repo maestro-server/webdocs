@@ -7,7 +7,7 @@ Themes
 
 ---------
 
-You can change the maestro theme, its a variable environment into client app
+You can change the client theme.
 
 .. code-block:: yaml
 
@@ -19,7 +19,7 @@ You can change the maestro theme, its a variable environment into client app
         - "API_URL=http://localhost:8888"
         - "THEME=gold"
 
-There are fill options to choose.
+There are some options to choose.
 
 -------
 

@@ -5,9 +5,9 @@ High Architecture
 
 -----------------
 
-This section will deep dive over configurations for each service.
+This section will deep dive over each configuration found it on each Maestro service.
 
-A minimun installation can be done with:
+A minimun installation require:
 
 ..
 
@@ -24,7 +24,7 @@ To uses a synchronous discovery features with AWS and/or other providers, do you
     * Data App
     * RabbitMq
 
-To have a auto update over discovery you need to install the scheduler app.
+To have an auto update over discovery/reports/analytics api you need to install the scheduler app.
 
 ..
 
@@ -56,7 +56,7 @@ And if you like to tracking history, you should install:
     * Audit App
 
 
-Let´s start
+------
 
 Client App
 ----------
@@ -76,12 +76,16 @@ Client App
 
 .. code-block:: bash
 
-    docker run -p 80:80 -e 'API_URL=http://localhost:8888' -e 'STATIC_URL=http://localhost:8888/static/' -e "ANALYTICS_URL=http://localhost:9999" maestroserver/client-maestro
+    docker run -p 80:80 
+    -e 'API_URL=http://localhost:8888' 
+    -e 'STATIC_URL=http://localhost:8888/static/' 
+    -e "ANALYTICS_URL=http://localhost:9999" 
+    maestroserver/client-maestro
 
 .. Warning::
-    * API_URL it's rest endpoint provide by server-app.
-    * ANALYTICS_URL it's rest endpoint provide by analytics-front.
-    * STATIC_URL it's endpoint for static files, if you use local upload type it need to be {server-app-url}/static  - `More details on upload setup <http://docs.maestroserver.io/en/latest/installing/upload.html>`_.
+    * **API_URL:** Set the endpoint provide by ``server-app``.
+    * **ANALYTICS_URL:** Set the endpoint provide by ``analytics-front``.
+    * **STATIC_URL:** Set the the static url provide by ``server-app``. - `More details on upload setup <http://docs.maestroserver.io/en/latest/installing/upload.html>`_.
 
 
 **Env variables**
@@ -90,7 +94,8 @@ Client App
 Env Variables                   Example                    Description         
 ======================= ============================ =============================== 
 API_URL                 http://localhost:8888        Server App Url                                           
-STATIC_URL              /static                      Full path static files                
+STATIC_URL              /static                      Full path static files
+ANALYTICS_URL	        http://localhost:9999	     Analytics App Url               
 LOGO                    /static/imgs/logo300.png     Logo URL used on login page
 THEME                   theme-lotus                  Theme (gold|wine|blue|green|dark)
 ======================= ============================ =============================== 
@@ -128,14 +133,11 @@ Server APP
         maestroserver/server-maestro 
 
 .. Warning::
-    * MAESTRO_MONGO_URI - Must be uri, mongodb://{MAESTRO_MONGO_URI}/{MAESTRO_MONGO_DATABASE}
-    * MAESTRO_MONGO_DATABASE - Only mongodb database name (ex: maestro-client)
-    * SMTP_X - Used for reset emails and accounts, need to be valid SMTP server - `More details smtp <http://docs.maestroserver.io/en/latest/installing/smtp.html>`_. 
-    * MAESTRO_UPLOAD_TYPE - Can be local or S3 `More details upload <http://docs.maestroserver.io/en/latest/installing/upload.html>`_.
-    * MAESTRO_SECRETJWT - Hash to crypt JWT strings and connections between Discovery App (need to be the same)
-    * MAESTRO_SECRETJWT_PUBLIC - Hash used only do public shared resources, must be different as MAESTRO_SECRETJWT
-    * MAESTRO_SECRETJWT_PRIVATE - Hash used on private comunication (only beetween services)
-    * MAESTRO_NOAUTH - Handshake authentication (private request only)
+    * **MAESTRO_MONGO_URI:** - It must be the full url -``mongodb://{MAESTRO_MONGO_URI}/{MAESTRO_MONGO_DATABASE}``
+    * **MAESTRO_MONGO_DATABASE:** - The mongodb database name (ex: maestro-client)
+    * **SMTP_X:** - It used to send transactional emails - `More details about SMTP <http://docs.maestroserver.io/en/latest/installing/smtp.html>`_. 
+    * **MAESTRO_UPLOAD_TYPE:** - Can be a local or S3 - `More details about upload <http://docs.maestroserver.io/en/latest/installing/upload.html>`_.
+    * **MAESTRO_SECRETJWT_PUBLIC:** - Hash used only do public shared resources, must be different of ``MAESTRO_SECRETJWT`` - `More details about tokens <http://docs.maestroserver.io/en/latest/installing/tokens.html>`_.
 
 **Env variables**
 
@@ -214,10 +216,9 @@ Discovery App
         maestroserver/discovery-maestro-celery 
 
 .. Warning::
-    * MAESTRO_REPORT_URI - Enpoint API of Discovery - default port is 5010
-    * MAESTRO_DATA_URI - Enpoint API of Data App - default port is 5000
-    * MAESTRO_AUDIT_URI - Endpoint API of Audit App - default port is 10900
-    * MAESTRO_SECRETJWT - Hash to crypt JWT strings and connections between Server App (need to be the same)
+    * **MAESTRO_DATA_URI:** - Data App enpoint API - default port is 5000
+    * **MAESTRO_AUDIT_URI:** - Audit App endpoint API - default port is 10900
+    * **MAESTRO_WEBSOCKET_URI:** - Websocket endpoint, this one is HTTP
 
 **Env variables**
 
@@ -265,9 +266,10 @@ Reports App
         - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
 
 .. Warning::
-    * MAESTRO_REPORT_URI - Enpoint API of Reports - default port is 5005
-    * MAESTRO_DATA_URI - Enpoint API of Data App - default port is 5000
-    * MAESTRO_AUDIT_URI - Endpoint API of Audit App - default port is 10900
+    * **MAESTRO_REPORT_URI:** - Reports enpoint API - default port is 5005, It used by reports workers
+    * **MAESTRO_DATA_URI:** - Data enpoint API - default port is 5000
+    * **MAESTRO_AUDIT_URI:** - Audit Endpoint API - default port is 10900
+    * **MAESTRO_WEBSOCKET_URI:** - Websocket endpoint, this one is HTTP
 
 .. code-block:: bash
 
@@ -330,8 +332,9 @@ Analytics App
         - "CELERYD_MAX_TASKS_PER_CHILD=2"
 
 .. Warning::
-    * MAESTRO_ANALYTICS_FRONT_URI - Enpoint API of Analytics Front - default port is 9999
-    * MAESTRO_DATA_URI - Enpoint API of Data App - default port is 5000
+    * **MAESTRO_ANALYTICS_FRONT_URI:** - Analytics Front enpoint API - default port is 9999
+    * **MAESTRO_DATA_URI:** - Data enpoint API - default port is 5000
+    * **MAESTRO_WEBSOCKET_URI:** - Websocket endpoint, this one is HTTP
 
 .. code-block:: bash
 
@@ -385,8 +388,9 @@ Analytics Front
 
 
 .. Warning::
-    * MAESTRO_REPORT_URI - Enpoint API of Reports - default port is 5005
-    * MAESTRO_DATA_URI - Enpoint API of Data App - default port is 5000
+    * **MAESTRO_REPORT_URI:** - Reports enpoint API - default port is 5005
+    * **MAESTRO_DATA_URI:** - Data enpoint API - default port is 5000
+    * **MAESTRO_WEBSOCKET_URI:** - Websocket endpoint, this one is HTTP
 
 .. code-block:: bash
 
@@ -410,7 +414,7 @@ MAESTRO_MONGO_DATABASE              maestro-client             Database name
 MAESTRO_SECRETJWT                   XXXX                       Secret key - server app         
 MAESTRO_SECRETJWT_PRIVATE           XXX                        Secret Key - JWT private connections       
 MAESTRO_NOAUTH                      XXX                        Secret Pass to validate private connections
-MAESTRO_SECRETJWT_PUBLIC	        XXXX	                   Secret key - same server app 
+MAESTRO_SECRETJWT_PUBLIC	        XXXX	                   Secret key - same as on server app 
 
 AWS_ACCESS_KEY_ID                   XXXX                                                   
 AWS_SECRET_ACCESS_KEY               XXXX                                                   
@@ -443,17 +447,17 @@ Data App
 
 **Env variables**
 
-========================= ============================ ============================================
+========================= ============================ =============================================
 Env Variables                   Example                    Description         
-========================= ============================ ============================================
+========================= ============================ =============================================
 MAESTRO_PORT			  5010						    Port used 
 MAESTRO_MONGO_URI         localhost                     Mongo Url conn
 MAESTRO_MONGO_DATABASE    maestro-client                Db name, its differente of servers-app     
 MAESTRO_GWORKERS   		  2       					    Gunicorn multi process  
-MAESTRO_INSERT_QTD        200                           Throughput insert in reports collection
+MAESTRO_INSERT_QTD        200                           Throughput insert used on reports collection
 MAESTRO_SECRETJWT_PRIVATE XXX                           Secret Key - JWT private connections       
 MAESTRO_NOAUTH            XXX                           Secret Pass to validate private connections
-========================= ============================ ============================================ 
+========================= ============================ =============================================
 
 
 Scheduler App
@@ -496,7 +500,7 @@ Scheduler App
         maestroserver/scheduler-maestro-celery 
      
 .. Warning::
-    * MAESTRO_DATA_URI - Enpoint API of Data App - default port is 5000
+    * **MAESTRO_DATA_URI:** - Data API - default port is 5000
 
 .. Danger::
     * You can only spin up an one schedule instance, if you do it will have a duplicate job execution.
@@ -538,7 +542,7 @@ Audit App
 
 
 .. Warning::
-    * MAESTRO_DATA_URI - Enpoint API of Data App - default port is 5000
+    * **MAESTRO_DATA_URI:** - Data API - default port is 5000
 
 .. code-block:: bash
 
@@ -584,11 +588,17 @@ WebSocket App
 
 **Env variables**
 
-========================= ============================ ===========================================
+========================= ============================ ======================================================================================
 Env Variables                   Example                    Description         
-========================= ============================ ===========================================
-MAESTRO_WEBSOCKET_SECRET   backSecretToken	            Token to authenticate backends apps
-MAESTRO_SECRETJWT	       frontSecretToken	            Token to autheticate front end users
-CENTRIFUGO_ADMIN	       adminPassword	            Admin password
-CENTRIFUGO_ADMIN_SECRET	   adminSecretToken	            Token to autheticate administrator users
-========================= ============================ =========================================== 
+========================= ============================ ======================================================================================
+MAESTRO_WEBSOCKET_SECRET  backSecretToken	           Token to authenticate backends apps
+MAESTRO_SECRETJWT	      frontSecretToken	           Token to autheticate front end users
+CENTRIFUGO_ADMIN	      adminPassword	               Admin password
+CENTRIFUGO_ADMIN_SECRET	  adminSecretToken	           Token to autheticate administrator users
+CENTRIFUGO_TLSAUTO	      true	                       Auto SSL using Let Encrypt
+CENTRIFUGO_TLSAUTO_HTTP	  true	                       Auto SSL using AcmeV1 Let Encrypt
+CENTRIFUGO_TLS_PORT	      :80	                       Can be used to set address for handling http_01 ACME challenge, default value is :80
+CENTRIFUGO_TLS	          true	                       Using dev ssl certs to run custom certs
+CENTRIFUGO_TLS_KEY	      /tmp/certs/server.key	       Full path ssl key (Expose by folder bind on docker)
+CENTRIFUGO_TLS_CERT	      /tmp/certs/server.key	       Full path ssl certs
+========================= ============================ ======================================================================================

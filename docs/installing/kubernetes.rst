@@ -1,17 +1,17 @@
+Running on Kubernetes
+=====================
 
-You can use kubernetes to run maestro server, 
-the easy way it's create a gke/eks cluster and run all deployment files found in `k8s deployments <https://github.com/maestro-server/infraascode-maestro/tree/master/kubernetes/>`_,
+To run Maestro over kubernetes, you can uses those deployment files found it on `k8s deployments <https://github.com/maestro-server/infraascode-maestro/tree/master/kubernetes/>`_,
 
-Creating secrets files
-----------------------
+**Creating secrets files**
 
-First step it's create 4 secrets files (secrets/)
+The first step it will be to create those secrets.
 
 - mongo_srv.txt
 - smtp.txt
 - storage.txt
 
-And populate accordlingly, running
+And populate accordlingly. Running these commands.
 
 .. code-block:: bash
 
@@ -45,7 +45,7 @@ And populate accordlingly, running
 	SMTP_PASSWORD=
 	SMTP_USETSL=
 
-To check if everything it's ok run 
+To check if everything it's ok, you can run:
 
 .. code-block:: bash
 
@@ -58,16 +58,15 @@ To check if everything it's ok run
 
 --------
 
-Deployment each service
------------------------
+**Deploying services**
 
 .. code-block:: bash
 
 	source run.sh
 
-Or
+And
 
-Create a third services.
+Create the third-party services.
 
 .. code-block:: bash
 
@@ -75,7 +74,7 @@ Create a third services.
 	kubectl apply -f rabbitmq/
 	kubectl apply -f maildev/
 
-Maestro micro services deployments.
+Deploying the Maestro bundle services
 
 .. code-block:: bash
 
@@ -92,14 +91,14 @@ Maestro micro services deployments.
 
 ---------
 
-Checking deployments
---------------------
+**Checking deployments**
 
 .. code-block:: bash
 
 	> kubectl get deployments
 
 	NAME                       DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
+	maestro-client             1         1         1            1           6d
 	maestro-analytics          1         1         1            1           6d
 	maestro-analytics-front    1         1         1            1           6d
 	maestro-analytics-worker   1         1         1            1           6d
@@ -116,16 +115,16 @@ Checking deployments
 	rabbitmq                   1         1         1            1           24d
 
 
-Checking exposed services
--------------------------
+**Checking exposed services**
 
 .. code-block:: bash
 
 	> kubectl get svc  
 
 	NAME                       TYPE           CLUSTER-IP      EXTERNAL-IP      PORT(S)                       AGE
-	external-analytics-front   LoadBalancer   10.XX.252.63    XX.XX.XX.XX      80:30859/TCP                  23d
-	external-server            LoadBalancer   10.XX.245.248   XX.XX.XX.XX      80:31254/TCP                  23d
+	external-analytics-front   LoadBalancer   10.XX.252.63    XX.XX.XX.XX      9999:30859/TCP                23d
+	external-server            LoadBalancer   10.XX.245.248   XX.XX.XX.XX      8888:31254/TCP                23d
+	external-client            LoadBalancer   10.XX.245.248   XX.XX.XX.XX      80:31254/TCP                  23d
 	external-websocket         LoadBalancer   10.XX.253.161   XX.XX.XX.XX      8443:30705/TCP,80:31146/TCP   21d
 
 	internal-analytics         ClusterIP      10.XX.240.129   <none>           5020/TCP                      6d
@@ -139,4 +138,4 @@ Checking exposed services
 
 .. Note::
 
-    Must have 3 public endpoint, it's server app, analytics front and websocket system.
+    It must have 4 public endpoint, the client service, server app, analytics front and websocket system.

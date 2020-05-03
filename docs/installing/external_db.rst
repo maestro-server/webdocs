@@ -12,7 +12,7 @@ Using external Database
 
 ---------
 
-It recommend to spin up a mongodb externally, it uses ``MAESTRO_MONGO_URI`` env variable.
+You should spin up a mongodb externally, you can do using the ``MAESTRO_MONGO_URI`` env variable.
 
 =================================== ========================== =======================================================
  Env Variables                       Default                    Description                          
@@ -60,7 +60,7 @@ It recommend to spin up a mongodb externally, it uses ``MAESTRO_MONGO_URI`` env 
 
 
 
-You can replace the db name setting the ``MAESTRO_MONGO_DATABASE`` env var.
+You can replace the db name using the ``MAESTRO_MONGO_DATABASE`` env var.
 
 =================================== ========================== =======================================================
  Env Variables                       Default                    Description                          

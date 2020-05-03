@@ -80,18 +80,3 @@ Download de repository
 	bind = "0.0.0.0:" + str(os.environ.get("MAESTRO_PORT", 5010))
 	workers = os.environ.get("MAESTRO_GWORKERS", 2)
 
-----------
-
-**Env variables**
-
-========================= ============================ ============================================
-Env Variables                   Example                    Description         
-========================= ============================ ============================================
-MAESTRO_PORT			  5010						    Port used 
-MAESTRO_MONGO_URI         localhost                     Mongo Url conn
-MAESTRO_MONGO_DATABASE    maestro-client                Db name, its differente of servers-app     
-MAESTRO_GWORKERS   		  2       					    Gunicorn multi process  
-MAESTRO_INSERT_QTD        200                           Throughput insert in reports collection
-MAESTRO_SECRETJWT_PRIVATE XXX                           Secret Key - JWT private connections       
-MAESTRO_NOAUTH            XXX                           Secret Pass to validate private connections
-========================= ============================ ============================================ 
