@@ -2,27 +2,24 @@
 User Guide
 ==========
 
-The Maestro Server have three parts:
+In this section we will cover how the maestro server works from the user's point of view, if you want to install and configure the Maestro server you should go to the installation section, if you would like to develop a new functionality or a new service, you should go to the developer section.
 
-> **Cloud Inventory:** The first one it's about your infrastructure, this area have all information of your cloud environment, as a servers, applications, loadbalances, databases, datacenters, system, and clients.
+Maestro is an inventory system for multi platform environments, multi-cloud for enterprise companies. It aim to organize in a single dashboard arelationship between servers, applications, systems and clients. 
 
-> **Analytics:** You can get an elegant graphics of system architecture. You can export to svg, png or embed the graph in any service like Confluence, GitHub and more. 
+The dashboard was divided into three parts:
 
-> **Reports:** You can generate reports using advanced filters and export in different file types.
+- **Cloud inventory:** The first part you will figure out the whole inventory, such as servers, applications and systems as well as the relationship between them. In this area you can also connect third-party providers to self-discover and self-update.
 
-Maestro Cloud Inventory
-=======================
+- **Analytics:** In the second part you can view the relationships between applications, systems architecture, a map of dependencies and can even share these information in third-party applications as Confluence, GitHub and more.
 
-- Helping IT operation teams to organize and audit multicloud infrastructure
-- Substitute CMDB systems
-- Enable continuous discovery of servers, services and apps in multi cloud, multi teams and/or multi clients.
-- Support a modern services as a database, message queue, VPN, API gateway, service mesh and etc
-- Visualize the owernship by servers, services, system and clients. 
+- **Reports:** In this area you can generate advanced reports such as the list of servers for a given client.
 
 .. figure:: ../_static/screen/intro.png
 
 Cloud Inventory
 ===============
+
+We can use to organize each part of our architecture by:
 
 .. toctree::
    :maxdepth: 2
@@ -42,7 +39,7 @@ Graphs - Architecture maps
    graphs/gpdependencies
    graphs/bussiness_graphs
 
-Reports - Generate complete reports
+Reports - Generate advanced reports
 ===================================
 
 .. toctree::
@@ -52,8 +49,8 @@ Reports - Generate complete reports
    reports/aggregation
    reports/scheduler
 
-Users and Teams
-===============
+ACLs- Users and Teams
+=====================
 
 .. toctree::
    :maxdepth: 2
