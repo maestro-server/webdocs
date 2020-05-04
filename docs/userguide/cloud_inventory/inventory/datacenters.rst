@@ -4,6 +4,8 @@ Datacenters
 
 A data center, or data centre, is a building, dedicated space within a building, or a group of buildings used to house computer systems and associated components, such as telecommunications and storage systems. Wikipedia
 
+----
+
 .. image:: ../../../_static/screen/datacenters_p.png
    :alt: Maestro Server - Create datacenters
 
