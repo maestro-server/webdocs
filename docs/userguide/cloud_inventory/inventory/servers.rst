@@ -31,10 +31,10 @@ Server details
 ============ ======================================================================================================================================================================================================== 
 Field        Functional 
 ============ ======================================================================================================================================================================================================== 
-Storage      Add a storage information, mount path, size in GB and if is a root device, some cloud hame a specifc data information.
-Datacenter   Providers, region and zones, if this server still in cloud Environment you can put the instnace id on id_instance field. It will be create a relation and Maestro won't duplicate this server.
+Storage      Add a storage information, mount path, size in GB and if is a root device.
+Datacenter   Providers, region and zones, if this server still in cloud Environment you can put the instance id on id_instance field. Avoiding Maestro to duplicate this server.
 Auth         Dummy information about how the team can loggin into servers.
-Service      Show up all services running, I can be used in ``Application Manager`` system to track the service configuration.
+Service      Show up all services running, It can be used on ``Application Manager`` page to track the service configuration.
 ============ ======================================================================================================================================================================================================== 
 
 ------------
