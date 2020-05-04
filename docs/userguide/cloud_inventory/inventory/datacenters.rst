@@ -2,15 +2,17 @@ Datacenters
 -----------
 `Inventory > Datacenter`
 
+A data center, or data centre, is a building, dedicated space within a building, or a group of buildings used to house computer systems and associated components, such as telecommunications and storage systems. Wikipedia
+
 .. image:: ../../../_static/screen/datacenters_p.png
    :alt: Maestro Server - Create datacenters
 
-Register all clouds, bare metal, providers and etc.
+You should insert any type of datacenters can be cloud, bare metal, providers and etc.
 
 ============ ======================================================================================================================================================================================================== 
 Field        Functional 
 ============ ======================================================================================================================================================================================================== 
-Name         Identity name
+Name         Datacenter name
 Provider     Choose a provider, or create a new one
 Regions      Choose or create regions
 Zones        Choose or create zones
@@ -21,18 +23,18 @@ Zones        Choose or create zones
 .. figure:: ../../../_static/screen/dc.png
    :alt: Maestro Server - Datacenters
 
-List of datacenters, with instances, regiions and zones
+List of your datacenters.
 
 ------------
 
 .. figure:: ../../../_static/screen/dc_regions.png
    :alt: Maestro Server - Datacenters Regions
 
-You can choose the provider, regions and zones.
+You can choose a provider, regions and zones.
 
 ------------
 
 .. figure:: ../../../_static/screen/dc_regions2.png
    :alt: Maestro Server - Datacenters regions 2
 
-Choose regions or create it.
+Selecting an existed region.
