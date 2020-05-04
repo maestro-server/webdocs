@@ -7,7 +7,7 @@ Server is a computer or a single program instance, which manages access to a cen
 ============ =============================================================================================================================
 Field        Functional 
 ============ ============================================================================================================================= 
-Hostname     Hostname, accept duplicate hostname per team.
+Hostname     Hostname
 Ipv4 Private Ipv4 private, It will warning if there are any duplication, 
 Ipv4 Public  Ipv4 public, only for external servers.
 OS           Operation system can be Linux adn Windows. Distro can be ubuntu, centos or any other.
