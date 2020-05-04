@@ -2,7 +2,7 @@ Servers
 -------
 `Inventory > Server`
 
-Server is a computer or a single prograam instance, which manages access to a centralized resource or service in a network.
+Server is a computer or a single program instance, which manages access to a centralized resource.
 
 ============ =============================================================================================================================
 Field        Functional 
