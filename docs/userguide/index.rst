@@ -4,20 +4,20 @@ User Guide
 
 The Maestro Server have three parts:
 
-> **Cloud Inventory:** The first one it's about your infrastructure, this area have all information of your cloud envrioment, as a servers, applications, loadbalances, databases, datacenters, system, and clients.
+> **Cloud Inventory:** The first one it's about your infrastructure, this area have all information of your cloud environment, as a servers, applications, loadbalances, databases, datacenters, system, and clients.
 
-> **Analytics:** You can get an elegant graphics of your dependencies. The best place to understand your architecture systems. You can export to svg, png or embed the graph on any service like Confluence, GitHub and more. 
+> **Analytics:** You can get an elegant graphics of system architecture. You can export to svg, png or embed the graph in any service like Confluence, GitHub and more. 
 
-> **Reports:** You can generate reports, using advanced filters and export on different file types.
+> **Reports:** You can generate reports using advanced filters and export in different file types.
 
 Maestro Cloud Inventory
 =======================
 
 - Helping IT operation teams to organize and audit multicloud infrastructure
 - Substitute CMDB systems
-- Enable continuous discovery of servers, services and apps
-- Can classify each service as a database, message queue, VPN, API gateway, service mesh and etc
-- Create a relation between servers, services, system and clients. 
+- Enable continuous discovery of servers, services and apps in multi cloud, multi teams and/or multi clients.
+- Support a modern services as a database, message queue, VPN, API gateway, service mesh and etc
+- Visualize the owernship by servers, services, system and clients. 
 
 .. figure:: ../_static/screen/intro.png
 

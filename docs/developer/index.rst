@@ -7,7 +7,6 @@ This chapter will explain a internal concepts about Maestro, if you like to cont
    :maxdepth: 2
 
    architecture/index
-   servdiscovery
    api/index
    analyticsgraph
    lint

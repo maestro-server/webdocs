@@ -90,15 +90,16 @@ Client App
 
 **Env variables**
 
-======================= ============================ =============================== 
+======================= ============================ =================================
 Env Variables                   Example                    Description         
-======================= ============================ =============================== 
+======================= ============================ =================================
 API_URL                 http://localhost:8888        Server App Url                                           
 STATIC_URL              /static                      Full path static files
-ANALYTICS_URL	        http://localhost:9999	     Analytics App Url               
+ANALYTICS_URL	        http://localhost:9999	     Analytics App Url 
+WEBSOCKET_URL           ws://localhost:8000          Websocket Url                             
 LOGO                    /static/imgs/logo300.png     Logo URL used on login page
 THEME                   theme-lotus                  Theme (gold|wine|blue|green|dark)
-======================= ============================ =============================== 
+======================= ============================ =================================
 
 ----------
 

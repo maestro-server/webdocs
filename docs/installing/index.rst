@@ -278,6 +278,7 @@ Advanced setups
    external_db
    external_rabbitmq
    tokens
+   servdiscovery
    themes
 
 Services configurations
