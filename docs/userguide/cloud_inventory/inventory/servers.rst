@@ -55,7 +55,7 @@ How you can to access and authenticate on that server.
 
 .. Note::
 
-   Services can be a very usefull field, Maestro are able to correlate services installed on servers and applications,as an example, you create a Oracle Database on Databases applications, then you can create a new server and assign this server to the database, Maestro automatically do a service/application bound.
+   Services can be a very usefull field, Maestro are able to correlate services installed on servers and applications, as an example, you can create an Oracle Database on Databases applications, then you can create a new server and assign this server to that database, Maestro automatically do a service/application bound.
 
 
 .. image:: ../../../_static/screen/sv_service.png
