@@ -42,14 +42,14 @@ Service      Show up all services running, It can be used on ``Application Manag
 .. figure:: ../../../_static/screen/sv_ddc.png
    :alt: Maestro Server - Assing datacenters name
 
-Assing a dc name, region and zone.
+Assing a dc name, region and zone on that server.
 
 ------------
 
 .. figure:: ../../../_static/screen/sv_auth.png
    :alt: Maestro Server - Assing service authentication
 
-How you can to access and authenticate on that server.   
+describe how you can to access and authenticate on that server.   
 
 ------------
 
@@ -73,11 +73,11 @@ Related services.
 
 Can be attached or built-in:
  
- - **Attached** are network storage or distributed storage service (ex: NFS)
+ - **Attached** is a network storage or distributed storage service (ex: NFS)
  
- - **built-in** is a hard drive setted, very common on bare metal.
+ - **built-in** is a hard drive setted in that server, very common on bare metal.
 
-After created the volume you will be able to describe awhere the mount path are, which file type, and a virtual volume configuration (LVM).
+You will be able to describe where the mount path are, which file type, and a virtual volume configuration (LVM).
 
 .. image:: ../../../_static/screen/vol_2.png
    :alt: Maestro Server - LVMs
@@ -86,7 +86,7 @@ After created the volume you will be able to describe awhere the mount path are,
 
 **Cloud Server Resources**
 
-Volumes, flavors and images were servers resources provide by cloud providers, on top of servers you can create/list those resources.
+Volumes, flavors and images are servers resources provide by cloud providers, on top of servers you can create/list those resources.
 
 .. image:: ../../../_static/screen/volumes_p.png
    :alt: Maestro Server - Servers resources
