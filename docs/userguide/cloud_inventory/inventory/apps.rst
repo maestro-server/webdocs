@@ -2,16 +2,16 @@ Apps
 ----
 `Inventory > Application`
 
-Apps are it all services with is a business responsibility, normally it is an application made by the developer and deploys.
+Applications are a program or group of programs designed for business responsibility.
 
-Some fields:
+Apps fields:
 
 ============ =============================================================================================================================
-Field        Functional 
+Field        Description 
 ============ ============================================================================================================================= 
-Name         Hostname, accept duplicate hostname per team, but the inveotry will warning about this.
+Name         Hostname
 Environment  Production | Development | Stage
-Language
+Language     What language this application was made.
 Cluster mode
 ============ =============================================================================================================================
 
@@ -19,11 +19,11 @@ Cluster mode
 Specification
 
 ============ ======================================================================================================================================================================================================== 
-Field        Functional 
+Field        Description 
 ============ ======================================================================================================================================================================================================== 
-Role         Point information like endpoint, commands, health check, its good for doc.
-System       Systems related it.
-Server       Servers deployed by app.
+Role         Endpoint, commands, health check and more.
+System       Accountant system/s.
+Server       Where the application are running.
 Deploy       List of ways to deploy this app.
 ============ ======================================================================================================================================================================================================== 
 
@@ -32,7 +32,7 @@ Deploy       List of ways to deploy this app.
 .. image:: ../../../_static/screen/app_language.png
    :alt: Maestro Server - App Language
 
-Choose language like node or php.
+Selecting a language that applications was made. As an example, node or php.
 
 ------------
 
@@ -40,9 +40,10 @@ Add dependency
 
 .. Note::
 
-        Dependency is a relation between two or more applications, example its database its a dependency of app4, and app4 its dependency of loadbalance.
+        A given applications with connects to this application, as an example webserver connects to database, so database is a dependecy of webserver.
+       
 
 .. image:: ../../../_static/screen/server_deps.png
    :alt: Maestro Server - Dependecy
 
-Add outers applications with dependency.
+Adding dependencies.

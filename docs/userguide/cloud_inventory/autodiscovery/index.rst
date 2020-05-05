@@ -1,27 +1,29 @@
 Auto Discovery
 ====================
 
-.. image:: ../../../_static/screen/conn_p.png
-   :alt: Maestro Server - Create connection
 
-To setup new connections in auto-discovery:
+Maestro can connect to a third-party provider and synchronize the information, and you can track and figure out in an easy way everything was created by multi-cloud providers.
 
-- Create datacenters (select all regions with you like to discovery)
-- Create a connection - Select previous datacenters created and regions
-- Pass aws key and secret - Maestro need only a readyonly permission, the best pratice is, create a specific key for maestro
-
-1 - Create datacenters
-
-2 - Create connection - Go inventory > connections.
+To set up a new connection, you should follow three steps.
 
 .. image:: ../../../_static/screen/connection.gif
    :alt: Maestro Server - Connections
 
-Create a iam key with read only permission.
+------
 
-Access connection
+1 - Create datacenter on Maestro (select all regions you use on that provider)
 
-In version 0.1, we have two providers:
+2 - Create a connection a select the previous datacenter. - Go inventory > connections.
+
+.. image:: ../../../_static/screen/conn_p.png
+   :alt: Maestro Server - Create connection
+
+3 - Create a cloud credencial such as aws acess/secret key, azure subscription and more, you can limited allow a read permission.
+
+
+------------
+
+**Maestro is able to connect on:**
 
 .. toctree::
    :maxdepth: 1
@@ -30,25 +32,3 @@ In version 0.1, we have two providers:
    azure
    digitalocean
    openstack
-
-------------
-
-FAQ
----
-
-- **Permission error**
-    
-    If through Unauthorized error, you need to grant ready only permission, in AWS you need to create IAM and grant these permissions.
-
-- **Infinitive process loading**
-
-    Its common problem, Maestro needs two services to execute a successful synchronize, Discovery APP and RabbitMQ, normally when discovery app is down, we have infinite process message (because server app notify to start a process, and discovery app need to finish with Success process). 
-    Guarantees if discovery app up and running and if it's connected correctly with rabbitmq.
-
-For debbug, use stdout docker, like
-
-.. code-block:: bash
-
-    docker-compose logs discovery-maestro
-    # or
-    docker-compose logs discovery-celery

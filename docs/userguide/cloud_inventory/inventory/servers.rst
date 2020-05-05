@@ -5,7 +5,7 @@ Servers
 Server is a computer or a single program instance, which manages access to a centralized resource.
 
 ============ =============================================================================================================================
-Field        Functional 
+Field        Description 
 ============ ============================================================================================================================= 
 Hostname     Hostname
 Ipv4 Private Ipv4 private, It will warning if there are any duplication, 
@@ -29,10 +29,10 @@ Selecting the OS
 Server details
 
 ============ ======================================================================================================================================================================================================== 
-Field        Functional 
+Field        Description 
 ============ ======================================================================================================================================================================================================== 
-Storage      Add a storage information, mount path, size in GB and if is a root device.
-Datacenter   Providers, region and zones, if this server still in cloud Environment you can put the instance id on id_instance field. Avoiding Maestro to duplicate this server.
+Storage      Storage configuration as a mount path, size in GB and if is a boot device.
+Datacenter   Providers, region and zones, used by cloud datacenters, you can put the instance id on id_instance field, avoiding Maestro to duplicate this server.
 Auth         Dummy information about how the team can loggin into servers.
 Service      Show up all services running, It can be used on ``Application Manager`` page to track the service configuration.
 ============ ======================================================================================================================================================================================================== 

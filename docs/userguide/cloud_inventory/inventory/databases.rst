@@ -2,12 +2,12 @@ Databases
 ---------
 `Inventory > Database`
 
-Databases can be relational, no relational, in memory, distribuited storage and etc.
+Databases are a programs to manage data store, can be relational and no relational.
 
 The database inventory have a exclusive form for Oracle and MySQL, otherwise the generic form are able to fit on all databases types.
 
 ============ ======================================================================================================================================================================================================== 
-Field        Functional 
+Field        Description 
 ============ ======================================================================================================================================================================================================== 
 Oracle       You can register ASM DB, CDBs, RAC, grid system and/or golden gate backups
 MySQL        It able to register features as Master/Slave, Aurora cluster, backups setups and more.
@@ -51,26 +51,24 @@ Support MySQL, AWS Aurora, MariaDB, Percona and etc
 .. image:: ../../../_static/screen/db_mysql_type.png
    :alt: Maestro Server - Database MYSQL
 
-Which version and mode.
+Which version and mode this db are.
 
 
 **Generic database**
 
-Partial support for all databases
+Generic support for all databases
 
 .. figure:: ../../../_static/screen/db_other_type.png
    :alt: Maestro Server - Database NoSQL
 
-Which version and mode.
-
 ------------
 
 ============ ======================================================================================================================================================================================================== 
-Field        Functional 
+Field        Description 
 ============ ======================================================================================================================================================================================================== 
-Spec         Specification as a endpoint, port, commands, health check and more.
-Datacenters  Provider
-Server       Where this database are deployed.
-CDBS         CDBS used by Oracle DB
-System       The system on which this database    
+Spec         Endpoint, port, commands, health check and more.
+Datacenters  A given datacenter.
+Server       Which servers this database are running.
+CDBS         CDBS used by Oracle DBs.
+System       Accountant system/s.
 ============ ======================================================================================================================================================================================================== 

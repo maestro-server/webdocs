@@ -2,13 +2,13 @@ System
 ------
 `Inventory > System`
 
-A group of application, databases, loadbalances and etc, compond a unique system.
+A group of application and resources.
 
 ============ ======================================================================================================================================================================================================== 
-Field        Functional 
+Field        Description 
 ============ ======================================================================================================================================================================================================== 
-Links        Some useful links
-Clients      Relation to this system and client
+Links        Useful links
+Clients      Accountant client/s.
 ============ ======================================================================================================================================================================================================== 
 
 ------------
@@ -16,4 +16,4 @@ Clients      Relation to this system and client
 .. image:: ../../../_static/screen/sys_clients.png
    :alt: Maestro Server - Systems and clients
 
-Select owner of system
+Selecting the accountant client.

@@ -1,4 +1,4 @@
-Connect with Azure
+Connecting on Azure
 ======================
 
 To register use client id, tenant id, subscription id and secret token
@@ -56,7 +56,7 @@ Grant permission for the application to access subscription that you want to con
 
 ----------------
 
-**Synchronized and permissions to grant.**
+**List of permissions to grant.**
 
 +-------------------------+---------------------------------------------------------------------------------------------------------+
 | server-List             | compute virtual_machines                                                                                |

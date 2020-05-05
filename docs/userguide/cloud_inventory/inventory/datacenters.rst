@@ -2,22 +2,22 @@ Datacenters
 -----------
 `Inventory > Datacenter`
 
-A data center, or data centre, is a building, dedicated space within a building, or a group of buildings used to house computer systems and associated components, such as telecommunications and storage systems. Wikipedia
+A datacenter, can be a building, dedicated space within a building, or a group of buildings used to house computer systems and associated components, can be a cloud account, a space reserved to execute resources provide by third-party company. 
 
 ----
 
 .. image:: ../../../_static/screen/datacenters_p.png
    :alt: Maestro Server - Create datacenters
 
-You should insert any type of datacenters can be cloud, bare metal, providers and etc.
+You should insert any type of datacenters can be a cloud third-party datacenter, a specific space or a group of bare metal servers.
 
 ============ ======================================================================================================================================================================================================== 
-Field        Functional 
+Field        Description 
 ============ ======================================================================================================================================================================================================== 
 Name         Datacenter name
-Provider     Choose a provider, or create a new one
-Regions      Choose or create regions
-Zones        Choose or create zones
+Provider     The third-party provider, or create a new one
+Regions      Selecting a region/s
+Zones        Selecting a zone/s
 ============ ======================================================================================================================================================================================================== 
 
 ------------
@@ -32,7 +32,7 @@ List of your datacenters.
 .. figure:: ../../../_static/screen/dc_regions.png
    :alt: Maestro Server - Datacenters Regions
 
-You can choose a provider, regions and zones.
+You can select a provider, regions and zones.
 
 ------------
 

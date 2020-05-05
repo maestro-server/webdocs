@@ -1,24 +1,24 @@
-Connect with Digital Ocean
+Connecting on Digital Ocean
 ==============================
 
-To register one application token.
+To get the application token. Go to:
 
 .. image:: ../../../_static/screen/do_tokens.png
    :alt: Maestro Server - Digital Ocean tokens
 
-Get App Token
+Getting the App Token
+---------------------
+
+To create a new token, go to Digital Ocean dashboard:
+
+1. Click on the API on the main menu
+2. Go to the Applications & API
+3. On the Tokens/Keys tab. Go to the Personal access tokens section
+4. Click on to ``Generate New Token``.
+
 -------------
 
-To create a new token, enter on Digital Ocean dashboard:
-
-1. Click the API link in the main navigation
-2. Takes you to to the Applications & API
-3. On the Tokens/Keys tab. In the Personal access tokens section
-4. Click the Generate New Token.
-
--------------
-
-**Synchronized and permissions to grant.**
+**List of permissions to grant.**
 
 +-------------------------------+----------------------------------------+
 | server-List                   | get_all_droplets                       |
@@ -55,18 +55,17 @@ To register spaces key and secret key.
 .. image:: ../../../_static/screen/spaces_tokens.png
    :alt: Maestro Server - Digital Ocean Space tokens
 
-Get Spaces Token
-----------------
+Getting Spaces Token
+--------------------
 
-1. To create a new token, enter on dashboard:
-2. Click the API link in the main navigation
-3. Takes you to to the Spaces token
-4. On the Tokens/Keys tab.
-5. Click the Generate New Token on Spaces, get the key and secret key.
+1. Click on the API on the main menu
+2. Go to the Spaces token
+3. On the Tokens/Keys tab.
+4. Click on the ``Generate New Token on Spaces``, and gets the key and secret key.
 
 ------------
 
 .. image:: ../../../_static/screen/conn_do_spaces.png
    :alt: Maestro Server - Digital Ocean Spaces Setup
 
-Setup connection with Digital Ocean Spaces
+Setup connection on Digital Ocean Spaces

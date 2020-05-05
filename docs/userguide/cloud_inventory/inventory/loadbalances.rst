@@ -2,20 +2,15 @@ LoadBalances
 ------------
 `Inventory > Loadbalance`
 
-Service with responsibility of distributed request through other servers
+In computing, load balancing refers to the process of distributing a set of tasks over a set of resources, with the aim of making their overall processing more efficient. Wikipedia
 
 ============ ======================================================================================================================================================================================================== 
-Field        Functional 
+Field        Description 
 ============ ======================================================================================================================================================================================================== 
-Service      Which is service?
-============ ======================================================================================================================================================================================================== 
-
-============ ======================================================================================================================================================================================================== 
-Field        Functional 
-============ ======================================================================================================================================================================================================== 
-Targets      Which servers this lb send it
-Servers      Which servers this lb still installed
-Spec         Endpoint and healthcheck
+Service      The loadbalance source.
+Targets      To proxied applications
+Servers      To proxied servers
+Spec         Endpoint, healthcheck and more
 ============ ======================================================================================================================================================================================================== 
 
 ------------
@@ -23,11 +18,11 @@ Spec         Endpoint and healthcheck
 .. image:: ../../../_static/screen/lb_spec.png
    :alt: Maestro Server - Loadbalancers
 
-Docs a endpoint and healthcheck used in app.
+Adding the healthcheck rule.
 
 ------------
 
 .. figure:: ../../../_static/screen/lb_targets.png
    :alt: Maestro Server - Targets
 
-Select loadbalance targets.
+Selecting applications.

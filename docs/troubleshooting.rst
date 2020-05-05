@@ -36,3 +36,23 @@ https://stackoverflow.com/questions/24551592/how-to-make-sure-dockers-time-syncs
         - "STATIC_URL=//maestro.xxx:8888/static" <--------- Static Files
         - "ANALYTICS_URL=//maestro.xxx:9999" <------------- Analytics Front
         - "WEBSOCKET_URL=wss://xxx:8000" <----------------- WebSocket
+
+-----
+
+**3 - Through Unauthorized error during the synchronization - Permission error**
+    
+    If through Unauthorized error, you need to grant ready only permission, as an example on AWS you should create IAM and grant full ready only permissions.
+
+-----
+
+**4 - The warning status never change**
+
+   Can be a RabbitMq issue or the Discovery workers weren't running, you can restart the rabbitmq and start the service discovery workers.
+
+You always can check the service logs:
+
+.. code-block:: bash
+
+    docker-compose logs discovery-maestro
+    # or
+    docker-compose logs discovery-celery # this one is the discovery workers

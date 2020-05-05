@@ -1,9 +1,9 @@
-Connect with OpenStack
+Connecting on OpenStack
 ==========================
 
 To register one openstack account, use project name, url api, user, and password.
 
-**Synchronized and permissions to grant.**
+**List of permissions to grant.**
 
 +-------------------+----------------------------------------------+
 | Server-List:      | servers compute                              |

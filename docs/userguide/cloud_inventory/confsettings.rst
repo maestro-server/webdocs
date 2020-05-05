@@ -1,57 +1,59 @@
-Config / Settings
-====================
+Options and configurations
+==========================
 
 .. image:: ../../_static/screen/setting_p.png
    :alt: Maestro Server - Configs
 
+-----
+
 Services
 --------
 
-You can create and delete new services used in servers and apps services field, choose a name, family and some tags.
+To create a new services, you can go to ``settings -> services`` and click on add new service:
 
 ------------
 
 .. image:: ../../_static/screen/service_reg.png
    :alt: Maestro Server - Services
 
-Register a new, or update service.
+You can add, remove or update any service filled on Maestro database.
 
 ------------
 
 Config Options
 --------------
 
-Config options, its used in point part options, like environments, types of services, and time to schedule updates providers lists.
+You can add or change any options.
 
-==================== ====================
-application_options  Options of apps
+==================== ==============================================
+application_options  Applications options
 clients_options         
 connections          Time scheduler and crawler connections
 database_options
 datacenter_options
 env_options
 server_options
-services_options     Initial setup of services
+services_options     Services initial setup
 system_options
-==================== ====================
+==================== ==============================================
 
 ------------
 
+As an example those are contacts found out it on ``clients_options``.
+
 .. image:: ../../_static/screen/rr_config.png
    :alt: Maestro Server - Register new service
-
-Maestro configs, created when run migration command.
 
 ------------
 
 Regions and zones
 -----------------
 
-Regions and zones, if you like, its possible to configure and pre-define some regions and zones.
+You can add a new regions and zones, go to ``settings -> regions and zones``:
 
 ------------
 
 .. image:: ../../_static/screen/rr_1.png
-   :alt: Maestro Server - Register new zone
+   :alt: Maestro Server - Zones
 
-Pre-define regions and zones.
+The default regions and zones options.

@@ -1,7 +1,7 @@
-Connect with AWS
+Connecting on AWS
 ====================
 
-To register one aws account use access_key and secret_key
+To connect a one aws account, it uses an access_key and secret_key
 
 .. raw:: html
 
@@ -12,24 +12,24 @@ To register one aws account use access_key and secret_key
 Go to IAM service
 -----------------
 
-Login on was account and go to iam services.
+Go to iam services on you AWS account dashboard.
 
-Create a user - SecurityAudit
------------------------------
+Create an user - SecurityAudit
+-------------------------------
 
 1. Go to user tab
-2. Add user, name access type it's programmatic access
-3. Attach policy direct on user
-4. Select SecurityAudit policy
+2. Add user, select the access type as a ``programmatic access``
+3. Choose to attach a existed policy on user
+4. Select ``SecurityAudit`` policy
 
-Get AWS Key and Secret Key
---------------------------
+Getting AWS Key and Secret Key
+------------------------------
 
 Copy and paste the aws key and secret key
 
 ------------
 
-**Synchronized and permissions to grant.**
+**List of permissions to grant.**
 
 +-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | server-List             | ec2 describe_instances                                                                                                                                                                                                    |
@@ -74,4 +74,4 @@ Copy and paste the aws key and secret key
 .. image:: ../../../_static/screen/conn_aws.png
    :alt: Maestro Server - AWS Setup
 
-Setup connection with AWS
+Setup connection on AWS
