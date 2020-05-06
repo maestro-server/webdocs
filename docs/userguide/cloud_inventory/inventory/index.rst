@@ -10,7 +10,7 @@ You can organize your servers, applications, cloud resources, systems, and clien
 - Easy to visualize a relationship between microservices
 - Correlation between teams/systems
 - Track costs
-- Easy way to document a high architecture systems
+- Easy way to do documents of high architecture systems
 
 
 .. image:: ../../../_static/screen/dashboard.png
