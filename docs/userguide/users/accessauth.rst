@@ -1,52 +1,66 @@
-Access and Auth
+Access rules
 ====================
 
-All entitites in Maestro has access roles, the access role 
+The Maestro ACL is composed of multiple entity type and each entity has a one rule.
 
-Account / Profile
------------------
+**Entities can be:**
 
-On profile you can update your profile.
+- a user
+- a team
+
+**Rules can be:**
+
++--------+------------------------------------------+
+| Read:  | Read access                              |
++--------+------------------------------------------+
+| Write: | Can read and update                      |
++--------+------------------------------------------+
+| Admin: | Can create and delete                    |
++--------+------------------------------------------+
+
+- The authentication control system is set at the resource level, that means each record has your own acl rule.
+
+- You can create teams to share the same access to multiple users, and under the hood the user assume the team identity and then the team can access that record.
+
+The ACL modal can be found on any resources suah as servers, applications, graphs, reports and more.
+
+.. image:: ../../_static/screen/acl.png
+   :alt: Maestro Server - Acl view
+
+------------
+
+Users
+-----
+
+You can update your profile.
 
 ------------
 
 .. image:: ../../_static/screen/profile.png
    :alt: Maestro Server - Profile fields
 
-Profile fields
-
-------------
-
-ACL
----
-
-All entities in Maestro has access roles, the access role, we have, each access role maybe in a team or in user.
-
-+--------+------------------------------------------+
-| Read:  | Have only read access                    |
-+--------+------------------------------------------+
-| Write: | Have read and write access (update)      |
-+--------+------------------------------------------+
-| Admin: | Able to delete, grant and revoke access. |
-+--------+------------------------------------------+
-
-------------
-
-.. image:: ../../_static/screen/acl.png
-   :alt: Maestro Server - Acl view
-
-You can change any acl point for specify user or team.
-
 ------------
 
 Change password
 ---------------
 
-If you like to change password, you need to go on profile > change password
+If you like to change the access password, you can go to profile > change password
 
 ------------
 
 .. image:: ../../_static/screen/newpass.png
    :alt: Maestro Server - New password
 
-New pass
+------------
+
+Teams
+=====
+
+To create a team, go to the main menu on the right corner, and click on the Teams page.
+
+Each team has a name, email, avatar and members.
+
+------------
+
+.. figure:: ../../_static/screen/team.png
+   :alt: Maestro Server - Teams

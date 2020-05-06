@@ -1,12 +1,12 @@
-Create a dependecy tree
-=======================
+Using the dependecy tree wizard
+================================
 
 .. image:: ../../_static/screen/dep_p.png
    :alt: Maestro Server - Dependency tree
 
-Dependency tree maker it's a feature which to turn easy to link dependency service, you can link an entire graph map in minutes, without access to each service and set all dependency.
+To create diagrams you need to link each applications using the dependency field. However, you can use the Dependency wizard, and this feature allows you to create and connect each application in a single and fast page.
 
-Starting select a system or a entry application, these application will be the first application.
+Go to dependency tree, and you can use an existed system, or a client or an application.
 
 ------------
 
@@ -15,7 +15,7 @@ Starting select a system or a entry application, these application will be the f
 
 ------------
 
-After selected, you can select any application (will be active the app), and use plus button to add new dependecies.
+To connect in an application, you can click on plus button and select those applications; you can set the way those applications are connected, can be rest, grpc, tcp and etc.
 
 
 .. image:: ../../_static/screen/dependecy2.png
@@ -23,14 +23,14 @@ After selected, you can select any application (will be active the app), and use
 
 ------------
 
-Click on app, and add to dependency
+Clicking in an app
 
 .. image:: ../../_static/screen/dependecy4.png
    :alt: Maestro Server - Dependency tree
 
 ------------
 
-After create the tree, salve the tree, clicking on commit button.
+To finish the diagram, click on commit. All done.
 
 .. image:: ../../_static/screen/dependecy3.png
    :alt: Maestro Server - Dependency graph

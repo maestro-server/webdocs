@@ -19,7 +19,7 @@ Create an user - SecurityAudit
 
 1. Go to user tab
 2. Add user, select the access type as a ``programmatic access``
-3. Choose to attach a existed policy on user
+3. Choose to attach an existed policy on user
 4. Select ``SecurityAudit`` policy
 
 Getting AWS Key and Secret Key

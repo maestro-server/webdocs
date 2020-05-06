@@ -1,32 +1,31 @@
 Scheduler
 =========
 
-Scheduler section normally is used to automatize a polling synchronization in connections and playbooks, but you can create a custom schedule.
+The scheduler is a time-based job scheduler, and it is responsible for managing and executing job cross Maestro, it used to synchronize the cloud providers data, to update reports and can be used by users.
 
 ------------
 
-You can list all schedules, the first column show if that schedule is enabled or disabled.
+To list all schedules, go to reports -> scheduler.
 
 
 .. image:: ../../_static/screen/scheduler_list.png
    :alt: Maestro Server - Scheduler list
 
-List Scheduler
-
 ------------
 
-Details for connections schedulers, each time you create a new connection, automatically will create a lot of schedules, each schedule represents resources tracked if you like you can change the time processed of each schedule.
+As an example, we can see schedulers responsable to automatic sync a cloud provider data on Maestro.
 
 .. image:: ../../_static/screen/scheduler_counts.png
    :alt: Maestro Server - Scheduler counts
 
-Total counts
-
 ------------
 
-You can create a custom schedule, normally is rest calling.
+
+Creating a custom job.
+----------------------
+
+You can create a custom job.
 
 .. image:: ../../_static/screen/scheduler_create.png
    :alt: Maestro Server - Create scheduler
-    
-Creating      
+       

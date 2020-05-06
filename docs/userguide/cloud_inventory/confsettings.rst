@@ -9,7 +9,7 @@ Options and configurations
 Services
 --------
 
-To create a new services, you can go to ``settings -> services`` and click on add new service:
+To create a new service, you can go to ``settings -> services`` and click on add new service:
 
 ------------
 
@@ -23,7 +23,7 @@ You can add, remove or update any service filled on Maestro database.
 Config Options
 --------------
 
-You can add or change any options.
+You can add or change any option value.
 
 ==================== ==============================================
 application_options  Applications options
@@ -39,7 +39,7 @@ system_options
 
 ------------
 
-As an example those are contacts found out it on ``clients_options``.
+As an example, those are contacts found out it on ``clients_options``.
 
 .. image:: ../../_static/screen/rr_config.png
    :alt: Maestro Server - Register new service
@@ -49,11 +49,11 @@ As an example those are contacts found out it on ``clients_options``.
 Regions and zones
 -----------------
 
-You can add a new regions and zones, go to ``settings -> regions and zones``:
+You can add a new region and/or a zone, go to ``settings -> regions and zones``:
 
 ------------
 
 .. image:: ../../_static/screen/rr_1.png
    :alt: Maestro Server - Zones
 
-The default regions and zones options.
+The default regions and zones.

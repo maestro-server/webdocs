@@ -33,11 +33,14 @@ We can use to organize each part of our architecture by:
 Graphs - Architecture maps
 ==========================
 
+Visualize your cloud architecture
+
 .. toctree::
    :maxdepth: 2
 
-   graphs/gpdependencies
    graphs/bussiness_graphs
+   graphs/gpdependencies
+   
 
 Reports - Generate advanced reports
 ===================================
@@ -46,14 +49,12 @@ Reports - Generate advanced reports
    :maxdepth: 2
 
    reports/reports
-   reports/aggregation
    reports/scheduler
 
-ACLs- Users and Teams
-=====================
+ACLs - Users and Teams
+======================
 
 .. toctree::
    :maxdepth: 2
 
-   users/teams
    users/accessauth
