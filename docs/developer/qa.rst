@@ -1,14 +1,6 @@
 Quality Assurance
 =================
 
-We use some tools to mensure quality.
-
-.. Note::
-
-      `Travis with all projects <http://https://travis-ci.org/maestro-server>`_
-
-------------
-
 Client Maestro
 --------------
 

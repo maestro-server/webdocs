@@ -44,7 +44,7 @@ Audit             0.5.x
 v0.4x - Beta
 ------------
 
-Break changes - All services of version 0.4.x isnt compatible with early versions.
+Break changes - All services of version 0.4.x isn't compatible with early versions.
 
 ================  ===========
 Client            0.13.x

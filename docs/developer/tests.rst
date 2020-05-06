@@ -1,12 +1,12 @@
 Tests
 ====================
 
-This section describe, how you can test each service.
+This section describe about test tools.
 
 Server APP
 ----------
 
-Testing use Mocha + Chai and Sinon, test coverage with Istambul
+Server uses Mocha + Chai and Sinon to execute tests, and to create a coverage report they use Istambul
 
 .. code-block:: bash
 
@@ -42,7 +42,7 @@ Coveralls         .. image:: https://coveralls.io/repos/github/maestro-server/se
 Discovery APP
 -------------
 
-Testing use pytest
+Testing with pytest
 
 .. code-block:: bash
 
@@ -60,7 +60,7 @@ Coveralls         .. image:: https://coveralls.io/repos/github/maestro-server/di
 Reports APP
 -------------
 
-Testing use pytest
+Uses pytest
 
 .. code-block:: bash
 
@@ -77,7 +77,7 @@ Coveralls         .. image:: https://coveralls.io/repos/github/maestro-server/re
 Data Layer APP
 --------------
 
-Testing use pytest
+Testing with pytest
 
 .. code-block:: bash
 
@@ -94,7 +94,7 @@ Coveralls         .. image:: https://coveralls.io/repos/github/maestro-server/da
 Analytics Apps
 --------------
 
-Testing use pytest
+Testing with pytest
 
 .. code-block:: bash
 
@@ -111,7 +111,7 @@ Coveralls         .. image:: https://coveralls.io/repos/github/maestro-server/an
 Analytics Front
 ---------------
 
-Testing use pytest
+Testing with pytest
 
 .. code-block:: bash
 
@@ -127,7 +127,7 @@ Coveralls         .. image:: https://coveralls.io/repos/github/maestro-server/an
 Audit App
 ---------------
 
-Testing use pytest
+Testing with pytest
 
 .. code-block:: bash
 

@@ -1,7 +1,7 @@
 APIs
 ====================
 
-The communication between each service were made by `rest`, we uses `api docs` to describe each endpoint.
+The communication between each service was made by `rest`, and we use the `api docs` tool to create the api doc.
 
 Server API
 ----------

@@ -1,7 +1,7 @@
 Lints
 ====================
 
-This section describe, how you can lint the code.
+This section describe about lint tools.
 
 JavaScript (Client App)
 -----------------------
@@ -17,8 +17,6 @@ Uses `eslint <https://eslint.org/>`_,
 
 NodeJs (Server App)
 -------------------
-
-Uses Eslint.
 
 Describe on server-app/.eslintrc
 

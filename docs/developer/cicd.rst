@@ -1,7 +1,9 @@
 CI and CD
 =========
 
-Maestro Server using a lots of opensource project to run each pipeline.
+We use Travis as a CI.
+
+`Travis - Maestro dashboard <http://https://travis-ci.org/maestro-server>`_
 
 .. image:: ../_static/screen/cicd.png
    :alt: Maestro Server - CI and CD
