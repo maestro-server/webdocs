@@ -1,16 +1,16 @@
 Inventory
 =========
 
-You can view your servers by applications, organized by systems, including the possibility of knowing which customer owns each system, in a single and powerful dashboard.
+You can organize your servers, applications, cloud resources, systems, and clients on a single and powerful dashboard.
 
-**It will be easy to:**
+**You will be able to:**
 
-- Control multi-environment
-- Track ownership usage
-- Easy to visualize the relationship between microservices
+- Control multi-environment, mulit-cloud and multi-regions using a single dashboard.
+- Track an application ownership
+- Easy to visualize a relationship between microservices
 - Correlation between teams/systems
 - Track costs
-- Easy way to document high architecture systems
+- Easy way to document a high architecture systems
 
 
 .. image:: ../../../_static/screen/dashboard.png
