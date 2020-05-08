@@ -1,26 +1,11 @@
 FrontEnd - Client App
 ---------------------
 
-Client App front end application 
+Client App is a front end application 
 
-- Html and Js client application
+- Html and Js client
 - Single page app (SPA)
 - Cache layer
-
-.. Warning::
-    This service needs a proxy reverse like nginx or haproxy.
-
-----------
-
-====================== ===========================================================================
-Vue2                   Main framework, using by react and manager views, routes and temaplates, 
-                       use vue-loader with webpack                                   
-Webpack2               bundler generate                                                                                                                       
-Bootue                 All micro components, like buttons, tables, forms and etc, 
-                       its 100% Bootstrap3 components built with Vue2, 100% standalone, no query.  
-Nginx                  Using for proxy reverse                                                                                                                
-Mocha / Chai / Sinon   Test, asserts and mock library.                                                                                                        
-====================== ===========================================================================
 
 ----------
 
@@ -30,7 +15,7 @@ Mocha / Chai / Sinon   Test, asserts and mock library.
 
 **Important topics**
 
-- Front end application is divided in:
+- Front end application are divided on:
 
 	- **src/pages:** templates and bussiness rules (domain layer)
 
@@ -38,18 +23,18 @@ Mocha / Chai / Sinon   Test, asserts and mock library.
 
 ----------
 
-A single folder structure components normally use:
+A single component structure:
 
 .. image:: ../../_static/screen/client_component.png
    :alt: Maestro Server - Vue architecture
 
 ----------
 
-**Installation with node**
+**Installing node**
 
     - Nodejs >= 7.4
 
-Download de repository
+Download the repository
 
 .. code-block:: bash
 
@@ -57,7 +42,7 @@ Download de repository
 
 ----------
 
-**Install  dependences**
+**Installing  dependencies**
 
 .. code-block:: bash
 
@@ -65,7 +50,7 @@ Download de repository
 
 ----------
 
-**Production  build**
+**Build**
 
 .. code-block:: bash
 
@@ -73,9 +58,9 @@ Download de repository
 
 ----------
 
-**Dev run**
+**Dev server**
 
 .. code-block:: bash
 
-    npm run dev
+    npm run serve
 

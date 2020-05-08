@@ -1,19 +1,19 @@
-Algorithm Graphs Analytics
+Graphs Analytics Algorithm 
 ==========================
 
-This section will expose how the create of analytic graph works.
+This section will describe about analytics graph algorithm.
 
- - High level work flow
+ - The analytics work flow
 
 .. image:: ../_static/screen/analytics_internal.png
    :alt: Maestro Server - Analytics maestro architecture
 
 ----------
 
-Making the mongodb graph lookup
--------------------------------
+Making graph lookup on the mongodb
+----------------------------------
 
-The graph lookup creates a python dict using mongodb graph, and all application entities have a dep field this field have a app objects with `id` and `name`.
+The graph lookup creates a python dict using mongodb graph lookup feature, they use the ``application id`` on ``dependency field``.
 
 .. image:: ../_static/analytics_graphs/ana_mongo.jpg
 
@@ -22,14 +22,14 @@ The graph lookup creates a python dict using mongodb graph, and all application 
 Creating a networkX graph
 -------------------------
 
-After graph sends to network business, basically transform python object to networkX.
+The next step is to create a networkX object based on graph lookup.
 
-We have a recursive function inside each node on the tree, this order will apply a lot of rules creating a new graph tree with better UI order, like in these moments we handle with conflicts, double dependencies, orders and etc.
+We have a recursive function inside each leaf on the tree, the order will be applied using a well defined rules, the results will be a new graph tree and a position matrix for each leaf, this result fixed sorts, duplication and conflicts issues.
 
 .. image:: ../_static/analytics_graphs/ana_recursive.jpg
    :alt: Maestro Server - Analytics Recursive
 
-Code example showing the recursive function
+An example of code example showing a recursive function
 
 .. code-block:: python
 
@@ -46,20 +46,18 @@ Code example showing the recursive function
                 self._recursive_draw(succ, i + 1)
 
 
-In these graphs we can see all rules applied on graph to create a best dependency tree. 
-Each recursive tick try to figure out certainty pattern, if found apply a transformation. 
-For example The child balance pattern try to find a multiple child in one parent, if happen then create a dummy item on parent layer.
-
 -----
 
 
 Rules
 -----
 
+Follow all rules with can be applied during the create of a new tree. Those rules can be overread each other.
+
 **Growing node**
 
 	- **When:** If the node have more than one child, growing the node to be equal of the number of child
-	- **Transform:** Set the node size to be equal of number of child
+	- **Transform:** Set the node size to be equal to the number of child
 
 **Child Balance**
 
@@ -68,7 +66,7 @@ Rules
 
 **Chess Pawn**
 
-	- **When:** If the app it's an entry point and have parent.
+	- **When:** If the app is an entry point and have parent.
 	- **Transform:** Skipped one column
 
 .. image:: ../_static/analytics_graphs/ana_analytics.png
@@ -77,14 +75,14 @@ Rules
 **Chess horse**
 
 	- **When:** If the node have a top obstacle which other nodes point out to a common dependency.
-	- **Transform:** First push back the dependency to a clear column, and after create a dummy path to the new column.
+	- **Transform:** First push back the dependency to a clear column, and then create a dummy path to the new column.
 
 .. image:: ../_static/analytics_graphs/ana_chess.png
    :alt: Maestro Server - Analytics chess rules
 
 **Clear rows**
 
-	- **When:** After finish the recursive loop, figure out empty columns.
+	- **When:** If a whole column was empty.
 	- **Transform:** Delete these column and rebalance the grid.
 
 .. image:: ../_static/analytics_graphs/ana_clear.png
@@ -93,23 +91,22 @@ Rules
 
 ----------
 
-Enrichment data
----------------
+Enrichment data phase
+---------------------
 
-Next step is an enrichment layer with getting all server data used by each graph.
+Next step is an enrichment data layer. To filled with a data server information.
 
-The enrichment step received two dataset a json python dict represents a graph tree, a matrix position grid. 
-One worker will get all applications accordingly with graph tree creating a new dataset called servers.
+The enrichment step gets two dataset the first one is a json python dict represent as a graph tree, and the second one is a matrix position grid. 
 
 .. image:: ../_static/analytics_graphs/ana_enri.jpg
    :alt: Maestro Server - Analytics Enrichment
 
 ----------
 
-Draw layers
+Draw phase
 -----------
 
-Now its draw time, where we have three datasets, one its a graph tree, second its matrix od each position and the last its list of servers.
+The last but not least, it is the dra step, they get the graph tree, matrix position and servers data to make the svgs.
 
 .. image:: ../_static/analytics_graphs/ana_rotation.png
    :alt: Maestro Server - Analytics Rotation

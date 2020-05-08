@@ -1,21 +1,17 @@
 Analytics Maestro
 -----------------
 
-Analytics App is a module to analytics graph and create xml of Maestro Server, yours responsibility is: 
+Analytics App are responsable to get the dependency tree and do a diagram: 
 
-- Create grids
-- Create bussiness graph
-- Create network graph
-- Create infra graph
+- Create bussiness diagram
 - Drawing
-- SVGs
 
 ----------
 
 .. image:: ../../_static/screen/analytics_internal.png
    :alt: Maestro Server - Analytics maestro architecture
 
-Analytics using `Flask <http://flask.pocoo.org>`_,  and python >3.5, has api rest, and tasks.
+Analytics app use `Flask <http://flask.pocoo.org>`_,  on python >3.5.
 
 **Setup dev env**
 
@@ -25,53 +21,42 @@ Analytics using `Flask <http://flask.pocoo.org>`_,  and python >3.5, has api res
 
     docker-compose up -d
 
-Will be setup rabbitmq and redis
+It will be set a rabbitmq and a redis
 
-**Windows Env**
+**Highlights**
 
-If you use windows, celery havent support for windows, the last version is 3.1.25.
+- The diagram lookup and draw process are compound by:
 
-.. code-block:: bash
+    - **entry:** The first task, they get all entries application and send to graphlookup.
 
-    pip3 install celery==3.1.25
+    - **graphlookup:** Request for ``Data App`` a application lookup using a MongoDB $graphLookup feature.
 
-    npm run powershell
+    - **network bussiness:** Do a grid tree, and then send to ``enrichment task`` and ``info task``.
 
-**Important topics**
-
-- Controller used only graph to start all tasks:
-
-- The drawer process is compound by:
-
-    - **entry:** First task, figure out all entry applications accordingly system endpoint parameters, our any direct application if avalaible.
-
-    - **graphlookup:** Request for Data App a aggregate query using MongoDB $graphLookup.
-
-    - **network bussiness:** Construct Grid Map, and send to enrichment and info bussines.
-
-    - **enrichment:** Request for Data App all servers used on grid.
+    - **enrichment:** Request for ``Data App`` more data abouts servers.
 
     - **info bussiness:** Calculate histogram, counts, density and connections.
 
-    - **network client:** Request for Data App all clients used in grid.
+    - **network client:** Request for ``Data App`` all clients information.
 
-    - **draw bussiness:** Create svgs based of grid.
+    - **draw bussiness:** Draw svgs.
 
-    - **notification:** Send updates for Data App.
+    - **notification:** Send updates to ``Data App``.
 
-    - **send front app:** Send svgs to Analytics Front app.
+    - **send front app:** Send the svg to ``Analytics Front app``.
 
-	Each step have unique task.
 
-- Config is managed by env variables, need to be, because in production env like k8s is easier to manager the pods.
-
-- Repository has pymongo objects.
+- The configuration are managed by env variables
 
 ----------
 
 **Flower - Debbug Celery**
 
-You can install a flower, it's a control panel to centralize results throughout rabbitMQ, very useful to troubleshooting producer and consumers.
+Real-time monitoring using Celery Events
+
+- Task progress and history
+- Ability to show task details (arguments, start time, runtime, and more)
+- Graphs and statistics
 
 .. code-block:: bash
 
@@ -83,12 +68,12 @@ You can install a flower, it's a control panel to centralize results throughout 
 
 ----------
 
-**Installation with python 3**
+**Installation guide**
 
     - Python >3.4
     - RabbitMQ
 
-Download de repository
+Download the repository
 
 .. code-block:: bash
 
@@ -96,7 +81,7 @@ Download de repository
 
 ----------
 
-**Install  dependences**
+**Installing dependencies**
 
 .. code-block:: bash
 
@@ -104,7 +89,7 @@ Download de repository
 
 ----------
 
-**Install  run api**
+**Running**
 
 .. code-block:: bash
 
@@ -120,7 +105,7 @@ Download de repository
 
 ----------
 
-**Install  run rabbit workers**
+**Running workers**
 
 .. code-block:: bash
 
@@ -134,7 +119,7 @@ Download de repository
 
 .. Warning::
 
-    For production environment, use something like gunicorn.
+    On production we use gunicorn to handle requests.
 
     .. code-block:: python
 

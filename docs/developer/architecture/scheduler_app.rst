@@ -25,13 +25,13 @@ Scheduler use apscheduler to control scheduler jobs, `Apscheduler documentation 
     - RabbitMQ
     - MongoDB
 
-Download de repository
+Download the repository
 
 .. code-block:: bash
 
     git clone https://github.com/maestro-server/scheduler-app.git
 
-**Important topics**
+**Highlights**
 
 - Celery Beat consult schedulers collection in mongodb every 5 seconds and updated time to call the tasks.
 
@@ -58,7 +58,7 @@ Download de repository
     - RabbitMQ
     - MongoDB
 
-Download de repository
+Download the repository
 
 .. code-block:: bash
 
@@ -66,19 +66,15 @@ Download de repository
 
 ----------
 
-**Install  run celery beat**
+**Running scheduler beat**
 
 .. code-block:: bash
-
-    celery -A app.celery beat -S app.schedulers.MongoScheduler --loglevel=info
-
-    or 
 
     npm run beat
 
 ----------
 
-**Install  run rabbit workers**
+**Running workers**
 
 .. code-block:: bash
 

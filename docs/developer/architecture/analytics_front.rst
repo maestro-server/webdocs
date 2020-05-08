@@ -1,43 +1,38 @@
 Analytics Front
 ---------------
 
-Analytics Front App is front end of analytics graph of Maestro Server, yours responsibility is:
+Analytics Front Application is responsable to expose diagrams to the user:
 
-- Authentication
-- Show graphs SVGs
-- Upload internal SVGs of analytics
+- Public/private authorization
+- Expose svgs diagrams
+- Upload private SVGs
 
 .. Warning::
-	This service can be external access
+	This service need to expose an external access
 
 ----------
 
-We using DDD to organize the code, has infra, repositories, entities (values objects), interfaces, application, and domain, if like to learn read this article is very cool `DDD in Node Apps <https://blog.codeminer42.com/nodejs-and-good-practices-354e7d763626>`_ 
+We use DDD approach to organize a code, they have an infra, repositories, entities (values objects), interfaces, application, and domain folders. `DDD in Node Apps <https://blog.codeminer42.com/nodejs-and-good-practices-354e7d763626>`_ 
 
 .. image:: ../../_static/screen/fluxo_data.png
 
-Analytics its have constructed with `KrakenJs <http://krakenjs.com/>`_, we create a lot of middleware and organize by domain.
+Analytics is made with `KrakenJs <http://krakenjs.com/>`_.
 
-Core API, organized by modules:
+Follow a module flow diagram:
 
 .. image:: ../../_static/screen/analytics_front.png
    :alt: Maestro Server - Analytics front architecture
 
-- Core
-- Authetication
-- Graph
-- View
-
 ----------
 
-**Installation with node**
+**Installing node**
 
-    - Nodejs 8 or above
-    - MongoDB 3.4
+    - Nodejs >=8
+    - MongoDB >=3.4
     - RabbitMQ
-    - AWS S3 (If using S3 upload)
+    - AWS S3 (To use as a external storage)
 
-Download de repository
+To Download the repository, go to:
 
 .. code-block:: bash
 
@@ -45,7 +40,7 @@ Download de repository
 
 ----------
 
-**Install  dependences**
+**Installing dependencies**
 
 .. code-block:: bash
 
@@ -54,7 +49,7 @@ Download de repository
 
 ----------
 
-**Configure some env variable**
+**Configure env variables**
 
 create .env file
 
@@ -95,9 +90,9 @@ create .env file
 
 ----------
 
-For production environment, need to use pm2 or forever lib.
+We use PM2 to handle multiple threads, following the configuration.
 
-Like (PM2):
+PM2:
 
 .. code-block:: bash
 

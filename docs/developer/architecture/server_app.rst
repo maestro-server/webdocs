@@ -1,23 +1,24 @@
 Server App
 ----------
 
-Server App main application, some responsibility is 
+Server App is the main application:
 
 - Authentication and authorization
 - Validate and create entities (crud ops)
 - Proxy to others services
 
 .. Warning::
-	This service can be external access
+
+	This service need to be expose externally
 
 ----------
 
-We using DDD to organize the code, has infra, repositories, entities (values objects), interfaces, application, and domain, if like to learn read this article is very cool `DDD in Node Apps <https://blog.codeminer42.com/nodejs-and-good-practices-354e7d763626>`_ 
+We use DDD approach to organize a code, they have an infra, repositories, entities (values objects), interfaces, application, and domain folders. `DDD in Node Apps <https://blog.codeminer42.com/nodejs-and-good-practices-354e7d763626>`_ 
 
 .. image:: ../../_static/screen/fluxo_data.png
    :alt: Maestro Server - NodeJS DDD
 
-Server its have constructed with `KrakenJs <http://krakenjs.com/>`_, we create a lot of middleware and organize by domain.
+Server is made with `KrakenJs <http://krakenjs.com/>`_.
 
 **Setup dev env**
 
@@ -27,18 +28,17 @@ Server its have constructed with `KrakenJs <http://krakenjs.com/>`_, we create a
 
     docker-compose up -d
 
-Will be setup mongodb and fake smtp server
+It will run a mongodb and a fake stmp server
 
 ----------
 
-**Installation with node**
+**Installing node**
 
-    - Nodejs 8 or above
-    - Npm
+    - Nodejs >=8
     - MongoDB
-    - Gcc + python (bcrypt package, if need be compilate)
+    - Gcc + python (bcrypt package)
 
-Download de repository
+Download the repository
 
 .. code-block:: bash
 
@@ -46,7 +46,7 @@ Download de repository
 
 ----------
 
-**Install  dependences**
+**Installing dependencies**
 
 .. code-block:: bash
 
@@ -55,7 +55,7 @@ Download de repository
 
 ----------
 
-**Configure some env variable**
+**Configure env variables**
 
 create .env file
 
@@ -76,7 +76,7 @@ create .env file
     MAESTRO_ANALYTICS_FRONT_URI=http://analytics_front:9999 // get analytics html
     MAESTRO_AUDIT_URI=http://audit:10900 // notify audit update event and get history track
 
-and
+and run the app
 
 .. code-block:: bash
 
@@ -97,19 +97,22 @@ Every config can be pass by env variables, but if you like, can be organize by .
  .env.production     node_env is setted prodcution
 =================== ================================
 
-**Migrate setup data**
+**Database migration**
 
-create .env file
+Run the migration command.
 
 .. code-block:: bash
 
     npm run migrate
 
+    # to rollback the migration, run
+    npm run down_migration
+
 ----------
 
-For production environment, need to use pm2 or forever lib.
+We use PM2 to handle multiple threads, following the configuration.
 
-Like (PM2):
+PM2:
 
 .. code-block:: bash
 

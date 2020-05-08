@@ -2,10 +2,11 @@
 Data APP
 ---------------
 
-Data app, database gateway micro service
-- Request and response database operations
+Data app is a gateway connection to the mongodb.
 
-Simple Rest API using `Flask <http://flask.pocoo.org>`_ (python) + pymongo.
+- CRUD database operations
+
+Data app use `Flask <http://flask.pocoo.org>`_,  on python >3.5.
 
 ---------------
 
@@ -34,7 +35,7 @@ Mongo service
 
     docker-compose up -d
 
-Will be setup mongodb
+It setup a mongodb
 
 ----------
 
@@ -43,7 +44,7 @@ Will be setup mongodb
     - Python >3.4
     - MongoDB
 
-Download de repository
+Download the repository
 
 .. code-block:: bash
 
@@ -69,7 +70,7 @@ Download de repository
 
 .. Warning::
 
-    For production environment, use something like gunicorn.
+    On production we use gunicorn to handle requests.
 
 .. code-block:: python
 

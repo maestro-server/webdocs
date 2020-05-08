@@ -27,7 +27,7 @@ Websocket system using `Centrifugo OpenSource project <https://github.com/centri
 
 ----------
 
-Download de repository (Centrifugal project)
+Download the repository (Centrifugal project)
 
 .. code-block:: bash
 

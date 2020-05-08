@@ -2,38 +2,33 @@ Audit App
 ---------
 
 
-Audit App is webapp application port of Maestro Server stack, yours responsibility is:
+Audit App is a single application to track and record resources change:
 
-- Control and manage changed data on Maestro
-- Show a tree of changed entities
-- Store and control data changes
-- Trigger hooks based in changed rules
+- Track resources changes
+- Create a change tree
+- Store those data
 
 ----------
 
-We using DDD to organize the code, has infra, repositories, entities (values objects), interfaces, application, and domain, if like to learn read this article is very cool `DDD in Node Apps <https://blog.codeminer42.com/nodejs-and-good-practices-354e7d763626>`_ 
+We use DDD approach to organize a code, they have an infra, repositories, entities (values objects), interfaces, application, and domain folders. `DDD in Node Apps <https://blog.codeminer42.com/nodejs-and-good-practices-354e7d763626>`_ 
 
 .. image:: ../../_static/screen/fluxo_data.png
    :alt: Maestro Server - NodeJS DDD
 
-Audit its have constructed with `KrakenJs <http://krakenjs.com/>`_, we create a lot of middleware and organize by domain.
+Audit is made with `KrakenJs <http://krakenjs.com/>`_.
 
-Core API, organized by modules:
+Follow a module flow diagram:
 
 .. image:: ../../_static/screen/audit_arch.png
 
-- Core
-- Audit // make diff of each request
-- Snapshot // hold last state of each entity
-
 ----------
 
-**Installation with node**
+**Installing node**
 
     - Nodejs 8 or above
     - MongoDB 3.x
 
-Download de repository
+Download the repository
 
 .. code-block:: bash
 
@@ -41,7 +36,7 @@ Download de repository
 
 ----------
 
-**Install  dependences**
+**Installing dependencies**
 
 .. code-block:: bash
 
@@ -50,7 +45,7 @@ Download de repository
 
 ----------
 
-**Configure some env variable**
+**Configure env variables**
 
 create .env file
 
@@ -71,30 +66,22 @@ and
 
 **Multiple env**
 
-Every config can be pass by env variables, but if you like, can be organize by .env files,
+You can use .env files the set configurations
 
-=================== ================================
+=================== ====================================
        Name                     Desc                                             
-=================== ================================
+=================== ====================================
  .env                Default
- .env.test           Used on run test
- .env.development    node_env is setted development
- .env.production     node_env is setted prodcution
-=================== ================================
-
-**Migrate setup data**
-
-create .env file
-
-.. code-block:: bash
-
-    npm run migrate
+ .env.test           Used on tests
+ .env.development    node_env was setted ``development``
+ .env.production     node_env was setted ``prodcution``
+=================== ====================================
 
 ----------
 
-For production environment, need to use pm2 or forever lib.
+We use PM2 to handle multiple threads, following the configuration.
 
-Like (PM2):
+PM2:
 
 .. code-block:: bash
 

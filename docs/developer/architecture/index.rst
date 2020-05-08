@@ -1,12 +1,7 @@
 Architecture
 ====================
 
-This section shows a advanced configurations for each micro service.
-
-    **Constainerazed system:**
-    Made with containers in mind, Maestro Server are deployed with Docker.
-
-The services uses `rest` (http) calls to communicate between then.
+This section describes advanced configurations and architecture. Maestro is organized by services made in nodejs and python, and they use mongodb as a datastore and rabbitmq as broker, we build and deploy the application using docker.
 
 .. image:: ../../_static/screen/arch_1.png
    :alt: Maestro Server - Architecture overview

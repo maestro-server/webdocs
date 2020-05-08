@@ -1,18 +1,18 @@
 Discovery App
 -------------
 
-Discovery App service to connect and crawler provider
+Discovery App is a crawler encharge to connect yo cloud providers.
 
-- Encharge to manager and authenticate in each provider
-- Crawler the data and record into db
-- Consume batch insert data
+- Encharge to manager and authenticate in each cloud provider
+- Crawler data and record it on Maestro db
+- Translate cloud data to maestro data.
 
 ----------
 
 .. image:: ../../_static/screen/discovery.png
    :alt: Maestro Server - Discovery app overview
 
-Discovery using `Flask <http://flask.pocoo.org>`_,  and python >3.5, has api rest, and tasks.
+Discovery app use `Flask <http://flask.pocoo.org>`_,  on python >3.5.
 
 **Setup dev env**
 
@@ -22,52 +22,33 @@ Discovery using `Flask <http://flask.pocoo.org>`_,  and python >3.5, has api res
 
     docker-compose up -d
 
-Will be setup rabbitmq and redis
 
-**Windows Env**
-
-If you use windows, celery havent support for windows, the last version is 3.1.25.
-
-.. code-block:: bash
-
-    pip3 install celery==3.1.25
-
-    npm run powershell
-
-**Important topics**
+**Highlights**
 
 .. image:: ../../_static/screen/discovery_arch.png
    :alt: Maestro Server - Discovery architecture
 
-- Controller used factory dc abstract to create easy way to make CRUD in mongodb
+- The crawler are divided in:
 
-- The crawler is divided in:
+	- **api:** To authenticate on cloud providers.
 
-	- **api:** connect in api provider and get result
+	- **translate:** Normalize the data.
 
-	- **translate:** normalize the data
+    - **setup:** Reset the tracker stats (it used on datacenters to get the orphans instances) 
 
-    - **setup:** reset tracker stats (used in datacenters to ensure a sync resource) 
+    - **tracker:** recreate the tracker stats
 
-    - **tracker:** add list entry into tracker stats
+	- **insert:** insert/update data on mongodb
 
-	- **insert:** insert/update data in mongodb
+    - **audit:** prepare and transform a data to be send to the external audit
 
-    - **audit:** prepare and transform data to be send record to external audit task
+    - **external_audit:** Send a http request to ``Audit app``
 
-    - **external_audit:** Send http request to Audit app
-
-    - **ws:** Send http notification to webscoket api
-
-	Each step have unique task.
-
-- Config is managed by env variables, need to be, because in production env like k8s is easier to manager the pods.
-
-- Repository has pymongo objects.
+    - **ws:** Send a http notification to ``webscoket api``
 
 ----------
 
-**Component Diagram**
+**Components Diagram**
 
 Follow the component diagram to show a relation of each worker and service.
 
@@ -78,7 +59,11 @@ Follow the component diagram to show a relation of each worker and service.
 
 **Flower - Debbug Celery**
 
-You can install a flower, it's a control panel to centralize results throughout rabbitMQ, very useful to troubleshooting producer and consumers.
+Real-time monitoring using Celery Events
+
+- Task progress and history
+- Ability to show task details (arguments, start time, runtime, and more)
+- Graphs and statistics
 
 .. code-block:: bash
 
@@ -95,7 +80,7 @@ You can install a flower, it's a control panel to centralize results throughout 
     - Python >3.4
     - RabbitMQ
 
-Download de repository
+Download the repository
 
 .. code-block:: bash
 
@@ -103,7 +88,7 @@ Download de repository
 
 ----------
 
-**Install  dependences**
+**Installing dependencies**
 
 .. code-block:: bash
 
@@ -111,7 +96,7 @@ Download de repository
 
 ----------
 
-**Install  run api**
+**Running**
 
 .. code-block:: bash
 
@@ -127,7 +112,7 @@ Download de repository
 
 ----------
 
-**Install  run rabbit workers**
+**Running workers**
 
 .. code-block:: bash
 
@@ -141,7 +126,7 @@ Download de repository
 
 .. Warning::
 
-    For production environment, use something like gunicorn.
+    On production we use gunicorn to handle requests.
 
     .. code-block:: python
 
