@@ -1,6 +1,6 @@
 Quick Start
 ====================
-It had three ways to install maestro. The quick one is to use a standalone docker, if you like more control over the installation, you can place multiple docker images per service, and the last you can install from the source.
+It had three ways to install maestro. The quick one is to use a standalone docker [easy way], if you like more control over the installation, you can run multiple docker images per service [Recommended], and the last you can install from the source [Dev].
 
 Running locally
 ***************
