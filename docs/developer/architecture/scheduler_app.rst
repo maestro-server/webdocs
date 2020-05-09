@@ -2,7 +2,7 @@
 Scheduler App
 -------------
 
-Scheduler App are able to manage and execute jobs
+Scheduler App is responsable to manage and execute internal jobs.
 
 - Schedule jobs, interval or crontab
 - Do chain jobs
