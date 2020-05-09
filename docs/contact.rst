@@ -12,6 +12,6 @@ Do you have any question, comments, feedback or question about Maestro Server? P
 Feature request
 ---------------
 
-Do you like a new feature? Please open a new request on Github.
+Do you like a new feature? You can open a new request on Github.
 
 `Feature request <https://github.com/maestro-server/server-app/issues/new?template=feature_request.md>`_.
