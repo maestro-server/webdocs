@@ -10,12 +10,11 @@ Audit App is a single application to track and record resources change:
 
 ----------
 
-We use DDD approach to organize a code, they have an infra, repositories, entities (values objects), interfaces, application, and domain folders. `DDD in Node Apps <https://blog.codeminer42.com/nodejs-and-good-practices-354e7d763626>`_
+- Audit is made with `KrakenJs <http://krakenjs.com/>`_.
+- We use DDD approach to organize a code, they have an infra, repositories, entities (values objects), interfaces, application, and domain folders. `DDD in Node Apps <https://blog.codeminer42.com/nodejs-and-good-practices-354e7d763626>`_
 
 .. image:: ../../_static/screen/fluxo_data.png
    :alt: Maestro Server - NodeJS DDD
-
-Audit is made with `KrakenJs <http://krakenjs.com/>`_.
 
 Follow a module flow diagram:
 
