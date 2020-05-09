@@ -10,7 +10,7 @@ Audit App is a single application to track and record resources change:
 
 ----------
 
-We use DDD approach to organize a code, they have an infra, repositories, entities (values objects), interfaces, application, and domain folders. `DDD in Node Apps <https://blog.codeminer42.com/nodejs-and-good-practices-354e7d763626>`_ 
+We use DDD approach to organize a code, they have an infra, repositories, entities (values objects), interfaces, application, and domain folders. `DDD in Node Apps <https://blog.codeminer42.com/nodejs-and-good-practices-354e7d763626>`_
 
 .. image:: ../../_static/screen/fluxo_data.png
    :alt: Maestro Server - NodeJS DDD
@@ -69,12 +69,12 @@ and
 You can use .env files the set configurations
 
 =================== ====================================
-       Name                     Desc                                             
+       Name                     Desc
 =================== ====================================
  .env                Default
  .env.test           Used on tests
- .env.development    node_env was setted ``development``
- .env.production     node_env was setted ``prodcution``
+ .env.development    node_env was set ``development``
+ .env.production     node_env was set ``production``
 =================== ====================================
 
 ----------

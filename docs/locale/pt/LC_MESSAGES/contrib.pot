@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Maestro Server - Cloud Inventory 0.1\n"
+"Project-Id-Version: Maestro Server - Cloud Inventory 0.6\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-22 20:54+0100\n"
+"POT-Creation-Date: 2020-05-09 12:21+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -53,6 +53,5 @@ msgid "Include tests if your patch is supposed to solve a bug, and explain clear
 msgstr ""
 
 #: ../../contrib.rst:24
-msgid "All contribuition will be accept by Pull Request"
+msgid "All contribution will be accept by Pull Request"
 msgstr ""
-

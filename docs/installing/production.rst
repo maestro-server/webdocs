@@ -7,7 +7,7 @@ This section describes some tips you can use to be able to productionize the Mae
 
 	- You should use a reliable storage engine as S3 - `More details about upload <http://docs.maestroserver.io/en/latest/installing/upload.html>`_.
 	- You can use atlas mongodb to manage your mongo db externally. - `More details about external DB <http://docs.maestroserver.io/en/latest/installing/external_db.html>`_.
-	- Configurate a third-party SMTP - `More details about SMTP <http://docs.maestroserver.io/en/latest/installing/smtp.html>`_. 
+	- Configuration a third-party SMTP - `More details about SMTP <http://docs.maestroserver.io/en/latest/installing/smtp.html>`_.
 	- Set a unique value for each ``SECRETJWT`` key - `More details about tokens <http://docs.maestroserver.io/en/latest/installing/tokens.html>`_.
 
 - Spin up an nginx/loadbalance over any public endpoint to handle ssl configuration.
@@ -31,5 +31,4 @@ Scheduler Beat App
 ------------------
 
 .. Danger::
-	Scheduler app have two parts, the producer called beat and the workers, the beat isn't able to have multiple instance on the same time, be carefull. To minimize the drawback, the beat schedule is an isolated and an stateless service (if fall, you can call up the beat again). 
-     
+	Scheduler app have two parts, the producer called beat and the workers, the beat isn't able to have multiple instance on the same time, be careful. To minimize the drawback, the beat schedule is an isolated and an stateless service (if fall, you can call up the beat again).

@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Maestro Server - Cloud Inventory 0.1\n"
+"Project-Id-Version: Maestro Server - Cloud Inventory 0.6\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-22 20:54+0100\n"
+"POT-Creation-Date: 2020-05-09 12:21+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,678 +16,2185 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../../installing/architecture.rst:3
-msgid "Cloud Inventory"
+#: ../../installing/docker.rst:2
+msgid "High Architecture"
 msgstr ""
 
-#: ../../installing/architecture.rst:5
-msgid "Cloud Inventory able to catalog and manager system in multi-cloud environment"
+#: ../../installing/docker.rst:8
+msgid "This section will deep dive over each configuration found it on each Maestro service."
 msgstr ""
 
-#: ../../installing/architecture.rst:7
-msgid "Server manager in multi-cloud"
+#: ../../installing/docker.rst:10
+msgid "A minimum installation require:"
 msgstr ""
 
-#: ../../installing/architecture.rst:8
-msgid "Reports with advanced filters"
+#: ../../installing/docker.rst:14
+#: ../../installing/docker.rst:62
+#: ../../installing/index.rst:14
+#: ../../installing/servdiscovery.rst:14
+#: ../../installing/tokens.rst:21
+#: ../../installing/tokens.rst:31
+msgid "Client App"
 msgstr ""
 
-#: ../../installing/architecture.rst:9
-msgid "‎Scheduler commands with Ansible"
+#: ../../installing/docker.rst:15
+#: ../../installing/index.rst:16
+#: ../../installing/servdiscovery.rst:14
+#: ../../installing/servdiscovery.rst:20
+#: ../../installing/tokens.rst:21
+#: ../../installing/tokens.rst:29
+#: ../../installing/tokens.rst:31
+#: ../../installing/tokens.rst:33
+#: ../../installing/tokens.rst:33
+msgid "Server App"
 msgstr ""
 
-#: ../../installing/architecture.rst:10
-msgid "‎Auto Discovery for cloud environment"
-msgstr ""
-
-#: ../../installing/architecture.rst:13
-msgid "Architecture"
-msgstr ""
-
-#: ../../installing/architecture.rst:17
-msgid "Cloud inventory services is:"
-msgstr ""
-
-#: ../../installing/architecture.rst:21
-msgid "Server API"
-msgstr ""
-
-#: ../../installing/architecture.rst:23
-msgid "Server App main application, some responsibility is"
-msgstr ""
-
-#: ../../installing/architecture.rst:25
-msgid "Authentication and authorization"
-msgstr ""
-
-#: ../../installing/architecture.rst:26
-msgid "Validate and create entities (crud ops)"
-msgstr ""
-
-#: ../../installing/architecture.rst:27
-msgid "Proxy to others services"
-msgstr ""
-
-#: ../../installing/architecture.rst:28
-msgid "Unique service can be access by world"
-msgstr ""
-
-#: ../../installing/architecture.rst:31
-msgid "Only this service can be external access"
-msgstr ""
-
-#: ../../installing/architecture.rst:35
-#: ../../installing/architecture.rst:181
-#: ../../installing/architecture.rst:261
-#: ../../installing/architecture.rst:377
-#: ../../installing/architecture.rst:445
-msgid "**Installation by docker**"
-msgstr ""
-
-#: ../../installing/architecture.rst:52
-msgid "Run docker compose"
-msgstr ""
-
-#: ../../installing/architecture.rst:58
-msgid "Or docker run"
-msgstr ""
-
-#: ../../installing/architecture.rst:66
-#: ../../installing/architecture.rst:203
-msgid "**Installation with node**"
-msgstr ""
-
-#: ../../installing/architecture.rst:68
-#: ../../installing/architecture.rst:205
-msgid "Nodejs 6 or 7"
-msgstr ""
-
-#: ../../installing/architecture.rst:69
-msgid "Npm"
-msgstr ""
-
-#: ../../installing/architecture.rst:70
-#: ../../installing/architecture.rst:291
-#: ../../installing/architecture.rst:399
-#: ../../installing/architecture.rst:473
-#: ../../installing/production.rst:34
+#: ../../installing/docker.rst:16
 msgid "MongoDB"
 msgstr ""
 
-#: ../../installing/architecture.rst:71
-msgid "Gcc + python (bcrypt package, if need be compilate)"
-msgstr ""
-
-#: ../../installing/architecture.rst:73
-#: ../../installing/architecture.rst:207
-#: ../../installing/architecture.rst:293
-#: ../../installing/architecture.rst:401
-#: ../../installing/architecture.rst:475
-msgid "Download de repository"
-msgstr ""
-
-#: ../../installing/architecture.rst:81
-#: ../../installing/architecture.rst:215
-#: ../../installing/architecture.rst:301
-msgid "**Install  dependences**"
-msgstr ""
-
-#: ../../installing/architecture.rst:90
-msgid "**Configure some env variable**"
-msgstr ""
-
-#: ../../installing/architecture.rst:92
-msgid "create .env file"
-msgstr ""
-
-#: ../../installing/architecture.rst:104
-msgid "and"
-msgstr ""
-
-#: ../../installing/architecture.rst:112
-msgid "For production environment, need to use pm2 or forever lib."
-msgstr ""
-
-#: ../../installing/architecture.rst:114
-msgid "Like:"
-msgstr ""
-
-#: ../../installing/architecture.rst:139
-#: ../../installing/architecture.rst:239
-#: ../../installing/architecture.rst:352
-#: ../../installing/architecture.rst:421
-#: ../../installing/architecture.rst:526
-msgid "**Env variables**"
-msgstr ""
-
-#: ../../installing/architecture.rst:142
-#: ../../installing/architecture.rst:242
-#: ../../installing/architecture.rst:355
-#: ../../installing/architecture.rst:424
-#: ../../installing/architecture.rst:529
-msgid "Env Variables"
-msgstr ""
-
-#: ../../installing/architecture.rst:142
-#: ../../installing/architecture.rst:242
-#: ../../installing/architecture.rst:355
-#: ../../installing/architecture.rst:424
-#: ../../installing/architecture.rst:529
-msgid "Example"
-msgstr ""
-
-#: ../../installing/architecture.rst:142
-#: ../../installing/architecture.rst:242
-#: ../../installing/architecture.rst:355
-#: ../../installing/architecture.rst:424
-#: ../../installing/architecture.rst:529
-msgid "Description"
-msgstr ""
-
-#: ../../installing/architecture.rst:144
-msgid "MAESTRO_PORT"
-msgstr ""
-
-#: ../../installing/architecture.rst:144
-msgid "8888"
-msgstr ""
-
-#: ../../installing/architecture.rst:145
-msgid "NODE_ENV"
-msgstr ""
-
-#: ../../installing/architecture.rst:145
-msgid "development|production"
-msgstr ""
-
-#: ../../installing/architecture.rst:146
-#: ../../installing/architecture.rst:357
-#: ../../installing/architecture.rst:531
-msgid "MAESTRO_MONGO_URI"
-msgstr ""
-
-#: ../../installing/architecture.rst:146
-msgid "localhost/maestro-client"
-msgstr ""
-
-#: ../../installing/architecture.rst:146
-msgid "DB string connection"
-msgstr ""
-
-#: ../../installing/architecture.rst:147
-#: ../../installing/architecture.rst:361
-msgid "MAESTRO_SECRETJWT"
-msgstr ""
-
-#: ../../installing/architecture.rst:147
-#: ../../installing/architecture.rst:148
-#: ../../installing/architecture.rst:149
-#: ../../installing/architecture.rst:156
-#: ../../installing/architecture.rst:157
-msgid "XXXX"
-msgstr ""
-
-#: ../../installing/architecture.rst:148
-msgid "MAESTRO_SECRETJWT_FORGOT"
-msgstr ""
-
-#: ../../installing/architecture.rst:149
-msgid "MAESTRO_SECRET_CRYPTO_FORGOT"
-msgstr ""
-
-#: ../../installing/architecture.rst:150
-#: ../../installing/architecture.rst:359
-#: ../../installing/architecture.rst:426
-#: ../../installing/architecture.rst:533
-msgid "MAESTRO_DISCOVERY_URL"
-msgstr ""
-
-#: ../../installing/architecture.rst:150
-#: ../../installing/architecture.rst:533
-msgid "http://localhost:5000"
-msgstr ""
-
-#: ../../installing/architecture.rst:150
-msgid "Url discovery-app (flask)"
-msgstr ""
-
-#: ../../installing/architecture.rst:151
-msgid "MAESTRO_REPORT_URL"
-msgstr ""
-
-#: ../../installing/architecture.rst:151
-#: ../../installing/architecture.rst:534
-msgid "http://localhost:5005"
-msgstr ""
-
-#: ../../installing/architecture.rst:151
-msgid "Url reports-app (flask)"
-msgstr ""
-
-#: ../../installing/architecture.rst:152
-msgid "SMTP_PORT"
-msgstr ""
-
-#: ../../installing/architecture.rst:152
-msgid "1025"
-msgstr ""
-
-#: ../../installing/architecture.rst:153
-msgid "SMTP_HOST"
-msgstr ""
-
-#: ../../installing/architecture.rst:153
-#: ../../installing/architecture.rst:357
-#: ../../installing/architecture.rst:531
-msgid "localhost"
-msgstr ""
-
-#: ../../installing/architecture.rst:154
-msgid "SMTP_SENDER"
-msgstr ""
-
-#: ../../installing/architecture.rst:154
-msgid "felipeklerkk@XXXX"
-msgstr ""
-
-#: ../../installing/architecture.rst:155
-msgid "SMTP_IGNORE"
-msgstr ""
-
-#: ../../installing/architecture.rst:155
-msgid "true|false"
-msgstr ""
-
-#: ../../installing/architecture.rst:156
-msgid "AWS_ACCESS_KEY_ID"
-msgstr ""
-
-#: ../../installing/architecture.rst:157
-msgid "AWS_SECRET_ACCESS_KEY"
-msgstr ""
-
-#: ../../installing/architecture.rst:158
-msgid "AWS_DEFAULT_REGION"
-msgstr ""
-
-#: ../../installing/architecture.rst:158
-msgid "us-east-1"
-msgstr ""
-
-#: ../../installing/architecture.rst:159
-msgid "AWS_S3_BUCKET_NAME"
-msgstr ""
-
-#: ../../installing/architecture.rst:159
-msgid "maestroserver"
-msgstr ""
-
-#: ../../installing/architecture.rst:160
-msgid "MAESTRO_UPLOAD_TYPE"
-msgstr ""
-
-#: ../../installing/architecture.rst:160
-msgid "S3/Local"
-msgstr ""
-
-#: ../../installing/architecture.rst:160
-msgid "Upload mode"
-msgstr ""
-
-#: ../../installing/architecture.rst:161
-msgid "LOCAL_DIR"
-msgstr ""
-
-#: ../../installing/architecture.rst:161
-msgid "/public/static/"
-msgstr ""
-
-#: ../../installing/architecture.rst:161
-msgid "Where files willb uploaded"
-msgstr ""
-
-#: ../../installing/architecture.rst:168
-msgid "FrontEnd - Client App"
-msgstr ""
-
-#: ../../installing/architecture.rst:170
-msgid "Client App front end application"
-msgstr ""
-
-#: ../../installing/architecture.rst:172
-msgid "Html and Js client application"
-msgstr ""
-
-#: ../../installing/architecture.rst:173
-msgid "Single page app (SPA)"
-msgstr ""
-
-#: ../../installing/architecture.rst:174
-msgid "Cache layer"
-msgstr ""
-
-#: ../../installing/architecture.rst:177
-msgid "This service needs a proxy reverse like nginx or haproxy."
-msgstr ""
-
-#: ../../installing/architecture.rst:199
-msgid "Docker have installed nginx proxy."
-msgstr ""
-
-#: ../../installing/architecture.rst:223
-msgid "**Production  build**"
-msgstr ""
-
-#: ../../installing/architecture.rst:231
-msgid "**Dev run**"
-msgstr ""
-
-#: ../../installing/architecture.rst:244
-msgid "API_URL"
-msgstr ""
-
-#: ../../installing/architecture.rst:244
-msgid "http://localhost:8888"
-msgstr ""
-
-#: ../../installing/architecture.rst:244
-msgid "Server App Url"
-msgstr ""
-
-#: ../../installing/architecture.rst:245
-msgid "STATIC_URL"
-msgstr ""
-
-#: ../../installing/architecture.rst:245
-msgid "/upload/"
-msgstr ""
-
-#: ../../installing/architecture.rst:245
-msgid "Relative path of static content"
-msgstr ""
-
-#: ../../installing/architecture.rst:251
+#: ../../installing/docker.rst:19
+msgid "To uses a synchronous discovery features with AWS and/or other providers, do you need:"
+msgstr ""
+
+#: ../../installing/docker.rst:23
+#: ../../installing/docker.rst:188
+#: ../../installing/index.rst:18
+#: ../../installing/servdiscovery.rst:22
+#: ../../installing/servdiscovery.rst:34
+#: ../../installing/servdiscovery.rst:48
+#: ../../installing/tokens.rst:23
+#: ../../installing/tokens.rst:37
+#: ../../installing/tokens.rst:43
+#: ../../installing/tokens.rst:47
 msgid "Discovery App"
 msgstr ""
 
-#: ../../installing/architecture.rst:253
-msgid "Discovery App service to connect and crawler provider"
+#: ../../installing/docker.rst:24
+#: ../../installing/docker.rst:38
+#: ../../installing/docker.rst:48
+#: ../../installing/docker.rst:431
+#: ../../installing/servdiscovery.rst:28
+#: ../../installing/servdiscovery.rst:34
+#: ../../installing/servdiscovery.rst:40
+#: ../../installing/servdiscovery.rst:52
+#: ../../installing/servdiscovery.rst:54
+msgid "Data App"
 msgstr ""
 
-#: ../../installing/architecture.rst:255
-msgid "Encharge to manager and authenticate in each provider"
+#: ../../installing/docker.rst:25
+#: ../../installing/docker.rst:39
+#: ../../installing/docker.rst:49
+msgid "RabbitMq"
 msgstr ""
 
-#: ../../installing/architecture.rst:256
-msgid "Crawler the data and record into db"
+#: ../../installing/docker.rst:27
+msgid "To have an auto update over discovery/reports/analytics api you need to install the scheduler app."
 msgstr ""
 
-#: ../../installing/architecture.rst:257
-msgid "Consume batch insert data"
-msgstr ""
-
-#: ../../installing/architecture.rst:287
-#: ../../installing/architecture.rst:395
-#: ../../installing/architecture.rst:469
-msgid "**Installation with python 3**"
-msgstr ""
-
-#: ../../installing/architecture.rst:289
-#: ../../installing/architecture.rst:397
-#: ../../installing/architecture.rst:471
-msgid "Python >3.4"
-msgstr ""
-
-#: ../../installing/architecture.rst:290
-#: ../../installing/architecture.rst:398
-#: ../../installing/architecture.rst:472
-msgid "RabbitMQ"
-msgstr ""
-
-#: ../../installing/architecture.rst:309
-#: ../../installing/architecture.rst:483
-msgid "**Install  run api**"
-msgstr ""
-
-#: ../../installing/architecture.rst:325
-#: ../../installing/architecture.rst:409
-#: ../../installing/architecture.rst:499
-msgid "**Install  run rabbit workers**"
-msgstr ""
-
-#: ../../installing/architecture.rst:339
-#: ../../installing/architecture.rst:513
-msgid "For production environment, use something like gunicorn."
-msgstr ""
-
-#: ../../installing/architecture.rst:357
-#: ../../installing/architecture.rst:531
-msgid "Mongo Url conn"
-msgstr ""
-
-#: ../../installing/architecture.rst:358
-#: ../../installing/architecture.rst:532
-msgid "MAESTRO_MONGO_DATABASE"
-msgstr ""
-
-#: ../../installing/architecture.rst:358
-msgid "maestro-client"
-msgstr ""
-
-#: ../../installing/architecture.rst:359
-#: ../../installing/architecture.rst:426
-msgid "http://localhost"
-msgstr ""
-
-#: ../../installing/architecture.rst:359
-#: ../../installing/architecture.rst:426
-#: ../../installing/architecture.rst:533
-msgid "Discovery API URL"
-msgstr ""
-
-#: ../../installing/architecture.rst:360
-#: ../../installing/architecture.rst:427
-msgid "MAESTRO_DISCOVERY_PORT"
-msgstr ""
-
-#: ../../installing/architecture.rst:360
-#: ../../installing/architecture.rst:427
-msgid "5000"
-msgstr ""
-
-#: ../../installing/architecture.rst:360
-#: ../../installing/architecture.rst:427
-msgid "Discovery API Port"
-msgstr ""
-
-#: ../../installing/architecture.rst:361
-msgid "xxxx"
-msgstr ""
-
-#: ../../installing/architecture.rst:361
-msgid "Same that Server App"
-msgstr ""
-
-#: ../../installing/architecture.rst:362
-msgid "MAESTRO_SCAN_QTD"
-msgstr ""
-
-#: ../../installing/architecture.rst:362
-#: ../../installing/architecture.rst:535
-msgid "200"
-msgstr ""
-
-#: ../../installing/architecture.rst:363
-#: ../../installing/architecture.rst:428
-#: ../../installing/architecture.rst:536
-msgid "CELERY_BROKER_URL"
-msgstr ""
-
-#: ../../installing/architecture.rst:363
-#: ../../installing/architecture.rst:428
-#: ../../installing/architecture.rst:536
-msgid "amqp://rabbitmq:5672"
-msgstr ""
-
-#: ../../installing/architecture.rst:363
-#: ../../installing/architecture.rst:428
-#: ../../installing/architecture.rst:536
-msgid "RabbitMQ connection"
-msgstr ""
-
-#: ../../installing/architecture.rst:369
+#: ../../installing/docker.rst:31
+#: ../../installing/docker.rst:465
+#: ../../installing/index.rst:20
+#: ../../installing/servdiscovery.rst:46
 msgid "Scheduler App"
 msgstr ""
 
-#: ../../installing/architecture.rst:371
-msgid "Scheduler App service to execute schedule crawler job"
+#: ../../installing/docker.rst:33
+msgid "To create and export reports you need to have the reports app installed:"
 msgstr ""
 
-#: ../../installing/architecture.rst:373
-msgid "Celery beat, to create a jobs calling discovery app"
+#: ../../installing/docker.rst:37
+#: ../../installing/docker.rst:246
+#: ../../installing/index.rst:22
+#: ../../installing/tokens.rst:51
+msgid "Reports App"
 msgstr ""
 
-#: ../../installing/architecture.rst:435
-msgid "Report App"
+#: ../../installing/docker.rst:42
+msgid "To create a business analytics graphs, public and shared these maps, you need to install these apps:"
 msgstr ""
 
-#: ../../installing/architecture.rst:437
-msgid "Reports app, generate reports"
+#: ../../installing/docker.rst:46
+#: ../../installing/docker.rst:313
+#: ../../installing/index.rst:24
+#: ../../installing/servdiscovery.rst:24
+#: ../../installing/servdiscovery.rst:40
+#: ../../installing/servdiscovery.rst:50
+#: ../../installing/tokens.rst:35
+#: ../../installing/tokens.rst:41
+#: ../../installing/tokens.rst:57
+msgid "Analytics App"
 msgstr ""
 
-#: ../../installing/architecture.rst:439
-msgid "Understand complex queries and generate reports"
+#: ../../installing/docker.rst:47
+msgid "Analytics Front App"
 msgstr ""
 
-#: ../../installing/architecture.rst:440
-msgid "Manage storage and control each technical flow"
+#: ../../installing/docker.rst:52
+msgid "And if you like to tracking history, you should install:"
 msgstr ""
 
-#: ../../installing/architecture.rst:441
-msgid "Transform in artifact pdf, csv or json"
+#: ../../installing/docker.rst:56
+#: ../../installing/docker.rst:529
+#: ../../installing/index.rst:30
+#: ../../installing/servdiscovery.rst:26
+#: ../../installing/servdiscovery.rst:30
+#: ../../installing/servdiscovery.rst:36
+#: ../../installing/servdiscovery.rst:54
+msgid "Audit App"
 msgstr ""
 
-#: ../../installing/architecture.rst:532
+#: ../../installing/docker.rst:64
+msgid "**Installation by docker-compose**"
+msgstr ""
+
+#: ../../installing/docker.rst:86
+msgid "**API_URL:** Set the endpoint provide by ``server-app``."
+msgstr ""
+
+#: ../../installing/docker.rst:87
+msgid "**ANALYTICS_URL:** Set the endpoint provide by ``analytics-front``."
+msgstr ""
+
+#: ../../installing/docker.rst:88
+msgid "**STATIC_URL:** Set the the static url provide by ``server-app``. - `More details on upload setup <http://docs.maestroserver.io/en/latest/installing/upload.html>`_."
+msgstr ""
+
+#: ../../installing/docker.rst:91
+#: ../../installing/docker.rst:143
+#: ../../installing/docker.rst:224
+#: ../../installing/docker.rst:287
+#: ../../installing/docker.rst:355
+#: ../../installing/docker.rst:404
+#: ../../installing/docker.rst:449
+#: ../../installing/docker.rst:509
+#: ../../installing/docker.rst:556
+#: ../../installing/docker.rst:590
+msgid "**Env variables**"
+msgstr ""
+
+#: ../../installing/docker.rst:94
+#: ../../installing/docker.rst:146
+#: ../../installing/docker.rst:227
+#: ../../installing/docker.rst:290
+#: ../../installing/docker.rst:358
+#: ../../installing/docker.rst:407
+#: ../../installing/docker.rst:452
+#: ../../installing/docker.rst:512
+#: ../../installing/docker.rst:559
+#: ../../installing/docker.rst:593
+#: ../../installing/external_db.rst:18
+#: ../../installing/external_db.rst:66
+#: ../../installing/external_rabbitmq.rst:20
+msgid "Env Variables"
+msgstr ""
+
+#: ../../installing/docker.rst:94
+#: ../../installing/docker.rst:146
+#: ../../installing/docker.rst:227
+#: ../../installing/docker.rst:290
+#: ../../installing/docker.rst:358
+#: ../../installing/docker.rst:407
+#: ../../installing/docker.rst:452
+#: ../../installing/docker.rst:512
+#: ../../installing/docker.rst:559
+#: ../../installing/docker.rst:593
+#: ../../installing/smtp.rst:28
+msgid "Example"
+msgstr ""
+
+#: ../../installing/docker.rst:94
+#: ../../installing/docker.rst:146
+#: ../../installing/docker.rst:227
+#: ../../installing/docker.rst:290
+#: ../../installing/docker.rst:358
+#: ../../installing/docker.rst:407
+#: ../../installing/docker.rst:452
+#: ../../installing/docker.rst:512
+#: ../../installing/docker.rst:559
+#: ../../installing/docker.rst:593
+#: ../../installing/external_db.rst:18
+#: ../../installing/external_db.rst:66
+#: ../../installing/external_rabbitmq.rst:20
+msgid "Description"
+msgstr ""
+
+#: ../../installing/docker.rst:96
+#: ../../installing/docker.rst:410
+#: ../../installing/servdiscovery.rst:14
+msgid "API_URL"
+msgstr ""
+
+#: ../../installing/docker.rst:96
+#: ../../installing/docker.rst:410
+msgid "http://localhost:8888"
+msgstr ""
+
+#: ../../installing/docker.rst:96
+msgid "Server App Url"
+msgstr ""
+
+#: ../../installing/docker.rst:97
+msgid "STATIC_URL"
+msgstr ""
+
+#: ../../installing/docker.rst:97
+msgid "/static"
+msgstr ""
+
+#: ../../installing/docker.rst:97
+msgid "Full path static files"
+msgstr ""
+
+#: ../../installing/docker.rst:98
+#: ../../installing/servdiscovery.rst:18
+msgid "ANALYTICS_URL"
+msgstr ""
+
+#: ../../installing/docker.rst:98
+#: ../../installing/docker.rst:362
+msgid "http://localhost:9999"
+msgstr ""
+
+#: ../../installing/docker.rst:98
+msgid "Analytics App Url"
+msgstr ""
+
+#: ../../installing/docker.rst:99
+#: ../../installing/servdiscovery.rst:16
+msgid "WEBSOCKET_URL"
+msgstr ""
+
+#: ../../installing/docker.rst:99
+msgid "ws://localhost:8000"
+msgstr ""
+
+#: ../../installing/docker.rst:99
+msgid "Websocket Url"
+msgstr ""
+
+#: ../../installing/docker.rst:100
+msgid "LOGO"
+msgstr ""
+
+#: ../../installing/docker.rst:100
+msgid "/static/imgs/logo300.png"
+msgstr ""
+
+#: ../../installing/docker.rst:100
+msgid "Logo URL used on login page"
+msgstr ""
+
+#: ../../installing/docker.rst:101
+msgid "THEME"
+msgstr ""
+
+#: ../../installing/docker.rst:101
+msgid "theme-lotus"
+msgstr ""
+
+#: ../../installing/docker.rst:101
+msgid "Theme (gold|wine|blue|green|dark)"
+msgstr ""
+
+#: ../../installing/docker.rst:107
+msgid "Server APP"
+msgstr ""
+
+#: ../../installing/docker.rst:109
+#: ../../installing/docker.rst:190
+#: ../../installing/docker.rst:248
+#: ../../installing/docker.rst:315
+#: ../../installing/docker.rst:378
+#: ../../installing/docker.rst:433
+#: ../../installing/docker.rst:467
+#: ../../installing/docker.rst:531
+#: ../../installing/docker.rst:577
+msgid "**Installation by docker**"
+msgstr ""
+
+#: ../../installing/docker.rst:137
+msgid "**MAESTRO_MONGO_URI:** - It must be the full url -``mongodb://{MAESTRO_MONGO_URI}/{MAESTRO_MONGO_DATABASE}``"
+msgstr ""
+
+#: ../../installing/docker.rst:138
+msgid "**MAESTRO_MONGO_DATABASE:** - The mongodb database name (ex: maestro-client)"
+msgstr ""
+
+#: ../../installing/docker.rst:139
+msgid "**SMTP_X:** - It used to send transactional emails - `More details about SMTP <http://docs.maestroserver.io/en/latest/installing/smtp.html>`_."
+msgstr ""
+
+#: ../../installing/docker.rst:140
+msgid "**MAESTRO_UPLOAD_TYPE:** - Can be a local or S3 - `More details about upload <http://docs.maestroserver.io/en/latest/installing/upload.html>`_."
+msgstr ""
+
+#: ../../installing/docker.rst:141
+msgid "**MAESTRO_SECRETJWT_PUBLIC:** - Hash used only do public shared resources, must be different of ``MAESTRO_SECRETJWT`` - `More details about tokens <http://docs.maestroserver.io/en/latest/installing/tokens.html>`_."
+msgstr ""
+
+#: ../../installing/docker.rst:148
+#: ../../installing/docker.rst:229
+#: ../../installing/docker.rst:292
+#: ../../installing/docker.rst:360
+#: ../../installing/docker.rst:409
+#: ../../installing/docker.rst:454
+#: ../../installing/docker.rst:561
+msgid "MAESTRO_PORT"
+msgstr ""
+
+#: ../../installing/docker.rst:148
+msgid "8888"
+msgstr ""
+
+#: ../../installing/docker.rst:149
+#: ../../installing/docker.rst:411
+#: ../../installing/docker.rst:562
+msgid "NODE_ENV"
+msgstr ""
+
+#: ../../installing/docker.rst:149
+#: ../../installing/docker.rst:411
+#: ../../installing/docker.rst:562
+msgid "development|production"
+msgstr ""
+
+#: ../../installing/docker.rst:150
+#: ../../installing/docker.rst:293
+#: ../../installing/docker.rst:412
+#: ../../installing/docker.rst:455
+#: ../../installing/docker.rst:519
+#: ../../installing/docker.rst:563
+#: ../../installing/external_db.rst:19
+msgid "MAESTRO_MONGO_URI"
+msgstr ""
+
+#: ../../installing/docker.rst:150
+msgid "mongodb://localhost"
+msgstr ""
+
+#: ../../installing/docker.rst:150
+#: ../../installing/docker.rst:412
+#: ../../installing/docker.rst:563
+msgid "DB string connection"
+msgstr ""
+
+#: ../../installing/docker.rst:151
+#: ../../installing/docker.rst:294
+#: ../../installing/docker.rst:413
+#: ../../installing/docker.rst:456
+#: ../../installing/docker.rst:520
+#: ../../installing/docker.rst:565
+#: ../../installing/external_db.rst:67
+msgid "MAESTRO_MONGO_DATABASE"
+msgstr ""
+
+#: ../../installing/docker.rst:151
+#: ../../installing/docker.rst:413
+#: ../../installing/docker.rst:456
+#: ../../installing/docker.rst:520
+#: ../../installing/external_db.rst:67
+msgid "maestro-client"
+msgstr ""
+
+#: ../../installing/docker.rst:151
+#: ../../installing/docker.rst:413
+#: ../../installing/docker.rst:565
+#: ../../installing/external_db.rst:67
+msgid "Database name"
+msgstr ""
+
+#: ../../installing/docker.rst:153
+#: ../../installing/docker.rst:234
+#: ../../installing/docker.rst:415
+#: ../../installing/docker.rst:596
+msgid "MAESTRO_SECRETJWT"
+msgstr ""
+
+#: ../../installing/docker.rst:153
+#: ../../installing/docker.rst:154
+#: ../../installing/docker.rst:155
+#: ../../installing/docker.rst:174
+#: ../../installing/docker.rst:175
+#: ../../installing/docker.rst:415
+#: ../../installing/docker.rst:418
+#: ../../installing/docker.rst:420
+#: ../../installing/docker.rst:421
+msgid "XXXX"
+msgstr ""
+
+#: ../../installing/docker.rst:153
+msgid "Secret key - session"
+msgstr ""
+
+#: ../../installing/docker.rst:154
+msgid "MAESTRO_SECRETJWT_FORGOT"
+msgstr ""
+
+#: ../../installing/docker.rst:154
+msgid "Secret key - forgot request"
+msgstr ""
+
+#: ../../installing/docker.rst:155
+msgid "MAESTRO_SECRET_CRYPTO_FORGOT"
+msgstr ""
+
+#: ../../installing/docker.rst:155
+msgid "Secret key - forgot content"
+msgstr ""
+
+#: ../../installing/docker.rst:156
+#: ../../installing/docker.rst:418
+msgid "MAESTRO_SECRETJWT_PUBLIC"
+msgstr ""
+
+#: ../../installing/docker.rst:156
+#: ../../installing/docker.rst:157
+#: ../../installing/docker.rst:158
+#: ../../installing/docker.rst:234
+#: ../../installing/docker.rst:235
+#: ../../installing/docker.rst:236
+#: ../../installing/docker.rst:237
+#: ../../installing/docker.rst:301
+#: ../../installing/docker.rst:302
+#: ../../installing/docker.rst:303
+#: ../../installing/docker.rst:365
+#: ../../installing/docker.rst:366
+#: ../../installing/docker.rst:367
+#: ../../installing/docker.rst:416
+#: ../../installing/docker.rst:417
+#: ../../installing/docker.rst:459
+#: ../../installing/docker.rst:460
+#: ../../installing/docker.rst:523
+#: ../../installing/docker.rst:524
+#: ../../installing/docker.rst:569
+#: ../../installing/docker.rst:570
+msgid "XXX"
+msgstr ""
+
+#: ../../installing/docker.rst:156
+msgid "Secret key - public shared"
+msgstr ""
+
+#: ../../installing/docker.rst:157
+#: ../../installing/docker.rst:235
+#: ../../installing/docker.rst:301
+#: ../../installing/docker.rst:365
+#: ../../installing/docker.rst:416
+#: ../../installing/docker.rst:459
+#: ../../installing/docker.rst:523
+#: ../../installing/docker.rst:569
+msgid "MAESTRO_SECRETJWT_PRIVATE"
+msgstr ""
+
+#: ../../installing/docker.rst:157
+#: ../../installing/docker.rst:235
+#: ../../installing/docker.rst:301
+#: ../../installing/docker.rst:365
+#: ../../installing/docker.rst:416
+#: ../../installing/docker.rst:459
+#: ../../installing/docker.rst:523
+#: ../../installing/docker.rst:569
+msgid "Secret Key - JWT private connections"
+msgstr ""
+
+#: ../../installing/docker.rst:158
+#: ../../installing/docker.rst:236
+#: ../../installing/docker.rst:302
+#: ../../installing/docker.rst:366
+#: ../../installing/docker.rst:417
+#: ../../installing/docker.rst:460
+#: ../../installing/docker.rst:524
+#: ../../installing/docker.rst:570
+msgid "MAESTRO_NOAUTH"
+msgstr ""
+
+#: ../../installing/docker.rst:158
+#: ../../installing/docker.rst:236
+#: ../../installing/docker.rst:302
+#: ../../installing/docker.rst:366
+#: ../../installing/docker.rst:417
+#: ../../installing/docker.rst:460
+#: ../../installing/docker.rst:524
+#: ../../installing/docker.rst:570
+msgid "Secret Pass to validate private connections"
+msgstr ""
+
+#: ../../installing/docker.rst:160
+msgid "MAESTRO_DISCOVERY_URL"
+msgstr ""
+
+#: ../../installing/docker.rst:160
+#: ../../installing/docker.rst:515
+msgid "http://localhost:5000"
+msgstr ""
+
+#: ../../installing/docker.rst:160
+msgid "Url discovery-app (flask)"
+msgstr ""
+
+#: ../../installing/docker.rst:161
+msgid "MAESTRO_REPORT_URL"
+msgstr ""
+
+#: ../../installing/docker.rst:161
+#: ../../installing/docker.rst:297
+#: ../../installing/docker.rst:517
+msgid "http://localhost:5005"
+msgstr ""
+
+#: ../../installing/docker.rst:161
+msgid "Url reports-app (flask)"
+msgstr ""
+
+#: ../../installing/docker.rst:162
+#: ../../installing/docker.rst:516
+msgid "MAESTRO_ANALYTICS_URI"
+msgstr ""
+
+#: ../../installing/docker.rst:162
+#: ../../installing/docker.rst:516
+msgid "http://localhost:5020"
+msgstr ""
+
+#: ../../installing/docker.rst:162
+msgid "Url Analytics-app (flask)"
+msgstr ""
+
+#: ../../installing/docker.rst:163
+#: ../../installing/docker.rst:231
+#: ../../installing/docker.rst:298
+#: ../../installing/servdiscovery.rst:26
+#: ../../installing/servdiscovery.rst:30
+#: ../../installing/servdiscovery.rst:36
+msgid "MAESTRO_AUDIT_URI"
+msgstr ""
+
+#: ../../installing/docker.rst:163
+#: ../../installing/docker.rst:231
+#: ../../installing/docker.rst:298
+msgid "http://localhost:10900"
+msgstr ""
+
+#: ../../installing/docker.rst:163
+msgid "Url Audit-app (krakenjs)"
+msgstr ""
+
+#: ../../installing/docker.rst:164
+#: ../../installing/docker.rst:566
+msgid "MAESTRO_TIMEOUT"
+msgstr ""
+
+#: ../../installing/docker.rst:164
+#: ../../installing/docker.rst:566
+msgid "1000"
+msgstr ""
+
+#: ../../installing/docker.rst:164
+msgid "Timeout micro service request"
+msgstr ""
+
+#: ../../installing/docker.rst:166
+#: ../../installing/smtp.rst:13
+msgid "SMTP_PORT"
+msgstr ""
+
+#: ../../installing/docker.rst:166
+msgid "1025"
+msgstr ""
+
+#: ../../installing/docker.rst:167
+#: ../../installing/smtp.rst:15
+msgid "SMTP_HOST"
+msgstr ""
+
+#: ../../installing/docker.rst:167
+#: ../../installing/docker.rst:293
+#: ../../installing/docker.rst:412
+#: ../../installing/docker.rst:455
+#: ../../installing/docker.rst:519
+#: ../../installing/docker.rst:563
+msgid "localhost"
+msgstr ""
+
+#: ../../installing/docker.rst:168
+#: ../../installing/smtp.rst:17
+msgid "SMTP_SENDER"
+msgstr ""
+
+#: ../../installing/docker.rst:168
+msgid "myemail@XXXX"
+msgstr ""
+
+#: ../../installing/docker.rst:169
+#: ../../installing/smtp.rst:25
+msgid "SMTP_IGNORE"
+msgstr ""
+
+#: ../../installing/docker.rst:169
+#: ../../installing/docker.rst:170
+#: ../../installing/smtp.rst:23
+#: ../../installing/smtp.rst:25
+msgid "true|false"
+msgstr ""
+
+#: ../../installing/docker.rst:170
+#: ../../installing/smtp.rst:23
+msgid "SMTP_USETSL"
+msgstr ""
+
+#: ../../installing/docker.rst:171
+#: ../../installing/smtp.rst:19
+msgid "SMTP_USERNAME"
+msgstr ""
+
+#: ../../installing/docker.rst:172
+#: ../../installing/smtp.rst:21
+msgid "SMTP_PASSWORD"
+msgstr ""
+
+#: ../../installing/docker.rst:174
+#: ../../installing/docker.rst:420
+#: ../../installing/upload.rst:61
+#: ../../installing/upload.rst:101
+msgid "AWS_ACCESS_KEY_ID"
+msgstr ""
+
+#: ../../installing/docker.rst:175
+#: ../../installing/docker.rst:421
+#: ../../installing/upload.rst:62
+#: ../../installing/upload.rst:102
+msgid "AWS_SECRET_ACCESS_KEY"
+msgstr ""
+
+#: ../../installing/docker.rst:176
+#: ../../installing/docker.rst:422
+#: ../../installing/upload.rst:63
+#: ../../installing/upload.rst:103
+msgid "AWS_DEFAULT_REGION"
+msgstr ""
+
+#: ../../installing/docker.rst:176
+#: ../../installing/docker.rst:422
+#: ../../installing/upload.rst:63
+msgid "us-east-1"
+msgstr ""
+
+#: ../../installing/docker.rst:177
+#: ../../installing/docker.rst:423
+#: ../../installing/upload.rst:64
+#: ../../installing/upload.rst:104
+msgid "AWS_S3_BUCKET_NAME"
+msgstr ""
+
+#: ../../installing/docker.rst:177
+#: ../../installing/docker.rst:423
+#: ../../installing/upload.rst:64
+#: ../../installing/upload.rst:104
+msgid "maestroserver"
+msgstr ""
+
+#: ../../installing/docker.rst:177
+msgid "Bucket name"
+msgstr ""
+
+#: ../../installing/docker.rst:178
+#: ../../installing/docker.rst:424
+msgid "MAESTRO_UPLOAD_TYPE"
+msgstr ""
+
+#: ../../installing/docker.rst:178
+msgid "S3 or Local"
+msgstr ""
+
+#: ../../installing/docker.rst:178
+#: ../../installing/docker.rst:424
+msgid "Upload mode"
+msgstr ""
+
+#: ../../installing/docker.rst:179
+#: ../../installing/docker.rst:425
+#: ../../installing/upload.rst:30
+msgid "LOCAL_DIR"
+msgstr ""
+
+#: ../../installing/docker.rst:179
+#: ../../installing/docker.rst:425
+#: ../../installing/upload.rst:30
+msgid "/public/static/"
+msgstr ""
+
+#: ../../installing/docker.rst:179
+#: ../../installing/docker.rst:425
+msgid "Where files will be uploaded"
+msgstr ""
+
+#: ../../installing/docker.rst:180
+msgid "MAESTRO_TMP"
+msgstr ""
+
+#: ../../installing/docker.rst:180
+#: ../../installing/docker.rst:426
+msgid "$rootDirectory"
+msgstr ""
+
+#: ../../installing/docker.rst:180
+msgid "Tmp folder used on upload files process"
+msgstr ""
+
+#: ../../installing/docker.rst:182
+msgid "MAESTRO_AUDIT_DISABLED"
+msgstr ""
+
+#: ../../installing/docker.rst:182
+#: ../../installing/docker.rst:183
+#: ../../installing/docker.rst:184
+msgid "false"
+msgstr ""
+
+#: ../../installing/docker.rst:182
+msgid "Disable the audit services"
+msgstr ""
+
+#: ../../installing/docker.rst:183
+msgid "MAESTRO_REPORT_DISABLED"
+msgstr ""
+
+#: ../../installing/docker.rst:183
+msgid "Disable the report services"
+msgstr ""
+
+#: ../../installing/docker.rst:184
+msgid "MAESTRO_DISCOVERY_DISABLED"
+msgstr ""
+
+#: ../../installing/docker.rst:184
+msgid "Disable the discovery service"
+msgstr ""
+
+#: ../../installing/docker.rst:220
+msgid "**MAESTRO_DATA_URI:** - Data App enpoint API - default port is 5000"
+msgstr ""
+
+#: ../../installing/docker.rst:221
+msgid "**MAESTRO_AUDIT_URI:** - Audit App endpoint API - default port is 10900"
+msgstr ""
+
+#: ../../installing/docker.rst:222
+#: ../../installing/docker.rst:273
+#: ../../installing/docker.rst:338
+#: ../../installing/docker.rst:394
+msgid "**MAESTRO_WEBSOCKET_URI:** - Websocket endpoint, this one is HTTP"
+msgstr ""
+
+#: ../../installing/docker.rst:229
+msgid "5000"
+msgstr ""
+
+#: ../../installing/docker.rst:229
+#: ../../installing/docker.rst:292
+#: ../../installing/docker.rst:454
+msgid "Port used"
+msgstr ""
+
+#: ../../installing/docker.rst:230
+#: ../../installing/docker.rst:296
+#: ../../installing/docker.rst:361
+#: ../../installing/docker.rst:514
+#: ../../installing/docker.rst:567
+#: ../../installing/servdiscovery.rst:28
+#: ../../installing/servdiscovery.rst:34
+#: ../../installing/servdiscovery.rst:40
+#: ../../installing/servdiscovery.rst:52
+#: ../../installing/servdiscovery.rst:54
+msgid "MAESTRO_DATA_URI"
+msgstr ""
+
+#: ../../installing/docker.rst:230
+#: ../../installing/docker.rst:296
+#: ../../installing/docker.rst:361
+#: ../../installing/docker.rst:514
+#: ../../installing/docker.rst:567
+msgid "http://localhost:5010"
+msgstr ""
+
+#: ../../installing/docker.rst:230
+#: ../../installing/docker.rst:361
+#: ../../installing/docker.rst:514
+msgid "Data Layer API URL"
+msgstr ""
+
+#: ../../installing/docker.rst:231
+#: ../../installing/docker.rst:298
+msgid "Audit App - API URL"
+msgstr ""
+
+#: ../../installing/docker.rst:232
+#: ../../installing/docker.rst:299
+#: ../../installing/docker.rst:363
+#: ../../installing/servdiscovery.rst:32
+#: ../../installing/servdiscovery.rst:38
+#: ../../installing/servdiscovery.rst:44
+msgid "MAESTRO_WEBSOCKET_URI"
+msgstr ""
+
+#: ../../installing/docker.rst:232
+#: ../../installing/docker.rst:299
+#: ../../installing/docker.rst:363
+msgid "http://localhost:8000"
+msgstr ""
+
+#: ../../installing/docker.rst:232
+#: ../../installing/docker.rst:299
+#: ../../installing/docker.rst:363
+msgid "Webosocket App - API URL"
+msgstr ""
+
+#: ../../installing/docker.rst:234
+msgid "Same that Server App"
+msgstr ""
+
+#: ../../installing/docker.rst:237
+#: ../../installing/docker.rst:303
+#: ../../installing/docker.rst:367
+#: ../../installing/docker.rst:595
+msgid "MAESTRO_WEBSOCKET_SECRET"
+msgstr ""
+
+#: ../../installing/docker.rst:237
+#: ../../installing/docker.rst:303
+#: ../../installing/docker.rst:367
+msgid "Secret Key - JWT Websocket connections"
+msgstr ""
+
+#: ../../installing/docker.rst:239
+msgid "MAESTRO_TRANSLATE_QTD"
+msgstr ""
+
+#: ../../installing/docker.rst:239
+#: ../../installing/docker.rst:458
+msgid "200"
+msgstr ""
+
+#: ../../installing/docker.rst:239
+msgid "Prefetch translation process"
+msgstr ""
+
+#: ../../installing/docker.rst:240
+#: ../../installing/docker.rst:308
+#: ../../installing/docker.rst:369
+#: ../../installing/docker.rst:457
+msgid "MAESTRO_GWORKERS"
+msgstr ""
+
+#: ../../installing/docker.rst:240
+#: ../../installing/docker.rst:308
+#: ../../installing/docker.rst:369
+#: ../../installing/docker.rst:457
+msgid "2"
+msgstr ""
+
+#: ../../installing/docker.rst:240
+#: ../../installing/docker.rst:369
+#: ../../installing/docker.rst:457
+msgid "Gunicorn multi process"
+msgstr ""
+
+#: ../../installing/docker.rst:241
+#: ../../installing/docker.rst:309
+#: ../../installing/docker.rst:370
+#: ../../installing/docker.rst:521
+#: ../../installing/external_rabbitmq.rst:21
+msgid "CELERY_BROKER_URL"
+msgstr ""
+
+#: ../../installing/docker.rst:241
+#: ../../installing/docker.rst:309
+#: ../../installing/docker.rst:370
+#: ../../installing/docker.rst:521
+msgid "amqp://rabbitmq:5672"
+msgstr ""
+
+#: ../../installing/docker.rst:241
+#: ../../installing/docker.rst:309
+#: ../../installing/docker.rst:370
+#: ../../installing/docker.rst:521
+msgid "RabbitMQ connection"
+msgstr ""
+
+#: ../../installing/docker.rst:242
+#: ../../installing/docker.rst:371
+msgid "CELERYD_TASK_TIME_LIMIT"
+msgstr ""
+
+#: ../../installing/docker.rst:242
+#: ../../installing/docker.rst:371
+msgid "10"
+msgstr ""
+
+#: ../../installing/docker.rst:242
+#: ../../installing/docker.rst:371
+msgid "Timeout workers"
+msgstr ""
+
+#: ../../installing/docker.rst:270
+msgid "**MAESTRO_REPORT_URI:** - Reports enpoint API - default port is 5005, It used by reports workers"
+msgstr ""
+
+#: ../../installing/docker.rst:271
+#: ../../installing/docker.rst:337
+#: ../../installing/docker.rst:393
+msgid "**MAESTRO_DATA_URI:** - Data enpoint API - default port is 5000"
+msgstr ""
+
+#: ../../installing/docker.rst:272
+msgid "**MAESTRO_AUDIT_URI:** - Audit Endpoint API - default port is 10900"
+msgstr ""
+
+#: ../../installing/docker.rst:292
+msgid "5005"
+msgstr ""
+
+#: ../../installing/docker.rst:293
+#: ../../installing/docker.rst:455
+msgid "Mongo Url conn"
+msgstr ""
+
+#: ../../installing/docker.rst:294
 msgid "maestro-reports"
 msgstr ""
 
-#: ../../installing/architecture.rst:532
+#: ../../installing/docker.rst:294
+#: ../../installing/docker.rst:456
 msgid "Db name, its differente of servers-app"
 msgstr ""
 
-#: ../../installing/architecture.rst:534
+#: ../../installing/docker.rst:296
+msgid "Data layer api"
+msgstr ""
+
+#: ../../installing/docker.rst:297
+#: ../../installing/docker.rst:517
+#: ../../installing/servdiscovery.rst:20
+#: ../../installing/servdiscovery.rst:46
 msgid "MAESTRO_REPORT_URI"
 msgstr ""
 
-#: ../../installing/architecture.rst:534
+#: ../../installing/docker.rst:297
 msgid "Report api"
 msgstr ""
 
-#: ../../installing/architecture.rst:535
+#: ../../installing/docker.rst:305
+msgid "MAESTRO_REPORT_RESULT_QTD"
+msgstr ""
+
+#: ../../installing/docker.rst:305
+msgid "1500"
+msgstr ""
+
+#: ../../installing/docker.rst:305
+msgid "Limit default"
+msgstr ""
+
+#: ../../installing/docker.rst:306
+#: ../../installing/docker.rst:458
 msgid "MAESTRO_INSERT_QTD"
 msgstr ""
 
-#: ../../installing/architecture.rst:535
-msgid "Throughput insert in reports collection"
+#: ../../installing/docker.rst:306
+msgid "20"
 msgstr ""
 
-#: ../../installing/architecture.rst:542
-msgid "Playbook Server"
+#: ../../installing/docker.rst:306
+msgid "Prefetch data insert"
 msgstr ""
 
-#: ../../installing/architecture.rst:544
-msgid "Playbook server, execute a remote commands - Create and manage a encapsulate environments - Connect remotely - Execute playbook jobs - Manage failback and notification"
+#: ../../installing/docker.rst:308
+msgid "Gworkers thread pool"
 msgstr ""
 
-#: ../../installing/architecture.rst:551
-msgid "This service is under development"
+#: ../../installing/docker.rst:336
+msgid "**MAESTRO_ANALYTICS_FRONT_URI:** - Analytics Front enpoint API - default port is 9999"
+msgstr ""
+
+#: ../../installing/docker.rst:360
+msgid "5020"
+msgstr ""
+
+#: ../../installing/docker.rst:360
+msgid "Port"
+msgstr ""
+
+#: ../../installing/docker.rst:362
+#: ../../installing/servdiscovery.rst:42
+msgid "MAESTRO_ANALYTICS_FRONT_URI"
+msgstr ""
+
+#: ../../installing/docker.rst:362
+msgid "Analytics Front URL"
+msgstr ""
+
+#: ../../installing/docker.rst:376
+#: ../../installing/index.rst:26
+#: ../../installing/index.rst:26
+#: ../../installing/servdiscovery.rst:18
+#: ../../installing/servdiscovery.rst:42
+#: ../../installing/tokens.rst:25
+#: ../../installing/tokens.rst:29
+#: ../../installing/tokens.rst:59
+msgid "Analytics Front"
+msgstr ""
+
+#: ../../installing/docker.rst:392
+msgid "**MAESTRO_REPORT_URI:** - Reports enpoint API - default port is 5005"
+msgstr ""
+
+#: ../../installing/docker.rst:409
+msgid "9999"
+msgstr ""
+
+#: ../../installing/docker.rst:410
+msgid "Server app Url"
+msgstr ""
+
+#: ../../installing/docker.rst:415
+msgid "Secret key - server app"
+msgstr ""
+
+#: ../../installing/docker.rst:418
+msgid "Secret key - same as on server app"
+msgstr ""
+
+#: ../../installing/docker.rst:424
+msgid "S3/Local"
+msgstr ""
+
+#: ../../installing/docker.rst:426
+msgid "PWD"
+msgstr ""
+
+#: ../../installing/docker.rst:426
+msgid "PWD process"
+msgstr ""
+
+#: ../../installing/docker.rst:454
+msgid "5010"
+msgstr ""
+
+#: ../../installing/docker.rst:458
+msgid "Throughput insert used on reports collection"
+msgstr ""
+
+#: ../../installing/docker.rst:504
+#: ../../installing/docker.rst:546
+msgid "**MAESTRO_DATA_URI:** - Data API - default port is 5000"
+msgstr ""
+
+#: ../../installing/docker.rst:507
+msgid "You can only spin up an one schedule instance, if you do it will have a duplicate job execution."
+msgstr ""
+
+#: ../../installing/docker.rst:515
+#: ../../installing/servdiscovery.rst:22
+#: ../../installing/servdiscovery.rst:48
+msgid "MAESTRO_DISCOVERY_URI"
+msgstr ""
+
+#: ../../installing/docker.rst:515
+msgid "Discovery App URL"
+msgstr ""
+
+#: ../../installing/docker.rst:516
+msgid "Analytics App URL"
+msgstr ""
+
+#: ../../installing/docker.rst:517
+msgid "Reports App URL"
+msgstr ""
+
+#: ../../installing/docker.rst:519
+msgid "MongoDB URI"
+msgstr ""
+
+#: ../../installing/docker.rst:520
+msgid "Mongo Database name"
+msgstr ""
+
+#: ../../installing/docker.rst:561
+msgid "10900"
+msgstr ""
+
+#: ../../installing/docker.rst:565
+msgid "maestro-audit"
+msgstr ""
+
+#: ../../installing/docker.rst:566
+msgid "Timeout any http private request"
+msgstr ""
+
+#: ../../installing/docker.rst:567
+msgid "Data App - API URL"
+msgstr ""
+
+#: ../../installing/docker.rst:575
+#: ../../installing/servdiscovery.rst:16
+#: ../../installing/servdiscovery.rst:32
+#: ../../installing/servdiscovery.rst:38
+#: ../../installing/servdiscovery.rst:44
+msgid "WebSocket App"
+msgstr ""
+
+#: ../../installing/docker.rst:595
+msgid "backSecretToken"
+msgstr ""
+
+#: ../../installing/docker.rst:595
+msgid "Token to authenticate backends apps"
+msgstr ""
+
+#: ../../installing/docker.rst:596
+msgid "frontSecretToken"
+msgstr ""
+
+#: ../../installing/docker.rst:596
+msgid "Token to autheticate front end users"
+msgstr ""
+
+#: ../../installing/docker.rst:597
+msgid "CENTRIFUGO_ADMIN"
+msgstr ""
+
+#: ../../installing/docker.rst:597
+msgid "adminPassword"
+msgstr ""
+
+#: ../../installing/docker.rst:597
+msgid "Admin password"
+msgstr ""
+
+#: ../../installing/docker.rst:598
+msgid "CENTRIFUGO_ADMIN_SECRET"
+msgstr ""
+
+#: ../../installing/docker.rst:598
+msgid "adminSecretToken"
+msgstr ""
+
+#: ../../installing/docker.rst:598
+msgid "Token to autheticate administrator users"
+msgstr ""
+
+#: ../../installing/docker.rst:599
+msgid "CENTRIFUGO_TLSAUTO"
+msgstr ""
+
+#: ../../installing/docker.rst:599
+#: ../../installing/docker.rst:600
+#: ../../installing/docker.rst:602
+msgid "true"
+msgstr ""
+
+#: ../../installing/docker.rst:599
+msgid "Auto SSL using Let Encrypt"
+msgstr ""
+
+#: ../../installing/docker.rst:600
+msgid "CENTRIFUGO_TLSAUTO_HTTP"
+msgstr ""
+
+#: ../../installing/docker.rst:600
+msgid "Auto SSL using AcmeV1 Let Encrypt"
+msgstr ""
+
+#: ../../installing/docker.rst:601
+msgid "CENTRIFUGO_TLS_PORT"
+msgstr ""
+
+#: ../../installing/docker.rst:601
+msgid ":80"
+msgstr ""
+
+#: ../../installing/docker.rst:601
+msgid "Can be used to set address for handling http_01 ACME challenge, default value is :80"
+msgstr ""
+
+#: ../../installing/docker.rst:602
+msgid "CENTRIFUGO_TLS"
+msgstr ""
+
+#: ../../installing/docker.rst:602
+msgid "Using dev ssl certs to run custom certs"
+msgstr ""
+
+#: ../../installing/docker.rst:603
+msgid "CENTRIFUGO_TLS_KEY"
+msgstr ""
+
+#: ../../installing/docker.rst:603
+#: ../../installing/docker.rst:604
+msgid "/tmp/certs/server.key"
+msgstr ""
+
+#: ../../installing/docker.rst:603
+msgid "Full path ssl key (Expose by folder bind on docker)"
+msgstr ""
+
+#: ../../installing/docker.rst:604
+msgid "CENTRIFUGO_TLS_CERT"
+msgstr ""
+
+#: ../../installing/docker.rst:604
+msgid "Full path ssl certs"
+msgstr ""
+
+#: ../../installing/external_db.rst:2
+msgid "Using external Database"
+msgstr ""
+
+#: ../../installing/external_db.rst:4
+#: ../../installing/external_rabbitmq.rst:4
+#: ../../installing/smtp.rst:4
+#: ../../installing/themes.rst:4
+#: ../../installing/upload.rst:4
+msgid "**Services**"
+msgstr ""
+
+#: ../../installing/external_db.rst:6
+#: ../../installing/smtp.rst:6
+#: ../../installing/upload.rst:6
+msgid "server"
+msgstr ""
+
+#: ../../installing/external_db.rst:7
+#: ../../installing/external_rabbitmq.rst:8
+msgid "reports"
+msgstr ""
+
+#: ../../installing/external_db.rst:8
+#: ../../installing/external_rabbitmq.rst:12
+msgid "scheduler"
+msgstr ""
+
+#: ../../installing/external_db.rst:9
+#: ../../installing/upload.rst:7
+msgid "analytics_front"
+msgstr ""
+
+#: ../../installing/external_db.rst:10
+msgid "data"
+msgstr ""
+
+#: ../../installing/external_db.rst:11
+msgid "audit"
+msgstr ""
+
+#: ../../installing/external_db.rst:15
+msgid "You should spin up a mongodb externally, you can do using the ``MAESTRO_MONGO_URI`` env variable."
+msgstr ""
+
+#: ../../installing/external_db.rst:18
+#: ../../installing/external_db.rst:66
+#: ../../installing/external_rabbitmq.rst:20
+msgid "Default"
+msgstr ""
+
+#: ../../installing/external_db.rst:19
+msgid "mongodb://localhost:27017"
+msgstr ""
+
+#: ../../installing/external_db.rst:19
+msgid "Can be mongodb or mongo+srv://"
+msgstr ""
+
+#: ../../installing/external_db.rst:63
+msgid "You can replace the db name using the ``MAESTRO_MONGO_DATABASE`` env var."
+msgstr ""
+
+#: ../../installing/external_rabbitmq.rst:2
+msgid "Using external RabbitMQ"
+msgstr ""
+
+#: ../../installing/external_rabbitmq.rst:6
+msgid "discovery"
+msgstr ""
+
+#: ../../installing/external_rabbitmq.rst:7
+msgid "discovery_worker"
+msgstr ""
+
+#: ../../installing/external_rabbitmq.rst:9
+msgid "reports_worker"
+msgstr ""
+
+#: ../../installing/external_rabbitmq.rst:10
+msgid "analytics"
+msgstr ""
+
+#: ../../installing/external_rabbitmq.rst:11
+msgid "analytics_worker"
+msgstr ""
+
+#: ../../installing/external_rabbitmq.rst:13
+msgid "scheduler_worker"
+msgstr ""
+
+#: ../../installing/external_rabbitmq.rst:17
+msgid "You can spin up a rabbitmq externally, you can do using the `CELERY_BROKER_URL` env variable."
+msgstr ""
+
+#: ../../installing/external_rabbitmq.rst:21
+msgid "amqp://localhost:5672"
+msgstr ""
+
+#: ../../installing/external_rabbitmq.rst:21
+msgid "Amqp endpoint"
+msgstr ""
+
+#: ../../installing/healthcheck.rst:2
+msgid "HealthChecks"
+msgstr ""
+
+#: ../../installing/healthcheck.rst:4
+msgid "You can you the / path to do the healthchecks."
+msgstr ""
+
+#: ../../installing/healthcheck.rst:6
+msgid "Front end, show in right-footer."
+msgstr ""
+
+#: ../../installing/healthcheck.rst:8
+msgid "http://{server-api}:8888/"
+msgstr ""
+
+#: ../../installing/healthcheck.rst:10
+msgid "http://{discovery-api}:5000/"
+msgstr ""
+
+#: ../../installing/healthcheck.rst:12
+msgid "http://{reports-api}:5005/"
+msgstr ""
+
+#: ../../installing/healthcheck.rst:14
+msgid "http://{analytics-maestro}:5020/"
+msgstr ""
+
+#: ../../installing/healthcheck.rst:16
+msgid "http://{analytics-front}:9999/"
+msgstr ""
+
+#: ../../installing/healthcheck.rst:18
+msgid "http://{audit}:10900/"
 msgstr ""
 
 #: ../../installing/index.rst:2
 msgid "Installing Maestro"
 msgstr ""
 
-#: ../../installing/production.rst:3
-msgid "HA - Production Read"
+#: ../../installing/index.rst:5
+msgid "Using Docker Compose"
 msgstr ""
 
-#: ../../installing/production.rst:6
-msgid "Not exist one way to do right, but we have some concerns, needed a backup system, HA avaliability, monitoring and etc, like a normal app system. Maestro built with 12 factory in mind, its able to hight availability and horizontal scaling."
+#: ../../installing/index.rst:7
+msgid "To get Maestro up in just a few minutes go to `Standalone installation <http://docs.maestroserver.io/en/latest/quickstart.html>`_.; However if you like to get more control over the installation you can spin up a one docker per service."
 msgstr ""
 
-#: ../../installing/production.rst:9
+#: ../../installing/index.rst:10
+msgid "Overview"
+msgstr ""
+
+#: ../../installing/index.rst:11
+msgid "There are a list of all services:"
+msgstr ""
+
+#: ../../installing/index.rst:14
+msgid "FrontEnd client"
+msgstr ""
+
+#: ../../installing/index.rst:14
+msgid "Vue2 + Bootstrap 3"
+msgstr ""
+
+#: ../../installing/index.rst:16
+msgid "Primary API, authentication, crud and manager"
+msgstr ""
+
+#: ../../installing/index.rst:16
+#: ../../installing/index.rst:26
+#: ../../installing/index.rst:30
+msgid "NodeJs 8.11 Kraken"
+msgstr ""
+
+#: ../../installing/index.rst:18
+msgid "Auto discovery and crawlers"
+msgstr ""
+
+#: ../../installing/index.rst:18
+#: ../../installing/index.rst:22
+#: ../../installing/index.rst:24
+#: ../../installing/index.rst:28
+msgid "Python 3.6, flask"
+msgstr ""
+
+#: ../../installing/index.rst:20
+msgid "Jobs manager with celery beat"
+msgstr ""
+
+#: ../../installing/index.rst:20
+msgid "Python 3.6, celery"
+msgstr ""
+
+#: ../../installing/index.rst:22
+msgid "Reports generator"
+msgstr ""
+
+#: ../../installing/index.rst:24
+msgid "Analytics Maestro - Graphs Generator"
+msgstr ""
+
+#: ../../installing/index.rst:28
+msgid "Data DB App"
+msgstr ""
+
+#: ../../installing/index.rst:28
+msgid "Data layer"
+msgstr ""
+
+#: ../../installing/index.rst:30
+msgid "History tracker service"
+msgstr ""
+
+#: ../../installing/index.rst:32
+msgid "WebSocket APP"
+msgstr ""
+
+#: ../../installing/index.rst:32
+msgid "WebSocket - Events"
+msgstr ""
+
+#: ../../installing/index.rst:32
+msgid "Go, Centrifugo"
+msgstr ""
+
+#: ../../installing/index.rst:37
+msgid "Running locally"
+msgstr ""
+
+#: ../../installing/index.rst:38
+msgid "You can use docker to spin up a maestro bundle, you can copy and execute the docker-compose file describe below."
+msgstr ""
+
+#: ../../installing/index.rst:41
+msgid "PS: Docker compose will be able to create and manager all networks and communication between services."
+msgstr ""
+
+#: ../../installing/index.rst:43
+msgid "PS: Containers is prepared to run in production."
+msgstr ""
+
+#: ../../installing/index.rst:47
+msgid "`Download docker-compose file <https://raw.githubusercontent.com/maestro-server/infraascode-maestro/master/docker-compose/docker-compose.yml>`_."
+msgstr ""
+
+#: ../../installing/index.rst:237
+msgid "Spin up the API server in a different server"
+msgstr ""
+
+#: ../../installing/index.rst:239
+msgid "By default the client server uses the same domain name to connect into server api, websocket and analytics front api; However if you like to switch this configuration you can use env vars to set all urls."
+msgstr ""
+
+#: ../../installing/index.rst:241
+msgid "By default if you run the client service over ``//example.maestro``, the client will try to access the server api by ``//example.maestro:8888``, the analytic front by ``//example.maestro:9999`` and the websocket by ``ws(s)//example.maestro:8000``"
+msgstr ""
+
+#: ../../installing/index.rst:257
+msgid "Productionize"
+msgstr ""
+
+#: ../../installing/index.rst:259
+msgid "Should you follow the steps below to run the Maestro on production."
+msgstr ""
+
+#: ../../installing/index.rst:261
+msgid "Using external Database and RabbitMq  - `More details about external DB <http://docs.maestroserver.io/en/latest/installing/external_db.html>`_."
+msgstr ""
+
+#: ../../installing/index.rst:262
+msgid "Using a reliable store engine as AWS S3 - `More details about upload <http://docs.maestroserver.io/en/latest/installing/upload.html>`_."
+msgstr ""
+
+#: ../../installing/index.rst:263
+msgid "Configuration a third-party SMTP system -  `More details about SMTP <http://docs.maestroserver.io/en/latest/installing/smtp.html>`_."
+msgstr ""
+
+#: ../../installing/index.rst:264
+msgid "Spin up two or more instance of client, server, discovery, reports, analytics and data. [Expect websocket and scheduler]"
+msgstr ""
+
+#: ../../installing/index.rst:265
+#: ../../installing/production.rst:11
+msgid "Set a unique value for each ``SECRETJWT`` key - `More details about tokens <http://docs.maestroserver.io/en/latest/installing/tokens.html>`_."
+msgstr ""
+
+#: ../../installing/index.rst:266
+msgid "Use a external loadbalance to handle ssl connections."
+msgstr ""
+
+#: ../../installing/index.rst:271
+msgid "Advanced setups"
+msgstr ""
+
+#: ../../installing/index.rst:285
+msgid "Services configurations"
+msgstr ""
+
+#: ../../installing/index.rst:293
+msgid "High availability"
+msgstr ""
+
+#: ../../installing/kubernetes.rst:2
+msgid "Running on Kubernetes"
+msgstr ""
+
+#: ../../installing/kubernetes.rst:4
+msgid "To run Maestro over kubernetes, you can uses those deployment files found it on `k8s deployments <https://github.com/maestro-server/infraascode-maestro/tree/master/kubernetes/>`_,"
+msgstr ""
+
+#: ../../installing/kubernetes.rst:6
+msgid "**Creating secrets files**"
+msgstr ""
+
+#: ../../installing/kubernetes.rst:8
+msgid "The first step it will be to create those secrets."
+msgstr ""
+
+#: ../../installing/kubernetes.rst:10
+msgid "mongo_srv.txt"
+msgstr ""
+
+#: ../../installing/kubernetes.rst:11
+msgid "smtp.txt"
+msgstr ""
+
+#: ../../installing/kubernetes.rst:12
+msgid "storage.txt"
+msgstr ""
+
+#: ../../installing/kubernetes.rst:14
+msgid "And populate accordlingly. Running these commands."
+msgstr ""
+
+#: ../../installing/kubernetes.rst:22
+msgid "**storage.txt**"
+msgstr ""
+
+#: ../../installing/kubernetes.rst:31
+msgid "**mongo_srv.txt**"
+msgstr ""
+
+#: ../../installing/kubernetes.rst:37
+msgid "**smtp.txt**"
+msgstr ""
+
+#: ../../installing/kubernetes.rst:48
+msgid "To check if everything it's ok, you can run:"
+msgstr ""
+
+#: ../../installing/kubernetes.rst:61
+msgid "**Deploying services**"
+msgstr ""
+
+#: ../../installing/kubernetes.rst:67
+msgid "And"
+msgstr ""
+
+#: ../../installing/kubernetes.rst:69
+msgid "Create the third-party services."
+msgstr ""
+
+#: ../../installing/kubernetes.rst:77
+msgid "Deploying the Maestro bundle services"
+msgstr ""
+
+#: ../../installing/kubernetes.rst:94
+msgid "**Checking deployments**"
+msgstr ""
+
+#: ../../installing/kubernetes.rst:118
+msgid "**Checking exposed services**"
+msgstr ""
+
+#: ../../installing/kubernetes.rst:141
+msgid "It must have 4 public endpoint, the client service, server app, analytics front and websocket system."
+msgstr ""
+
+#: ../../installing/production.rst:2
 msgid "12 Factory and Horizontal Scaling"
 msgstr ""
 
-#: ../../installing/production.rst:11
-msgid "All services need work in stateless, like session, images or any process, we use JWT for authentication and isolated storage server."
+#: ../../installing/production.rst:4
+msgid "This section describes some tips you can use to be able to productionize the Maestro."
+msgstr ""
+
+#: ../../installing/production.rst:6
+msgid "The first and most important is to avoid to use any local configuration as a local upload file system, local mongodb and rabbitmq."
+msgstr ""
+
+#: ../../installing/production.rst:8
+msgid "You should use a reliable storage engine as S3 - `More details about upload <http://docs.maestroserver.io/en/latest/installing/upload.html>`_."
+msgstr ""
+
+#: ../../installing/production.rst:9
+msgid "You can use atlas mongodb to manage your mongo db externally. - `More details about external DB <http://docs.maestroserver.io/en/latest/installing/external_db.html>`_."
+msgstr ""
+
+#: ../../installing/production.rst:10
+msgid "Configuration a third-party SMTP - `More details about SMTP <http://docs.maestroserver.io/en/latest/installing/smtp.html>`_."
 msgstr ""
 
 #: ../../installing/production.rst:13
-msgid "Avoid to use any local configurate like local upload, maestro has supported to use s3 storage object."
+msgid "Spin up an nginx/loadbalance over any public endpoint to handle ssl configuration."
 msgstr ""
 
 #: ../../installing/production.rst:15
-msgid "Put all connection config in env docker setup, would able to use kubernetes, rancher or any orchestration is good advice."
+msgid "Discovery, reports and analytics services are compound by two parts, one it's the api, and the other is the workers, you don't need to deploy it on the same server."
 msgstr ""
 
 #: ../../installing/production.rst:17
-msgid "Its possible to deploy discovery api in one server, and discovery celery another server."
+msgid "Follow a single example,"
 msgstr ""
 
-#: ../../installing/production.rst:19
-msgid "In front end, use nginx, or any other proxy."
+#: ../../installing/production.rst:23
+msgid "It's possible to improve the reliability over discovery and reports services."
 msgstr ""
 
-#: ../../installing/production.rst:21
-msgid "One example setup, can be in each node,"
+#: ../../installing/production.rst:31
+msgid "Scheduler Beat App"
 msgstr ""
 
-#: ../../installing/production.rst:27
-msgid "It's possible to improve discovery and reports app"
+#: ../../installing/production.rst:34
+msgid "Scheduler app have two parts, the producer called beat and the workers, the beat isn't able to have multiple instance on the same time, be careful. To minimize the drawback, the beat schedule is an isolated and an stateless service (if fall, you can call up the beat again)."
 msgstr ""
 
-#: ../../installing/production.rst:36
-msgid "MongoDB is prepared to scale and high availability, the best setup creates a master and `replica <https://docs.mongodb.com/manual/tutorial/deploy-replica-set>`_,"
+#: ../../installing/servdiscovery.rst:2
+msgid "Service Discovery Configuration"
 msgstr ""
 
-#: ../../installing/production.rst:41
-msgid "Version"
+#: ../../installing/servdiscovery.rst:4
+msgid "This section describes the service discovery configuration. The Maestro server uses env vars to set the configuration between applications, as an example the server-app uses the ``MAESTRO_DISCOVERY_URI`` to figure out where the discovery app is."
 msgstr ""
 
-#: ../../installing/production.rst:43
-msgid "We controlled a version (semversion), any docker has this version, for example, maestro-server:0.3, if you need to rollback is easier to do. How find my version:"
+#: ../../installing/servdiscovery.rst:12
+msgid "Service"
 msgstr ""
 
-#: ../../installing/production.rst:46
-msgid "Front end, show in right-footer."
+#: ../../installing/servdiscovery.rst:12
+msgid "To discovery"
 msgstr ""
 
-#: ../../installing/production.rst:48
-msgid "http://server.api.maestroserver.io:8888/"
+#: ../../installing/servdiscovery.rst:12
+#: ../../installing/tokens.rst:19
+msgid "Context"
 msgstr ""
 
-#: ../../installing/production.rst:50
-msgid "http://discovery.api.maestroserver.io:5000/"
+#: ../../installing/servdiscovery.rst:12
+msgid "Protocol"
 msgstr ""
 
-#: ../../installing/production.rst:52
-msgid "http://reports.api.maestroserver.io:5005/"
+#: ../../installing/servdiscovery.rst:14
+msgid "SPA application"
 msgstr ""
 
-#: ../../installing/production.rst:56
-msgid "Health Check"
+#: ../../installing/servdiscovery.rst:14
+#: ../../installing/servdiscovery.rst:20
+#: ../../installing/servdiscovery.rst:22
+#: ../../installing/servdiscovery.rst:24
+#: ../../installing/servdiscovery.rst:26
+#: ../../installing/servdiscovery.rst:28
+#: ../../installing/servdiscovery.rst:30
+#: ../../installing/servdiscovery.rst:34
+#: ../../installing/servdiscovery.rst:36
+#: ../../installing/servdiscovery.rst:40
+#: ../../installing/servdiscovery.rst:42
+#: ../../installing/servdiscovery.rst:46
+#: ../../installing/servdiscovery.rst:48
+#: ../../installing/servdiscovery.rst:50
+#: ../../installing/servdiscovery.rst:52
+#: ../../installing/servdiscovery.rst:54
+msgid "Rest"
 msgstr ""
 
-#: ../../installing/production.rst:58
-msgid "**http://server.api.maestroserver.io:8888/health** - Check mongoDB connection."
+#: ../../installing/servdiscovery.rst:16
+msgid "Received status message (service bus)"
 msgstr ""
 
-#: ../../installing/production.rst:60
-msgid "**http://discovery.api.maestroserver.io:5000/health** - Check RabbitMQ and MongoDB Connection"
+#: ../../installing/servdiscovery.rst:16
+#: ../../installing/servdiscovery.rst:32
+#: ../../installing/servdiscovery.rst:38
+#: ../../installing/tokens.rst:27
+msgid "WebSocket"
 msgstr ""
 
-#: ../../installing/production.rst:62
-msgid "**http://reports.api.maestroserver.io:5005/health** - Check RabbitMQ and MongoDB Connection"
+#: ../../installing/servdiscovery.rst:18
+msgid "Show graphs on business analytics"
 msgstr ""
 
+#: ../../installing/servdiscovery.rst:18
+msgid "Iframe HTTP"
+msgstr ""
+
+#: ../../installing/servdiscovery.rst:20
+#: ../../installing/servdiscovery.rst:28
+#: ../../installing/servdiscovery.rst:46
+#: ../../installing/tokens.rst:45
+msgid "Report App"
+msgstr ""
+
+#: ../../installing/servdiscovery.rst:20
+msgid "Create any reports"
+msgstr ""
+
+#: ../../installing/servdiscovery.rst:22
+msgid "Execute crawler actions"
+msgstr ""
+
+#: ../../installing/servdiscovery.rst:24
+#: ../../installing/servdiscovery.rst:50
+msgid "MAESTRO_ANALITYCS_URI"
+msgstr ""
+
+#: ../../installing/servdiscovery.rst:24
+msgid "Create business graphs"
+msgstr ""
+
+#: ../../installing/servdiscovery.rst:26
+#: ../../installing/servdiscovery.rst:30
+#: ../../installing/servdiscovery.rst:36
+msgid "Send any update to audit"
+msgstr ""
+
+#: ../../installing/servdiscovery.rst:28
+msgid "Update report status"
+msgstr ""
+
+#: ../../installing/servdiscovery.rst:32
+#: ../../installing/servdiscovery.rst:44
+msgid "Send to client any status"
+msgstr ""
+
+#: ../../installing/servdiscovery.rst:40
+msgid "Populate meta data in analytics entity"
+msgstr ""
+
+#: ../../installing/servdiscovery.rst:42
+msgid "Post svgs"
+msgstr ""
+
+#: ../../installing/servdiscovery.rst:44
+msgid "Socket"
+msgstr ""
+
+#: ../../installing/servdiscovery.rst:46
+msgid "Automated and manage reports"
+msgstr ""
+
+#: ../../installing/servdiscovery.rst:48
+msgid "Automated and manage discovery"
+msgstr ""
+
+#: ../../installing/servdiscovery.rst:50
+msgid "Automated and manage analçytics"
+msgstr ""
+
+#: ../../installing/servdiscovery.rst:52
+msgid "Dump connections parameters."
+msgstr ""
+
+#: ../../installing/servdiscovery.rst:54
+msgid "Update any sync rule"
+msgstr ""
+
+#: ../../installing/smtp.rst:2
+msgid "SMTP Config"
+msgstr ""
+
+#: ../../installing/smtp.rst:10
+msgid "You can use an external smtp service as SendGrid, AWS SeS or any smtp server. Go to server application and set:"
+msgstr ""
+
+#: ../../installing/smtp.rst:13
+msgid "465"
+msgstr ""
+
+#: ../../installing/smtp.rst:15
+msgid "smtp.gmail.com"
+msgstr ""
+
+#: ../../installing/smtp.rst:17
+msgid "'maestrosmtp@gmail.com'"
+msgstr ""
+
+#: ../../installing/smtp.rst:19
+msgid "'maestrosmtp'"
+msgstr ""
+
+#: ../../installing/smtp.rst:21
+msgid "'XXXX'"
+msgstr ""
+
+#: ../../installing/smtp.rst:23
+msgid "Enable TLS connect"
+msgstr ""
+
+#: ../../installing/smtp.rst:25
+msgid "During the connection, validate security connection?"
+msgstr ""
+
+#: ../../installing/themes.rst:2
+msgid "Themes"
+msgstr ""
+
+#: ../../installing/themes.rst:6
+msgid "client"
+msgstr ""
+
+#: ../../installing/themes.rst:10
+msgid "You can change the client theme."
+msgstr ""
+
+#: ../../installing/themes.rst:22
+msgid "There are some options to choose."
+msgstr ""
+
+#: ../../installing/themes.rst:26
+msgid "**Default**"
+msgstr ""
+
+#: ../../installing/themes.rst:31
+msgid "THEME=lotus"
+msgstr ""
+
+#: ../../installing/themes.rst:35
+msgid "**Gold**"
+msgstr ""
+
+#: ../../installing/themes.rst:40
+msgid "THEME=gold"
+msgstr ""
+
+#: ../../installing/themes.rst:44
+msgid "**Wine**"
+msgstr ""
+
+#: ../../installing/themes.rst:49
+msgid "THEME=wine"
+msgstr ""
+
+#: ../../installing/themes.rst:53
+msgid "**Blue**"
+msgstr ""
+
+#: ../../installing/themes.rst:58
+msgid "THEME=blue"
+msgstr ""
+
+#: ../../installing/themes.rst:62
+msgid "**Dark**"
+msgstr ""
+
+#: ../../installing/themes.rst:67
+msgid "THEME=dark"
+msgstr ""
+
+#: ../../installing/themes.rst:71
+msgid "**Green**"
+msgstr ""
+
+#: ../../installing/themes.rst:76
+msgid "THEME=green"
+msgstr ""
+
+#: ../../installing/themes.rst:80
+msgid "**Orange**"
+msgstr ""
+
+#: ../../installing/themes.rst:85
+msgid "THEME=orange"
+msgstr ""
+
+#: ../../installing/tokens.rst:2
+msgid "JWT Tokens"
+msgstr ""
+
+#: ../../installing/tokens.rst:4
+msgid "Maestro uses JWT token to handle the authentication/authorization task, those tasks are:"
+msgstr ""
+
+#: ../../installing/tokens.rst:6
+msgid "Authenticate users"
+msgstr ""
+
+#: ../../installing/tokens.rst:7
+msgid "Authenticate private requests between the services"
+msgstr ""
+
+#: ../../installing/tokens.rst:8
+msgid "Authenticate public requests as websockets"
+msgstr ""
+
+#: ../../installing/tokens.rst:10
+msgid "High level architecture:"
+msgstr ""
+
+#: ../../installing/tokens.rst:19
+msgid "JWT Name"
+msgstr ""
+
+#: ../../installing/tokens.rst:19
+msgid "Owned by"
+msgstr ""
+
+#: ../../installing/tokens.rst:19
+msgid "Used by"
+msgstr ""
+
+#: ../../installing/tokens.rst:21
+msgid "SecreteJwt"
+msgstr ""
+
+#: ../../installing/tokens.rst:21
+msgid "Authenticate/Authorization users"
+msgstr ""
+
+#: ../../installing/tokens.rst:21
+#: ../../installing/tokens.rst:25
+msgid "Jwt user auth"
+msgstr ""
+
+#: ../../installing/tokens.rst:23
+msgid "To crawler 3 party provider"
+msgstr ""
+
+#: ../../installing/tokens.rst:27
+msgid "To authorize to connect on websocket"
+msgstr ""
+
+#: ../../installing/tokens.rst:29
+msgid "SecretJwt Public"
+msgstr ""
+
+#: ../../installing/tokens.rst:29
+msgid "Auth shared links (public access)"
+msgstr ""
+
+#: ../../installing/tokens.rst:29
+msgid "Used to authorize to access a public graphs"
+msgstr ""
+
+#: ../../installing/tokens.rst:31
+msgid "SecretJwt Crpto Forgot"
+msgstr ""
+
+#: ../../installing/tokens.rst:31
+msgid "First secret key, request forgot password"
+msgstr ""
+
+#: ../../installing/tokens.rst:33
+msgid "SecretJwt Forgot"
+msgstr ""
+
+#: ../../installing/tokens.rst:33
+msgid "Second secret key, confirm forgot password"
+msgstr ""
+
+#: ../../installing/tokens.rst:35
+msgid "SecretJwt Socket"
+msgstr ""
+
+#: ../../installing/tokens.rst:35
+msgid "Authorization users to connect to websocket"
+msgstr ""
+
+#: ../../installing/tokens.rst:35
+msgid "Websocket App"
+msgstr ""
+
+#: ../../installing/tokens.rst:35
+msgid "To authorize to send a messsage to websocket message bus"
+msgstr ""
+
+#: ../../installing/tokens.rst:41
+msgid "SecretJwt Private"
+msgstr ""
+
+#: ../../installing/tokens.rst:41
+msgid "Private Authenticate"
+msgstr ""
+
+#: ../../installing/tokens.rst:41
+msgid "Server"
+msgstr ""
+
+#: ../../installing/tokens.rst:41
+msgid "Security key between services"
+msgstr ""
+
+#: ../../installing/tokens.rst:47
+#: ../../installing/tokens.rst:51
+#: ../../installing/tokens.rst:57
+msgid "Data   App"
+msgstr ""
+
+#: ../../installing/tokens.rst:49
+#: ../../installing/tokens.rst:53
+msgid "Audit  App"
+msgstr ""
+
+#: ../../installing/tokens.rst:55
+msgid "Report  App"
+msgstr ""
+
+#: ../../installing/tokens.rst:55
+msgid "Report Worker -> Report Api"
+msgstr ""
+
+#: ../../installing/tokens.rst:59
+msgid "Analytics App (Worker)"
+msgstr ""
+
+#: ../../installing/tokens.rst:59
+msgid "To be able to send artifacts to analytics front"
+msgstr ""
+
+#: ../../installing/tokens.rst:62
+msgid "**Owned** - Token accountant service"
+msgstr ""
+
+#: ../../installing/tokens.rst:63
+msgid "**Context** - High-level description"
+msgstr ""
+
+#: ../../installing/tokens.rst:64
+msgid "**Used** - It was used by"
+msgstr ""
+
+#: ../../installing/upload.rst:2
+msgid "Using external store engine as S3"
+msgstr ""
+
+#: ../../installing/upload.rst:11
+msgid "You can choose two upload mode, a local file or using S3 storage."
+msgstr ""
+
+#: ../../installing/upload.rst:13
+msgid "The upload system was used on two points:"
+msgstr ""
+
+#: ../../installing/upload.rst:16
+msgid "server-app"
+msgstr ""
+
+#: ../../installing/upload.rst:16
+msgid "Using on avatar users, teams and projects images."
+msgstr ""
+
+#: ../../installing/upload.rst:18
+msgid "analytics app"
+msgstr ""
+
+#: ../../installing/upload.rst:18
+msgid "To store artifacts such as graphs, svgs and pngs"
+msgstr ""
+
+#: ../../installing/upload.rst:22
+msgid "Local Storage"
+msgstr ""
+
+#: ../../installing/upload.rst:24
+msgid "For a single node, the file will be stored on a local disk."
+msgstr ""
+
+#: ../../installing/upload.rst:26
+#: ../../installing/upload.rst:57
+#: ../../installing/upload.rst:97
+msgid "Env variables"
+msgstr ""
+
+#: ../../installing/upload.rst:29
+#: ../../installing/upload.rst:60
+#: ../../installing/upload.rst:100
+msgid "UPLOAD_TYPE"
+msgstr ""
+
+#: ../../installing/upload.rst:29
+msgid "Local"
+msgstr ""
+
+#: ../../installing/upload.rst:48
+msgid "These are the default configurations, you don't need to declare these values."
+msgstr ""
+
+#: ../../installing/upload.rst:53
+msgid "AWS S3 Storage"
+msgstr ""
+
+#: ../../installing/upload.rst:55
+msgid "You can use a S3 Amazon storage object service to store an upload files."
+msgstr ""
+
+#: ../../installing/upload.rst:60
+#: ../../installing/upload.rst:100
+msgid "S3"
+msgstr ""
+
+#: ../../installing/upload.rst:61
+#: ../../installing/upload.rst:101
+msgid "XXXXXXXXXX"
+msgstr ""
+
+#: ../../installing/upload.rst:62
+#: ../../installing/upload.rst:102
+msgid "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+msgstr ""
+
+#: ../../installing/upload.rst:65
+#: ../../installing/upload.rst:105
+msgid "AWS_ENDPOINT"
+msgstr ""
+
+#: ../../installing/upload.rst:65
+#: ../../installing/upload.rst:105
+msgid "S3 endpoint"
+msgstr ""
+
+#: ../../installing/upload.rst:87
+msgid "Remember to set the right path on ``STATIC_URL`` endpoint into client-app."
+msgstr ""
+
+#: ../../installing/upload.rst:88
+msgid "The bucket need to be public."
+msgstr ""
+
+#: ../../installing/upload.rst:93
+msgid "Digital Ocean Spaces"
+msgstr ""
+
+#: ../../installing/upload.rst:95
+msgid "You can use Digital ocean space, they uses the same S3 protocol, but rather than AWS you need to set ``AWS_ENDPOINT``."
+msgstr ""
+
+#: ../../installing/upload.rst:103
+msgid "ny3"
+msgstr ""
+
+#: ../../installing/upload.rst:108
+msgid "Endpoint can be ny3.spacesdigitalocean"
+msgstr ""
+
+#: ../../installing/upload.rst:109
+msgid "Access and secret can be get on spaces dashboard."
+msgstr ""
+
+#: ../../installing/upload.rst:110
+msgid "AWS_DEFAULT_REGION can be ny3"
+msgstr ""

@@ -22,7 +22,7 @@ The Maestro ACL is composed of multiple entity type and each entity has a one ru
 
 - You can create teams to share the same access to multiple users, and under the hood the user assume the team identity and then the team can access that record.
 
-The ACL modal can be found on any resources suah as servers, applications, graphs, reports and more.
+The ACL modal can be found on any resources such as servers, applications, graphs, reports and more.
 
 .. image:: ../../_static/screen/acl.png
    :alt: Maestro Server - Acl view

@@ -21,4 +21,4 @@ Submitting patches
 
 .. Note::
 
-    All contribuition will be accept by Pull Request
+    All contribution will be accept by Pull Request

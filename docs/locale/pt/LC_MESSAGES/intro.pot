@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Maestro Server - Cloud Inventory 0.1\n"
+"Project-Id-Version: Maestro Server - Cloud Inventory 0.6\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-22 20:54+0100\n"
+"POT-Creation-Date: 2020-05-09 12:21+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,111 +20,74 @@ msgstr ""
 msgid "Overview"
 msgstr ""
 
-#: ../../intro.rst:3
-msgid "Maestro Server is an open source software platform for management and discovery servers, apps, a system for Hybrid IT. It can manage small and large environments, offer a possibility to centralize all data for multiple cloud accounts. You will be able to:"
-msgstr ""
-
-#: ../../intro.rst:6
-msgid "Centralize all data about your server"
-msgstr ""
-
-#: ../../intro.rst:7
-msgid "Continuously discover new servers and services of all environments"
-msgstr ""
-
-#: ../../intro.rst:8
-msgid "Powerful reports and greater relation to servers, services, and apps"
-msgstr ""
-
-#: ../../intro.rst:9
-msgid "Automatically create inventory for ansible"
-msgstr ""
-
-#: ../../intro.rst:12
-msgid "Introduction"
-msgstr ""
-
-#: ../../intro.rst:13
-msgid "Maestro Server is be composed of 3 system."
-msgstr ""
-
-#: ../../intro.rst:15
-msgid "> **Cloud inventory**: Catalog and manager system in multi-cloud environment"
-msgstr ""
-
-#: ../../intro.rst:17
-msgid "Server manage in multi-cloud"
-msgstr ""
-
-#: ../../intro.rst:18
-msgid "Reports with advanced filters"
-msgstr ""
-
-#: ../../intro.rst:19
-msgid "‎Scheduler commands with Ansible"
-msgstr ""
-
-#: ../../intro.rst:20
-msgid "‎Auto Discovery for cloud environment"
-msgstr ""
-
-#: ../../intro.rst:24
-msgid "`See demo cloud inventory here <http://demo.maestroserver.io/>`_."
-msgstr ""
-
-#: ../../intro.rst:26
-msgid "> **App manager**: Automataze command services"
-msgstr ""
-
-#: ../../intro.rst:28
-msgid "Command hooks in multiple servers."
-msgstr ""
-
-#: ../../intro.rst:29
-msgid "‎Centralized manage server."
-msgstr ""
-
-#: ../../intro.rst:30
-msgid "Schedule task"
-msgstr ""
-
-#: ../../intro.rst:32
-msgid "> **Orchestrate architecture**: Orchestrate system for server and services."
-msgstr ""
-
-#: ../../intro.rst:34
-msgid "Orchestration architecture for complex system"
-msgstr ""
-
-#: ../../intro.rst:35
-msgid "‎State manager."
-msgstr ""
-
-#: ../../intro.rst:39
+#: ../../intro.rst:5
 msgid "What is Maestro Server"
 msgstr ""
 
-#: ../../intro.rst:41
-msgid "Maestro was built to solve some problems we found in operating multi-cloud environments, multiple shared Devops culture team."
+#: ../../intro.rst:7
+msgid "Maestro Server is an open source software platform for management and discovery servers, apps and system for Hybrid IT. Can manage small and large environments, to be able to visualize the latest multi-cloud environment state."
 msgstr ""
 
-#: ../../intro.rst:44
+#: ../../intro.rst:9
+msgid "You will be able to:"
+msgstr ""
+
+#: ../../intro.rst:11
+msgid "Centralize and visualize the latest state multi-cloud environment"
+msgstr ""
+
+#: ../../intro.rst:12
+msgid "Continuously discover new servers and services of all environments"
+msgstr ""
+
+#: ../../intro.rst:13
+msgid "Powerful reports, you can create a relation with servers, services, apps and clients"
+msgstr ""
+
+#: ../../intro.rst:14
+msgid "Automatically populate inventory with ansible, logging jobs, audit and cordenate multiple teams."
+msgstr ""
+
+#: ../../intro.rst:15
+msgid "Tracking all changes of your infrastructure"
+msgstr ""
+
+#: ../../intro.rst:19
 msgid "What problems does it solve?"
 msgstr ""
 
-#: ../../intro.rst:46
-msgid "New way in the technology world wit h new forms to think and act, new architecture in multicloud, microservices and etc, all this stuffs increase a complex path to be updated, in the same time teams grow and more, the knowledge split, it operation teams transform in squad horizontal service team, create a necessity to orchestrate people and data."
+#: ../../intro.rst:21
+msgid "Maestro had built to solve some problems founded in operating multi-cloud environments, multi shared devops culture and multi clients, where turns hard to keep track the latest environment state, bottlenecks to apply a compliance in all teams, visualization gaps to understand the infrastructure state, access security flaws for internals employees and out of date documentation."
 msgstr ""
 
-#: ../../intro.rst:48
-msgid "Maestro comes to help it operation teams to organize and audit multicloud infrastructure, Cloud Inventory arrive to substitute CMDB systems, auto-discovery servers, services and apps in organizing and smart way, its possible to classify each service, like database, message queues, vpns, api gateway, service mesh and etc, create a relation between servers and services, docs clusters, and points, targets all you need to be a complete and simple inventory."
+#: ../../intro.rst:23
+msgid "How can we audit your env?"
 msgstr ""
 
-#: ../../intro.rst:51
+#: ../../intro.rst:24
+msgid "How control and keep track your environment?"
+msgstr ""
+
+#: ../../intro.rst:25
+msgid "How garantee if my documentation is updated?"
+msgstr ""
+
+#: ../../intro.rst:26
+msgid "Witch servers belong this client?"
+msgstr ""
+
+#: ../../intro.rst:28
+msgid "Maestro comes to help IT operation teams to organize and audit multicloud infrastructure, it come to substitute CMDB systems, auto-discovery servers, services and apps, be organized in a smart way, it's possible to classify each service, like database, message queues, vpns, api gateway, service mesh and etc, to create a relation between servers and services, docs clusters and points target, relate services, system and clients. Maestro come for you, to be a complete and simple cloud inventory."
+msgstr ""
+
+#: ../../intro.rst:31
 msgid "How do I use it?"
 msgstr ""
 
-#: ../../intro.rst:55
-msgid "Centralized database system like CMDB, centralized playbooks like Ansible Tower and centralized monitoring cloud system like ManageIQ"
+#: ../../intro.rst:33
+msgid "It able to analysis your full state environment of all providers you have, centralize all information about datacenters, servers, loadbalance, orchestrations tools, volumes, vpns and etc, keep track their relations, can create complex and powerful reports, analysis costs, growing up velocity, standards services names, network configurations and available deploys for each server."
 msgstr ""
 
+#: ../../intro.rst:40
+msgid "`See demo cloud inventory here <http://demo.maestroserver.io/>`_."
+msgstr ""

@@ -7,7 +7,7 @@ High Architecture
 
 This section will deep dive over each configuration found it on each Maestro service.
 
-A minimun installation require:
+A minimum installation require:
 
 ..
 
@@ -28,7 +28,7 @@ To have an auto update over discovery/reports/analytics api you need to install 
 
 ..
 
-    * Scheduler App 
+    * Scheduler App
 
 To create and export reports you need to have the reports app installed:
 
@@ -39,7 +39,7 @@ To create and export reports you need to have the reports app installed:
     * RabbitMq
 
 
-To create a bussiness analytics graphs, public and shared these maps, you need to install these apps:
+To create a business analytics graphs, public and shared these maps, you need to install these apps:
 
 ..
 
@@ -76,10 +76,10 @@ Client App
 
 .. code-block:: bash
 
-    docker run -p 80:80 
-    -e 'API_URL=http://localhost:8888' 
-    -e 'STATIC_URL=http://localhost:8888/static/' 
-    -e "ANALYTICS_URL=http://localhost:9999" 
+    docker run -p 80:80
+    -e 'API_URL=http://localhost:8888'
+    -e 'STATIC_URL=http://localhost:8888/static/'
+    -e "ANALYTICS_URL=http://localhost:9999"
     maestroserver/client-maestro
 
 .. Warning::
@@ -91,12 +91,12 @@ Client App
 **Env variables**
 
 ======================= ============================ =================================
-Env Variables                   Example                    Description         
+Env Variables                   Example                    Description
 ======================= ============================ =================================
-API_URL                 http://localhost:8888        Server App Url                                           
+API_URL                 http://localhost:8888        Server App Url
 STATIC_URL              /static                      Full path static files
-ANALYTICS_URL	        http://localhost:9999	     Analytics App Url 
-WEBSOCKET_URL           ws://localhost:8000          Websocket Url                             
+ANALYTICS_URL	        http://localhost:9999	     Analytics App Url
+WEBSOCKET_URL           ws://localhost:8000          Websocket Url
 LOGO                    /static/imgs/logo300.png     Logo URL used on login page
 THEME                   theme-lotus                  Theme (gold|wine|blue|green|dark)
 ======================= ============================ =================================
@@ -124,58 +124,58 @@ Server APP
 
 .. code-block:: bash
 
-    docker run -p 8888:8888  
-        -e "MAESTRO_MONGO_URI=mongodb://mongodb" 
-        -e "MAESTRO_MONGO_DATABASE=maestro-client" 
-        -e "MAESTRO_DISCOVERY_URI=http://localhost:5000" 
+    docker run -p 8888:8888
+        -e "MAESTRO_MONGO_URI=mongodb://mongodb"
+        -e "MAESTRO_MONGO_DATABASE=maestro-client"
+        -e "MAESTRO_DISCOVERY_URI=http://localhost:5000"
         -e "MAESTRO_REPORT_URI=http://localhost:5005"
         -e "MAESTRO_ANALYTICS_URI=http://localhost:5020"
         -e "MAESTRO_AUDIT_URI=http://audit:10900"
-        maestroserver/server-maestro 
+        maestroserver/server-maestro
 
 .. Warning::
     * **MAESTRO_MONGO_URI:** - It must be the full url -``mongodb://{MAESTRO_MONGO_URI}/{MAESTRO_MONGO_DATABASE}``
     * **MAESTRO_MONGO_DATABASE:** - The mongodb database name (ex: maestro-client)
-    * **SMTP_X:** - It used to send transactional emails - `More details about SMTP <http://docs.maestroserver.io/en/latest/installing/smtp.html>`_. 
+    * **SMTP_X:** - It used to send transactional emails - `More details about SMTP <http://docs.maestroserver.io/en/latest/installing/smtp.html>`_.
     * **MAESTRO_UPLOAD_TYPE:** - Can be a local or S3 - `More details about upload <http://docs.maestroserver.io/en/latest/installing/upload.html>`_.
     * **MAESTRO_SECRETJWT_PUBLIC:** - Hash used only do public shared resources, must be different of ``MAESTRO_SECRETJWT`` - `More details about tokens <http://docs.maestroserver.io/en/latest/installing/tokens.html>`_.
 
 **Env variables**
 
-=================================== ========================== ============================================ 
-            Env Variables                   Example                   Description                          
 =================================== ========================== ============================================
- MAESTRO_PORT                        8888                                                                   
- NODE_ENV                            development|production                                                 
+            Env Variables                   Example                   Description
+=================================== ========================== ============================================
+ MAESTRO_PORT                        8888
+ NODE_ENV                            development|production
  MAESTRO_MONGO_URI                   mongodb://localhost        DB string connection
  MAESTRO_MONGO_DATABASE              maestro-client             Database name
 
- MAESTRO_SECRETJWT                   XXXX                       Secret key - session                                            
- MAESTRO_SECRETJWT_FORGOT            XXXX                       Secret key - forgot request                                            
+ MAESTRO_SECRETJWT                   XXXX                       Secret key - session
+ MAESTRO_SECRETJWT_FORGOT            XXXX                       Secret key - forgot request
  MAESTRO_SECRET_CRYPTO_FORGOT        XXXX                       Secret key - forgot content
- MAESTRO_SECRETJWT_PUBLIC            XXX                        Secret key - public shared   
- MAESTRO_SECRETJWT_PRIVATE           XXX                        Secret Key - JWT private connections       
- MAESTRO_NOAUTH                      XXX                        Secret Pass to validate private connections 
+ MAESTRO_SECRETJWT_PUBLIC            XXX                        Secret key - public shared
+ MAESTRO_SECRETJWT_PRIVATE           XXX                        Secret Key - JWT private connections
+ MAESTRO_NOAUTH                      XXX                        Secret Pass to validate private connections
 
- MAESTRO_DISCOVERY_URL               http://localhost:5000      Url discovery-app (flask)                   
+ MAESTRO_DISCOVERY_URL               http://localhost:5000      Url discovery-app (flask)
  MAESTRO_REPORT_URL                  http://localhost:5005      Url reports-app (flask)
  MAESTRO_ANALYTICS_URI               http://localhost:5020      Url Analytics-app (flask)
  MAESTRO_AUDIT_URI                   http://localhost:10900     Url Audit-app (krakenjs)
  MAESTRO_TIMEOUT                     1000                       Timeout micro service request
 
- SMTP_PORT                           1025                                                                   
- SMTP_HOST                           localhost                                                              
- SMTP_SENDER                         myemail@XXXX                                                      
+ SMTP_PORT                           1025
+ SMTP_HOST                           localhost
+ SMTP_SENDER                         myemail@XXXX
  SMTP_IGNORE                         true|false
  SMTP_USETSL                         true|false
  SMTP_USERNAME
  SMTP_PASSWORD
 
- AWS_ACCESS_KEY_ID                   XXXX                                                                   
- AWS_SECRET_ACCESS_KEY               XXXX                                                                   
- AWS_DEFAULT_REGION                  us-east-1                                                              
- AWS_S3_BUCKET_NAME                  maestroserver              Bucket name                                            
- MAESTRO_UPLOAD_TYPE                 S3 or Local                Upload mode                                 
+ AWS_ACCESS_KEY_ID                   XXXX
+ AWS_SECRET_ACCESS_KEY               XXXX
+ AWS_DEFAULT_REGION                  us-east-1
+ AWS_S3_BUCKET_NAME                  maestroserver              Bucket name
+ MAESTRO_UPLOAD_TYPE                 S3 or Local                Upload mode
  LOCAL_DIR                           /public/static/            Where files will be uploaded
  MAESTRO_TMP                         $rootDirectory             Tmp folder used on upload files process
 
@@ -208,13 +208,13 @@ Discovery App
 
 .. code-block:: bash
 
-    docker run -p 5000:5000  -e "MAESTRO_DATA_URI=http://localhost:5010" -e "CELERY_BROKER_URL=amqp://rabbitmq:5672" maestroserver/discovery-maestro 
- 
+    docker run -p 5000:5000  -e "MAESTRO_DATA_URI=http://localhost:5010" -e "CELERY_BROKER_URL=amqp://rabbitmq:5672" maestroserver/discovery-maestro
+
     docker run \
         -e "MAESTRO_DATA_URI=http://localhost:5010" \
         -e "CELERY_BROKER_URL=amqp://rabbitmq:5672" \
         -e "MAESTRO_AUDIT_URI=http://localhost:10900" \
-        maestroserver/discovery-maestro-celery 
+        maestroserver/discovery-maestro-celery
 
 .. Warning::
     * **MAESTRO_DATA_URI:** - Data App enpoint API - default port is 5000
@@ -224,16 +224,16 @@ Discovery App
 **Env variables**
 
 ========================== ============================ ==============================================
-Env Variables                   Example                    Description         
-========================== ============================ ==============================================  
-MAESTRO_PORT			   5000  					     Port used    
+Env Variables                   Example                    Description
+========================== ============================ ==============================================
+MAESTRO_PORT			   5000  					     Port used
 MAESTRO_DATA_URI           http://localhost:5010         Data Layer API URL
 MAESTRO_AUDIT_URI	       http://localhost:10900	     Audit App - API URL
 MAESTRO_WEBSOCKET_URI	   http://localhost:8000	     Webosocket App - API URL
 
 MAESTRO_SECRETJWT          XXX                           Same that Server App
-MAESTRO_SECRETJWT_PRIVATE  XXX                           Secret Key - JWT private connections       
-MAESTRO_NOAUTH             XXX                           Secret Pass to validate private connections 
+MAESTRO_SECRETJWT_PRIVATE  XXX                           Secret Key - JWT private connections
+MAESTRO_NOAUTH             XXX                           Secret Pass to validate private connections
 MAESTRO_WEBSOCKET_SECRET   XXX                           Secret Key - JWT Websocket connections
 
 MAESTRO_TRANSLATE_QTD      200                           Prefetch translation process
@@ -275,37 +275,37 @@ Reports App
 .. code-block:: bash
 
     docker run -p 5005 -e "MAESTRO_DATA_URI=http://localhost:5010" -e "CELERY_BROKER_URL=amqp://rabbitmq:5672" -e 'MAESTRO_MONGO_URI=localhost' maestroserver/reports-maestro
- 
+
     docker run \
         -e "MAESTRO_DATA_URI=http://localhost:5010" \
         -e "MAESTRO_REPORT_URI=http://localhost:5005" \
         -e "CELERY_BROKER_URL=amqp://rabbitmq:5672" \
         -e "MAESTRO_AUDIT_URI=http://audit:10900" \
-        maestroserver/reports-maestro-celery 
-     
-    
+        maestroserver/reports-maestro-celery
+
+
 **Env variables**
 
 ========================= ============================ ===========================================
-Env Variables                   Example                    Description         
+Env Variables                   Example                    Description
 ========================= ============================ ===========================================
-MAESTRO_PORT			  5005						   Port used 
+MAESTRO_PORT			  5005						   Port used
 MAESTRO_MONGO_URI         localhost                    Mongo Url conn
-MAESTRO_MONGO_DATABASE    maestro-reports              Db name, its differente of servers-app     
+MAESTRO_MONGO_DATABASE    maestro-reports              Db name, its differente of servers-app
 
 MAESTRO_DATA_URI          http://localhost:5010        Data layer api
 MAESTRO_REPORT_URI        http://localhost:5005        Report api
 MAESTRO_AUDIT_URI	      http://localhost:10900	   Audit App - API URL
 MAESTRO_WEBSOCKET_URI	  http://localhost:8000	       Webosocket App - API URL
 
-MAESTRO_SECRETJWT_PRIVATE XXX                          Secret Key - JWT private connections       
-MAESTRO_NOAUTH            XXX                          Secret Pass to validate private connections 
+MAESTRO_SECRETJWT_PRIVATE XXX                          Secret Key - JWT private connections
+MAESTRO_NOAUTH            XXX                          Secret Pass to validate private connections
 MAESTRO_WEBSOCKET_SECRET  XXX                          Secret Key - JWT Websocket connections
 
 MAESTRO_REPORT_RESULT_QTD 1500                         Limit default
 MAESTRO_INSERT_QTD        20                           Prefetch data insert
 
-MAESTRO_GWORKERS          2                            Gworkers thread pool                         
+MAESTRO_GWORKERS          2                            Gworkers thread pool
 CELERY_BROKER_URL         amqp://rabbitmq:5672         RabbitMQ connection
 ========================= ============================ ===========================================
 
@@ -329,7 +329,7 @@ Analytics App
         environment:
         - "MAESTRO_DATA_URI=http://data:5010"
         - "MAESTRO_ANALYTICS_FRONT_URI=http://analytics_front:9999"
-        - "CELERY_BROKER_URL=amqp://rabbitmq:5672" 
+        - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
         - "CELERYD_MAX_TASKS_PER_CHILD=2"
 
 .. Warning::
@@ -339,31 +339,31 @@ Analytics App
 
 .. code-block:: bash
 
-    docker run -p 5020 
-        -e "MAESTRO_DATA_URI=http://localhost:5010" 
-        -e "CELERY_BROKER_URL=amqp://rabbitmq:5672" 
-        -e 'MAESTRO_MONGO_URI=localhost' 
+    docker run -p 5020
+        -e "MAESTRO_DATA_URI=http://localhost:5010"
+        -e "CELERY_BROKER_URL=amqp://rabbitmq:5672"
+        -e 'MAESTRO_MONGO_URI=localhost'
         maestroserver/analytics-maestro
- 
-    docker run 
+
+    docker run
         -e "MAESTRO_DATA_URI=http://localhost:5010"
         -e "MAESTRO_ANALYTICS_FRONT_URI=http://localhost:9999"
-        -e "CELERY_BROKER_URL=amqp://rabbitmq:5672" 
-        maestroserver/analytics-maestro-celery 
-     
-    
+        -e "CELERY_BROKER_URL=amqp://rabbitmq:5672"
+        maestroserver/analytics-maestro-celery
+
+
 **Env variables**
 
 =========================== ============================ =============================================
-Env Variables                   Example                    Description         
-=========================== ============================ =============================================    
+Env Variables                   Example                    Description
+=========================== ============================ =============================================
 MAESTRO_PORT                 5020                         Port
 MAESTRO_DATA_URI             http://localhost:5010        Data Layer API URL
 MAESTRO_ANALYTICS_FRONT_URI  http://localhost:9999        Analytics Front URL
 MAESTRO_WEBSOCKET_URI	     http://localhost:8000	      Webosocket App - API URL
 
-MAESTRO_SECRETJWT_PRIVATE    XXX                          Secret Key - JWT private connections       
-MAESTRO_NOAUTH               XXX                          Secret Pass to validate private connections 
+MAESTRO_SECRETJWT_PRIVATE    XXX                          Secret Key - JWT private connections
+MAESTRO_NOAUTH               XXX                          Secret Pass to validate private connections
 MAESTRO_WEBSOCKET_SECRET     XXX                          Secret Key - JWT Websocket connections
 
 MAESTRO_GWORKERS             2                            Gunicorn multi process
@@ -395,35 +395,35 @@ Analytics Front
 
 .. code-block:: bash
 
-    docker run -p 5005 
+    docker run -p 5005
         -e "MAESTRO_MONGO_URI=mongodb://mongodb"
         -e "MAESTRO_MONGO_DATABASE=maestro-client"
         maestroserver/analytics-front-maestro
- 
+
 
 **Env variables**
 
-================================== ========================== ============================================== 
-            Env Variables                   Example                   Description                          
 ================================== ========================== ==============================================
-MAESTRO_PORT                        9999                                                   
-API_URL                             http://localhost:8888      Server app Url               
-NODE_ENV                            development|production                                 
-MAESTRO_MONGO_URI                   localhost                  DB string connection         
-MAESTRO_MONGO_DATABASE              maestro-client             Database name   
+            Env Variables                   Example                   Description
+================================== ========================== ==============================================
+MAESTRO_PORT                        9999
+API_URL                             http://localhost:8888      Server app Url
+NODE_ENV                            development|production
+MAESTRO_MONGO_URI                   localhost                  DB string connection
+MAESTRO_MONGO_DATABASE              maestro-client             Database name
 
-MAESTRO_SECRETJWT                   XXXX                       Secret key - server app         
-MAESTRO_SECRETJWT_PRIVATE           XXX                        Secret Key - JWT private connections       
+MAESTRO_SECRETJWT                   XXXX                       Secret key - server app
+MAESTRO_SECRETJWT_PRIVATE           XXX                        Secret Key - JWT private connections
 MAESTRO_NOAUTH                      XXX                        Secret Pass to validate private connections
-MAESTRO_SECRETJWT_PUBLIC	        XXXX	                   Secret key - same as on server app 
+MAESTRO_SECRETJWT_PUBLIC	        XXXX	                   Secret key - same as on server app
 
-AWS_ACCESS_KEY_ID                   XXXX                                                   
-AWS_SECRET_ACCESS_KEY               XXXX                                                   
-AWS_DEFAULT_REGION                  us-east-1                                              
-AWS_S3_BUCKET_NAME                  maestroserver                                          
-MAESTRO_UPLOAD_TYPE                 S3/Local                   Upload mode                  
-LOCAL_DIR                           /public/static/            Where files will be uploaded 
-PWD                                 $rootDirectory             PWD process                  
+AWS_ACCESS_KEY_ID                   XXXX
+AWS_SECRET_ACCESS_KEY               XXXX
+AWS_DEFAULT_REGION                  us-east-1
+AWS_S3_BUCKET_NAME                  maestroserver
+MAESTRO_UPLOAD_TYPE                 S3/Local                   Upload mode
+LOCAL_DIR                           /public/static/            Where files will be uploaded
+PWD                                 $rootDirectory             PWD process
 ================================== ========================== ==============================================
 
 
@@ -449,14 +449,14 @@ Data App
 **Env variables**
 
 ========================= ============================ =============================================
-Env Variables                   Example                    Description         
+Env Variables                   Example                    Description
 ========================= ============================ =============================================
-MAESTRO_PORT			  5010						    Port used 
+MAESTRO_PORT			  5010						    Port used
 MAESTRO_MONGO_URI         localhost                     Mongo Url conn
-MAESTRO_MONGO_DATABASE    maestro-client                Db name, its differente of servers-app     
-MAESTRO_GWORKERS   		  2       					    Gunicorn multi process  
+MAESTRO_MONGO_DATABASE    maestro-client                Db name, its differente of servers-app
+MAESTRO_GWORKERS   		  2       					    Gunicorn multi process
 MAESTRO_INSERT_QTD        200                           Throughput insert used on reports collection
-MAESTRO_SECRETJWT_PRIVATE XXX                           Secret Key - JWT private connections       
+MAESTRO_SECRETJWT_PRIVATE XXX                           Secret Key - JWT private connections
 MAESTRO_NOAUTH            XXX                           Secret Pass to validate private connections
 ========================= ============================ =============================================
 
@@ -487,19 +487,19 @@ Scheduler App
 
 .. code-block:: bash
 
-    docker run 
-        -e "MAESTRO_DATA_URI=http://localhost:5010" 
-        -e "CELERY_BROKER_URL=amqp://rabbitmq:5672" 
+    docker run
+        -e "MAESTRO_DATA_URI=http://localhost:5010"
+        -e "CELERY_BROKER_URL=amqp://rabbitmq:5672"
         maestroserver/scheduler-maestro
- 
-    docker run 
+
+    docker run
         -e "MAESTRO_DATA_URI=http://localhost:5010"
         -e "MAESTRO_DISCOVERY_URI=http://localhost:5000"
         -e "MAESTRO_ANALYTICS_URI=http://localhost:5020"
         -e "MAESTRO_REPORT_URI=http://localhost:5005"
-        -e "CELERY_BROKER_URL=amqp://rabbitmq:5672" 
-        maestroserver/scheduler-maestro-celery 
-     
+        -e "CELERY_BROKER_URL=amqp://rabbitmq:5672"
+        maestroserver/scheduler-maestro-celery
+
 .. Warning::
     * **MAESTRO_DATA_URI:** - Data API - default port is 5000
 
@@ -508,9 +508,9 @@ Scheduler App
 
 **Env variables**
 
-============================ ============================ ============================================= 
-Env Variables                   Example                    Description         
-============================ ============================ ============================================= 
+============================ ============================ =============================================
+Env Variables                   Example                    Description
+============================ ============================ =============================================
 MAESTRO_DATA_URI              http://localhost:5010        Data Layer API URL
 MAESTRO_DISCOVERY_URI         http://localhost:5000        Discovery App URL
 MAESTRO_ANALYTICS_URI         http://localhost:5020        Analytics App URL
@@ -520,7 +520,7 @@ MAESTRO_MONGO_URI             localhost                    MongoDB URI
 MAESTRO_MONGO_DATABASE        maestro-client               Mongo Database name
 CELERY_BROKER_URL             amqp://rabbitmq:5672         RabbitMQ connection
 
-MAESTRO_SECRETJWT_PRIVATE     XXX                          Secret Key - JWT private connections       
+MAESTRO_SECRETJWT_PRIVATE     XXX                          Secret Key - JWT private connections
 MAESTRO_NOAUTH                XXX                          Secret Pass to validate private connections
 ============================ ============================ =============================================
 
@@ -547,27 +547,27 @@ Audit App
 
 .. code-block:: bash
 
-    docker run -p 10900 
+    docker run -p 10900
         -e "MAESTRO_MONGO_URI=mongodb://mongodb"
         -e "MAESTRO_MONGO_DATABASE=maestro-audit"
         maestroserver/audit-app-maestro
- 
+
 
 **Env variables**
 
 ================================== ========================== ============================================
-            Env Variables                   Example                   Description                          
+            Env Variables                   Example                   Description
 ================================== ========================== ============================================
-MAESTRO_PORT                         10900                                                               
-NODE_ENV                             development|production                                              
-MAESTRO_MONGO_URI                    localhost                DB string connection 
+MAESTRO_PORT                         10900
+NODE_ENV                             development|production
+MAESTRO_MONGO_URI                    localhost                DB string connection
 
-MAESTRO_MONGO_DATABASE               maestro-audit            Database name                              
-MAESTRO_TIMEOUT                      1000                     Timeout any http private request           
-MAESTRO_DATA_URI                     http://localhost:5010    Data App - API URL 
+MAESTRO_MONGO_DATABASE               maestro-audit            Database name
+MAESTRO_TIMEOUT                      1000                     Timeout any http private request
+MAESTRO_DATA_URI                     http://localhost:5010    Data App - API URL
 
-MAESTRO_SECRETJWT_PRIVATE            XXX                      Secret Key - JWT private connections       
-MAESTRO_NOAUTH                       XXX                      Secret Pass to validate private connections               
+MAESTRO_SECRETJWT_PRIVATE            XXX                      Secret Key - JWT private connections
+MAESTRO_NOAUTH                       XXX                      Secret Pass to validate private connections
 ================================== ========================== ============================================
 
 
@@ -590,7 +590,7 @@ WebSocket App
 **Env variables**
 
 ========================= ============================ ======================================================================================
-Env Variables                   Example                    Description         
+Env Variables                   Example                    Description
 ========================= ============================ ======================================================================================
 MAESTRO_WEBSOCKET_SECRET  backSecretToken	           Token to authenticate backends apps
 MAESTRO_SECRETJWT	      frontSecretToken	           Token to autheticate front end users

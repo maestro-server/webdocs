@@ -16,15 +16,22 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../../index.rst:8
-#: ../../index.rst:8
-msgid "Contents:"
+#: ../../contact.rst:2
+msgid "Contact"
 msgstr ""
 
-#: ../../index.rst:4
-msgid "Cloud Inventory's documentation!"
+#: ../../contact.rst:4
+msgid "Do you have any question, comments, feedback or question about Maestro Server? Please send me a message."
 msgstr ""
 
-#: ../../index.rst:6
-msgid "The docs are separated into 3 parts, the first one is about installation and setup Maestro, the second is User Guide and how you create and manage Maestro in the business point of view, and the last we have a developer guide to help to contribute for the project."
+#: ../../contact.rst:13
+msgid "Feature request"
+msgstr ""
+
+#: ../../contact.rst:15
+msgid "Do you like a new feature? Please open a new request on Github."
+msgstr ""
+
+#: ../../contact.rst:17
+msgid "`Feature request <https://github.com/maestro-server/server-app/issues/new?template=feature_request.md>`_."
 msgstr ""

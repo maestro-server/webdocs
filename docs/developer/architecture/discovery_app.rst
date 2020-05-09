@@ -1,9 +1,9 @@
 Discovery App
 -------------
 
-Discovery App is a crawler resposanble to connect yo cloud providers.
+Discovery App is a crawler accountable to connect to cloud providers.
 
-- To manager and authenticate in each cloud provider
+- To manager and authenticate on each cloud provider
 - Translate cloud data to maestro data.
 
 ----------
@@ -27,36 +27,36 @@ Discovery app use `Flask <http://flask.pocoo.org>`_,  on python >3.5.
 .. image:: ../../_static/screen/discovery_arch.png
    :alt: Maestro Server - Discovery architecture
 
-- The crawler are divided in:
+- The discovery are divided in modules:
 
-	- **api:** To authenticate on cloud providers.
+    - **api:** To authenticate on cloud providers.
 
-	- **translate:** Normalize the data.
+    - **translate:** Normalize the data.
 
-    - **setup:** Reset the tracker stats (it used on datacenters to get the orphans instances) 
+    - **setup:** Reset the tracker stats (it used on datacenters to get the orphans instances)
 
     - **tracker:** recreate the tracker stats
 
-	- **insert:** insert/update data on mongodb
+    - **insert:** insert/update data on mongodb
 
-    - **audit:** prepare and transform a data to be send to the external audit
+    - **audit:** prepare and transform a data to send to the ``external audit``
 
     - **external_audit:** Send a http request to ``Audit app``
 
-    - **ws:** Send a http notification to ``webscoket api``
+    - **ws:** Send a http notification to ``websocket api``
 
 ----------
 
 **Components Diagram**
 
-Follow the component diagram to show a relation of each worker and service.
+Follow an example of request flow.
 
 .. image:: ../../_static/screen/discovery_components.png
    :alt: Maestro Server - Component diagram
 
 ----------
 
-**Flower - Debbug Celery**
+**Flower - Debug Celery**
 
 Real-time monitoring using Celery Events
 
@@ -105,7 +105,7 @@ Download the repository
 
     FLASK_APP=run.py FLASK_DEBUG=1 flask run
 
-    or 
+    or
 
     npm run server
 
@@ -117,7 +117,7 @@ Download the repository
 
     celery -A app.celery worker -E -Q discovery --hostname=discovery@%h --loglevel=info
 
-    or 
+    or
 
     npm run celery
 
@@ -125,7 +125,7 @@ Download the repository
 
 .. Warning::
 
-    On production we use gunicorn to handle requests.
+    On production we use gunicorn to handle multiple threads.
 
     .. code-block:: python
 

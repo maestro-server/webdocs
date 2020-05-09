@@ -1,10 +1,10 @@
-Bussiness Graphs
+Business Graphs
 ================
 
 You can create a diagram of your architecture, can be one or more systems/application.
 To create a diagram, Maestro uses the dependency field, the fast way to set connections between applications it using the dependency tree feature.
 
-Go to Analytics > Bussiness Graph > New Graph
+Go to Analytics > business Graph > New Graph
 
 .. image:: ../../_static/screen/analytics_enter.png
    :alt: Maestro Server - Create dependency graph
@@ -17,8 +17,8 @@ The first modal shows three options, you can start using a client, a system or a
    :alt: Maestro Server - Graph modal
 
 ================  ============================================================
-by System          It uses all entry applications setted on those systems.
-by Client          It uses all systems setted on those clients.
+by System          It uses all entry applications set on those systems.
+by Client          It uses all systems set on those clients.
 by App             A entry given application
 ================  ============================================================
 
@@ -27,9 +27,9 @@ by App             A entry given application
 Entries applications
 --------------------
 
-Entry applications are the diagram root branch, normally represents the first application hitted by users, common categories are cdns, proxies, loadbalances and/or webservices. 
+Entry applications are the diagram root branch, normally represents the first application hit by users, common categories are cdns, proxies, loadbalances and/or webservices.
 
-Using the dependecy tree wizard.
+Using the dependency tree wizard.
 
 .. image:: ../../_static/screen/entry_app.png
    :alt: Maestro Server - Entry apps

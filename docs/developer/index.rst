@@ -1,7 +1,7 @@
 Developer Guide
 ====================
 
-This chapter will explain a internal concepts about Maestro, if you like to contribute to the code this is the righ place to start.
+This chapter will explain a internal concepts about Maestro, if you like to contribute to the code this is the right place to start.
 
 .. toctree::
    :maxdepth: 2

@@ -13,7 +13,7 @@ To list all schedules, go to reports -> scheduler.
 
 ------------
 
-As an example, we can see schedulers responsable to automatic sync a cloud provider data on Maestro.
+As an example, we can see schedulers accountable to automatic sync a cloud provider data on Maestro.
 
 .. image:: ../../_static/screen/scheduler_counts.png
    :alt: Maestro Server - Scheduler counts
@@ -28,4 +28,3 @@ You can create a custom job.
 
 .. image:: ../../_static/screen/scheduler_create.png
    :alt: Maestro Server - Create scheduler
-       

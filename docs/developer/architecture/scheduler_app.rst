@@ -2,19 +2,19 @@
 Scheduler App
 -------------
 
-Scheduler App is responsable to manage and execute internal jobs.
+Scheduler App is accountable to manage and execute internal jobs.
 
 - Schedule jobs, interval or crontab
 - Do chain jobs
 
-----------   
+----------
 
 Scheduler use apscheduler to control scheduler jobs, `Apscheduler documentation <https://apscheduler.readthedocs.io/en/latest/>`_
 
 .. image:: ../../_static/screen/scheduler.png
    :alt: Maestro Server - Scheduler
 
-----------    
+----------
 
 **Installation with python 3**
 
@@ -34,7 +34,7 @@ Download the repository
 
 - Beat can do:
 
-	- **webhook:** Call HTTP request accordly arguments. 
+	- **webhook:** Call HTTP request accordingly arguments.
 
 	- **connection:** Sync a cloud data.
 
@@ -46,7 +46,7 @@ Download the repository
 
 	- **depleted_job:**  Error handler to get any error and take the job out.
 
-    - **notify_event:** Send a notification. 
+    - **notify_event:** Send a notification.
 
 
 ----------
@@ -79,7 +79,6 @@ Download the repository
 
     celery -A app.celery worker -E --hostname=scheduler@%h --loglevel=info
 
-    or 
+    or
 
     npm run celery
-    

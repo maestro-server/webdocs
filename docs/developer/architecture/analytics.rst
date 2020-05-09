@@ -1,10 +1,10 @@
 Analytics Maestro
 -----------------
 
-Analytics App are responsable to get the dependency tree and do a diagram: 
+Accountant to get and create a application dependency tree and build diagrams:
 
-- Create bussiness diagram
-- Drawing
+- Create business graphs
+- Drawing diagrams
 
 ----------
 
@@ -29,28 +29,25 @@ It will be set a rabbitmq and a redis
 
     - **entry:** The first task, they get all entries application and send to graphlookup.
 
-    - **graphlookup:** Request for ``Data App`` a application lookup using a MongoDB $graphLookup feature.
+    - **graphlookup:** Requesting the db data over ``Data App``, doing an application lookup using a MongoDB $graphLookup feature.
 
-    - **network bussiness:** Do a grid tree, and then send to ``enrichment task`` and ``info task``.
+    - **network business:** Do a grid tree, and then send to ``enrichment task`` and ``info task``.
 
-    - **enrichment:** Request for ``Data App`` more data abouts servers.
+    - **enrichment:** Getting servers.
 
-    - **info bussiness:** Calculate histogram, counts, density and connections.
+    - **info business:** Calculate histogram, counts, density and connections.
 
-    - **network client:** Request for ``Data App`` all clients information.
+    - **network client:** Getting clients.
 
-    - **draw bussiness:** Draw svgs.
+    - **draw business:** Draw svgs.
 
     - **notification:** Send updates to ``Data App``.
 
     - **send front app:** Send the svg to ``Analytics Front app``.
 
-
-- The configuration are managed by env variables
-
 ----------
 
-**Flower - Debbug Celery**
+**Flower - Debug Celery**
 
 Real-time monitoring using Celery Events
 
@@ -99,7 +96,7 @@ Download the repository
 
     FLASK_APP=run.py FLASK_DEBUG=1 flask run
 
-    or 
+    or
 
     npm run server
 
@@ -111,7 +108,7 @@ Download the repository
 
     celery -A app.celery worker -E -Q analytics --loglevel=info
 
-    or 
+    or
 
     npm run celery
 
@@ -119,7 +116,7 @@ Download the repository
 
 .. Warning::
 
-    On production we use gunicorn to handle requests.
+    On production we use gunicorn to handle multiple threads.
 
     .. code-block:: python
 

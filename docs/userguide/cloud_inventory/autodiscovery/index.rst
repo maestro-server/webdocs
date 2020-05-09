@@ -18,7 +18,7 @@ To set up a new connection, you should follow three steps.
 .. image:: ../../../_static/screen/conn_p.png
    :alt: Maestro Server - Create connection
 
-3 - Create a cloud credential such as aws acess/secret key, azure subscription and more. You can be limited, allowing only read permission.
+3 - Create a cloud credential such as aws access/secret key, azure subscription and more. You can be limited, allowing only read permission.
 
 
 ------------

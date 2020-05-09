@@ -11,25 +11,25 @@ Overview
 There are a list of all services:
 
 +----------------------+-------------------------------------------------+--------------------+
-| Client App           | FrontEnd client                                 | Vue2 + Bootstrap 3 | 
+| Client App           | FrontEnd client                                 | Vue2 + Bootstrap 3 |
 +----------------------+-------------------------------------------------+--------------------+
-| Server App           | Primary API, authetication, crud and manager    | NodeJs 8.11 Kraken |
+| Server App           | Primary API, authentication, crud and manager   | NodeJs 8.11 Kraken |
 +----------------------+-------------------------------------------------+--------------------+
-| Discovery App        | Auto discovery and crawlers                     | Python 3.6, flask  | 
+| Discovery App        | Auto discovery and crawlers                     | Python 3.6, flask  |
 +----------------------+-------------------------------------------------+--------------------+
-| Scheduler App        | Jobs manager with celery beat                   | Python 3.6, celery | 
+| Scheduler App        | Jobs manager with celery beat                   | Python 3.6, celery |
 +----------------------+-------------------------------------------------+--------------------+
-| Reports App          | Reports generetor                               | Python 3.6, flask  | 
+| Reports App          | Reports generator                               | Python 3.6, flask  |
 +----------------------+-------------------------------------------------+--------------------+
-| Analytics App        | Analytics Maestro - Graphs Generator            | Python 3.6, flask  | 
+| Analytics App        | Analytics Maestro - Graphs Generator            | Python 3.6, flask  |
 +----------------------+-------------------------------------------------+--------------------+
-| Analytics Front      | Analytics Front                                 | NodeJs 8.11 Kraken | 
+| Analytics Front      | Analytics Front                                 | NodeJs 8.11 Kraken |
 +----------------------+-------------------------------------------------+--------------------+
 | Data DB App          | Data layer                                      | Python 3.6, flask  |
 +----------------------+-------------------------------------------------+--------------------+
-| Audit App            | HIstory tracker service                         | NodeJs 8.11 Kraken |
+| Audit App            | History tracker service                         | NodeJs 8.11 Kraken |
 +----------------------+-------------------------------------------------+--------------------+
-| WebSocket APP        | WebSocket - Events                              | Go, Centrifugo     | 
+| WebSocket APP        | WebSocket - Events                              | Go, Centrifugo     |
 +----------------------+-------------------------------------------------+--------------------+
 
 
@@ -39,7 +39,7 @@ You can use docker to spin up a maestro bundle, you can copy and execute the doc
 
 .. Note::
     PS: Docker compose will be able to create and manager all networks and communication between services.
-    
+
     PS: Containers is prepared to run in production.
 
 .. Note::
@@ -62,7 +62,7 @@ You can use docker to spin up a maestro bundle, you can copy and execute the doc
             - "ANALYTICS_URL=http://localhost:9999"
             - "WEBSOCKET_URL=ws://localhost:8000"
             depends_on:
-            - server    
+            - server
 
         server:
             image: maestroserver/server-maestro
@@ -84,7 +84,7 @@ You can use docker to spin up a maestro bundle, you can copy and execute the doc
             depends_on:
             - mongodb
             - discovery
-            - reports 
+            - reports
 
         discovery:
             image: maestroserver/discovery-maestro
@@ -102,7 +102,7 @@ You can use docker to spin up a maestro bundle, you can copy and execute the doc
             environment:
             - "MAESTRO_DATA_URI=http://data:5010"
             - "MAESTRO_WEBSOCKET_URI=http://ws:8000"
-            - "CELERY_BROKER_URL=amqp://rabbitmq:5672" 
+            - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
             depends_on:
             - rabbitmq
             - data
@@ -149,7 +149,7 @@ You can use docker to spin up a maestro bundle, you can copy and execute the doc
             - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
             depends_on:
             - rabbitmq
-            - data  
+            - data
 
         analytics:
             image: maestroserver/analytics-maestro
@@ -168,7 +168,7 @@ You can use docker to spin up a maestro bundle, you can copy and execute the doc
             - "MAESTRO_DATA_URI=http://data:5010"
             - "MAESTRO_ANALYTICS_FRONT_URI=http://analytics_front:9999"
             - "MAESTRO_WEBSOCKET_URI=http://ws:8000"
-            - "CELERY_BROKER_URL=amqp://rabbitmq:5672" 
+            - "CELERY_BROKER_URL=amqp://rabbitmq:5672"
             - "CELERYD_MAX_TASKS_PER_CHILD=2"
             depends_on:
             - rabbitmq
@@ -210,7 +210,7 @@ You can use docker to spin up a maestro bundle, you can copy and execute the doc
             ports:
             - "15672:15672"
             - "5672:5672"
-            
+
         mongodb:
             image: mongo
             volumes:
@@ -233,7 +233,7 @@ You can use docker to spin up a maestro bundle, you can copy and execute the doc
 
 --------
 
-Spin up the API server in a different server    
+Spin up the API server in a different server
 ********************************************
 
 By default the client server uses the same domain name to connect into server api, websocket and analytics front api; However if you like to switch this configuration you can use env vars to set all urls.
@@ -253,14 +253,14 @@ By default if you run the client service over ``//example.maestro``, the client 
 
 --------
 
-Productionize  
+Productionize
 *************
 
 Should you follow the steps below to run the Maestro on production.
 
-- Using external Database and RabbitMq  - `More details about external DB <http://docs.maestroserver.io/en/latest/installing/external_db.html>`_.  
+- Using external Database and RabbitMq  - `More details about external DB <http://docs.maestroserver.io/en/latest/installing/external_db.html>`_.
 - Using a reliable store engine as AWS S3 - `More details about upload <http://docs.maestroserver.io/en/latest/installing/upload.html>`_.
-- Configurate a third-party SMTP system -  `More details about SMTP <http://docs.maestroserver.io/en/latest/installing/smtp.html>`_. 
+- Configuration a third-party SMTP system -  `More details about SMTP <http://docs.maestroserver.io/en/latest/installing/smtp.html>`_.
 - Spin up two or more instance of client, server, discovery, reports, analytics and data. [Expect websocket and scheduler]
 - Set a unique value for each ``SECRETJWT`` key - `More details about tokens <http://docs.maestroserver.io/en/latest/installing/tokens.html>`_.
 - Use a external loadbalance to handle ssl connections.
@@ -272,7 +272,7 @@ Advanced setups
 
 .. toctree::
    :maxdepth: 2
- 
+
    smtp
    upload
    external_db

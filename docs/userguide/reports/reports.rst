@@ -1,10 +1,10 @@
 Reports
 =======
 
-Mastro has two types of reports.
+Maestro has two types of reports.
 
 - **Generic:** it is a single resource, it can have any filter
-- **Pivot:** It is a multi-resource, you can create a report link clients -> system -> applications -> servers. 
+- **Pivot:** It is a multi-resource, you can create a report link clients -> system -> applications -> servers.
 
 .. image:: ../../_static/screen/reports_p.png
    :alt: Maestro Server - Create reports
@@ -24,10 +24,10 @@ The general report is a single resource report, you can add any type of filters 
 
 Follow some filters examples:
 
-+---------------------------------------------------------------------------+---------+--------------------+-------------------------------------------------+                                                                                                                                                         
++---------------------------------------------------------------------------+---------+--------------------+-------------------------------------------------+
 |Hostname/name                                                              | string  | equal/contains     | .. image:: ../../_static/screen/filter_host.png |
 +---------------------------------------------------------------------------+---------+--------------------+-------------------------------------------------+
-|Get all hostname contais stg.                                                                                                                               |
+|Get all hostname contains stg.                                                                                                                              |
 +---------------------------------------------------------------------------+---------+--------------------+-------------------------------------------------+
 
 +---------------------------------------------------------------------------+---------+--------------------+-------------------------------------------------+

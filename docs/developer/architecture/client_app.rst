@@ -1,7 +1,7 @@
 FrontEnd - Client App
 ---------------------
 
-Client App is a front end application 
+The front end application, made using Vue2.
 
 - Html and Js client
 - Single page app (SPA)
@@ -17,7 +17,7 @@ Client App is a front end application
 
 - Front end application are divided on:
 
-	- **src/pages:** templates and bussiness rules (domain layer)
+	- **src/pages:** templates and business rules (domain layer)
 
 	- **resources:** factories, modals, and cache managers (infrastructure layer)
 

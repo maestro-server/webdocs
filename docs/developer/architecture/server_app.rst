@@ -1,7 +1,7 @@
 Server App
 ----------
 
-Server app is the main service; also they act as a middleware to authenticate and authorize users, connect to the database and connect onto other services.
+Server app is the main service; also they act as a middleware to authenticate and authorize users, it connect to the database and connect to others services.
 
 - Authentication and authorization
 - Validate and create entities (crud ops)
@@ -13,12 +13,11 @@ Server app is the main service; also they act as a middleware to authenticate an
 
 ----------
 
-We use DDD approach to organize a code, they have an infra, repositories, entities (values objects), interfaces, application, and domain folders. `DDD in Node Apps <https://blog.codeminer42.com/nodejs-and-good-practices-354e7d763626>`_ 
+- Server is made with `KrakenJs <http://krakenjs.com/>`_.
+- We use DDD to organize the code, they have an infra, repositories, entities (values objects), interfaces, application, and domain folders. `DDD in Node Apps <https://blog.codeminer42.com/nodejs-and-good-practices-354e7d763626>`_
 
 .. image:: ../../_static/screen/fluxo_data.png
    :alt: Maestro Server - NodeJS DDD
-
-Server is made with `KrakenJs <http://krakenjs.com/>`_.
 
 **Setup dev env**
 
@@ -89,12 +88,12 @@ and run the app
 Every config can be pass by env variables, but if you like, can be organize by .env files,
 
 =================== ================================
-       Name                     Desc                                             
+       Name                     Desc
 =================== ================================
  .env                Default
  .env.test           Used on run test
- .env.development    node_env is setted development
- .env.production     node_env is setted prodcution
+ .env.development    node_env is set development
+ .env.production     node_env is set production
 =================== ================================
 
 **Database migration**

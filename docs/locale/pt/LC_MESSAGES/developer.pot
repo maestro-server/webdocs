@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Maestro Server - Cloud Inventory 0.1\n"
+"Project-Id-Version: Maestro Server - Cloud Inventory 0.6\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-22 20:54+0100\n"
+"POT-Creation-Date: 2020-05-09 12:21+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,236 +16,966 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../../developer/api.rst:2
+#: ../../developer/analyticsgraph.rst:2
+msgid "Graphs Analytics Algorithm"
+msgstr ""
+
+#: ../../developer/analyticsgraph.rst:4
+msgid "This section will describe about analytics graph algorithm."
+msgstr ""
+
+#: ../../developer/analyticsgraph.rst:6
+msgid "The analytics work flow"
+msgstr ""
+
+#: ../../developer/analyticsgraph.rst:14
+msgid "Making graph lookup on the mongodb"
+msgstr ""
+
+#: ../../developer/analyticsgraph.rst:16
+msgid "The graph lookup creates a python dict using mongodb graph lookup feature, they use the ``application id`` on ``dependency field``."
+msgstr ""
+
+#: ../../developer/analyticsgraph.rst:23
+msgid "Creating a networkX graph"
+msgstr ""
+
+#: ../../developer/analyticsgraph.rst:25
+msgid "The next step is to create a networkX object based on graph lookup."
+msgstr ""
+
+#: ../../developer/analyticsgraph.rst:27
+msgid "We have a recursive function inside each leaf on the tree, the order will be applied using a well defined rules, the results will be a new graph tree and a position matrix for each leaf, this result fixed sorts, duplication and conflicts issues."
+msgstr ""
+
+#: ../../developer/analyticsgraph.rst:32
+msgid "An example of code example showing a recursive function"
+msgstr ""
+
+#: ../../developer/analyticsgraph.rst:53
+msgid "Rules"
+msgstr ""
+
+#: ../../developer/analyticsgraph.rst:55
+msgid "Follow all rules with can be applied during the create of a new tree. Those rules can be overread each other."
+msgstr ""
+
+#: ../../developer/analyticsgraph.rst:57
+msgid "**Growing node**"
+msgstr ""
+
+#: ../../developer/analyticsgraph.rst:59
+msgid "**When:** If the node have more than one child, growing the node to be equal of the number of child"
+msgstr ""
+
+#: ../../developer/analyticsgraph.rst:60
+msgid "**Transform:** Set the node size to be equal to the number of child"
+msgstr ""
+
+#: ../../developer/analyticsgraph.rst:62
+msgid "**Child Balance**"
+msgstr ""
+
+#: ../../developer/analyticsgraph.rst:64
+msgid "**When:** If the parent node have more than two child."
+msgstr ""
+
+#: ../../developer/analyticsgraph.rst:65
+msgid "**Transform:** Create a dummy item beside to node parent."
+msgstr ""
+
+#: ../../developer/analyticsgraph.rst:67
+msgid "**Chess Pawn**"
+msgstr ""
+
+#: ../../developer/analyticsgraph.rst:69
+msgid "**When:** If the app is an entry point and have parent."
+msgstr ""
+
+#: ../../developer/analyticsgraph.rst:70
+msgid "**Transform:** Skipped one column"
+msgstr ""
+
+#: ../../developer/analyticsgraph.rst:75
+msgid "**Chess horse**"
+msgstr ""
+
+#: ../../developer/analyticsgraph.rst:77
+msgid "**When:** If the node have a top obstacle which other nodes point out to a common dependency."
+msgstr ""
+
+#: ../../developer/analyticsgraph.rst:78
+msgid "**Transform:** First push back the dependency to a clear column, and then create a dummy path to the new column."
+msgstr ""
+
+#: ../../developer/analyticsgraph.rst:83
+msgid "**Clear rows**"
+msgstr ""
+
+#: ../../developer/analyticsgraph.rst:85
+msgid "**When:** If a whole column was empty."
+msgstr ""
+
+#: ../../developer/analyticsgraph.rst:86
+msgid "**Transform:** Delete these column and rebalance the grid."
+msgstr ""
+
+#: ../../developer/analyticsgraph.rst:95
+msgid "Enrichment data phase"
+msgstr ""
+
+#: ../../developer/analyticsgraph.rst:97
+msgid "Next step is an enrichment data layer. To filled with a data server information."
+msgstr ""
+
+#: ../../developer/analyticsgraph.rst:99
+msgid "The enrichment step gets two dataset the first one is a json python dict represent as a graph tree, and the second one is a matrix position grid."
+msgstr ""
+
+#: ../../developer/analyticsgraph.rst:107
+msgid "Draw phase"
+msgstr ""
+
+#: ../../developer/analyticsgraph.rst:109
+msgid "The last but not least, it is the dra step, they get the graph tree, matrix position and servers data to make the svgs."
+msgstr ""
+
+#: ../../developer/api/index.rst:2
 msgid "APIs"
 msgstr ""
 
-#: ../../developer/api.rst:4
-msgid "All commands, jobs, tasks or action is made by rest api, you can use se same api to integrate with your own applications."
+#: ../../developer/api/index.rst:4
+msgid "The communication between each service was made by `rest`, and we use the `api docs` tool to create the api doc."
 msgstr ""
 
-#: ../../developer/api.rst:7
+#: ../../developer/api/index.rst:7
 msgid "Server API"
 msgstr ""
 
-#: ../../developer/api.rst:9
-msgid "Primary api, encharge by autentication, create and retrive data. `See docs server api <https://maestro-server.github.io/server-app/inventory/>`_."
+#: ../../developer/api/index.rst:9
+msgid "`You can see the server docs here <https://maestro-server.github.io/server-app/inventory/>`_."
 msgstr ""
 
-#: ../../developer/api.rst:18
+#: ../../developer/api/index.rst:12
 msgid "Discovery API"
 msgstr ""
 
-#: ../../developer/api.rst:20
-msgid "Crawler and connection with api providers. `See docs discovery api <https://maestro-server.github.io/discovery-api/>`_."
+#: ../../developer/api/index.rst:14
+msgid "`You can see the discovery docs here <https://maestro-server.github.io/discovery-api/>`_."
 msgstr ""
 
-#: ../../developer/architecture.rst:2
-msgid "Architecture"
+#: ../../developer/api/index.rst:17
+msgid "Report API"
 msgstr ""
 
-#: ../../developer/architecture.rst:5
-msgid "Macro Map"
+#: ../../developer/api/index.rst:19
+msgid "`You can see the report docs here <https://maestro-server.github.io/report-app/>`_."
 msgstr ""
 
-#: ../../developer/architecture.rst:7
-msgid "Services relation, each service comunite by `rest` (http) calls."
+#: ../../developer/api/index.rst:22
+msgid "Analytics API"
 msgstr ""
 
-#: ../../developer/architecture.rst:12
-msgid "Client App"
+#: ../../developer/api/index.rst:24
+msgid "`You can see the analytics docs here <https://maestro-server.github.io/analytics-maestro/>`_."
 msgstr ""
 
-#: ../../developer/architecture.rst:14
-msgid "The front end is written with:"
+#: ../../developer/api/index.rst:27
+msgid "Data API"
 msgstr ""
 
-#: ../../developer/architecture.rst:17
-msgid "Vue2"
+#: ../../developer/api/index.rst:29
+msgid "`You can see the data server docs here <https://maestro-server.github.io/data-app/>`_."
 msgstr ""
 
-#: ../../developer/architecture.rst:17
-msgid "Main framework, using by react and manager views, routes and temaplates, use vue-loader with webpack"
+#: ../../developer/api/index.rst:32
+msgid "Analytics Front API"
 msgstr ""
 
-#: ../../developer/architecture.rst:19
-msgid "Webpack2"
+#: ../../developer/api/index.rst:34
+msgid "`You can see the analytics front docs here <https://maestro-server.github.io/analytics-front/>`_."
 msgstr ""
 
-#: ../../developer/architecture.rst:19
-msgid "bundler generate"
+#: ../../developer/api/index.rst:37
+msgid "Audit API"
 msgstr ""
 
-#: ../../developer/architecture.rst:20
-msgid "Bootue"
+#: ../../developer/api/index.rst:39
+msgid "`You can see the audit docs here <https://maestro-server.github.io/audit-app/>`_."
 msgstr ""
 
-#: ../../developer/architecture.rst:20
-msgid "All micro components, like buttons, tables, forms and etc, its 100% Bootstrap3 components built with Vue2, 100% standalone, no query."
+#: ../../developer/architecture/analytics.rst:2
+msgid "Analytics Maestro"
 msgstr ""
 
-#: ../../developer/architecture.rst:22
-msgid "Nginx"
+#: ../../developer/architecture/analytics.rst:4
+msgid "Accountant to get and create a application dependency tree and build diagrams:"
 msgstr ""
 
-#: ../../developer/architecture.rst:22
-msgid "Using for proxy reverse"
+#: ../../developer/architecture/analytics.rst:6
+msgid "Create business graphs"
 msgstr ""
 
-#: ../../developer/architecture.rst:23
-msgid "Mocha / Chai / Sinon"
+#: ../../developer/architecture/analytics.rst:7
+msgid "Drawing diagrams"
 msgstr ""
 
-#: ../../developer/architecture.rst:23
-msgid "Test, asserts and mock library."
+#: ../../developer/architecture/analytics.rst:14
+msgid "Analytics app use `Flask <http://flask.pocoo.org>`_,  on python >3.5."
 msgstr ""
 
-#: ../../developer/architecture.rst:28
-msgid "**Vue2 Macro Architecture**"
-msgstr ""
-
-#: ../../developer/architecture.rst:32
-#: ../../developer/architecture.rst:95
-#: ../../developer/architecture.rst:145
-msgid "**Important topics**"
-msgstr ""
-
-#: ../../developer/architecture.rst:34
-msgid "Front end application is divided in:"
-msgstr ""
-
-#: ../../developer/architecture.rst:36
-msgid "**src/pages:** templates and bussiness rules (domain layer)"
-msgstr ""
-
-#: ../../developer/architecture.rst:38
-msgid "**resources:** factories, modals, and cache managers (infrastructure layer)"
-msgstr ""
-
-#: ../../developer/architecture.rst:42
-msgid "A single folder structure components normally use:"
-msgstr ""
-
-#: ../../developer/architecture.rst:49
-#: ../../developer/qa.rst:34
-msgid "Server App"
-msgstr ""
-
-#: ../../developer/architecture.rst:51
-msgid "We using DDD to organize the code, has infra, repositories, entities (values objects), interfaces, application, and domain, if like to learn read this article is very cool `DDD in Node Apps <https://blog.codeminer42.com/nodejs-and-good-practices-354e7d763626>`_"
-msgstr ""
-
-#: ../../developer/architecture.rst:55
-msgid "Server its have constructed with `KrakenJs <http://krakenjs.com/>`_, we create a lot of middleware and organize by domain."
-msgstr ""
-
-#: ../../developer/architecture.rst:57
-#: ../../developer/architecture.rst:75
+#: ../../developer/architecture/analytics.rst:16
+#: ../../developer/architecture/data_app.rst:16
+#: ../../developer/architecture/discovery_app.rst:16
+#: ../../developer/architecture/server_app.rst:22
+#: ../../developer/architecture/ws_app.rst:16
 msgid "**Setup dev env**"
 msgstr ""
 
-#: ../../developer/architecture.rst:65
-msgid "Will be setup mongodb and fake smtp server"
+#: ../../developer/architecture/analytics.rst:24
+msgid "It will be set a rabbitmq and a redis"
 msgstr ""
 
-#: ../../developer/architecture.rst:69
+#: ../../developer/architecture/analytics.rst:26
+#: ../../developer/architecture/discovery_app.rst:25
+#: ../../developer/architecture/reports_app.rst:20
+#: ../../developer/architecture/scheduler_app.rst:31
+msgid "**Highlights**"
+msgstr ""
+
+#: ../../developer/architecture/analytics.rst:28
+msgid "The diagram lookup and draw process are compound by:"
+msgstr ""
+
+#: ../../developer/architecture/analytics.rst:30
+msgid "**entry:** The first task, they get all entries application and send to graphlookup."
+msgstr ""
+
+#: ../../developer/architecture/analytics.rst:32
+msgid "**graphlookup:** Requesting the db data over ``Data App``, doing an application lookup using a MongoDB $graphLookup feature."
+msgstr ""
+
+#: ../../developer/architecture/analytics.rst:34
+msgid "**network business:** Do a grid tree, and then send to ``enrichment task`` and ``info task``."
+msgstr ""
+
+#: ../../developer/architecture/analytics.rst:36
+msgid "**enrichment:** Getting servers."
+msgstr ""
+
+#: ../../developer/architecture/analytics.rst:38
+msgid "**info business:** Calculate histogram, counts, density and connections."
+msgstr ""
+
+#: ../../developer/architecture/analytics.rst:40
+msgid "**network client:** Getting clients."
+msgstr ""
+
+#: ../../developer/architecture/analytics.rst:42
+msgid "**draw business:** Draw svgs."
+msgstr ""
+
+#: ../../developer/architecture/analytics.rst:44
+msgid "**notification:** Send updates to ``Data App``."
+msgstr ""
+
+#: ../../developer/architecture/analytics.rst:46
+msgid "**send front app:** Send the svg to ``Analytics Front app``."
+msgstr ""
+
+#: ../../developer/architecture/analytics.rst:50
+#: ../../developer/architecture/discovery_app.rst:59
+msgid "**Flower - Debug Celery**"
+msgstr ""
+
+#: ../../developer/architecture/analytics.rst:52
+#: ../../developer/architecture/discovery_app.rst:61
+msgid "Real-time monitoring using Celery Events"
+msgstr ""
+
+#: ../../developer/architecture/analytics.rst:54
+#: ../../developer/architecture/discovery_app.rst:63
+msgid "Task progress and history"
+msgstr ""
+
+#: ../../developer/architecture/analytics.rst:55
+#: ../../developer/architecture/discovery_app.rst:64
+msgid "Ability to show task details (arguments, start time, runtime, and more)"
+msgstr ""
+
+#: ../../developer/architecture/analytics.rst:56
+#: ../../developer/architecture/discovery_app.rst:65
+msgid "Graphs and statistics"
+msgstr ""
+
+#: ../../developer/architecture/analytics.rst:68
+msgid "**Installation guide**"
+msgstr ""
+
+#: ../../developer/architecture/analytics.rst:70
+#: ../../developer/architecture/data_app.rst:44
+#: ../../developer/architecture/discovery_app.rst:79
+#: ../../developer/architecture/reports_app.rst:43
+#: ../../developer/architecture/scheduler_app.rst:21
+#: ../../developer/architecture/scheduler_app.rst:56
+msgid "Python >3.4"
+msgstr ""
+
+#: ../../developer/architecture/analytics.rst:71
+#: ../../developer/architecture/analytics_front.rst:32
+#: ../../developer/architecture/discovery_app.rst:80
+#: ../../developer/architecture/reports_app.rst:44
+#: ../../developer/architecture/scheduler_app.rst:22
+#: ../../developer/architecture/scheduler_app.rst:57
+msgid "RabbitMQ"
+msgstr ""
+
+#: ../../developer/architecture/analytics.rst:73
+#: ../../developer/architecture/audit.rst:31
+#: ../../developer/architecture/client_app.rst:37
+#: ../../developer/architecture/data_app.rst:47
+#: ../../developer/architecture/discovery_app.rst:82
+#: ../../developer/architecture/reports_app.rst:47
+#: ../../developer/architecture/scheduler_app.rst:25
+#: ../../developer/architecture/scheduler_app.rst:60
+#: ../../developer/architecture/server_app.rst:40
+msgid "Download the repository"
+msgstr ""
+
+#: ../../developer/architecture/analytics.rst:81
+#: ../../developer/architecture/analytics_front.rst:43
+#: ../../developer/architecture/audit.rst:39
+#: ../../developer/architecture/discovery_app.rst:90
+#: ../../developer/architecture/server_app.rst:48
+msgid "**Installing dependencies**"
+msgstr ""
+
+#: ../../developer/architecture/analytics.rst:89
+#: ../../developer/architecture/discovery_app.rst:98
+#: ../../developer/architecture/reports_app.rst:55
+msgid "**Running**"
+msgstr ""
+
+#: ../../developer/architecture/analytics.rst:105
+#: ../../developer/architecture/discovery_app.rst:114
+#: ../../developer/architecture/reports_app.rst:71
+#: ../../developer/architecture/scheduler_app.rst:76
+msgid "**Running workers**"
+msgstr ""
+
+#: ../../developer/architecture/analytics.rst:119
+#: ../../developer/architecture/data_app.rst:73
+#: ../../developer/architecture/discovery_app.rst:128
+#: ../../developer/architecture/reports_app.rst:85
+msgid "On production we use gunicorn to handle multiple threads."
+msgstr ""
+
+#: ../../developer/architecture/analytics_front.rst:2
+#: ../../developer/qa.rst:154
+#: ../../developer/tests.rst:112
+#: ../../developer/version.rst:19
+#: ../../developer/version.rst:38
+#: ../../developer/version.rst:57
+msgid "Analytics Front"
+msgstr ""
+
+#: ../../developer/architecture/analytics_front.rst:4
+msgid "Analytics Front Application is accountable to expose diagrams to the user:"
+msgstr ""
+
+#: ../../developer/architecture/analytics_front.rst:6
+msgid "Public/private authorization"
+msgstr ""
+
+#: ../../developer/architecture/analytics_front.rst:7
+msgid "Expose svgs diagrams"
+msgstr ""
+
+#: ../../developer/architecture/analytics_front.rst:8
+msgid "Upload private SVGs"
+msgstr ""
+
+#: ../../developer/architecture/analytics_front.rst:11
+msgid "This service need to expose an external access"
+msgstr ""
+
+#: ../../developer/architecture/analytics_front.rst:15
+#: ../../developer/architecture/audit.rst:13
+msgid "We use DDD approach to organize a code, they have an infra, repositories, entities (values objects), interfaces, application, and domain folders. `DDD in Node Apps <https://blog.codeminer42.com/nodejs-and-good-practices-354e7d763626>`_"
+msgstr ""
+
+#: ../../developer/architecture/analytics_front.rst:19
+msgid "Analytics is made with `KrakenJs <http://krakenjs.com/>`_."
+msgstr ""
+
+#: ../../developer/architecture/analytics_front.rst:21
+#: ../../developer/architecture/audit.rst:20
+msgid "Follow a module flow diagram:"
+msgstr ""
+
+#: ../../developer/architecture/analytics_front.rst:28
+#: ../../developer/architecture/audit.rst:26
+#: ../../developer/architecture/client_app.rst:33
+#: ../../developer/architecture/server_app.rst:34
+msgid "**Installing node**"
+msgstr ""
+
+#: ../../developer/architecture/analytics_front.rst:30
+#: ../../developer/architecture/server_app.rst:36
+msgid "Nodejs >=8"
+msgstr ""
+
+#: ../../developer/architecture/analytics_front.rst:31
+msgid "MongoDB >=3.4"
+msgstr ""
+
+#: ../../developer/architecture/analytics_front.rst:33
+msgid "AWS S3 (To use as a external storage)"
+msgstr ""
+
+#: ../../developer/architecture/analytics_front.rst:35
+msgid "To Download the repository, go to:"
+msgstr ""
+
+#: ../../developer/architecture/analytics_front.rst:52
+#: ../../developer/architecture/audit.rst:48
+#: ../../developer/architecture/server_app.rst:57
+msgid "**Configure env variables**"
+msgstr ""
+
+#: ../../developer/architecture/analytics_front.rst:54
+#: ../../developer/architecture/analytics_front.rst:85
+#: ../../developer/architecture/audit.rst:50
+#: ../../developer/architecture/server_app.rst:59
+msgid "create .env file"
+msgstr ""
+
+#: ../../developer/architecture/analytics_front.rst:62
+#: ../../developer/architecture/audit.rst:59
+msgid "and"
+msgstr ""
+
+#: ../../developer/architecture/analytics_front.rst:70
+#: ../../developer/architecture/audit.rst:67
+#: ../../developer/architecture/server_app.rst:86
+msgid "**Multiple env**"
+msgstr ""
+
+#: ../../developer/architecture/analytics_front.rst:72
+#: ../../developer/architecture/server_app.rst:88
+msgid "Every config can be pass by env variables, but if you like, can be organize by .env files,"
+msgstr ""
+
+#: ../../developer/architecture/analytics_front.rst:75
+#: ../../developer/architecture/audit.rst:72
+#: ../../developer/architecture/server_app.rst:91
+msgid "Name"
+msgstr ""
+
+#: ../../developer/architecture/analytics_front.rst:75
+#: ../../developer/architecture/audit.rst:72
+#: ../../developer/architecture/server_app.rst:91
+msgid "Desc"
+msgstr ""
+
+#: ../../developer/architecture/analytics_front.rst:77
+#: ../../developer/architecture/audit.rst:74
+#: ../../developer/architecture/server_app.rst:93
+msgid ".env"
+msgstr ""
+
+#: ../../developer/architecture/analytics_front.rst:77
+#: ../../developer/architecture/audit.rst:74
+#: ../../developer/architecture/server_app.rst:93
+msgid "Default"
+msgstr ""
+
+#: ../../developer/architecture/analytics_front.rst:78
+#: ../../developer/architecture/audit.rst:75
+#: ../../developer/architecture/server_app.rst:94
+msgid ".env.test"
+msgstr ""
+
+#: ../../developer/architecture/analytics_front.rst:78
+#: ../../developer/architecture/server_app.rst:94
+msgid "Used on run test"
+msgstr ""
+
+#: ../../developer/architecture/analytics_front.rst:79
+#: ../../developer/architecture/audit.rst:76
+#: ../../developer/architecture/server_app.rst:95
+msgid ".env.development"
+msgstr ""
+
+#: ../../developer/architecture/analytics_front.rst:79
+#: ../../developer/architecture/server_app.rst:95
+msgid "node_env is set development"
+msgstr ""
+
+#: ../../developer/architecture/analytics_front.rst:80
+#: ../../developer/architecture/audit.rst:77
+#: ../../developer/architecture/server_app.rst:96
+msgid ".env.production"
+msgstr ""
+
+#: ../../developer/architecture/analytics_front.rst:80
+#: ../../developer/architecture/server_app.rst:96
+msgid "node_env is set production"
+msgstr ""
+
+#: ../../developer/architecture/analytics_front.rst:83
+msgid "**Migrate setup data**"
+msgstr ""
+
+#: ../../developer/architecture/analytics_front.rst:93
+#: ../../developer/architecture/audit.rst:82
+#: ../../developer/architecture/server_app.rst:112
+msgid "We use PM2 to handle multiple threads, following the configuration."
+msgstr ""
+
+#: ../../developer/architecture/analytics_front.rst:95
+#: ../../developer/architecture/audit.rst:84
+#: ../../developer/architecture/server_app.rst:114
+msgid "PM2:"
+msgstr ""
+
+#: ../../developer/architecture/audit.rst:2
+#: ../../developer/qa.rst:175
+#: ../../developer/tests.rst:128
+msgid "Audit App"
+msgstr ""
+
+#: ../../developer/architecture/audit.rst:5
+msgid "Audit App is a single application to track and record resources change:"
+msgstr ""
+
+#: ../../developer/architecture/audit.rst:7
+msgid "Track resources changes"
+msgstr ""
+
+#: ../../developer/architecture/audit.rst:8
+msgid "Create a change tree"
+msgstr ""
+
+#: ../../developer/architecture/audit.rst:9
+msgid "Store those data"
+msgstr ""
+
+#: ../../developer/architecture/audit.rst:18
+msgid "Audit is made with `KrakenJs <http://krakenjs.com/>`_."
+msgstr ""
+
+#: ../../developer/architecture/audit.rst:28
+msgid "Nodejs 8 or above"
+msgstr ""
+
+#: ../../developer/architecture/audit.rst:29
+msgid "MongoDB 3.x"
+msgstr ""
+
+#: ../../developer/architecture/audit.rst:69
+msgid "You can use .env files the set configurations"
+msgstr ""
+
+#: ../../developer/architecture/audit.rst:75
+msgid "Used on tests"
+msgstr ""
+
+#: ../../developer/architecture/audit.rst:76
+msgid "node_env was set ``development``"
+msgstr ""
+
+#: ../../developer/architecture/audit.rst:77
+msgid "node_env was set ``production``"
+msgstr ""
+
+#: ../../developer/architecture/client_app.rst:2
+msgid "FrontEnd - Client App"
+msgstr ""
+
+#: ../../developer/architecture/client_app.rst:4
+msgid "The front end application, made using Vue2."
+msgstr ""
+
+#: ../../developer/architecture/client_app.rst:6
+msgid "Html and Js client"
+msgstr ""
+
+#: ../../developer/architecture/client_app.rst:7
+msgid "Single page app (SPA)"
+msgstr ""
+
+#: ../../developer/architecture/client_app.rst:8
+msgid "Cache layer"
+msgstr ""
+
+#: ../../developer/architecture/client_app.rst:12
+msgid "**Vue2 Macro Architecture**"
+msgstr ""
+
+#: ../../developer/architecture/client_app.rst:16
+msgid "**Important topics**"
+msgstr ""
+
+#: ../../developer/architecture/client_app.rst:18
+msgid "Front end application are divided on:"
+msgstr ""
+
+#: ../../developer/architecture/client_app.rst:20
+msgid "**src/pages:** templates and business rules (domain layer)"
+msgstr ""
+
+#: ../../developer/architecture/client_app.rst:22
+msgid "**resources:** factories, modals, and cache managers (infrastructure layer)"
+msgstr ""
+
+#: ../../developer/architecture/client_app.rst:26
+msgid "A single component structure:"
+msgstr ""
+
+#: ../../developer/architecture/client_app.rst:35
+msgid "Nodejs >= 7.4"
+msgstr ""
+
+#: ../../developer/architecture/client_app.rst:45
+msgid "**Installing  dependencies**"
+msgstr ""
+
+#: ../../developer/architecture/client_app.rst:53
+msgid "**Build**"
+msgstr ""
+
+#: ../../developer/architecture/client_app.rst:61
+msgid "**Dev server**"
+msgstr ""
+
+#: ../../developer/architecture/data_app.rst:3
+msgid "Data APP"
+msgstr ""
+
+#: ../../developer/architecture/data_app.rst:5
+msgid "Data app is a gateway connection to the mongodb."
+msgstr ""
+
+#: ../../developer/architecture/data_app.rst:7
+msgid "CRUD database operations"
+msgstr ""
+
+#: ../../developer/architecture/data_app.rst:9
+msgid "Data app use `Flask <http://flask.pocoo.org>`_,  on python >3.5."
+msgstr ""
+
+#: ../../developer/architecture/data_app.rst:30
+msgid "Mongo service"
+msgstr ""
+
+#: ../../developer/architecture/data_app.rst:38
+msgid "Running a mongodb"
+msgstr ""
+
+#: ../../developer/architecture/data_app.rst:42
+#: ../../developer/architecture/discovery_app.rst:77
+#: ../../developer/architecture/reports_app.rst:41
+#: ../../developer/architecture/scheduler_app.rst:19
+#: ../../developer/architecture/scheduler_app.rst:54
+msgid "**Installation with python 3**"
+msgstr ""
+
+#: ../../developer/architecture/data_app.rst:45
+#: ../../developer/architecture/reports_app.rst:45
+#: ../../developer/architecture/scheduler_app.rst:23
+#: ../../developer/architecture/scheduler_app.rst:58
+#: ../../developer/architecture/server_app.rst:37
+msgid "MongoDB"
+msgstr ""
+
+#: ../../developer/architecture/data_app.rst:55
+msgid "**Install  run api**"
+msgstr ""
+
+#: ../../developer/architecture/discovery_app.rst:2
 msgid "Discovery App"
 msgstr ""
 
-#: ../../developer/architecture.rst:73
-msgid "Discovery using `Flask <http://flask.pocoo.org>`_,  and python >3.5, has api rest, and tasks."
+#: ../../developer/architecture/discovery_app.rst:4
+msgid "Discovery App is a crawler accountable to connect to cloud providers."
 msgstr ""
 
-#: ../../developer/architecture.rst:83
-msgid "Will be setup rabbitmq and redis"
+#: ../../developer/architecture/discovery_app.rst:6
+msgid "To manager and authenticate on each cloud provider"
 msgstr ""
 
-#: ../../developer/architecture.rst:85
-msgid "**Windows Env**"
+#: ../../developer/architecture/discovery_app.rst:7
+msgid "Translate cloud data to maestro data."
 msgstr ""
 
-#: ../../developer/architecture.rst:87
-msgid "If you use windows, celery havent support for windows, the last version is 3.1.25."
+#: ../../developer/architecture/discovery_app.rst:14
+msgid "Discovery app use `Flask <http://flask.pocoo.org>`_,  on python >3.5."
 msgstr ""
 
-#: ../../developer/architecture.rst:97
-msgid "Controller used factory dc abstract to create easy way to make CRUD in mongodb"
+#: ../../developer/architecture/discovery_app.rst:30
+msgid "The discovery are divided in modules:"
 msgstr ""
 
-#: ../../developer/architecture.rst:99
-msgid "The crawler is divided in 3 parts"
+#: ../../developer/architecture/discovery_app.rst:32
+msgid "**api:** To authenticate on cloud providers."
 msgstr ""
 
-#: ../../developer/architecture.rst:101
-msgid "**api:** connect in api provider and get result"
+#: ../../developer/architecture/discovery_app.rst:34
+msgid "**translate:** Normalize the data."
 msgstr ""
 
-#: ../../developer/architecture.rst:103
-msgid "**translate:** normalize the data"
+#: ../../developer/architecture/discovery_app.rst:36
+msgid "**setup:** Reset the tracker stats (it used on datacenters to get the orphans instances)"
 msgstr ""
 
-#: ../../developer/architecture.rst:105
-msgid "**insert:** insert/update data in mongodb"
+#: ../../developer/architecture/discovery_app.rst:38
+msgid "**tracker:** recreate the tracker stats"
 msgstr ""
 
-#: ../../developer/architecture.rst:107
-msgid "Each step have unique task."
+#: ../../developer/architecture/discovery_app.rst:40
+msgid "**insert:** insert/update data on mongodb"
 msgstr ""
 
-#: ../../developer/architecture.rst:109
-msgid "Config is managed by env variables, need to be, because in production env like k8s is easier to manager the pods."
+#: ../../developer/architecture/discovery_app.rst:42
+msgid "**audit:** prepare and transform a data to send to the ``external audit``"
 msgstr ""
 
-#: ../../developer/architecture.rst:111
-msgid "Repository has pymongo objects."
+#: ../../developer/architecture/discovery_app.rst:44
+msgid "**external_audit:** Send a http request to ``Audit app``"
 msgstr ""
 
-#: ../../developer/architecture.rst:115
-msgid "**Flower - Debbug Celery**"
+#: ../../developer/architecture/discovery_app.rst:46
+msgid "**ws:** Send a http notification to ``websocket api``"
 msgstr ""
 
-#: ../../developer/architecture.rst:117
-msgid "We installed a flower, it's a control panel to centralize results throughout rabbitMQ, very useful to troubleshooting producer and consumers."
+#: ../../developer/architecture/discovery_app.rst:50
+msgid "**Components Diagram**"
 msgstr ""
 
-#: ../../developer/architecture.rst:128
-msgid "Scheduler App"
+#: ../../developer/architecture/discovery_app.rst:52
+msgid "Follow an example of request flow."
 msgstr ""
 
-#: ../../developer/architecture.rst:132
-msgid "Discovery using `Flask <http://flask.pocoo.org>`_,  and python >3.5, used Celery Beat feature to call tasks."
+#: ../../developer/architecture/index.rst:2
+msgid "Architecture"
 msgstr ""
 
-#: ../../developer/architecture.rst:137
+#: ../../developer/architecture/index.rst:4
+msgid "This section describes advanced configurations, architecture and setups for developer. Maestro are organized by services made in nodejs and python, and they use mongodb as a datastore and rabbitmq as a broker, we build and deploy the application using docker."
+msgstr ""
+
+#: ../../developer/architecture/reports_app.rst:2
 msgid "Reports App"
 msgstr ""
 
-#: ../../developer/architecture.rst:141
-msgid "Reports using `Flask <http://flask.pocoo.org>`_,  and python >3.6, used Celery Beat feature to call tasks, have strong dependences with discovery app and server app, reports use a standalone MongoDB (only reports app see this db)."
+#: ../../developer/architecture/reports_app.rst:4
+msgid "Application to aggregate, filter and generate reports."
 msgstr ""
 
-#: ../../developer/architecture.rst:147
-msgid "Controller used factory task to organize the workflow report generetaion."
+#: ../../developer/architecture/reports_app.rst:6
+msgid "Parse complex queries and generate reports"
 msgstr ""
 
-#: ../../developer/architecture.rst:149
-msgid "The process is divided in 4 parts"
+#: ../../developer/architecture/reports_app.rst:7
+msgid "Manage storage and control each technical flow"
 msgstr ""
 
-#: ../../developer/architecture.rst:151
-msgid "**general/pivot:** prepare and select result (communicate with discovery api)"
+#: ../../developer/architecture/reports_app.rst:8
+msgid "Transform reports on artifacts such as pdf, csv or json"
 msgstr ""
 
-#: ../../developer/architecture.rst:153
-msgid "**notification:** notificate any message (use discovery app to do)"
+#: ../../developer/architecture/reports_app.rst:9
+msgid "Save results on database"
 msgstr ""
 
-#: ../../developer/architecture.rst:155
-msgid "**upload:** control flow data (throttle inserets)"
+#: ../../developer/architecture/reports_app.rst:13
+msgid "Reports app use `Flask <http://flask.pocoo.org>`_,  on python >3.5."
 msgstr ""
 
-#: ../../developer/architecture.rst:157
-msgid "**webhook:** insert/update data in mongodb or an y endpoint"
+#: ../../developer/architecture/reports_app.rst:24
+msgid "The module description:"
+msgstr ""
+
+#: ../../developer/architecture/reports_app.rst:26
+msgid "**general/pivot:** get and filter data (communicate with discovery api)"
+msgstr ""
+
+#: ../../developer/architecture/reports_app.rst:28
+msgid "**notification:** send a notification to data/audit services"
+msgstr ""
+
+#: ../../developer/architecture/reports_app.rst:30
+msgid "**upload:** send results to the webhook"
+msgstr ""
+
+#: ../../developer/architecture/reports_app.rst:32
+msgid "**webhook:** insert/update data on mongodb [report database]"
+msgstr ""
+
+#: ../../developer/architecture/reports_app.rst:34
+msgid "**aggregation** - Execute aggregation tasks and save on report collections"
+msgstr ""
+
+#: ../../developer/architecture/reports_app.rst:36
+msgid "**notify** - Send a notification to data app"
+msgstr ""
+
+#: ../../developer/architecture/scheduler_app.rst:3
+msgid "Scheduler App"
+msgstr ""
+
+#: ../../developer/architecture/scheduler_app.rst:5
+msgid "Scheduler App is accountable to manage and execute internal jobs."
+msgstr ""
+
+#: ../../developer/architecture/scheduler_app.rst:7
+msgid "Schedule jobs, interval or crontab"
+msgstr ""
+
+#: ../../developer/architecture/scheduler_app.rst:8
+msgid "Do chain jobs"
+msgstr ""
+
+#: ../../developer/architecture/scheduler_app.rst:12
+msgid "Scheduler use apscheduler to control scheduler jobs, `Apscheduler documentation <https://apscheduler.readthedocs.io/en/latest/>`_"
+msgstr ""
+
+#: ../../developer/architecture/scheduler_app.rst:33
+msgid "Every 5 seconds the beat gets jobs on ``schedulers collection`` on mongodb."
+msgstr ""
+
+#: ../../developer/architecture/scheduler_app.rst:35
+msgid "Beat can do:"
+msgstr ""
+
+#: ../../developer/architecture/scheduler_app.rst:37
+msgid "**webhook:** Call HTTP request accordingly arguments."
+msgstr ""
+
+#: ../../developer/architecture/scheduler_app.rst:39
+msgid "**connection:** Sync a cloud data."
+msgstr ""
+
+#: ../../developer/architecture/scheduler_app.rst:41
+msgid "**report:** Generate/update a report."
+msgstr ""
+
+#: ../../developer/architecture/scheduler_app.rst:43
+msgid "Support tasks."
+msgstr ""
+
+#: ../../developer/architecture/scheduler_app.rst:45
+msgid "**chain and chain_exec:** If this job have a chain job this tasks will do it."
+msgstr ""
+
+#: ../../developer/architecture/scheduler_app.rst:47
+msgid "**depleted_job:**  Error handler to get any error and take the job out."
+msgstr ""
+
+#: ../../developer/architecture/scheduler_app.rst:49
+msgid "**notify_event:** Send a notification."
+msgstr ""
+
+#: ../../developer/architecture/scheduler_app.rst:68
+msgid "**Running scheduler beat**"
+msgstr ""
+
+#: ../../developer/architecture/server_app.rst:2
+#: ../../developer/qa.rst:26
+msgid "Server App"
+msgstr ""
+
+#: ../../developer/architecture/server_app.rst:4
+msgid "Server app is the main service; also they act as a middleware to authenticate and authorize users, it connect to the database and connect to others services."
+msgstr ""
+
+#: ../../developer/architecture/server_app.rst:6
+msgid "Authentication and authorization"
+msgstr ""
+
+#: ../../developer/architecture/server_app.rst:7
+msgid "Validate and create entities (crud ops)"
+msgstr ""
+
+#: ../../developer/architecture/server_app.rst:8
+msgid "Proxy to others services"
+msgstr ""
+
+#: ../../developer/architecture/server_app.rst:12
+msgid "This service need to be expose externally"
+msgstr ""
+
+#: ../../developer/architecture/server_app.rst:16
+msgid "Server is made with `KrakenJs <http://krakenjs.com/>`_."
+msgstr ""
+
+#: ../../developer/architecture/server_app.rst:17
+msgid "We use DDD to organize the code, they have an infra, repositories, entities (values objects), interfaces, application, and domain folders. `DDD in Node Apps <https://blog.codeminer42.com/nodejs-and-good-practices-354e7d763626>`_"
+msgstr ""
+
+#: ../../developer/architecture/server_app.rst:30
+msgid "It will run a mongodb and a fake stmp server"
+msgstr ""
+
+#: ../../developer/architecture/server_app.rst:38
+msgid "Gcc + python (bcrypt package)"
+msgstr ""
+
+#: ../../developer/architecture/server_app.rst:78
+msgid "and run the app"
+msgstr ""
+
+#: ../../developer/architecture/server_app.rst:99
+msgid "**Database migration**"
+msgstr ""
+
+#: ../../developer/architecture/server_app.rst:101
+msgid "Run the migration command."
+msgstr ""
+
+#: ../../developer/architecture/ws_app.rst:3
+msgid "WebSocket APP"
+msgstr ""
+
+#: ../../developer/architecture/ws_app.rst:5
+msgid "Centrifugo server. It is a websocket + rest server, the websocket is used by client to get a real time notification, and the rest is used by internal maestro do send a notification to the client."
+msgstr ""
+
+#: ../../developer/architecture/ws_app.rst:7
+msgid "Client notification using websockets"
+msgstr ""
+
+#: ../../developer/architecture/ws_app.rst:9
+msgid "Websocket implement a `Centrifugo OpenSource project <https://github.com/centrifugal>`_ (Centrifugo OpenSource project)."
+msgstr ""
+
+#: ../../developer/architecture/ws_app.rst:31
+msgid "Download the repository (Centrifugal project)"
+msgstr ""
+
+#: ../../developer/architecture/ws_app.rst:39
+msgid "**Endpoints**"
+msgstr ""
+
+#: ../../developer/architecture/ws_app.rst:41
+msgid "Client access"
+msgstr ""
+
+#: ../../developer/architecture/ws_app.rst:54
+msgid "Backend access"
+msgstr ""
+
+#: ../../developer/cicd.rst:2
+msgid "CI and CD"
+msgstr ""
+
+#: ../../developer/cicd.rst:4
+msgid "We use Travis as a CI."
+msgstr ""
+
+#: ../../developer/cicd.rst:6
+msgid "`Travis - Maestro dashboard <http://https://travis-ci.org/maestro-server>`_"
 msgstr ""
 
 #: ../../developer/index.rst:2
@@ -253,7 +983,7 @@ msgid "Developer Guide"
 msgstr ""
 
 #: ../../developer/index.rst:4
-msgid "This chapter will explain internal concepts about Maestro, its only matter if you will contribute with code, customize and etc."
+msgid "This chapter will explain a internal concepts about Maestro, if you like to contribute to the code this is the right place to start."
 msgstr ""
 
 #: ../../developer/lint.rst:2
@@ -261,7 +991,7 @@ msgid "Lints"
 msgstr ""
 
 #: ../../developer/lint.rst:4
-msgid "Each project uses lint program to guarantee the pattern and quality."
+msgid "This section describe about lint tools."
 msgstr ""
 
 #: ../../developer/lint.rst:7
@@ -269,7 +999,7 @@ msgid "JavaScript (Client App)"
 msgstr ""
 
 #: ../../developer/lint.rst:9
-msgid "Use `eslint <https://eslint.org/>`_, default vue-loader"
+msgid "Uses `eslint <https://eslint.org/>`_,"
 msgstr ""
 
 #: ../../developer/lint.rst:19
@@ -277,80 +1007,94 @@ msgid "NodeJs (Server App)"
 msgstr ""
 
 #: ../../developer/lint.rst:21
-msgid "Eslint too,"
+msgid "Describe on server-app/.eslintrc"
 msgstr ""
 
-#: ../../developer/lint.rst:23
-msgid "Airbnb with some changes"
-msgstr ""
-
-#: ../../developer/lint.rst:63
+#: ../../developer/lint.rst:31
 msgid "Python 3 (Discovery, Scheduler and Reports)"
 msgstr ""
 
-#: ../../developer/lint.rst:65
-msgid "pytlint, default config."
+#: ../../developer/lint.rst:33
+msgid "pytlint using the default config."
 msgstr ""
 
 #: ../../developer/qa.rst:2
 msgid "Quality Assurance"
 msgstr ""
 
-#: ../../developer/qa.rst:4
-msgid "We use some tools to mensure quality."
-msgstr ""
-
-#: ../../developer/qa.rst:8
-msgid "`Travis with all projects <http://https://travis-ci.org/maestro-server>`_"
-msgstr ""
-
-#: ../../developer/qa.rst:13
+#: ../../developer/qa.rst:5
 msgid "Client Maestro"
 msgstr ""
 
-#: ../../developer/qa.rst:17
-#: ../../developer/qa.rst:49
-#: ../../developer/qa.rst:63
-#: ../../developer/qa.rst:82
-#: ../../developer/qa.rst:103
+#: ../../developer/qa.rst:9
+#: ../../developer/qa.rst:41
+#: ../../developer/qa.rst:55
+#: ../../developer/qa.rst:74
+#: ../../developer/qa.rst:95
+#: ../../developer/qa.rst:116
+#: ../../developer/qa.rst:137
+#: ../../developer/qa.rst:158
+#: ../../developer/qa.rst:179
 msgid "Codacy"
 msgstr ""
 
-#: ../../developer/qa.rst:20
-#: ../../developer/qa.rst:43
-#: ../../developer/qa.rst:66
-#: ../../developer/qa.rst:85
-#: ../../developer/qa.rst:106
+#: ../../developer/qa.rst:12
+#: ../../developer/qa.rst:35
+#: ../../developer/qa.rst:58
+#: ../../developer/qa.rst:77
+#: ../../developer/qa.rst:98
+#: ../../developer/qa.rst:119
+#: ../../developer/qa.rst:140
+#: ../../developer/qa.rst:161
+#: ../../developer/qa.rst:182
 msgid "Travis"
 msgstr ""
 
-#: ../../developer/qa.rst:23
-#: ../../developer/qa.rst:37
-#: ../../developer/qa.rst:69
-#: ../../developer/qa.rst:88
-#: ../../developer/qa.rst:109
+#: ../../developer/qa.rst:15
+#: ../../developer/qa.rst:29
+#: ../../developer/qa.rst:61
+#: ../../developer/qa.rst:80
+#: ../../developer/qa.rst:101
+#: ../../developer/qa.rst:122
+#: ../../developer/qa.rst:143
+#: ../../developer/qa.rst:164
+#: ../../developer/qa.rst:185
 msgid "CodeClimate"
 msgstr ""
 
-#: ../../developer/qa.rst:46
+#: ../../developer/qa.rst:38
 msgid "DavidDm"
 msgstr ""
 
-#: ../../developer/qa.rst:52
+#: ../../developer/qa.rst:44
 #: ../../developer/tests.rst:37
+#: ../../developer/tests.rst:54
+#: ../../developer/tests.rst:72
+#: ../../developer/tests.rst:89
+#: ../../developer/tests.rst:106
+#: ../../developer/tests.rst:121
+#: ../../developer/tests.rst:137
 msgid "Coveralls"
 msgstr ""
 
-#: ../../developer/qa.rst:59
+#: ../../developer/qa.rst:51
 msgid "Discovery Maestro"
 msgstr ""
 
-#: ../../developer/qa.rst:78
+#: ../../developer/qa.rst:70
 msgid "Report Maestro"
 msgstr ""
 
-#: ../../developer/qa.rst:99
+#: ../../developer/qa.rst:91
 msgid "Scheduler Maestro"
+msgstr ""
+
+#: ../../developer/qa.rst:112
+msgid "Data Layer API"
+msgstr ""
+
+#: ../../developer/qa.rst:133
+msgid "Analytics App"
 msgstr ""
 
 #: ../../developer/tests.rst:2
@@ -358,7 +1102,7 @@ msgid "Tests"
 msgstr ""
 
 #: ../../developer/tests.rst:4
-msgid "Each service need to be testing."
+msgid "This section describe about test tools."
 msgstr ""
 
 #: ../../developer/tests.rst:7
@@ -366,7 +1110,7 @@ msgid "Server APP"
 msgstr ""
 
 #: ../../developer/tests.rst:9
-msgid "Testing use Mocha + Chai and Sinon, test coverage with Istambul"
+msgid "Server uses Mocha + Chai and Sinon to execute tests, and to create a coverage report they use Istambul"
 msgstr ""
 
 #: ../../developer/tests.rst:29
@@ -378,11 +1122,244 @@ msgid "Discovery APP"
 msgstr ""
 
 #: ../../developer/tests.rst:45
-#: ../../developer/tests.rst:57
-msgid "Testing use pytest"
+#: ../../developer/tests.rst:80
+#: ../../developer/tests.rst:97
+#: ../../developer/tests.rst:114
+#: ../../developer/tests.rst:130
+msgid "Testing with pytest"
 msgstr ""
 
-#: ../../developer/tests.rst:55
+#: ../../developer/tests.rst:61
 msgid "Reports APP"
 msgstr ""
 
+#: ../../developer/tests.rst:63
+msgid "Uses pytest"
+msgstr ""
+
+#: ../../developer/tests.rst:78
+msgid "Data Layer APP"
+msgstr ""
+
+#: ../../developer/tests.rst:95
+msgid "Analytics Apps"
+msgstr ""
+
+#: ../../developer/third.rst:2
+msgid "Third Party"
+msgstr ""
+
+#: ../../developer/third.rst:4
+msgid "Third Party Support"
+msgstr ""
+
+#: ../../developer/third.rst:9
+msgid "Provider"
+msgstr ""
+
+#: ../../developer/third.rst:9
+msgid "Library"
+msgstr ""
+
+#: ../../developer/third.rst:11
+msgid "AWS"
+msgstr ""
+
+#: ../../developer/third.rst:11
+msgid "Boto3"
+msgstr ""
+
+#: ../../developer/third.rst:12
+msgid "OpenStack"
+msgstr ""
+
+#: ../../developer/third.rst:12
+msgid "OpenStackSDK"
+msgstr ""
+
+#: ../../developer/third.rst:13
+msgid "Azure"
+msgstr ""
+
+#: ../../developer/third.rst:13
+msgid "Azure sdk"
+msgstr ""
+
+#: ../../developer/third.rst:14
+msgid "DigitalOcean"
+msgstr ""
+
+#: ../../developer/third.rst:14
+msgid "Do SDK"
+msgstr ""
+
+#: ../../developer/version.rst:2
+msgid "Versions"
+msgstr ""
+
+#: ../../developer/version.rst:4
+msgid "Compatible mapping versions between services"
+msgstr ""
+
+#: ../../developer/version.rst:9
+msgid "v0.6x - Candidate release"
+msgstr ""
+
+#: ../../developer/version.rst:12
+#: ../../developer/version.rst:31
+#: ../../developer/version.rst:50
+#: ../../developer/version.rst:67
+#: ../../developer/version.rst:81
+msgid "Client"
+msgstr ""
+
+#: ../../developer/version.rst:12
+msgid "0.15.x"
+msgstr ""
+
+#: ../../developer/version.rst:13
+#: ../../developer/version.rst:32
+#: ../../developer/version.rst:51
+#: ../../developer/version.rst:68
+#: ../../developer/version.rst:82
+msgid "Server"
+msgstr ""
+
+#: ../../developer/version.rst:13
+#: ../../developer/version.rst:14
+#: ../../developer/version.rst:15
+#: ../../developer/version.rst:16
+#: ../../developer/version.rst:17
+#: ../../developer/version.rst:18
+#: ../../developer/version.rst:19
+#: ../../developer/version.rst:20
+msgid "0.6.x"
+msgstr ""
+
+#: ../../developer/version.rst:14
+#: ../../developer/version.rst:33
+#: ../../developer/version.rst:52
+#: ../../developer/version.rst:69
+#: ../../developer/version.rst:83
+msgid "Discovery"
+msgstr ""
+
+#: ../../developer/version.rst:15
+#: ../../developer/version.rst:34
+#: ../../developer/version.rst:53
+#: ../../developer/version.rst:70
+#: ../../developer/version.rst:84
+msgid "Scheduler"
+msgstr ""
+
+#: ../../developer/version.rst:16
+#: ../../developer/version.rst:35
+#: ../../developer/version.rst:54
+#: ../../developer/version.rst:71
+#: ../../developer/version.rst:85
+msgid "Data"
+msgstr ""
+
+#: ../../developer/version.rst:17
+#: ../../developer/version.rst:36
+#: ../../developer/version.rst:55
+#: ../../developer/version.rst:72
+#: ../../developer/version.rst:86
+msgid "Reports"
+msgstr ""
+
+#: ../../developer/version.rst:18
+#: ../../developer/version.rst:37
+#: ../../developer/version.rst:56
+msgid "Analytics"
+msgstr ""
+
+#: ../../developer/version.rst:20
+#: ../../developer/version.rst:39
+msgid "Audit"
+msgstr ""
+
+#: ../../developer/version.rst:26
+msgid "v0.5x - Beta"
+msgstr ""
+
+#: ../../developer/version.rst:28
+msgid "Break changes - All services of version 0.5.x isn't compatible with early versions."
+msgstr ""
+
+#: ../../developer/version.rst:31
+msgid "0.14.x"
+msgstr ""
+
+#: ../../developer/version.rst:32
+#: ../../developer/version.rst:33
+#: ../../developer/version.rst:34
+#: ../../developer/version.rst:35
+#: ../../developer/version.rst:36
+#: ../../developer/version.rst:37
+#: ../../developer/version.rst:38
+#: ../../developer/version.rst:39
+msgid "0.5.x"
+msgstr ""
+
+#: ../../developer/version.rst:45
+msgid "v0.4x - Beta"
+msgstr ""
+
+#: ../../developer/version.rst:47
+msgid "Break changes - All services of version 0.4.x isn't compatible with early versions."
+msgstr ""
+
+#: ../../developer/version.rst:50
+msgid "0.13.x"
+msgstr ""
+
+#: ../../developer/version.rst:51
+#: ../../developer/version.rst:52
+#: ../../developer/version.rst:53
+#: ../../developer/version.rst:54
+#: ../../developer/version.rst:55
+#: ../../developer/version.rst:56
+#: ../../developer/version.rst:57
+#: ../../developer/version.rst:58
+msgid "0.4.x"
+msgstr ""
+
+#: ../../developer/version.rst:58
+msgid "WebSocket"
+msgstr ""
+
+#: ../../developer/version.rst:64
+msgid "v0.3x - Beta"
+msgstr ""
+
+#: ../../developer/version.rst:67
+msgid "0.12.x"
+msgstr ""
+
+#: ../../developer/version.rst:68
+#: ../../developer/version.rst:69
+#: ../../developer/version.rst:70
+#: ../../developer/version.rst:71
+msgid "0.3.x"
+msgstr ""
+
+#: ../../developer/version.rst:72
+#: ../../developer/version.rst:82
+#: ../../developer/version.rst:83
+#: ../../developer/version.rst:84
+msgid "0.2.x"
+msgstr ""
+
+#: ../../developer/version.rst:78
+msgid "v0.2x - Alpha"
+msgstr ""
+
+#: ../../developer/version.rst:81
+msgid "0.11.x"
+msgstr ""
+
+#: ../../developer/version.rst:85
+#: ../../developer/version.rst:86
+msgid "0.1.x"
+msgstr ""

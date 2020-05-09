@@ -1,7 +1,7 @@
 Analytics Front
 ---------------
 
-Analytics Front Application is responsable to expose diagrams to the user:
+Analytics Front Application is accountable to expose diagrams to the user:
 
 - Public/private authorization
 - Expose svgs diagrams
@@ -12,7 +12,7 @@ Analytics Front Application is responsable to expose diagrams to the user:
 
 ----------
 
-We use DDD approach to organize a code, they have an infra, repositories, entities (values objects), interfaces, application, and domain folders. `DDD in Node Apps <https://blog.codeminer42.com/nodejs-and-good-practices-354e7d763626>`_ 
+We use DDD approach to organize a code, they have an infra, repositories, entities (values objects), interfaces, application, and domain folders. `DDD in Node Apps <https://blog.codeminer42.com/nodejs-and-good-practices-354e7d763626>`_
 
 .. image:: ../../_static/screen/fluxo_data.png
 
@@ -72,12 +72,12 @@ and
 Every config can be pass by env variables, but if you like, can be organize by .env files,
 
 =================== ================================
-       Name                     Desc                                             
+       Name                     Desc
 =================== ================================
  .env                Default
  .env.test           Used on run test
- .env.development    node_env is setted development
- .env.production     node_env is setted prodcution
+ .env.development    node_env is set development
+ .env.production     node_env is set production
 =================== ================================
 
 **Migrate setup data**

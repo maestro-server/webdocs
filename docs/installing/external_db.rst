@@ -1,4 +1,4 @@
-Using external Database 
+Using external Database
 =======================
 
 **Services**
@@ -15,7 +15,7 @@ Using external Database
 You should spin up a mongodb externally, you can do using the ``MAESTRO_MONGO_URI`` env variable.
 
 =================================== ========================== =======================================================
- Env Variables                       Default                    Description                          
+ Env Variables                       Default                    Description
  MAESTRO_MONGO_URI                   mongodb://localhost:27017  Can be mongodb or mongo+srv://
 =================================== ========================== =======================================================
 
@@ -44,13 +44,13 @@ You should spin up a mongodb externally, you can do using the ``MAESTRO_MONGO_UR
         image: maestroserver/analytics-front-maestro
         environment:
         - "MAESTRO_MONGO_URI=mongodb://{external.mongo.url}"
-        - "MAESTRO_MONGO_DATABASE=maestro-client" # <------ It need to be the same db of servert-api
+        - "MAESTRO_MONGO_DATABASE=maestro-client" # <------ It need to be the same db of server-api
 
     data:
         image: maestroserver/data-maestro
         environment:
         - "MAESTRO_MONGO_URI=mongodb://{external.mongo.url}"
-        - "MAESTRO_MONGO_DATABASE=maestro-client" # <------ It need to be the same db of servert-api
+        - "MAESTRO_MONGO_DATABASE=maestro-client" # <------ It need to be the same db of server-api
 
     audit:
         image: maestroserver/audit-app-maestro
@@ -63,6 +63,6 @@ You should spin up a mongodb externally, you can do using the ``MAESTRO_MONGO_UR
 You can replace the db name using the ``MAESTRO_MONGO_DATABASE`` env var.
 
 =================================== ========================== =======================================================
- Env Variables                       Default                    Description                          
+ Env Variables                       Default                    Description
  MAESTRO_MONGO_DATABASE              maestro-client             Database name
 =================================== ========================== =======================================================

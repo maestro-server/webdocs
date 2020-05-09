@@ -5,7 +5,7 @@ This section describes the service discovery configuration. The Maestro server u
 
 ------------
 
-.. image:: ../_static/screen/dependecy.png
+.. image:: ../_static/screen/dependency.png
    :alt: Maestro Server - Dependency graph
 
 +---------------+-----------------+----------------------------+----------------------------------------+-------------+
@@ -15,13 +15,13 @@ This section describes the service discovery configuration. The Maestro server u
 +---------------+-----------------+----------------------------+----------------------------------------+-------------+
 |               | WebSocket App   | WEBSOCKET_URL              | Received status message (service bus)  | WebSocket   |
 +---------------+-----------------+----------------------------+----------------------------------------+-------------+
-|               | Analytics Front | ANALYTICS_URL              | Show graphs on bussiness analytics     | Iframe HTTP |
+|               | Analytics Front | ANALYTICS_URL              | Show graphs on business analytics      | Iframe HTTP |
 +---------------+-----------------+----------------------------+----------------------------------------+-------------+
 | Server App    | Report App      | MAESTRO_REPORT_URI         | Create any reports                     | Rest        |
 +---------------+-----------------+----------------------------+----------------------------------------+-------------+
 |               | Discovery App   | MAESTRO_DISCOVERY_URI      | Execute crawler actions                | Rest        |
 +---------------+-----------------+----------------------------+----------------------------------------+-------------+
-|               | Analytics App   | MAESTRO_ANALITYCS_URI      | Create bussiness graphs                | Rest        |
+|               | Analytics App   | MAESTRO_ANALITYCS_URI      | Create business graphs                 | Rest        |
 +---------------+-----------------+----------------------------+----------------------------------------+-------------+
 |               | Audit App       | MAESTRO_AUDIT_URI          | Send any update to audit               | Rest        |
 +---------------+-----------------+----------------------------+----------------------------------------+-------------+

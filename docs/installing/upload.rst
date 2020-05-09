@@ -25,10 +25,10 @@ For a single node, the file will be stored on a local disk.
 
 Env variables
 
- ============= ================ 
-  UPLOAD_TYPE   Local        
-  LOCAL_DIR     /public/static/ 
- ============= ================ 
+ ============= ================
+  UPLOAD_TYPE   Local
+  LOCAL_DIR     /public/static/
+ ============= ================
 
  .. code-block:: yaml
 
@@ -56,23 +56,23 @@ You can use a S3 Amazon storage object service to store an upload files.
 
 Env variables
 
- ======================= ================================ 
-  UPLOAD_TYPE             S3 
-  AWS_ACCESS_KEY_ID       XXXXXXXXXX                      
-  AWS_SECRET_ACCESS_KEY   XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  
-  AWS_DEFAULT_REGION      us-east-1                       
+ ======================= ================================
+  UPLOAD_TYPE             S3
+  AWS_ACCESS_KEY_ID       XXXXXXXXXX
+  AWS_SECRET_ACCESS_KEY   XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+  AWS_DEFAULT_REGION      us-east-1
   AWS_S3_BUCKET_NAME      maestroserver
-  AWS_ENDPOINT            S3 endpoint       
- ======================= ================================ 
+  AWS_ENDPOINT            S3 endpoint
+ ======================= ================================
 
  .. code-block:: yaml
 
     server:
         image: maestroserver/server-maestro
         environment:
-        - AWS_ACCESS_KEY_ID='XXXXXXXXXX'                    
+        - AWS_ACCESS_KEY_ID='XXXXXXXXXX'
         - AWS_SECRET_ACCESS_KEY='XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
-        - AWS_DEFAULT_REGION='us-east-1'              
+        - AWS_DEFAULT_REGION='us-east-1'
         - AWS_S3_BUCKET_NAME='maestroserver'
 
 
@@ -84,7 +84,7 @@ Env variables
 
 .. Note::
 
-    - Remember to set the righ path on ``STATIC_URL`` endpoint into client-app.
+    - Remember to set the right path on ``STATIC_URL`` endpoint into client-app.
     - The bucket need to be public.
 
 -------
@@ -92,18 +92,18 @@ Env variables
 Digital Ocean Spaces
 --------------------
 
-You can use Digital ocean space, they uses the same S3 protocol, but rather than AWS you need to set ``AWS_ENDPOINT``. 
+You can use Digital ocean space, they uses the same S3 protocol, but rather than AWS you need to set ``AWS_ENDPOINT``.
 
 Env variables
 
-======================= ================================ 
-UPLOAD_TYPE             S3 
-AWS_ACCESS_KEY_ID       XXXXXXXXXX                      
-AWS_SECRET_ACCESS_KEY   XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  
-AWS_DEFAULT_REGION      ny3                       
+======================= ================================
+UPLOAD_TYPE             S3
+AWS_ACCESS_KEY_ID       XXXXXXXXXX
+AWS_SECRET_ACCESS_KEY   XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+AWS_DEFAULT_REGION      ny3
 AWS_S3_BUCKET_NAME      maestroserver
-AWS_ENDPOINT            S3 endpoint       
-======================= ================================ 
+AWS_ENDPOINT            S3 endpoint
+======================= ================================
 
 - Endpoint can be ny3.spacesdigitalocean
 - Access and secret can be get on spaces dashboard.

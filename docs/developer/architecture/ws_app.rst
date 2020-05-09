@@ -2,9 +2,9 @@
 WebSocket APP
 ---------------
 
-Centrifugo server with rest hooks. It is a websocket + rest server, the websocket is used by client to get a real time notification, and the rest is used by internal maestro do send a notification to the client.
+Centrifugo server. It is a websocket + rest server, the websocket is used by client to get a real time notification, and the rest is used by internal maestro do send a notification to the client.
 
-- Client notification using webscokets
+- Client notification using websockets
 
 Websocket implement a `Centrifugo OpenSource project <https://github.com/centrifugal>`_ (Centrifugo OpenSource project).
 
@@ -39,7 +39,7 @@ Download the repository (Centrifugal project)
 **Endpoints**
 
 Client access
- 
+
 .. code-block:: javascript
 
     var centrifuge = new Centrifuge('ws://{server}/connection/websocket');
@@ -61,7 +61,7 @@ Backend access
     command = {
         "method": "publish",
         "params": {
-            "channel": "maestro#${ID-USER}", 
+            "channel": "maestro#${ID-USER}",
             "data": {
                 "notify": { // call notify
                     "title": "<string>",

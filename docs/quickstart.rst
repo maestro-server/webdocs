@@ -27,7 +27,7 @@ Docker have a empheral disk, with means if you remove the container all data wil
 
     mkdir ./db ./server/public ./analytics/public
 
-    docker run 
+    docker run
     -v ./db:/data/db
     -v ./server/public:/data/server-app/public/
     -v ./analytics/public:/data/analytics-front/public
@@ -40,7 +40,7 @@ Using external Database
 It do recommend to spin up a mongodb externally, you can set the ``MAESTRO_MONGO_URI`` env variable.
 
 =================================== ========================== =======================================================
- Env Variables                       Default                    Description                          
+ Env Variables                       Default                    Description
  MAESTRO_MONGO_URI                   mongodb://localhost:27017  Can be mongodb or mongo+srv://
 =================================== ========================== =======================================================
 
@@ -48,18 +48,18 @@ As an example
 
  .. code-block:: bash
 
-    docker run 
-        -p 80:80 
-        -p 8888:8888 
-        -p 8000:8000 
-        -p 9999:9999 
-        -e MAESTRO_MONGO_URI=mongodb://external.mongo.com:27017 
+    docker run
+        -p 80:80
+        -p 8888:8888
+        -p 8000:8000
+        -p 9999:9999
+        -e MAESTRO_MONGO_URI=mongodb://external.mongo.com:27017
         maestroserver/standalone-maestro
 
 Optionally, you can replace the db name, setting the ``MAESTRO_MONGO_DATABASE`` env var.
 
 =================================== ========================== =======================================================
- Env Variables                       Default                    Description                          
+ Env Variables                       Default                    Description
  MAESTRO_MONGO_DATABASE              maestro-client             Database name
 =================================== ========================== =======================================================
 
@@ -69,17 +69,17 @@ Using external RabbitMQ
 You can spin up a rabbitmq externally, it's uses `CELERY_BROKER_URL` env variable.
 
 =================================== ========================== =======================================================
- Env Variables                       Default                    Description                          
+ Env Variables                       Default                    Description
  CELERY_BROKER_URL                   amqp://localhost:5672      Amqp endpoint
 =================================== ========================== =======================================================
 
  .. code-block:: bash
 
-    docker run 
-        -p 80:80 
-        -p 8888:8888 
-        -p 8000:8000 
-        -p 9999:9999 
+    docker run
+        -p 80:80
+        -p 8888:8888
+        -p 8000:8000
+        -p 9999:9999
         -e CELERY_BROKER_URL=amqp://external.rabbitmq.com:5672
         maestroserver/standalone-maestro
 
@@ -91,20 +91,20 @@ You can use S3 Amazon storage object service to store artifacts and profiles ima
 
 Env variables
 
- ======================= ================================ 
-  UPLOAD_TYPE             S3 
-  AWS_ACCESS_KEY_ID       XXXXXXXXXX                      
-  AWS_SECRET_ACCESS_KEY   XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  
-  AWS_DEFAULT_REGION      us-east-1                       
-  AWS_S3_BUCKET_NAME      maestroserver   
- ======================= ================================ 
+ ======================= ================================
+  UPLOAD_TYPE             S3
+  AWS_ACCESS_KEY_ID       XXXXXXXXXX
+  AWS_SECRET_ACCESS_KEY   XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+  AWS_DEFAULT_REGION      us-east-1
+  AWS_S3_BUCKET_NAME      maestroserver
+ ======================= ================================
 
  .. code-block:: yaml
 
-    docker run 
+    docker run
         -e AWS_ACCESS_KEY_ID='XXXXXXXXXX'
         -e AWS_SECRET_ACCESS_KEY='XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
-        -e AWS_DEFAULT_REGION='us-east-1'  
+        -e AWS_DEFAULT_REGION='us-east-1'
         maestroserver/standalone-maestro
 
 
@@ -131,13 +131,13 @@ You can use a external smtp service as SendGrid, AWS SeS or any smtp server. Go 
 
  .. code-block:: yaml
 
-    docker run 
+    docker run
         -e SMTP_PORT=465
         -e SMTP_HOST=smtp.gmail.com
         -e SMTP_SENDER='mysender@gmail.com'
         -e SMTP_USERNAME=myusername
         -e SMTP_PASSWORD=mysecret
-        -e SMTP_USETSL=true  
+        -e SMTP_USETSL=true
         maestroserver/standalone-maestro
 
 
@@ -155,7 +155,7 @@ Minimal setup
             ports:
             - 80:80
             - 8888:8888
-            - 8000:8000 
+            - 8000:8000
             - 9999:9999
             volumes:
             - mongodata:/data/db
@@ -167,7 +167,7 @@ Minimal setup
         artifacts_analytics: {}
 
 
-Recommended reliable setup, using a mongodb, rabbitmq, smtp and store file setted externally.
+Recommended reliable setup, using a mongodb, rabbitmq, smtp and store file set externally.
 
 .. code-block:: yaml
 
@@ -175,9 +175,9 @@ Recommended reliable setup, using a mongodb, rabbitmq, smtp and store file sette
         maestro:
             image: maestroserver/standalone-maestro
             ports:
-            - 80:80 
-            - 8888:8888 
-            - 8000:8000 
+            - 80:80
+            - 8888:8888
+            - 8000:8000
             - 9999:9999
             environment:
             - AWS_ACCESS_KEY_ID='XXXXXXXXXX'

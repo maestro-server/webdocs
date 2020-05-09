@@ -1,4 +1,4 @@
-Using the dependecy tree wizard
+Using the dependency tree wizard
 ================================
 
 .. image:: ../../_static/screen/dep_p.png
@@ -18,19 +18,19 @@ Go to dependency tree, and you can use an existed system, or a client or an appl
 To connect in an application, you can click on plus button and select those applications; you can set the way those applications are connected, can be rest, grpc, tcp and etc.
 
 
-.. image:: ../../_static/screen/dependecy2.png
+.. image:: ../../_static/screen/dependency2.png
    :alt: Maestro Server - Create a app
 
 ------------
 
 Clicking in an app
 
-.. image:: ../../_static/screen/dependecy4.png
+.. image:: ../../_static/screen/dependency4.png
    :alt: Maestro Server - Dependency tree
 
 ------------
 
 To finish the diagram, click on commit. All done.
 
-.. image:: ../../_static/screen/dependecy3.png
+.. image:: ../../_static/screen/dependency3.png
    :alt: Maestro Server - Dependency graph

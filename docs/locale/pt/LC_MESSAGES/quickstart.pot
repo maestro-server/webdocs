@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Maestro Server - Cloud Inventory 0.1\n"
+"Project-Id-Version: Maestro Server - Cloud Inventory 0.6\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-22 20:54+0100\n"
+"POT-Creation-Date: 2020-05-09 12:21+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,126 +18,242 @@ msgstr ""
 
 #: ../../quickstart.rst:2
 msgid "Quick Start"
-msgstr ""
+msgstr "Instalação rápida"
 
 #: ../../quickstart.rst:3
-msgid "Get Maestro up in just a few minutes, we recommend to use docker, but if you like to install direcly read the installation section."
+msgid "It had three ways to install maestro. The quick one is to use a standalone docker [easy way], if you like more control over the installation, you can run multiple docker images per service [Recommended], and the last you can install from the source [Dev]."
 msgstr ""
 
 #: ../../quickstart.rst:6
-msgid "Overview"
-msgstr ""
+msgid "Running locally"
+msgstr "Rodando local"
 
 #: ../../quickstart.rst:7
-msgid "Maestro is split into 6 pieces:"
-msgstr ""
-
-#: ../../quickstart.rst:10
-msgid "Client App"
-msgstr ""
-
-#: ../../quickstart.rst:10
-msgid "FrontEnd client"
-msgstr ""
-
-#: ../../quickstart.rst:10
-msgid "Vue2 + Bootstrap 3"
-msgstr ""
-
-#: ../../quickstart.rst:12
-msgid "Server App"
-msgstr ""
-
-#: ../../quickstart.rst:12
-msgid "Primary API, authetication, crud and manager"
-msgstr ""
-
-#: ../../quickstart.rst:12
-msgid "NodeJs 6.10 Kraken"
-msgstr ""
+msgid "You can use a standalone docker to spin up a single maestro instance."
+msgstr "Você pode usar a imagem docker standalone para rodar uma única instancia"
 
 #: ../../quickstart.rst:14
-msgid "Discovery App"
-msgstr ""
+msgid "You need to expose ports **80**, **8888**, **8000** and **9999**"
+msgstr "Vocé precisa exportar as portas **80**, **8888**, **8000** and **9999**"
 
-#: ../../quickstart.rst:14
-msgid "Auto discovery and crawler"
-msgstr ""
-
-#: ../../quickstart.rst:14
-#: ../../quickstart.rst:18
-msgid "Python 3.6, flask"
-msgstr ""
-
-#: ../../quickstart.rst:16
-msgid "Scheduler App"
-msgstr ""
-
-#: ../../quickstart.rst:16
-msgid "Rabbits worker for Scheduler discovery"
-msgstr ""
-
-#: ../../quickstart.rst:16
-msgid "Python 3.6, celery"
+#: ../../quickstart.rst:15
+msgid "You can access by browser over 80 port."
 msgstr ""
 
 #: ../../quickstart.rst:18
-msgid "Reports App"
-msgstr ""
-
-#: ../../quickstart.rst:18
-msgid "Reports generetor"
+msgid "Persistent data"
 msgstr ""
 
 #: ../../quickstart.rst:20
-msgid "Playbook Server"
+msgid "Docker have a empheral disk, with means if you remove the container all data will be lost. You can handle it making volumes, the list of folder to expose are:"
 msgstr ""
 
-#: ../../quickstart.rst:20
-msgid "Playbook server, task executer"
+#: ../../quickstart.rst:22
+msgid "**/data/db:** It is all data recorded on mongo db."
 msgstr ""
 
-#: ../../quickstart.rst:20
-msgid "Python, shell"
+#: ../../quickstart.rst:23
+msgid "**/data/server-app/public/:** Profile images uploaded"
 msgstr ""
 
-#: ../../quickstart.rst:25
-msgid "Running locally"
+#: ../../quickstart.rst:24
+msgid "**/data/analytics-front/public:** Architecture artifacts exposed externally."
 msgstr ""
 
-#: ../../quickstart.rst:26
-msgid "We recommend to use docker, if you like to see demo version, copy and execute docker-compose below, you need to change only two variable in client-app, url, and port."
+#: ../../quickstart.rst:38
+msgid "Using external Database"
 msgstr ""
 
-#: ../../quickstart.rst:29
-msgid "PS: Docker will be created and manager all networks and communication between services."
+#: ../../quickstart.rst:40
+msgid "It do recommend to spin up a mongodb externally, you can set the ``MAESTRO_MONGO_URI`` env variable."
 msgstr ""
 
-#: ../../quickstart.rst:31
-msgid "PS: The containers its prepared for run in production ready, but its recommend to create a separate database environment and export the volume (remember all storage inside of docker its temporary)"
+#: ../../quickstart.rst:43
+#: ../../quickstart.rst:62
+#: ../../quickstart.rst:72
+msgid "Env Variables"
 msgstr ""
 
-#: ../../quickstart.rst:35
-msgid ":download:`docker-compose file <_static/files/docker-compose.yml>`"
+#: ../../quickstart.rst:43
+#: ../../quickstart.rst:62
+#: ../../quickstart.rst:72
+msgid "Default"
 msgstr ""
 
-#: ../../quickstart.rst:124
-msgid "Vagrant"
+#: ../../quickstart.rst:43
+#: ../../quickstart.rst:62
+#: ../../quickstart.rst:72
+msgid "Description"
 msgstr ""
 
-#: ../../quickstart.rst:126
-msgid "We have Vagrant box, its good for visualization (demo) or the best way to create a development environment."
+#: ../../quickstart.rst:44
+msgid "MAESTRO_MONGO_URI"
 msgstr ""
 
-#: ../../quickstart.rst:130
-msgid "PS: ``All port its expose``, don't use vagrant in production environment."
+#: ../../quickstart.rst:44
+msgid "mongodb://localhost:27017"
 msgstr ""
 
-#: ../../quickstart.rst:135
-msgid "**HA - High availability and critical system**"
+#: ../../quickstart.rst:44
+msgid "Can be mongodb or mongo+srv://"
 msgstr ""
 
-#: ../../quickstart.rst:137
-msgid "If your necessity is, HA, critical situation, go in `Ha session`__."
+#: ../../quickstart.rst:47
+msgid "As an example"
 msgstr ""
 
+#: ../../quickstart.rst:59
+msgid "Optionally, you can replace the db name, setting the ``MAESTRO_MONGO_DATABASE`` env var."
+msgstr ""
+
+#: ../../quickstart.rst:63
+msgid "MAESTRO_MONGO_DATABASE"
+msgstr ""
+
+#: ../../quickstart.rst:63
+msgid "maestro-client"
+msgstr ""
+
+#: ../../quickstart.rst:63
+msgid "Database name"
+msgstr ""
+
+#: ../../quickstart.rst:67
+msgid "Using external RabbitMQ"
+msgstr ""
+
+#: ../../quickstart.rst:69
+msgid "You can spin up a rabbitmq externally, it's uses `CELERY_BROKER_URL` env variable."
+msgstr ""
+
+#: ../../quickstart.rst:73
+msgid "CELERY_BROKER_URL"
+msgstr ""
+
+#: ../../quickstart.rst:73
+msgid "amqp://localhost:5672"
+msgstr ""
+
+#: ../../quickstart.rst:73
+msgid "Amqp endpoint"
+msgstr ""
+
+#: ../../quickstart.rst:88
+msgid "Using S3 to store files"
+msgstr ""
+
+#: ../../quickstart.rst:90
+msgid "You can use S3 Amazon storage object service to store artifacts and profiles images over a reliable storage system."
+msgstr ""
+
+#: ../../quickstart.rst:92
+msgid "Env variables"
+msgstr ""
+
+#: ../../quickstart.rst:95
+msgid "UPLOAD_TYPE"
+msgstr ""
+
+#: ../../quickstart.rst:95
+msgid "S3"
+msgstr ""
+
+#: ../../quickstart.rst:96
+msgid "AWS_ACCESS_KEY_ID"
+msgstr ""
+
+#: ../../quickstart.rst:96
+msgid "XXXXXXXXXX"
+msgstr ""
+
+#: ../../quickstart.rst:97
+msgid "AWS_SECRET_ACCESS_KEY"
+msgstr ""
+
+#: ../../quickstart.rst:97
+msgid "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+msgstr ""
+
+#: ../../quickstart.rst:98
+msgid "AWS_DEFAULT_REGION"
+msgstr ""
+
+#: ../../quickstart.rst:98
+msgid "us-east-1"
+msgstr ""
+
+#: ../../quickstart.rst:99
+msgid "AWS_S3_BUCKET_NAME"
+msgstr ""
+
+#: ../../quickstart.rst:99
+msgid "maestroserver"
+msgstr ""
+
+#: ../../quickstart.rst:112
+msgid "Using external SMTP"
+msgstr ""
+
+#: ../../quickstart.rst:114
+msgid "You can use a external smtp service as SendGrid, AWS SeS or any smtp server. Go to server application and set:"
+msgstr ""
+
+#: ../../quickstart.rst:117
+msgid "SMTP_PORT"
+msgstr ""
+
+#: ../../quickstart.rst:119
+msgid "SMTP_HOST"
+msgstr ""
+
+#: ../../quickstart.rst:121
+msgid "SMTP_SENDER"
+msgstr ""
+
+#: ../../quickstart.rst:123
+msgid "SMTP_USERNAME"
+msgstr ""
+
+#: ../../quickstart.rst:125
+msgid "SMTP_PASSWORD"
+msgstr ""
+
+#: ../../quickstart.rst:127
+msgid "SMTP_USETSL"
+msgstr ""
+
+#: ../../quickstart.rst:127
+msgid "Enable TLS connect"
+msgstr ""
+
+#: ../../quickstart.rst:129
+msgid "SMTP_IGNORE"
+msgstr ""
+
+#: ../../quickstart.rst:129
+msgid "Ignore the validation of security connection"
+msgstr ""
+
+#: ../../quickstart.rst:146
+msgid "Complete docker compose"
+msgstr ""
+
+#: ../../quickstart.rst:148
+msgid "Minimal setup"
+msgstr ""
+
+#: ../../quickstart.rst:170
+msgid "Recommended reliable setup, using a mongodb, rabbitmq, smtp and store file set externally."
+msgstr ""
+
+#: ../../quickstart.rst:197
+msgid "Standalone docker use the same env vars found it in all services."
+msgstr ""
+
+#: ../../quickstart.rst:201
+msgid "Standalone uses supervisord to manage all services inside of one docker, if you like to spin up one docker per service, go to `installation <http://docs.maestroserver.io/en/latest/installing/>`__."
+msgstr ""
+
+#: ../../quickstart.rst:205
+msgid "Don't spin up a multiple standalone docker, it will duplicate the schedule tasks, if you need to make a production high availability setup, go to installation per service."
+msgstr ""

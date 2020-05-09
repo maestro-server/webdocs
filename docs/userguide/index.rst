@@ -4,7 +4,7 @@ User Guide
 
 In this section we will cover how the maestro server works from the user's point of view, if you want to install and configure the Maestro server you should go to the installation section, if you would like to develop a new functionality or a new service, you should go to the developer section.
 
-Maestro is an inventory system for multi platform environments, multi-cloud for enterprise companies. It aim to organize in a single dashboard arelationship between servers, applications, systems and clients. 
+Maestro is an inventory system for multi platform environments, multi-cloud for enterprise companies. It aim to organize in a single dashboard with relation between servers, applications, systems and clients.
 
 The dashboard was divided into three parts:
 
@@ -40,7 +40,7 @@ Visualize your cloud architecture
 
    graphs/bussiness_graphs
    graphs/gpdependencies
-   
+
 
 Reports - Generate advanced reports
 ===================================

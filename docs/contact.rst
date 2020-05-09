@@ -1,7 +1,7 @@
 Contact
 =======
 
-Do you have any question, comments, feeback or question about Maestro Server? Please send me a message.
+Do you have any question, comments, feedback or question about Maestro Server? Please send me a message.
 
 .. raw:: html
 
@@ -12,6 +12,6 @@ Do you have any question, comments, feeback or question about Maestro Server? Pl
 Feature request
 ---------------
 
-Do you like a new feature? Please open a new request on Gihub.
+Do you like a new feature? Please open a new request on Github.
 
 `Feature request <https://github.com/maestro-server/server-app/issues/new?template=feature_request.md>`_.

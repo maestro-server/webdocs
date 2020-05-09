@@ -1,38 +1,39 @@
 Reports App
 -------------
 
-Reports app, generate reports
+Application to aggregate, filter and generate reports.
 
 - Parse complex queries and generate reports
 - Manage storage and control each technical flow
-- Transform in artifact pdf, csv or json
+- Transform reports on artifacts such as pdf, csv or json
+- Save results on database
 
 ----------
+
+- Reports app use `Flask <http://flask.pocoo.org>`_,  on python >3.5.
 
 .. image:: ../../_static/screen/microservice_arq.png
    :alt: Maestro Server - Microservice
 
-Reports app use `Flask <http://flask.pocoo.org>`_,  on python >3.5.
+----------
 
 **Highlights**
 
 .. image:: ../../_static/screen/reports_arch.png
 
-- Controller used factory task to organize the workflow report generetaion.
+- The module description:
 
-- The process is divided
+    - **general/pivot:** get and filter data (communicate with discovery api)
 
-    - **general/pivot:** prepare and select result (communicate with discovery api)
+    - **notification:** send a notification to data/audit services
 
-    - **notification:** notificate any message (use discovery app to do)
+    - **upload:** send results to the webhook
 
-    - **upload:** control flow data (throttle inserets)
+    - **webhook:** insert/update data on mongodb [report database]
 
-    - **webhook:** insert/update data in mongodb or any endpoint
+    - **aggregation** - Execute aggregation tasks and save on report collections
 
-    - **aggregation** - Execute aggregation tasks and save in report collections
-
-    - **notify** - Notify status task to websocket and audit services
+    - **notify** - Send a notification to data app
 
 
 ----------
@@ -55,13 +56,13 @@ Download the repository
 
 .. code-block:: bash
 
-    python -m flask run.py --port 5005 
+    python -m flask run.py --port 5005
 
     or
 
-    FLASK_APP=run.py FLASK_DEBUG=1 flask run --port 5005 
+    FLASK_APP=run.py FLASK_DEBUG=1 flask run --port 5005
 
-    or 
+    or
 
     npm run server
 
@@ -73,7 +74,7 @@ Download the repository
 
     celery -A app.celery worker -E -Q report --hostname=report@%h --loglevel=info
 
-    or 
+    or
 
     npm run celery
 
@@ -81,7 +82,7 @@ Download the repository
 
 .. Warning::
 
-    On production we use gunicorn to handle requests.
+    On production we use gunicorn to handle multiple threads.
 
     .. code-block:: python
 

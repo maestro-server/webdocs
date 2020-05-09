@@ -5,7 +5,7 @@ You can organize your servers, applications, cloud resources, systems, and clien
 
 **You will be able to:**
 
-- Control multi-environment, mulit-cloud and multi-regions using a single dashboard.
+- Control multi-environment, multi-cloud and multi-regions using a single dashboard.
 - Track an application ownership
 - Easy to visualize a relationship between microservices
 - Correlation between teams/systems

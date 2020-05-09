@@ -7,7 +7,7 @@ To test out the demo, [Demo Online](http://demo.maestroserver.io "Demo Online")
 
 # Maestro Server - WebDocs #
 
-Offical Maestro Server documentation
+Official Maestro Server documentation
 
 [See Docs](http://docs.maestroserver.io "Docs Online")
 

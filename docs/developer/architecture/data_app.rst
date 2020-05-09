@@ -56,13 +56,13 @@ Download the repository
 
 .. code-block:: bash
 
-    python -m flask run.py --port 5010 
+    python -m flask run.py --port 5010
 
     or
 
-    FLASK_APP=run.py FLASK_DEBUG=1 flask run --port 5010 
+    FLASK_APP=run.py FLASK_DEBUG=1 flask run --port 5010
 
-    or 
+    or
 
     npm run server
 
@@ -70,7 +70,7 @@ Download the repository
 
 .. Warning::
 
-    On production we use gunicorn to handle requests.
+    On production we use gunicorn to handle multiple threads.
 
 .. code-block:: python
 
