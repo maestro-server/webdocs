@@ -2,10 +2,11 @@
 WebSocket APP
 ---------------
 
-It's websocket server with restfull hooks, maestro websocket use centrifugo project.
+Centrifugo server with rest hooks. It is a websocket + rest server, the websocket is used by client to get a real time notification, and the rest is used by internal maestro do send a notification to the client.
+
 - Client notification using webscokets
 
-Websocket system using `Centrifugo OpenSource project <https://github.com/centrifugal>`_ (Centrifugo OpenSource project).
+Websocket implement a `Centrifugo OpenSource project <https://github.com/centrifugal>`_ (Centrifugo OpenSource project).
 
 ---------------
 

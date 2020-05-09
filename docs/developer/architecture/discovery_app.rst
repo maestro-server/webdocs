@@ -1,10 +1,9 @@
 Discovery App
 -------------
 
-Discovery App is a crawler encharge to connect yo cloud providers.
+Discovery App is a crawler resposanble to connect yo cloud providers.
 
-- Encharge to manager and authenticate in each cloud provider
-- Crawler data and record it on Maestro db
+- To manager and authenticate in each cloud provider
 - Translate cloud data to maestro data.
 
 ----------

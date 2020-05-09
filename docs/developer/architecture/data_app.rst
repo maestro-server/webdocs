@@ -35,7 +35,7 @@ Mongo service
 
     docker-compose up -d
 
-It setup a mongodb
+Running a mongodb
 
 ----------
 

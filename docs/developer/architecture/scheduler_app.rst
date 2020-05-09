@@ -2,13 +2,10 @@
 Scheduler App
 -------------
 
-Scheduler App service to manage and execute jobs
+Scheduler App are able to manage and execute jobs
 
 - Schedule jobs, interval or crontab
-- Requests chain jobs
-- Modules
-    - Webhook: Call URL request
-    - Connections: Call Crawler task
+- Do chain jobs
 
 ----------   
 
@@ -33,21 +30,23 @@ Download the repository
 
 **Highlights**
 
-- Celery Beat consult schedulers collection in mongodb every 5 seconds and updated time to call the tasks.
+- Every 5 seconds the beat gets jobs on ``schedulers collection`` on mongodb.
 
-- Have 2 tasks called by beat
+- Beat can do:
 
 	- **webhook:** Call HTTP request accordly arguments. 
 
-	- **connection:** Consulting connection data, after call webhook.
+	- **connection:** Sync a cloud data.
 
-- Have support tasks called by outhers tasks.
+    - **report:** Generate/update a report.
 
-	- **chain and chain_exec:** Called by webhook, this create another job after the first finish.
+- Support tasks.
 
-	- **depleted_job:** If any job recevied something wrong, this taks is called e depleted that job.
+	- **chain and chain_exec:** If this job have a chain job this tasks will do it.
 
-    - **notify_event:** Send notification event. 
+	- **depleted_job:**  Error handler to get any error and take the job out.
+
+    - **notify_event:** Send a notification. 
 
 
 ----------

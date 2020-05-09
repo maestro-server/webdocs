@@ -1,7 +1,7 @@
 Server App
 ----------
 
-Server App is the main application:
+Server app is the main service; also they act as a middleware to authenticate and authorize users, connect to the database and connect onto other services.
 
 - Authentication and authorization
 - Validate and create entities (crud ops)

@@ -3,7 +3,7 @@ Reports App
 
 Reports app, generate reports
 
-- Understand complex queries and generate reports
+- Parse complex queries and generate reports
 - Manage storage and control each technical flow
 - Transform in artifact pdf, csv or json
 
