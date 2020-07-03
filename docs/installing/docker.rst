@@ -142,9 +142,9 @@ Server APP
 
 **Env variables**
 
-=================================== ========================== ============================================
+=================================== ========================== ==========================================================================
             Env Variables                   Example                   Description
-=================================== ========================== ============================================
+=================================== ========================== ==========================================================================
  MAESTRO_PORT                        8888
  NODE_ENV                            development|production
  MAESTRO_MONGO_URI                   mongodb://localhost        DB string connection
@@ -175,6 +175,7 @@ Server APP
  AWS_SECRET_ACCESS_KEY               XXXX
  AWS_DEFAULT_REGION                  us-east-1
  AWS_S3_BUCKET_NAME                  maestroserver              Bucket name
+ AWS_S3_PRIVATE_BUCKET_NAME          privatebucket              Used to upload internal files, as an example ansible facts and tf states
  MAESTRO_UPLOAD_TYPE                 S3 or Local                Upload mode
  LOCAL_DIR                           /public/static/            Where files will be uploaded
  MAESTRO_TMP                         $rootDirectory             Tmp folder used on upload files process
@@ -182,7 +183,7 @@ Server APP
  MAESTRO_AUDIT_DISABLED              false                      Disable the audit services
  MAESTRO_REPORT_DISABLED             false                      Disable the report services
  MAESTRO_DISCOVERY_DISABLED          false                      Disable the discovery service
-=================================== ========================== ============================================
+=================================== ========================== ==========================================================================
 
 Discovery App
 -------------
@@ -214,14 +215,14 @@ Discovery App
         -e "MAESTRO_DATA_URI=http://localhost:5010" \
         -e "CELERY_BROKER_URL=amqp://rabbitmq:5672" \
         -e "MAESTRO_AUDIT_URI=http://localhost:10900" \
-        -e "MAESTRO_WEBSOCKET_URI=http://localhost:8888" \
+        -e "MAESTRO_SERVER_URI=http://localhost:8888" \
         maestroserver/discovery-maestro-celery
 
 .. Warning::
     * **MAESTRO_DATA_URI:** - Data App enpoint API - default port is 5000
     * **MAESTRO_AUDIT_URI:** - Audit App endpoint API - default port is 10900
     * **MAESTRO_WEBSOCKET_URI:** - Websocket endpoint, this one is HTTP
-    * **MAESTRO_WEBSOCKET_URI** - Server endpoint
+    * **MAESTRO_SERVER_URI** - Server endpoint
 
 **Env variables**
 
@@ -232,7 +233,7 @@ MAESTRO_PORT			   5000  					     Port used
 MAESTRO_DATA_URI           http://localhost:5010         Data Layer API URL
 MAESTRO_AUDIT_URI	       http://localhost:10900	     Audit App - API URL
 MAESTRO_WEBSOCKET_URI	   http://localhost:8000	     Webosocket App - API URL
-MAESTRO_WEBSOCKET_URI      http://localhost:8888         Server App - API URL
+MAESTRO_SERVER_URI         http://localhost:8888         Server App - API URL
 
 MAESTRO_SECRETJWT          XXX                           Same that Server App
 MAESTRO_SECRETJWT_PRIVATE  XXX                           Secret Key - JWT private connections
