@@ -1,7 +1,7 @@
 Connecting on AWS
 ====================
 
-To connect a one aws account, it uses an access_key and secret_key
+To connect an one aws account, Maestro need to have an access_key and secret_key
 
 .. raw:: html
 
@@ -71,7 +71,13 @@ Copy and paste the aws key and secret key
 
 ------------
 
-.. image:: ../../../_static/screen/conn_aws.png
+.. image:: ../../_static/screen/conn_aws.png
    :alt: Maestro Server - AWS Setup
 
 Setup connection on AWS
+
+------------
+
+.. Note::
+    
+    PS:  There is scheduler job activated by default, each resource type have your own window time, server-list will be updated for every 5 minutes, networks for every 2 weeks.

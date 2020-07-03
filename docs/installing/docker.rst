@@ -214,12 +214,14 @@ Discovery App
         -e "MAESTRO_DATA_URI=http://localhost:5010" \
         -e "CELERY_BROKER_URL=amqp://rabbitmq:5672" \
         -e "MAESTRO_AUDIT_URI=http://localhost:10900" \
+        -e "MAESTRO_WEBSOCKET_URI=http://localhost:8888" \
         maestroserver/discovery-maestro-celery
 
 .. Warning::
     * **MAESTRO_DATA_URI:** - Data App enpoint API - default port is 5000
     * **MAESTRO_AUDIT_URI:** - Audit App endpoint API - default port is 10900
     * **MAESTRO_WEBSOCKET_URI:** - Websocket endpoint, this one is HTTP
+    * **MAESTRO_WEBSOCKET_URI** - Server endpoint
 
 **Env variables**
 
@@ -230,6 +232,7 @@ MAESTRO_PORT			   5000  					     Port used
 MAESTRO_DATA_URI           http://localhost:5010         Data Layer API URL
 MAESTRO_AUDIT_URI	       http://localhost:10900	     Audit App - API URL
 MAESTRO_WEBSOCKET_URI	   http://localhost:8000	     Webosocket App - API URL
+MAESTRO_WEBSOCKET_URI      http://localhost:8888         Server App - API URL
 
 MAESTRO_SECRETJWT          XXX                           Same that Server App
 MAESTRO_SECRETJWT_PRIVATE  XXX                           Secret Key - JWT private connections

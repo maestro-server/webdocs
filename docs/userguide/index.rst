@@ -25,10 +25,36 @@ We can use to organize each part of our architecture by:
    :maxdepth: 2
 
    cloud_inventory/inventory/index
-   cloud_inventory/autodiscovery/index
    cloud_inventory/confsettings
    cloud_inventory/history_track
 
+Auto Discovery
+==============
+
+Maestro can connect in multiples cloud providers. You can track in a single dashboard, everything was created on multi-cloud and multi-region architecture.
+
+To set up a new connection, you should follow three steps.
+
+.. image:: ../_static/screen/connection.gif
+   :alt: Maestro Server - Connections
+
+------
+
+1 - Create datacenter on Maestro (select all regions used on that provider)
+
+2 - Create a new connection on a given datacenter. - Go to inventory > connections.
+
+.. image:: ../_static/screen/conn_p.png
+   :alt: Maestro Server - Create connection
+
+3 - Allowing Maestro server to reach out a third provider using a readonly cloud credential such as aws access/secret key, azure subscription and more.
+
+------------
+
+.. toctree::
+   :maxdepth: 2
+
+   autodiscovery/index
 
 Graphs - Architecture maps
 ==========================

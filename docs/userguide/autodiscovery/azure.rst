@@ -9,8 +9,8 @@ To register use client id, tenant id, subscription id and secret token
 
 -------------
 
-Create and get Client ID
-------------------------
+Create and/or get Client ID
+---------------------------
 
 Create application in Azure Active Directory and you can then note the application ID.
 
@@ -24,11 +24,11 @@ Generate Authentication Key
 
 **Provide Permission**, select the application created and
 
-1. Go to Settings &gt; Required permissions.
-2. Click Add &gt; Select an API &gt; Windows Azure Service Management API and click Select.
+1. Go to Settings, then Required permissions.
+2. Click Add -> Select an API -> Windows Azure Service Management API and click Select.
 3. Select required Delegated Permissions, click Select and then click Done.
 4. Create a secret key
-5. Select the application and go to Settings &gt; Keys.
+5. Select the application and go to Settings and Keys.
 6. Add a description and expiry duration for the key and click Save.
 7. The value of the key appears in the Value field.
                             
@@ -50,7 +50,7 @@ Grant permission for the application to access subscription that you want to con
 2. On the Azure portal, navigate to Subscriptions.
 3. Select the subscription for which you want to grant permission to the application and note the subscription ID. 
 4. To grant permission to the application you created, choose Access Control (IAM).
-5. Go to Add &gt; Select a role. Pick the role as Reader. A Reader can view everything, but cannot make any changes to the resources of a subscription.
+5. Go to Add and Select a role. Pick the role as Reader. A Reader can view everything, but cannot make any changes to the resources of a subscription.
 6. Select Azure AD user, group, or application in Assign Access to dropdown.
 7. Type the application name in Select drop-down and select the application you created.
 
@@ -72,7 +72,7 @@ Grant permission for the application to access subscription that you want to con
 
 ------------
 
-.. image:: ../../../_static/screen/conn_azure.png
+.. image:: ../../_static/screen/conn_azure.png
    :alt: Maestro Server - Azure Setup
 
 Setup connection with Azure

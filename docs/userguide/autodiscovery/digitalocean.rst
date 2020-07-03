@@ -3,7 +3,7 @@ Connecting on Digital Ocean
 
 To get the application token. Go to:
 
-.. image:: ../../../_static/screen/do_tokens.png
+.. image:: ../../_static/screen/do_tokens.png
    :alt: Maestro Server - Digital Ocean tokens
 
 Getting the App Token
@@ -40,7 +40,7 @@ To create a new token, go to Digital Ocean dashboard:
 
 ------------
 
-.. image:: ../../../_static/screen/conn_do.png
+.. image:: ../../_static/screen/conn_do.png
    :alt: Maestro Server - Digital Ocean Setup
 
 Setup connection with Digital Ocean
@@ -52,7 +52,7 @@ Digital Ocean Spaces
 
 To register spaces key and secret key.
 
-.. image:: ../../../_static/screen/spaces_tokens.png
+.. image:: ../../_static/screen/spaces_tokens.png
    :alt: Maestro Server - Digital Ocean Space tokens
 
 Getting Spaces Token
@@ -65,7 +65,7 @@ Getting Spaces Token
 
 ------------
 
-.. image:: ../../../_static/screen/conn_do_spaces.png
+.. image:: ../../_static/screen/conn_do_spaces.png
    :alt: Maestro Server - Digital Ocean Spaces Setup
 
 Setup connection on Digital Ocean Spaces

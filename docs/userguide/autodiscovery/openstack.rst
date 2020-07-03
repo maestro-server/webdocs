@@ -27,7 +27,7 @@ If you like, choose how the resource will be synchronized with an active and ina
 
 ------------
 
-.. image:: ../../../_static/screen/conn_openstack.png
+.. image:: ../../_static/screen/conn_openstack.png
    :alt: Maestro Server - OpenStack setup
 
 Setupconnection with OpenStack
@@ -36,12 +36,12 @@ Setupconnection with OpenStack
 
 .. Note::
     
-    PS:  There is scheduler job, its automatize sync, this schedule will be activated by default, and each resource have our own time, in the example, server-list will be synchronized for every 5 minutes, networks stuffs normally happen for every 2 weeks. You can the time using in each resource, more details  see schedulers.
+    PS:  PS:  There is scheduler job activated by default, each resource type have specifc window time, server-list will be updated for every 5 minutes, networks for every 2 weeks.
 
 
 ------------
 
-.. image:: ../../../_static/screen/conn_ena.png
+.. image:: ../../_static/screen/conn_ena.png
    :alt: Maestro Server - Job on connection
 
 Enable and disable the job
